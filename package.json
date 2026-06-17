@@ -1,0 +1,18 @@
+{
+  "name": "kapasitet",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @kapasitet/web",
+    "build": "npm run build -w @kapasitet/web",
+    "lint": "npm run lint -w @kapasitet/web",
+    "validate:data": "node scripts/validate-csv.mjs",
+    "ci": "npm run validate:data ; npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,4 @@
+dataset_id,source_id,municipality_code,county_code,period,metric,value,unit,last_updated
+capacity_workforce,ssb_kostra_001,0301,03,2026,ansatte_legger_og_sykepleiere,18240,personer,2026-06-01
+capacity_workforce,ssb_kostra_001,4601,46,2026,ansatte_legger_og_sykepleiere,9850,personer,2026-06-01
+service_volume,fhi_kpr_001,0301,03,2026,mottar_tjeneste_per_dag,61200,personer,2026-06-05

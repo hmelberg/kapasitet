@@ -1,0 +1,3 @@
+source_id,owner,dataset_name,url,license,geo_level,update_frequency,last_updated
+ssb_kostra_001,SSB,KOSTRA helse og omsorg,https://www.ssb.no/offentlig-sektor/kostra,NLOD,kommune,arlig,2026-06-01
+fhi_kpr_001,FHI,KPR fastlege og kommunale tjenester,https://www.fhi.no/helseregistre/kpr,Offentlig statistikk,kommune,arlig,2026-06-05
