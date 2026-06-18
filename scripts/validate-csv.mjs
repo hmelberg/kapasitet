@@ -28,6 +28,30 @@ const schemaByFile = {
     "lat",
     "lon",
     "beds",
+    "last_updated",
+    "capacity_value",
+    "capacity_unit"
+  ],
+  "medications.csv": [
+    "group_code",
+    "group_label",
+    "period",
+    "users",
+    "per_1000",
+    "source_id",
+    "last_updated"
+  ],
+  "medication_use.csv": [
+    "dataset_id",
+    "source_id",
+    "group_code",
+    "group_label",
+    "municipality_code",
+    "county_code",
+    "period",
+    "value",
+    "per_1000",
+    "unit",
     "last_updated"
   ],
   "needs.csv": [
@@ -98,10 +122,15 @@ function validateNormalizedFile(filePath) {
       assert((get(key) || "").length > 0, `${fileName}:${lineNo}: tom verdi i '${key}'`);
     }
 
-    const municipalityCode = get("municipality_code");
-    const countyCode = get("county_code");
-    assert(/^\d{4}$/.test(municipalityCode), `${fileName}:${lineNo}: municipality_code ma vaere 4 siffer`);
-    assert(/^\d{2}$/.test(countyCode), `${fileName}:${lineNo}: county_code ma vaere 2 siffer`);
+    // Only files with geographic columns carry these (medications.csv is national).
+    if (idx.municipality_code !== undefined) {
+      const municipalityCode = get("municipality_code");
+      assert(/^\d{4}$/.test(municipalityCode), `${fileName}:${lineNo}: municipality_code ma vaere 4 siffer`);
+    }
+    if (idx.county_code !== undefined) {
+      const countyCode = get("county_code");
+      assert(/^\d{2}$/.test(countyCode), `${fileName}:${lineNo}: county_code ma vaere 2 siffer`);
+    }
 
     if (fileName === "capacity.csv") {
       const value = Number(get("value"));

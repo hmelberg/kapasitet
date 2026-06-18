@@ -3,6 +3,7 @@ import Link from "next/link";
 const links = [
   { href: "/", label: "Oversikt" },
   { href: "/behov", label: "Behov" },
+  { href: "/legemidler", label: "Legemidler" },
   { href: "/kapasitet", label: "Kart og kapasitet" },
   { href: "/scenarier", label: "Scenarier" },
   { href: "/kilder", label: "Kilder" }

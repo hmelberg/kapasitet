@@ -338,8 +338,8 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
                       <td>{countyLabel(selectedFacility.county_code)}</td>
                     </tr>
                     <tr>
-                      <th>Senger</th>
-                      <td>{selectedFacility.beds.toLocaleString("nb-NO")}</td>
+                      <th>Kapasitet</th>
+                      <td>{selectedFacility.capacity_value.toLocaleString("nb-NO")} {selectedFacility.capacity_unit}</td>
                     </tr>
                     <tr>
                       <th>Koordinater</th>

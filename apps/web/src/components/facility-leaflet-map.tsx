@@ -190,7 +190,7 @@ export function FacilityLeafletMap({
               <br />
               Fylke: {countyLabel(facility.county_code)}
               <br />
-              Senger: {facility.beds.toLocaleString("nb-NO")}
+              Kapasitet: {facility.capacity_value.toLocaleString("nb-NO")} {facility.capacity_unit}
             </Popup>
           </CircleMarker>
         );

@@ -53,4 +53,32 @@ export type FacilityRow = {
   lon: number;
   beds: number;
   last_updated: string;
+  capacity_value: number;
+  capacity_unit: string;
+};
+
+// National, real medication-use figures from FHI Legemiddelregisteret (LMR).
+export type MedicationRow = {
+  group_code: string;
+  group_label: string;
+  period: string;
+  users: number;
+  per_1000: number;
+  source_id: string;
+  last_updated: string;
+};
+
+// Per-municipality ESTIMATE: national LMR rate x municipality population.
+export type MedicationUseRow = {
+  dataset_id: string;
+  source_id: string;
+  group_code: string;
+  group_label: string;
+  municipality_code: string;
+  county_code: string;
+  period: string;
+  value: number;
+  per_1000: number;
+  unit: string;
+  last_updated: string;
 };

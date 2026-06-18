@@ -1,6 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { CapacityRow, FacilityRow, MunicipalityRow, NeedRow, SourceRow } from "./types";
+import type {
+  CapacityRow,
+  FacilityRow,
+  MedicationRow,
+  MedicationUseRow,
+  MunicipalityRow,
+  NeedRow,
+  SourceRow
+} from "./types";
 
 function resolveDataDir() {
   const candidates = [
@@ -72,6 +80,42 @@ export function loadFacilityRows(): FacilityRow[] {
     lat: Number(row[idx.lat]),
     lon: Number(row[idx.lon]),
     beds: Number(row[idx.beds]),
+    last_updated: row[idx.last_updated],
+    capacity_value: Number(row[idx.capacity_value]),
+    capacity_unit: row[idx.capacity_unit]
+  }));
+}
+
+export function loadMedicationRows(): MedicationRow[] {
+  const { header, rows } = readCsvFile(path.join("normalized", "medications.csv"));
+  const idx = Object.fromEntries(header.map((name, i) => [name, i]));
+
+  return rows.map((row) => ({
+    group_code: row[idx.group_code],
+    group_label: row[idx.group_label],
+    period: row[idx.period],
+    users: Number(row[idx.users]),
+    per_1000: Number(row[idx.per_1000]),
+    source_id: row[idx.source_id],
+    last_updated: row[idx.last_updated]
+  }));
+}
+
+export function loadMedicationUseRows(): MedicationUseRow[] {
+  const { header, rows } = readCsvFile(path.join("normalized", "medication_use.csv"));
+  const idx = Object.fromEntries(header.map((name, i) => [name, i]));
+
+  return rows.map((row) => ({
+    dataset_id: row[idx.dataset_id],
+    source_id: row[idx.source_id],
+    group_code: row[idx.group_code],
+    group_label: row[idx.group_label],
+    municipality_code: row[idx.municipality_code],
+    county_code: row[idx.county_code],
+    period: row[idx.period],
+    value: Number(row[idx.value]),
+    per_1000: Number(row[idx.per_1000]),
+    unit: row[idx.unit],
     last_updated: row[idx.last_updated]
   }));
 }

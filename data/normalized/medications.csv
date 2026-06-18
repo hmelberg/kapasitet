@@ -1,0 +1,113 @@
+﻿group_code,group_label,period,users,per_1000,source_id,last_updated
+R03,Astma og KOLS,2010,423191,87.11,fhi_lmr_825,2026-02-16
+R03,Astma og KOLS,2013,418291,82.81,fhi_lmr_825,2026-02-16
+R03,Astma og KOLS,2016,448092,85.94,fhi_lmr_825,2026-02-16
+R03,Astma og KOLS,2019,477371,89.59,fhi_lmr_825,2026-02-16
+R03,Astma og KOLS,2022,508796,93.78,fhi_lmr_825,2026-02-16
+R03,Astma og KOLS,2023,515011,93.83,fhi_lmr_825,2026-02-16
+R03,Astma og KOLS,2024,535722,96.52,fhi_lmr_825,2026-02-16
+R03,Astma og KOLS,2025,534730,95.58,fhi_lmr_825,2026-02-16
+A10,Diabetes,2010,152057,31.3,fhi_lmr_825,2026-02-16
+A10,Diabetes,2013,165308,32.73,fhi_lmr_825,2026-02-16
+A10,Diabetes,2016,183446,35.18,fhi_lmr_825,2026-02-16
+A10,Diabetes,2019,208031,39.04,fhi_lmr_825,2026-02-16
+A10,Diabetes,2022,311416,57.4,fhi_lmr_825,2026-02-16
+A10,Diabetes,2023,382194,69.63,fhi_lmr_825,2026-02-16
+A10,Diabetes,2024,436019,78.56,fhi_lmr_825,2026-02-16
+A10,Diabetes,2025,479173,85.65,fhi_lmr_825,2026-02-16
+C10,Kolesterolsenkende,2010,478348,98.46,fhi_lmr_825,2026-02-16
+C10,Kolesterolsenkende,2013,509922,100.95,fhi_lmr_825,2026-02-16
+C10,Kolesterolsenkende,2016,546551,104.82,fhi_lmr_825,2026-02-16
+C10,Kolesterolsenkende,2019,596733,111.99,fhi_lmr_825,2026-02-16
+C10,Kolesterolsenkende,2022,682938,125.88,fhi_lmr_825,2026-02-16
+C10,Kolesterolsenkende,2023,719300,131.04,fhi_lmr_825,2026-02-16
+C10,Kolesterolsenkende,2024,752145,135.52,fhi_lmr_825,2026-02-16
+C10,Kolesterolsenkende,2025,780538,139.52,fhi_lmr_825,2026-02-16
+C09,Blodtrykk (RAAS-hemmere),2010,498485,102.61,fhi_lmr_825,2026-02-16
+C09,Blodtrykk (RAAS-hemmere),2013,551993,109.28,fhi_lmr_825,2026-02-16
+C09,Blodtrykk (RAAS-hemmere),2016,592053,113.55,fhi_lmr_825,2026-02-16
+C09,Blodtrykk (RAAS-hemmere),2019,635932,119.35,fhi_lmr_825,2026-02-16
+C09,Blodtrykk (RAAS-hemmere),2022,696958,128.47,fhi_lmr_825,2026-02-16
+C09,Blodtrykk (RAAS-hemmere),2023,722891,131.7,fhi_lmr_825,2026-02-16
+C09,Blodtrykk (RAAS-hemmere),2024,747347,134.65,fhi_lmr_825,2026-02-16
+C09,Blodtrykk (RAAS-hemmere),2025,773504,138.27,fhi_lmr_825,2026-02-16
+C07,Betablokkere,2010,361070,74.32,fhi_lmr_825,2026-02-16
+C07,Betablokkere,2013,371813,73.61,fhi_lmr_825,2026-02-16
+C07,Betablokkere,2016,375417,72,fhi_lmr_825,2026-02-16
+C07,Betablokkere,2019,382265,71.74,fhi_lmr_825,2026-02-16
+C07,Betablokkere,2022,387781,71.48,fhi_lmr_825,2026-02-16
+C07,Betablokkere,2023,389991,71.05,fhi_lmr_825,2026-02-16
+C07,Betablokkere,2024,392066,70.64,fhi_lmr_825,2026-02-16
+C07,Betablokkere,2025,395312,70.66,fhi_lmr_825,2026-02-16
+N06A,Antidepressiva,2010,297115,61.16,fhi_lmr_825,2026-02-16
+N06A,Antidepressiva,2013,313320,62.03,fhi_lmr_825,2026-02-16
+N06A,Antidepressiva,2016,329597,63.21,fhi_lmr_825,2026-02-16
+N06A,Antidepressiva,2019,342925,64.36,fhi_lmr_825,2026-02-16
+N06A,Antidepressiva,2022,382528,70.51,fhi_lmr_825,2026-02-16
+N06A,Antidepressiva,2023,394486,71.87,fhi_lmr_825,2026-02-16
+N06A,Antidepressiva,2024,410096,73.89,fhi_lmr_825,2026-02-16
+N06A,Antidepressiva,2025,425519,76.06,fhi_lmr_825,2026-02-16
+N05B,Angstdempende,2010,277874,57.2,fhi_lmr_825,2026-02-16
+N05B,Angstdempende,2013,270637,53.58,fhi_lmr_825,2026-02-16
+N05B,Angstdempende,2016,258094,49.5,fhi_lmr_825,2026-02-16
+N05B,Angstdempende,2019,244449,45.88,fhi_lmr_825,2026-02-16
+N05B,Angstdempende,2022,244125,45,fhi_lmr_825,2026-02-16
+N05B,Angstdempende,2023,240353,43.79,fhi_lmr_825,2026-02-16
+N05B,Angstdempende,2024,239519,43.15,fhi_lmr_825,2026-02-16
+N05B,Angstdempende,2025,238591,42.65,fhi_lmr_825,2026-02-16
+N06B,ADHD / psykostimulerende,2010,30079,6.19,fhi_lmr_825,2026-02-16
+N06B,ADHD / psykostimulerende,2013,34760,6.88,fhi_lmr_825,2026-02-16
+N06B,ADHD / psykostimulerende,2016,42365,8.13,fhi_lmr_825,2026-02-16
+N06B,ADHD / psykostimulerende,2019,52710,9.89,fhi_lmr_825,2026-02-16
+N06B,ADHD / psykostimulerende,2022,80844,14.9,fhi_lmr_825,2026-02-16
+N06B,ADHD / psykostimulerende,2023,96067,17.5,fhi_lmr_825,2026-02-16
+N06B,ADHD / psykostimulerende,2024,110709,19.95,fhi_lmr_825,2026-02-16
+N06B,ADHD / psykostimulerende,2025,124928,22.33,fhi_lmr_825,2026-02-16
+H03,Stoffskifte (thyreoidea),2010,180842,37.22,fhi_lmr_825,2026-02-16
+H03,Stoffskifte (thyreoidea),2013,197786,39.16,fhi_lmr_825,2026-02-16
+H03,Stoffskifte (thyreoidea),2016,212082,40.68,fhi_lmr_825,2026-02-16
+H03,Stoffskifte (thyreoidea),2019,224393,42.11,fhi_lmr_825,2026-02-16
+H03,Stoffskifte (thyreoidea),2022,236970,43.68,fhi_lmr_825,2026-02-16
+H03,Stoffskifte (thyreoidea),2023,239704,43.67,fhi_lmr_825,2026-02-16
+H03,Stoffskifte (thyreoidea),2024,243367,43.85,fhi_lmr_825,2026-02-16
+H03,Stoffskifte (thyreoidea),2025,246627,44.09,fhi_lmr_825,2026-02-16
+M05B,Benskjorhet (osteoporose),2010,57597,11.86,fhi_lmr_825,2026-02-16
+M05B,Benskjorhet (osteoporose),2013,61037,12.08,fhi_lmr_825,2026-02-16
+M05B,Benskjorhet (osteoporose),2016,63305,12.14,fhi_lmr_825,2026-02-16
+M05B,Benskjorhet (osteoporose),2019,67014,12.58,fhi_lmr_825,2026-02-16
+M05B,Benskjorhet (osteoporose),2022,70659,13.02,fhi_lmr_825,2026-02-16
+M05B,Benskjorhet (osteoporose),2023,72915,13.28,fhi_lmr_825,2026-02-16
+M05B,Benskjorhet (osteoporose),2024,75372,13.58,fhi_lmr_825,2026-02-16
+M05B,Benskjorhet (osteoporose),2025,78309,14,fhi_lmr_825,2026-02-16
+N02A,Opioider (smertestillende),2010,491919,101.26,fhi_lmr_825,2026-02-16
+N02A,Opioider (smertestillende),2013,528253,104.58,fhi_lmr_825,2026-02-16
+N02A,Opioider (smertestillende),2016,559379,107.28,fhi_lmr_825,2026-02-16
+N02A,Opioider (smertestillende),2019,562174,105.51,fhi_lmr_825,2026-02-16
+N02A,Opioider (smertestillende),2022,576793,106.32,fhi_lmr_825,2026-02-16
+N02A,Opioider (smertestillende),2023,577883,105.28,fhi_lmr_825,2026-02-16
+N02A,Opioider (smertestillende),2024,571374,102.95,fhi_lmr_825,2026-02-16
+N02A,Opioider (smertestillende),2025,566645,101.29,fhi_lmr_825,2026-02-16
+R06,Allergi (antihistaminer),2010,511515,105.29,fhi_lmr_825,2026-02-16
+R06,Allergi (antihistaminer),2013,555454,109.96,fhi_lmr_825,2026-02-16
+R06,Allergi (antihistaminer),2016,642727,123.27,fhi_lmr_825,2026-02-16
+R06,Allergi (antihistaminer),2019,765707,143.71,fhi_lmr_825,2026-02-16
+R06,Allergi (antihistaminer),2022,805898,148.55,fhi_lmr_825,2026-02-16
+R06,Allergi (antihistaminer),2023,866497,157.86,fhi_lmr_825,2026-02-16
+R06,Allergi (antihistaminer),2024,912930,164.49,fhi_lmr_825,2026-02-16
+R06,Allergi (antihistaminer),2025,921157,164.66,fhi_lmr_825,2026-02-16
+A02B,Magesyre (protonpumpehemmere),2010,336364,69.24,fhi_lmr_825,2026-02-16
+A02B,Magesyre (protonpumpehemmere),2013,415357,82.23,fhi_lmr_825,2026-02-16
+A02B,Magesyre (protonpumpehemmere),2016,490558,94.09,fhi_lmr_825,2026-02-16
+A02B,Magesyre (protonpumpehemmere),2019,564511,105.95,fhi_lmr_825,2026-02-16
+A02B,Magesyre (protonpumpehemmere),2022,626951,115.56,fhi_lmr_825,2026-02-16
+A02B,Magesyre (protonpumpehemmere),2023,643771,117.28,fhi_lmr_825,2026-02-16
+A02B,Magesyre (protonpumpehemmere),2024,650219,117.15,fhi_lmr_825,2026-02-16
+A02B,Magesyre (protonpumpehemmere),2025,650561,116.29,fhi_lmr_825,2026-02-16
+N03A,Epilepsi,2010,71669,14.75,fhi_lmr_825,2026-02-16
+N03A,Epilepsi,2013,73624,14.58,fhi_lmr_825,2026-02-16
+N03A,Epilepsi,2016,73805,14.16,fhi_lmr_825,2026-02-16
+N03A,Epilepsi,2019,75202,14.11,fhi_lmr_825,2026-02-16
+N03A,Epilepsi,2022,77270,14.24,fhi_lmr_825,2026-02-16
+N03A,Epilepsi,2023,77948,14.2,fhi_lmr_825,2026-02-16
+N03A,Epilepsi,2024,77781,14.01,fhi_lmr_825,2026-02-16
+N03A,Epilepsi,2025,78139,13.97,fhi_lmr_825,2026-02-16

@@ -9,3 +9,4 @@ fhi_lmr_001,FHI,Legemiddelregisteret statistikk,https://www.fhi.no/helseregistre
 geonorge_kommuneinfo_001,Kartverket,Kommuneinndeling og representasjonspunkt,https://ws.geonorge.no/kommuneinfo/v1,NLOD,kommune,lopende,2026-06-18
 ssb_07459_001,SSB,Folkemengde etter kommune (tabell 07459),https://www.ssb.no/statbank/table/07459,NLOD,kommune,arlig,2026-02-25
 osm_overpass_001,OpenStreetMap,Helseinstitusjoner (sykehus apotek legekontor) via Overpass,https://www.openstreetmap.org,ODbL,nasjonalt,lopende,2026-06-18
+fhi_lmr_825,FHI,Legemiddelregisteret - brukere per ATC-kode (tabell 825),https://statistikk.fhi.no,CC BY 4.0,nasjonalt,arlig,2026-02-16

@@ -70,6 +70,19 @@ live by the scripts in `scripts/`:
   - `legekontor` ← `amenity=doctors`/`healthcare=doctor`/`healthcare=centre`
   - Coverage: ~2 760 facilities with real names and coordinates (ODbL)
   - Used by: `scripts/fetch-facilities-osm.ps1` → `facilities.csv`
+  - `capacity_value`/`capacity_unit` (beds / list size / customers per day) are
+    **modelled** indicators added by `scripts/generate-facility-capacity.ps1`
+    (hospital beds scaled by municipality population; real OSM `beds` tags kept
+    where present).
+
+### FHI Legemiddelregisteret (LMR)
+- **fhi_lmr_825**: Persons dispensed medication on prescription, per ATC group (table 825)
+  - 14 drug groups (asthma/COPD, diabetes, lipid-lowering, blood pressure,
+    antidepressants, ADHD, thyroid, etc.), 2010–2025
+  - `medications.csv`: **real national** users + users-per-1000
+  - `medication_use.csv`: **per-municipality estimate** = national rate × population
+  - API: https://statistikk-data.fhi.no/api/open/v1/lmr/Table/825 (CC BY 4.0)
+  - Used by: `scripts/fetch-medications-fhi.ps1`
 
 ## Data Quality Notes
 
