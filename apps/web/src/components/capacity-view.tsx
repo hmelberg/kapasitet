@@ -21,7 +21,7 @@ const FacilityLeafletMap = dynamic(
   { ssr: false }
 );
 
-export function CapacityView({ rows, facilities, municipalityMap, countyMap }: Props) {
+export function CapacityView({ rows, facilities, needRows, municipalityMap, countyMap }: Props) {
   const [metric, setMetric] = useState<string>("all");
   const [period, setPeriod] = useState<string>("all");
   const [county, setCounty] = useState<string>("all");
