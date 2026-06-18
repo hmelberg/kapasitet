@@ -1,11 +1,13 @@
-import { sampleCapacity } from "@/lib/sample-data";
+import { loadCapacityRows } from "@/lib/csv";
 
 export default function HomePage() {
-  const ansatte = sampleCapacity
+  const rows = loadCapacityRows();
+
+  const ansatte = rows
     .filter((row) => row.metric === "ansatte_legger_og_sykepleiere")
     .reduce((sum, row) => sum + row.value, 0);
 
-  const brukerePerDag = sampleCapacity
+  const brukerePerDag = rows
     .filter((row) => row.metric === "mottar_tjeneste_per_dag")
     .reduce((sum, row) => sum + row.value, 0);
 
@@ -29,7 +31,7 @@ export default function HomePage() {
         </article>
         <article className="card">
           <p className="muted">Dekning</p>
-          <div className="value">2 kommuner</div>
+          <div className="value">{new Set(rows.map((row) => row.municipality_code)).size} kommuner</div>
         </article>
       </div>
 

@@ -2,3 +2,8 @@ dataset_id,source_id,municipality_code,county_code,period,metric,value,unit,last
 capacity_workforce,ssb_kostra_001,0301,03,2026,ansatte_legger_og_sykepleiere,18240,personer,2026-06-01
 capacity_workforce,ssb_kostra_001,4601,46,2026,ansatte_legger_og_sykepleiere,9850,personer,2026-06-01
 service_volume,fhi_kpr_001,0301,03,2026,mottar_tjeneste_per_dag,61200,personer,2026-06-05
+service_volume,fhi_kpr_001,4601,46,2026,mottar_tjeneste_per_dag,29400,personer,2026-06-05
+capacity_workforce,ssb_kostra_001,5001,50,2026,ansatte_legger_og_sykepleiere,7420,personer,2026-06-01
+service_volume,fhi_kpr_001,5001,50,2026,mottar_tjeneste_per_dag,18600,personer,2026-06-05
+capacity_workforce,ssb_kostra_001,1103,11,2025,ansatte_legger_og_sykepleiere,6680,personer,2025-06-01
+service_volume,fhi_kpr_001,1103,11,2025,mottar_tjeneste_per_dag,17100,personer,2025-06-05

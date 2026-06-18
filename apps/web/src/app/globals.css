@@ -119,6 +119,55 @@ th {
   background: #fffbeb;
 }
 
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.7rem;
+}
+
+.filters label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.filters select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem;
+  background: #fff;
+}
+
+.map-canvas {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background:
+    linear-gradient(160deg, rgba(15, 118, 110, 0.08), rgba(245, 158, 11, 0.09)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(19, 32, 28, 0.03),
+      rgba(19, 32, 28, 0.03) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+}
+
+.map-point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--brand);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(19, 32, 28, 0.2);
+  transform: translate(-50%, -50%);
+}
+
 @media (max-width: 760px) {
   .container {
     padding: 0.75rem;
@@ -126,5 +175,9 @@ th {
 
   h1 {
     font-size: 1.5rem;
+  }
+
+  .map-canvas {
+    min-height: 240px;
   }
 }

@@ -1,6 +1,8 @@
-import { sampleSources } from "@/lib/sample-data";
+import { loadSourceRows } from "@/lib/csv";
 
 export default function KilderPage() {
+  const sources = loadSourceRows();
+
   return (
     <section className="grid">
       <div className="card">
@@ -21,7 +23,7 @@ export default function KilderPage() {
             </tr>
           </thead>
           <tbody>
-            {sampleSources.map((source) => (
+            {sources.map((source) => (
               <tr key={source.source_id}>
                 <td>{source.source_id}</td>
                 <td>{source.owner}</td>
