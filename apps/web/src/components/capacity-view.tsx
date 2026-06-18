@@ -28,6 +28,8 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
   const [sector, setSector] = useState<string>("all");
   const [selectedFacilityId, setSelectedFacilityId] = useState<string | null>(null);
   const [selectedMunicipalityCode, setSelectedMunicipalityCode] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [sortBy, setSortBy] = useState<"name" | "pressure" | "capacity">("name");
 
   const metricOptions = uniqueSorted(rows.map((row) => row.metric));
   const periodOptions = uniqueSorted(rows.map((row) => row.period));
@@ -102,6 +104,34 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
     });
   }, [filteredFacilities, filteredRows, needRows, municipalityMap, countyMap, period]);
 
+  const searchedAndSortedMunicipalities = useMemo(() => {
+    let result = [...municipalityOverlays];
+    
+    // Apply search filter
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter(
+        (m) =>
+          m.municipalityName.toLowerCase().includes(query) ||
+          m.countyName.toLowerCase().includes(query)
+      );
+    }
+
+    // Apply sorting
+    result.sort((a, b) => {
+      if (sortBy === "pressure") {
+        return b.pressure - a.pressure;
+      }
+      if (sortBy === "capacity") {
+        return b.capacity - a.capacity;
+      }
+      // Default: sort by name
+      return a.municipalityName.localeCompare(b.municipalityName);
+    });
+
+    return result;
+  }, [municipalityOverlays, searchQuery, sortBy]);
+
   const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
   const countyLabel = (countyCode: string) => countyMap[countyCode] ?? countyCode;
   const selectedFacility = filteredFacilities.find((facility) => facility.facility_id === selectedFacilityId) ?? filteredFacilities[0] ?? null;
@@ -167,6 +197,25 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
                 {option}
               </option>
             ))}
+          </select>
+        </label>
+
+        <label>
+          Søk kommune/fylke
+          <input
+            type="text"
+            placeholder="F.eks Oslo, Bergen, Rogaland..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </label>
+
+        <label>
+          Sorter etter
+          <select value={sortBy} onChange={(event) => setSortBy(event.target.value as "name" | "pressure" | "capacity")}>
+            <option value="name">Navn</option>
+            <option value="pressure">Pressindeks (høyeste først)</option>
+            <option value="capacity">Kapasitet (høyeste først)</option>
           </select>
         </label>
       </div>
@@ -263,6 +312,42 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
             )}
           </aside>
         </div>
+      </div>
+
+      <div className="card table-wrap">
+        <h3>Kommune-oversikt (sortering: {sortBy === "pressure" ? "Pressindeks" : sortBy === "capacity" ? "Kapasitet" : "Navn"})</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Kommune</th>
+              <th>Fylke</th>
+              <th>Ansatte</th>
+              <th>Behov</th>
+              <th>Pressindeks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {searchedAndSortedMunicipalities.map((municipality) => (
+              <tr
+                key={municipality.municipalityCode}
+                onClick={() => setSelectedMunicipalityCode(municipality.municipalityCode)}
+                style={{
+                  cursor: "pointer",
+                  backgroundColor: municipality.municipalityCode === selectedMunicipalityCode ? "#f0f0f0" : ""
+                }}
+              >
+                <td>{municipality.municipalityName}</td>
+                <td>{municipality.countyName}</td>
+                <td>{municipality.capacity.toLocaleString("nb-NO")}</td>
+                <td>{municipality.need.toLocaleString("nb-NO")}</td>
+                <td>
+                  <strong>{municipality.pressure.toFixed(2)}</strong>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="muted">Totalt: {searchedAndSortedMunicipalities.length} kommuner</p>
       </div>
 
       <div className="card table-wrap">
