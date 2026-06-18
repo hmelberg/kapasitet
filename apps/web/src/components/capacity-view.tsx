@@ -2,11 +2,12 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
-import type { CapacityRow, FacilityRow } from "../lib/types";
+import type { CapacityRow, FacilityRow, NeedRow } from "../lib/types";
 
 type Props = {
   rows: CapacityRow[];
   facilities: FacilityRow[];
+  needRows: NeedRow[];
   municipalityMap: Record<string, string>;
   countyMap: Record<string, string>;
 };
@@ -26,6 +27,7 @@ export function CapacityView({ rows, facilities, municipalityMap, countyMap }: P
   const [county, setCounty] = useState<string>("all");
   const [sector, setSector] = useState<string>("all");
   const [selectedFacilityId, setSelectedFacilityId] = useState<string | null>(null);
+  const [selectedMunicipalityCode, setSelectedMunicipalityCode] = useState<string | null>(null);
 
   const metricOptions = uniqueSorted(rows.map((row) => row.metric));
   const periodOptions = uniqueSorted(rows.map((row) => row.period));
@@ -59,15 +61,63 @@ export function CapacityView({ rows, facilities, municipalityMap, countyMap }: P
     });
   }, [facilities, county]);
 
+  const municipalityOverlays = useMemo(() => {
+    const facilitiesByMunicipality = new Map<string, FacilityRow[]>();
+    for (const facility of filteredFacilities) {
+      const list = facilitiesByMunicipality.get(facility.municipality_code) ?? [];
+      list.push(facility);
+      facilitiesByMunicipality.set(facility.municipality_code, list);
+    }
+
+    const municipalityCodes = Array.from(new Set(filteredRows.map((row) => row.municipality_code))).filter((code) =>
+      facilitiesByMunicipality.has(code)
+    );
+
+    return municipalityCodes.map((municipalityCode) => {
+      const muniFacilities = facilitiesByMunicipality.get(municipalityCode) ?? [];
+      const lat = muniFacilities.reduce((sum, facility) => sum + facility.lat, 0) / muniFacilities.length;
+      const lon = muniFacilities.reduce((sum, facility) => sum + facility.lon, 0) / muniFacilities.length;
+      const capacity = filteredRows
+        .filter((row) => row.municipality_code === municipalityCode && row.metric === "ansatte_legger_og_sykepleiere")
+        .reduce((sum, row) => sum + row.value, 0);
+      const demand = filteredRows
+        .filter((row) => row.municipality_code === municipalityCode && row.metric === "mottar_tjeneste_per_dag")
+        .reduce((sum, row) => sum + row.value, 0);
+      const need = needRows
+        .filter((row) => row.municipality_code === municipalityCode && (period === "all" || row.period === period))
+        .reduce((sum, row) => sum + row.value, 0);
+      const pressure = capacity > 0 ? need / capacity : 0;
+
+      return {
+        municipalityCode,
+        municipalityName: municipalityMap[municipalityCode] ?? municipalityCode,
+        countyName: countyMap[muniFacilities[0]?.county_code ?? ""] ?? muniFacilities[0]?.county_code ?? "",
+        lat,
+        lon,
+        capacity,
+        demand,
+        need,
+        pressure
+      };
+    });
+  }, [filteredFacilities, filteredRows, needRows, municipalityMap, countyMap, period]);
+
   const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
   const countyLabel = (countyCode: string) => countyMap[countyCode] ?? countyCode;
   const selectedFacility = filteredFacilities.find((facility) => facility.facility_id === selectedFacilityId) ?? filteredFacilities[0] ?? null;
+  const selectedMunicipality = municipalityOverlays.find((row) => row.municipalityCode === selectedMunicipalityCode) ?? municipalityOverlays[0] ?? null;
 
   useEffect(() => {
     if (!filteredFacilities.some((facility) => facility.facility_id === selectedFacilityId)) {
       setSelectedFacilityId(filteredFacilities[0]?.facility_id ?? null);
     }
   }, [filteredFacilities, selectedFacilityId]);
+
+  useEffect(() => {
+    if (!municipalityOverlays.some((row) => row.municipalityCode === selectedMunicipalityCode)) {
+      setSelectedMunicipalityCode(municipalityOverlays[0]?.municipalityCode ?? null);
+    }
+  }, [municipalityOverlays, selectedMunicipalityCode]);
 
   return (
     <>
@@ -135,8 +185,11 @@ export function CapacityView({ rows, facilities, municipalityMap, countyMap }: P
               facilities={filteredFacilities}
               municipalityMap={municipalityMap}
               countyMap={countyMap}
+              municipalityOverlays={municipalityOverlays}
               selectedFacilityId={selectedFacility?.facility_id ?? null}
               onSelectFacility={setSelectedFacilityId}
+              selectedMunicipalityCode={selectedMunicipality?.municipalityCode ?? null}
+              onSelectMunicipality={setSelectedMunicipalityCode}
             />
           </div>
 
@@ -173,6 +226,40 @@ export function CapacityView({ rows, facilities, municipalityMap, countyMap }: P
               </>
             ) : (
               <p className="muted">Ingen institusjon valgt.</p>
+            )}
+
+            <h3>Kommuneprofil</h3>
+            {selectedMunicipality ? (
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Kommune</th>
+                    <td>{selectedMunicipality.municipalityName}</td>
+                  </tr>
+                  <tr>
+                    <th>Fylke</th>
+                    <td>{selectedMunicipality.countyName}</td>
+                  </tr>
+                  <tr>
+                    <th>Ansatte</th>
+                    <td>{selectedMunicipality.capacity.toLocaleString("nb-NO")}</td>
+                  </tr>
+                  <tr>
+                    <th>Tjenester/dag</th>
+                    <td>{selectedMunicipality.demand.toLocaleString("nb-NO")}</td>
+                  </tr>
+                  <tr>
+                    <th>Behov</th>
+                    <td>{selectedMunicipality.need.toLocaleString("nb-NO")}</td>
+                  </tr>
+                  <tr>
+                    <th>Pressindeks</th>
+                    <td>{selectedMunicipality.pressure.toFixed(2)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            ) : (
+              <p className="muted">Ingen kommune valgt.</p>
             )}
           </aside>
         </div>
