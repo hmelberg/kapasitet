@@ -73,3 +73,37 @@ fac_hamar_apotek_001,dmp_apotek_001,Hamar Sentrum Apotek,apotek,2027,20,60.795,1
 fac_arendal_apotek_001,dmp_apotek_001,Arendal Sentrum Apotek,apotek,4201,42,58.462,8.776,0,2026-06-05
 fac_steinkjer_apotek_001,dmp_apotek_001,Steinkjer Sentrum Apotek,apotek,5007,50,64.014,11.494,0,2026-06-05
 fac_voss_apotek_001,dmp_apotek_001,Voss Sentrum Apotek,apotek,1226,12,60.639,6.414,0,2026-06-05
+fac_halden_001,helsedir_reg_001,Halden sykehus,sykehus,0105,01,59.126,11.407,280,2026-06-01
+fac_mysen_001,helsedir_reg_001,Mysen helsestasjon,sykehus,0106,01,59.759,11.816,180,2026-06-01
+fac_asker_001,helsedir_reg_001,Asker sykehus,sykehus,0209,02,59.854,10.475,320,2026-06-01
+fac_orsted_001,helsedir_reg_001,Ørsted helsehus,sykehus,0213,02,60.013,10.769,200,2026-06-01
+fac_kongsberg_001,helsedir_reg_001,Kongsberg sykehus,sykehus,0604,06,59.661,9.643,300,2026-06-01
+fac_larvik_001,helsedir_reg_001,Larvik sjukehus,sykehus,0709,07,59.056,10.362,350,2026-06-01
+fac_holmestrand_001,helsedir_reg_001,Holmestrand helsehus,sykehus,0710,07,59.518,10.232,220,2026-06-01
+fac_notodden_001,helsedir_reg_001,Notodden sykehus,sykehus,0807,08,59.555,9.196,290,2026-06-01
+fac_rjukan_001,helsedir_reg_001,Rjukan helsestasjon,sykehus,0809,08,59.327,8.763,210,2026-06-01
+fac_odda_001,helsedir_reg_001,Odda helsehus,sykehus,1235,12,60.082,6.204,240,2026-06-01
+fac_knarvik_001,helsedir_reg_001,Knarvik helsehus,sykehus,1246,12,60.466,5.860,200,2026-06-01
+fac_floro_001,helsedir_reg_001,Florø sjukehus,sykehus,1401,14,61.602,5.853,260,2026-06-01
+fac_sogndal_001,helsedir_reg_001,Sogndal sjukehus,sykehus,1411,14,61.201,6.740,240,2026-06-01
+fac_leikanger_001,helsedir_reg_001,Leikanger helsehus,sykehus,1412,14,61.127,6.562,200,2026-06-01
+fac_moirana_001,helsedir_reg_001,Mo i Rana sjukehus,sykehus,1821,18,66.313,14.189,330,2026-06-01
+fac_sandnessjoen_001,helsedir_reg_001,Sandnessjøen helsestasjon,sykehus,1826,18,66.014,12.488,240,2026-06-01
+fac_harstad_001,helsedir_reg_001,Harstad sykehus,sykehus,1903,19,68.795,16.543,300,2026-06-01
+fac_hammerfest_001,helsedir_reg_001,Hammerfest sykehus,sykehus,2004,20,70.964,25.025,220,2026-06-01
+fac_halden_gp_001,kpr_open_001,Halden Sentrum Legesenter,legekontor,0105,01,59.126,11.407,0,2026-06-05
+fac_asker_gp_001,kpr_open_001,Asker Sentrum Legesenter,legekontor,0209,02,59.854,10.475,0,2026-06-05
+fac_kongsberg_gp_001,kpr_open_001,Kongsberg Sentrum Legesenter,legekontor,0604,06,59.661,9.643,0,2026-06-05
+fac_larvik_gp_001,kpr_open_001,Larvik Sentrum Legesenter,legekontor,0709,07,59.056,10.362,0,2026-06-05
+fac_notodden_gp_001,kpr_open_001,Notodden Sentrum Legesenter,legekontor,0807,08,59.555,9.196,0,2026-06-05
+fac_floro_gp_001,kpr_open_001,Florø Sentrum Legesenter,legekontor,1401,14,61.602,5.853,0,2026-06-05
+fac_moirana_gp_001,kpr_open_001,Mo i Rana Sentrum Legesenter,legekontor,1821,18,66.313,14.189,0,2026-06-05
+fac_harstad_gp_001,kpr_open_001,Harstad Sentrum Legesenter,legekontor,1903,19,68.795,16.543,0,2026-06-05
+fac_halden_apotek_001,dmp_apotek_001,Halden Sentrum Apotek,apotek,0105,01,59.127,11.407,0,2026-06-05
+fac_asker_apotek_001,dmp_apotek_001,Asker Sentrum Apotek,apotek,0209,02,59.855,10.475,0,2026-06-05
+fac_kongsberg_apotek_001,dmp_apotek_001,Kongsberg Sentrum Apotek,apotek,0604,06,59.661,9.643,0,2026-06-05
+fac_larvik_apotek_001,dmp_apotek_001,Larvik Sentrum Apotek,apotek,0709,07,59.056,10.363,0,2026-06-05
+fac_notodden_apotek_001,dmp_apotek_001,Notodden Sentrum Apotek,apotek,0807,08,59.556,9.196,0,2026-06-05
+fac_floro_apotek_001,dmp_apotek_001,Florø Sentrum Apotek,apotek,1401,14,61.603,5.853,0,2026-06-05
+fac_moirana_apotek_001,dmp_apotek_001,Mo i Rana Sentrum Apotek,apotek,1821,18,66.314,14.189,0,2026-06-05
+fac_harstad_apotek_001,dmp_apotek_001,Harstad Sentrum Apotek,apotek,1903,19,68.796,16.543,0,2026-06-05
