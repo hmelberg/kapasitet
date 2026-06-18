@@ -148,6 +148,20 @@ th {
   background: #fff;
 }
 
+.action-button {
+  border: 1px solid var(--brand);
+  background: var(--brand);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.action-button:hover {
+  filter: brightness(1.05);
+}
+
 .map-canvas {
   position: relative;
   width: 100%;

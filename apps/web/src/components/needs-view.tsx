@@ -1,17 +1,18 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { NeedRow } from "../lib/types";
+import type { CapacityRow, NeedRow } from "../lib/types";
 
 type Props = {
   rows: NeedRow[];
+  capacityRows: CapacityRow[];
 };
 
 function uniqueSorted(values: string[]) {
   return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b));
 }
 
-export function NeedsView({ rows }: Props) {
+export function NeedsView({ rows, capacityRows }: Props) {
   const [period, setPeriod] = useState<string>("all");
   const [category, setCategory] = useState<string>("all");
   const [county, setCounty] = useState<string>("all");
@@ -36,6 +37,37 @@ export function NeedsView({ rows }: Props) {
   }, [rows, period, category, county]);
 
   const totalPopulation = filteredRows.reduce((sum, row) => sum + row.value, 0);
+
+  const gapRows = useMemo(() => {
+    const municipalitySet = new Set(filteredRows.map((row) => row.municipality_code));
+    const activePeriod = period === "all" ? periodOptions[periodOptions.length - 1] : period;
+
+    return Array.from(municipalitySet)
+      .map((municipalityCode) => {
+        const need = filteredRows
+          .filter((row) => row.municipality_code === municipalityCode)
+          .reduce((sum, row) => sum + row.value, 0);
+
+        const staff = capacityRows
+          .filter(
+            (row) =>
+              row.municipality_code === municipalityCode &&
+              row.metric === "ansatte_legger_og_sykepleiere" &&
+              (activePeriod ? row.period === activePeriod : true)
+          )
+          .reduce((sum, row) => sum + row.value, 0);
+
+        const needPerStaff = staff > 0 ? need / staff : null;
+
+        return {
+          municipalityCode,
+          need,
+          staff,
+          needPerStaff
+        };
+      })
+      .sort((a, b) => (b.needPerStaff ?? -1) - (a.needPerStaff ?? -1));
+  }, [filteredRows, capacityRows, period, periodOptions]);
 
   return (
     <>
@@ -117,6 +149,44 @@ export function NeedsView({ rows }: Props) {
                 </td>
               </tr>
             ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="card table-wrap">
+        <h2>Gap-indikator per kommune</h2>
+        <p className="muted">Forholdstall = behovsvolum delt pa antall ansatte (leger/sykepleiere).</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Kommune</th>
+              <th>Behovsvolum</th>
+              <th>Ansatte</th>
+              <th>Behov per ansatt</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {gapRows.map((row) => {
+              let status = "Lav";
+              if ((row.needPerStaff ?? 0) >= 8) {
+                status = "Hoy";
+              } else if ((row.needPerStaff ?? 0) >= 5) {
+                status = "Moderat";
+              }
+
+              return (
+                <tr key={row.municipalityCode}>
+                  <td>{row.municipalityCode}</td>
+                  <td>{row.need.toLocaleString("nb-NO")}</td>
+                  <td>{row.staff.toLocaleString("nb-NO")}</td>
+                  <td>{row.needPerStaff ? row.needPerStaff.toFixed(2) : "-"}</td>
+                  <td>
+                    <span className="badge">{status}</span>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

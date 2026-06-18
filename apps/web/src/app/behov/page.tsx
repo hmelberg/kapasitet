@@ -1,8 +1,9 @@
 import { NeedsView } from "../../components/needs-view";
-import { loadNeedRows } from "../../lib/csv";
+import { loadCapacityRows, loadNeedRows } from "../../lib/csv";
 
 export default function BehovPage() {
   const rows = loadNeedRows();
+  const capacityRows = loadCapacityRows();
 
   return (
     <section className="grid">
@@ -13,7 +14,7 @@ export default function BehovPage() {
         </p>
       </div>
 
-      <NeedsView rows={rows} />
+      <NeedsView rows={rows} capacityRows={capacityRows} />
     </section>
   );
 }

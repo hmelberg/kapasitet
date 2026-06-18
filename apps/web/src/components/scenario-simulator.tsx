@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { CapacityRow, FacilityRow } from "../lib/types";
 
 type Props = {
@@ -9,6 +9,16 @@ type Props = {
 };
 
 type ScenarioType = "evakuering" | "steng_sykehus";
+
+type ScenarioHistoryEntry = {
+  id: string;
+  timestamp: string;
+  scenarioType: ScenarioType;
+  period: string;
+  description: string;
+};
+
+const HISTORY_KEY = "kapasitet_scenario_history";
 
 function uniqueSorted(values: string[]) {
   return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b));
@@ -37,6 +47,25 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
   const [movedPopulation, setMovedPopulation] = useState(12000);
   const [selectedHospital, setSelectedHospital] = useState(hospitals[0]?.facility_id ?? "");
   const [closureDays, setClosureDays] = useState(14);
+  const [history, setHistory] = useState<ScenarioHistoryEntry[]>([]);
+
+  useEffect(() => {
+    const raw = window.localStorage.getItem(HISTORY_KEY);
+    if (!raw) {
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(raw) as ScenarioHistoryEntry[];
+      setHistory(Array.isArray(parsed) ? parsed : []);
+    } catch {
+      setHistory([]);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+  }, [history]);
 
   const evacuationScenario = useMemo(() => {
     const fromBaseDemand = getMetricValue(rows, fromMunicipality, period, "mottar_tjeneste_per_dag");
@@ -91,6 +120,24 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
       neededOther
     };
   }, [hospitals, selectedHospital, rows, period, closureDays]);
+
+  function saveScenario() {
+    const timestamp = new Date().toISOString();
+    const description =
+      scenarioType === "evakuering"
+        ? `Flytt ${movedPopulation.toLocaleString("nb-NO")} fra ${fromMunicipality} til ${toMunicipality}`
+        : `Steng ${closureScenario?.hospital.name ?? selectedHospital} i ${closureDays} dager`;
+
+    const newEntry: ScenarioHistoryEntry = {
+      id: `${timestamp}-${Math.random().toString(36).slice(2, 8)}`,
+      timestamp,
+      scenarioType,
+      period,
+      description
+    };
+
+    setHistory((prev) => [newEntry, ...prev].slice(0, 8));
+  }
 
   return (
     <>
@@ -174,6 +221,12 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
             </label>
           </>
         )}
+      </div>
+
+      <div className="card">
+        <button type="button" className="action-button" onClick={saveScenario}>
+          Lagre scenariokjoring
+        </button>
       </div>
 
       {scenarioType === "evakuering" ? (
@@ -276,6 +329,37 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
           )}
         </>
       )}
+
+      <div className="card table-wrap">
+        <h2>Scenariehistorikk</h2>
+        <p className="muted">Siste 8 kjoringer lagres lokalt i nettleseren.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Tidspunkt</th>
+              <th>Type</th>
+              <th>Periode</th>
+              <th>Beskrivelse</th>
+            </tr>
+          </thead>
+          <tbody>
+            {history.length === 0 ? (
+              <tr>
+                <td colSpan={4} className="muted">Ingen scenarier lagret enda.</td>
+              </tr>
+            ) : (
+              history.map((entry) => (
+                <tr key={entry.id}>
+                  <td>{new Date(entry.timestamp).toLocaleString("nb-NO")}</td>
+                  <td>{entry.scenarioType === "evakuering" ? "Flytting" : "Stenging"}</td>
+                  <td>{entry.period}</td>
+                  <td>{entry.description}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }
