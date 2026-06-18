@@ -114,31 +114,6 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
           </select>
         </label>
 
-        <label>
-          Fra kommune
-          <select value={fromMunicipality} onChange={(event) => setFromMunicipality(event.target.value)}>
-            {municipalities.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label>
-          Til kommune
-          <select value={toMunicipality} onChange={(event) => setToMunicipality(event.target.value)}>
-            {municipalities.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </label>
-
-        <label>
-          Flyttet befolkning
-
         {scenarioType === "evakuering" ? (
           <>
             <label>
@@ -199,7 +174,7 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
             </label>
           </>
         )}
-            </tr>
+      </div>
 
       {scenarioType === "evakuering" ? (
         <>
@@ -301,3 +276,6 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
           )}
         </>
       )}
+    </>
+  );
+}
