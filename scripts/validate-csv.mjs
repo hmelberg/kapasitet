@@ -57,10 +57,11 @@ const schemaByFile = {
   "hf_capacity.csv": [
     "helseforetak",
     "helseregion",
-    "tjenesteomrade_kode",
-    "tjenesteomrade",
+    "metric",
+    "metric_label",
     "period",
-    "dognplasser",
+    "value",
+    "unit",
     "source_id",
     "last_updated"
   ],

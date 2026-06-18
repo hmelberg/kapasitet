@@ -11,4 +11,5 @@ ssb_07459_001,SSB,Folkemengde etter kommune (tabell 07459),https://www.ssb.no/st
 osm_overpass_001,OpenStreetMap,Helseinstitusjoner (sykehus apotek legekontor) via Overpass,https://www.openstreetmap.org,ODbL,nasjonalt,lopende,2026-06-18
 fhi_lmr_825,FHI,Legemiddelregisteret - brukere per ATC-kode (tabell 825),https://statistikk.fhi.no,CC BY 4.0,nasjonalt,arlig,2026-02-16
 ssb_13942,SSB,Aktivitet kapasitet og beleggsprosent i spesialisthelsetjenesten (tabell 13942) - dognplasser per helseforetak,https://www.ssb.no/statbank/table/13942,NLOD,helseforetak,arlig,2026-06-18
+ssb_13953,SSB,Arsverk i spesialisthelsetjenesten etter yrke og helseforetak (tabell 13953),https://www.ssb.no/statbank/table/13953,NLOD,helseforetak,arlig,2026-06-18
 unn_avdeling,UNN,Universitetssykehuset Nord-Norge - avdelingsvis sengeoversikt (illustrativ),https://unn.no,Offentlig omtale,sykehus,sporadisk,2026-06-18

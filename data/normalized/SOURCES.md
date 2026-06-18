@@ -82,13 +82,21 @@ live by the scripts in `scripts/`:
     Helseforetak hospitals from Privat/ideell, Kommunal/annet (legevakt, helsesenter,
     sykehjem, ambulanse — things OSM also tags as "hospital") and Uklassifisert.
 
-### SSB spesialisthelsetjenesten (beds)
-- **ssb_13942**: Døgnplasser (beds) per helseforetak, by service area, 2015–2025
-  - `hf_capacity.csv`: **real** beds per HF (somatic / adult psych / child psych /
-    substance / total). E.g. UNN somatic 552 (2024), 593 (2025) — matches the
-    ~580 approved somatic beds. Figures are per *helseforetak*, not per building.
-  - API: https://data.ssb.no/api/v0/no/table/13942 (NLOD)
+### SSB spesialisthelsetjenesten (capacity + staffing)
+- **ssb_13942**: Beds, occupancy and discharges per helseforetak, 2015–2025
+- **ssb_13953**: Avtalte årsverk (staffing) per helseforetak by profession
+  - `hf_capacity.csv` (long format, one row per HF/metric/year) holds **real**
+    figures per *helseforetak* (not per building): beds by service area
+    (somatic/adult-psych/child-psych/substance/total), somatic occupancy %,
+    discharges, and FTEs (total/doctors/nurses). E.g. UNN 2025: 593 somatic beds,
+    74 % occupancy, 7 157 FTEs — matches the ~580 approved somatic beds.
+  - API: https://data.ssb.no/api/v0/no/table/13942 and /13953 (NLOD)
   - Used by: `scripts/fetch-hf-capacity.ps1`
+
+> Encoding note: PowerShell 5.1 reads `.ps1` files without a BOM as Windows-1252
+> and mis-decodes API responses lacking a charset, which corrupts æ/ø/å. Scripts
+> with Norwegian string literals are saved UTF-8 **with BOM**, and API responses
+> are decoded explicitly as UTF-8 (`fetch-facilities-osm.ps1`).
 - **unn_avdeling**: Curated department-level bed breakdown (`data/reference/hospital_unit_beds.csv`)
   - Illustrative per-unit beds for selected hospitals (seeded with UNN). Shown in
     the facility panel with a small-print source note. Per-building/per-unit beds

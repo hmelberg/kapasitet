@@ -42,8 +42,12 @@ $endpoints = @(
 $data = $null
 foreach ($ep in $endpoints) {
   try {
-    Write-Host "Spør Overpass: $ep ..."
-    $data = Invoke-RestMethod -Uri $ep -Method Post -Body @{ data = $query } -TimeoutSec 300
+    Write-Host "Spor Overpass: $ep ..."
+    # PowerShell 5.1's Invoke-RestMethod mis-decodes responses without an explicit
+    # charset (Latin-1 instead of UTF-8), corrupting æ/ø/å. Decode bytes as UTF-8.
+    $resp = Invoke-WebRequest -Uri $ep -Method Post -Body @{ data = $query } -TimeoutSec 300
+    $json = [System.Text.Encoding]::UTF8.GetString($resp.RawContentStream.ToArray())
+    $data = $json | ConvertFrom-Json
     if ($data.elements.Count -gt 0) { break }
   } catch {
     Write-Host "  feilet: $($_.Exception.Message)"

@@ -1,4 +1,4 @@
-# Classifies facilities of type "sykehus" into the Norwegian specialist-health
+﻿# Classifies facilities of type "sykehus" into the Norwegian specialist-health
 # hierarchy and adds three columns to facilities.csv:
 #   helseregion       - one of the 4 regions (from geography / county), for sykehus
 #   helseforetak      - the health trust (HF), matched by hospital name (best effort)
@@ -63,13 +63,18 @@ $lines = Get-Content $path -Encoding utf8
 $header = ($lines[0] -replace "^﻿", "") -split ","
 $idx = @{}; for ($i = 0; $i -lt $header.Count; $i++) { $idx[$header[$i]] = $i }
 
+$extra = @("helseregion", "helseforetak", "sykehus_kategori")
+$baseHeader = $header | Where-Object { $extra -notcontains $_ }
+$baseCount = $baseHeader.Count
+
 $out = New-Object System.Collections.Generic.List[string]
-$out.Add((($header + @("helseregion", "helseforetak", "sykehus_kategori")) -join ","))
+$out.Add((($baseHeader + $extra) -join ","))
 
 $stats = @{}
 for ($i = 1; $i -lt $lines.Count; $i++) {
   if (-not $lines[$i].Trim()) { continue }
   $c = $lines[$i] -split ","
+  $cBase = $c[0..($baseCount - 1)]
   $type = $c[$idx["facility_type"]]
   $name = $c[$idx["name"]]
   $cc = $c[$idx["county_code"]]
@@ -87,7 +92,7 @@ for ($i = 1; $i -lt $lines.Count; $i++) {
     }
     $stats[$kat] = ($stats[$kat] + 1)
   }
-  $out.Add(($c + @($region, $hf, $kat)) -join ",")
+  $out.Add(($cBase + @($region, $hf, $kat)) -join ",")
 }
 
 ($out -join "`n") | Out-File -FilePath $path -Encoding utf8

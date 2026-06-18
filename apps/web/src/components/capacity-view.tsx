@@ -206,8 +206,8 @@ export function CapacityView({ rows, facilities, needRows, hfCapacity, hospitalU
   const selectedFacility = visibleFacilities.find((facility) => facility.facility_id === selectedFacilityId) ?? visibleFacilities[0] ?? null;
   const selectedMunicipality = municipalityOverlays.find((row) => row.municipalityCode === selectedMunicipalityCode) ?? municipalityOverlays[0] ?? null;
 
-  // Real bed capacity for the selected hospital's helseforetak (SSB 13942).
-  const hfBeds = useMemo(() => {
+  // Real capacity for the selected hospital's helseforetak (SSB 13942 + 13953).
+  const hfMetrics = useMemo(() => {
     if (!selectedFacility || selectedFacility.facility_type !== "sykehus" || !selectedFacility.helseforetak) {
       return null;
     }
@@ -215,10 +215,10 @@ export function CapacityView({ rows, facilities, needRows, hfCapacity, hospitalU
     if (forHf.length === 0) {
       return null;
     }
-    const latestYear = forHf.map((r) => r.period).sort()[forHf.length - 1] ?? forHf[forHf.length - 1].period;
-    const beds = (code: string) =>
-      forHf.find((r) => r.tjenesteomrade_kode === code && r.period === latestYear)?.dognplasser ?? null;
-    return { latestYear, som: beds("SOM"), tot: beds("TOT"), vop: beds("VOP"), tsb: beds("TSB") };
+    const latestYear = [...new Set(forHf.map((r) => r.period))].sort().pop() ?? "";
+    const metricRows = forHf.filter((r) => r.period === latestYear);
+    const sources = [...new Set(metricRows.map((r) => r.source_id))].join(", ");
+    return { latestYear, rows: metricRows, sources };
   }, [selectedFacility, hfCapacity]);
 
   // Curated department-level breakdown for the selected hospital (if any).
@@ -465,40 +465,26 @@ export function CapacityView({ rows, facilities, needRows, hfCapacity, hospitalU
                   </tbody>
                 </table>
 
-                {hfBeds ? (
+                {hfMetrics ? (
                   <div style={{ marginTop: "0.6rem" }}>
-                    <h4 style={{ margin: "0 0 0.3rem" }}>Døgnplasser i helseforetaket ({hfBeds.latestYear})</h4>
+                    <h4 style={{ margin: "0 0 0.3rem" }}>Kapasitet i helseforetaket ({hfMetrics.latestYear})</h4>
                     <table>
                       <tbody>
-                        {hfBeds.som !== null ? (
-                          <tr>
-                            <th>Somatikk</th>
-                            <td>{hfBeds.som.toLocaleString("nb-NO")}</td>
+                        {hfMetrics.rows.map((r) => (
+                          <tr key={r.metric}>
+                            <th>{r.metric_label}</th>
+                            <td>
+                              {r.value.toLocaleString("nb-NO")}
+                              {r.unit && r.unit !== "%" ? ` ${r.unit}` : ""}
+                              {r.unit === "%" ? " %" : ""}
+                            </td>
                           </tr>
-                        ) : null}
-                        {hfBeds.vop !== null ? (
-                          <tr>
-                            <th>Psykisk helsevern (voksne)</th>
-                            <td>{hfBeds.vop.toLocaleString("nb-NO")}</td>
-                          </tr>
-                        ) : null}
-                        {hfBeds.tsb !== null ? (
-                          <tr>
-                            <th>Rusbehandling (TSB)</th>
-                            <td>{hfBeds.tsb.toLocaleString("nb-NO")}</td>
-                          </tr>
-                        ) : null}
-                        {hfBeds.tot !== null ? (
-                          <tr>
-                            <th>Totalt</th>
-                            <td><strong>{hfBeds.tot.toLocaleString("nb-NO")}</strong></td>
-                          </tr>
-                        ) : null}
+                        ))}
                       </tbody>
                     </table>
                     <p className="muted" style={{ fontSize: "0.72rem", marginTop: "0.3rem" }}>
-                      Kilde: SSB tabell 13942 (døgnplasser per helseforetak, hele foretaket – ikke per
-                      sykehusbygg). Per-institusjon «Kapasitet (modellert)» er et estimat.
+                      Kilde: SSB ({hfMetrics.sources}) — gjelder hele helseforetaket, ikke det enkelte
+                      sykehusbygg. Per-institusjon «Kapasitet (modellert)» er et estimat.
                     </p>
                   </div>
                 ) : null}

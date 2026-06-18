@@ -72,14 +72,16 @@ export type MedicationRow = {
   last_updated: string;
 };
 
-// Real bed capacity per helseforetak from SSB table 13942.
+// Real capacity per helseforetak from SSB (beds by area, occupancy, discharges,
+// staffing). Long format: one row per (HF, metric, year).
 export type HfCapacityRow = {
   helseforetak: string;
   helseregion: string;
-  tjenesteomrade_kode: string;
-  tjenesteomrade: string;
+  metric: string;
+  metric_label: string;
   period: string;
-  dognplasser: number;
+  value: number;
+  unit: string;
   source_id: string;
   last_updated: string;
 };

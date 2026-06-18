@@ -98,10 +98,11 @@ export function loadHfCapacityRows(): HfCapacityRow[] {
   return rows.map((row) => ({
     helseforetak: row[idx.helseforetak],
     helseregion: row[idx.helseregion],
-    tjenesteomrade_kode: row[idx.tjenesteomrade_kode],
-    tjenesteomrade: row[idx.tjenesteomrade],
+    metric: row[idx.metric],
+    metric_label: row[idx.metric_label],
     period: row[idx.period],
-    dognplasser: Number(row[idx.dognplasser]),
+    value: Number(row[idx.value]),
+    unit: row[idx.unit],
     source_id: row[idx.source_id],
     last_updated: row[idx.last_updated]
   }));

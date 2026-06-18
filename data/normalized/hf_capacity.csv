@@ -1,195 +1,435 @@
-﻿helseforetak,helseregion,tjenesteomrade_kode,tjenesteomrade,period,dognplasser,source_id,last_updated
-Helse Bergen HF,Helse Vest,TOT,I alt,2024,1257,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,TOT,I alt,2025,1279,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,SOM,Somatisk,2024,922,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,SOM,Somatisk,2025,943,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,VOP,Psykisk helsevern voksne,2024,207,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,VOP,Psykisk helsevern voksne,2025,212,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,BUP,Psykisk helsevern barn og unge,2024,24,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,BUP,Psykisk helsevern barn og unge,2025,23,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,TSB,Rusbehandling (TSB),2024,104,ssb_13942,2026-06-18
-Helse Bergen HF,Helse Vest,TSB,Rusbehandling (TSB),2025,101,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,TOT,I alt,2024,266,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,TOT,I alt,2025,262,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,SOM,Somatisk,2024,184,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,SOM,Somatisk,2025,180,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,VOP,Psykisk helsevern voksne,2024,66,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,VOP,Psykisk helsevern voksne,2025,66,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,BUP,Psykisk helsevern barn og unge,2024,6,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,BUP,Psykisk helsevern barn og unge,2025,6,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,TSB,Rusbehandling (TSB),2024,10,ssb_13942,2026-06-18
-Helse FÃ¸rde HF,,TSB,Rusbehandling (TSB),2025,10,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,TOT,I alt,2024,830,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,TOT,I alt,2025,824,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,SOM,Somatisk,2024,563,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,SOM,Somatisk,2025,553,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,VOP,Psykisk helsevern voksne,2024,210,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,VOP,Psykisk helsevern voksne,2025,213,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,BUP,Psykisk helsevern barn og unge,2024,16,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,BUP,Psykisk helsevern barn og unge,2025,16,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,TSB,Rusbehandling (TSB),2024,41,ssb_13942,2026-06-18
-Helse Stavanger HF,Helse Vest,TSB,Rusbehandling (TSB),2025,42,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,TOT,I alt,2024,462,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,TOT,I alt,2025,459,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,SOM,Somatisk,2024,331,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,SOM,Somatisk,2025,327,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,VOP,Psykisk helsevern voksne,2024,109,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,VOP,Psykisk helsevern voksne,2025,109,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,BUP,Psykisk helsevern barn og unge,2024,10,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,BUP,Psykisk helsevern barn og unge,2025,10,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,TSB,Rusbehandling (TSB),2024,12,ssb_13942,2026-06-18
-Helse Fonna HF,Helse Vest,TSB,Rusbehandling (TSB),2025,13,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,TOT,I alt,2024,993,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,TOT,I alt,2025,1000,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,SOM,Somatisk,2024,752,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,SOM,Somatisk,2025,768,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,VOP,Psykisk helsevern voksne,2024,193,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,VOP,Psykisk helsevern voksne,2025,184,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,BUP,Psykisk helsevern barn og unge,2024,14,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,BUP,Psykisk helsevern barn og unge,2025,14,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,TSB,Rusbehandling (TSB),2024,34,ssb_13942,2026-06-18
-St. Olavs hospital HF,Helse Midt-Norge,TSB,Rusbehandling (TSB),2025,34,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,TOT,I alt,2024,1731,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,TOT,I alt,2025,1746,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,SOM,Somatisk,2024,1379,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,SOM,Somatisk,2025,1412,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2024,240,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2025,222,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2024,40,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2025,40,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2024,72,ssb_13942,2026-06-18
-Oslo universitetssykehus HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2025,72,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,TOT,I alt,2024,935,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,TOT,I alt,2025,964,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,SOM,Somatisk,2024,665,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,SOM,Somatisk,2025,691,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2024,206,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2025,206,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2024,15,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2025,19,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2024,49,ssb_13942,2026-06-18
-Vestre Viken HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2025,48,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,TOT,I alt,2024,377,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,TOT,I alt,2025,377,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,SOM,Somatisk,2024,257,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,SOM,Somatisk,2025,257,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,VOP,Psykisk helsevern voksne,2024,98,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,VOP,Psykisk helsevern voksne,2025,98,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,BUP,Psykisk helsevern barn og unge,2024,6,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,BUP,Psykisk helsevern barn og unge,2025,6,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,TSB,Rusbehandling (TSB),2024,16,ssb_13942,2026-06-18
-Helse Nord-TrÃ¸ndelag HF,,TSB,Rusbehandling (TSB),2025,16,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,TOT,I alt,2024,443,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,TOT,I alt,2025,439,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,SOM,Somatisk,2024,303,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,SOM,Somatisk,2025,295,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,VOP,Psykisk helsevern voksne,2024,119,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,VOP,Psykisk helsevern voksne,2025,119,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,BUP,Psykisk helsevern barn og unge,2024,13,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,BUP,Psykisk helsevern barn og unge,2025,13,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,TSB,Rusbehandling (TSB),2024,8,ssb_13942,2026-06-18
-Nordlandssykehuset HF,Helse Nord,TSB,Rusbehandling (TSB),2025,12,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,TOT,I alt,2024,182,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,TOT,I alt,2025,159,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,SOM,Somatisk,2024,144,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,SOM,Somatisk,2025,121,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,VOP,Psykisk helsevern voksne,2024,23,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,VOP,Psykisk helsevern voksne,2025,23,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,BUP,Psykisk helsevern barn og unge,2024,7,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,BUP,Psykisk helsevern barn og unge,2025,7,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,TSB,Rusbehandling (TSB),2024,8,ssb_13942,2026-06-18
-Helgelandssykehuset HF,Helse Nord,TSB,Rusbehandling (TSB),2025,8,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,TOT,I alt,2024,186,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,TOT,I alt,2025,184,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,SOM,Somatisk,2024,138,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,SOM,Somatisk,2025,134,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,VOP,Psykisk helsevern voksne,2024,28,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,VOP,Psykisk helsevern voksne,2025,30,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,BUP,Psykisk helsevern barn og unge,2024,8,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,BUP,Psykisk helsevern barn og unge,2025,8,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,TSB,Rusbehandling (TSB),2024,12,ssb_13942,2026-06-18
-Finnmarkssykehuset HF,Helse Nord,TSB,Rusbehandling (TSB),2025,12,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,TOT,I alt,2024,780,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,TOT,I alt,2025,813,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,SOM,Somatisk,2024,552,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,SOM,Somatisk,2025,593,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,VOP,Psykisk helsevern voksne,2024,149,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,VOP,Psykisk helsevern voksne,2025,154,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,BUP,Psykisk helsevern barn og unge,2024,14,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,BUP,Psykisk helsevern barn og unge,2025,14,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,TSB,Rusbehandling (TSB),2024,65,ssb_13942,2026-06-18
-Universitetssykehuset Nord-Norge HF,Helse Nord,TSB,Rusbehandling (TSB),2025,52,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,TOT,I alt,2024,409,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,TOT,I alt,2025,418,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,SOM,Somatisk,2024,285,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,SOM,Somatisk,2025,287,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2024,103,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2025,110,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2024,8,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2025,8,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2024,13,ssb_13942,2026-06-18
-Sykehuset Telemark HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2025,13,ssb_13942,2026-06-18
-Sunnaas sykehus HF,Helse Sør-Øst,TOT,I alt,2024,149,ssb_13942,2026-06-18
-Sunnaas sykehus HF,Helse Sør-Øst,TOT,I alt,2025,149,ssb_13942,2026-06-18
-Sunnaas sykehus HF,Helse Sør-Øst,SOM,Somatisk,2024,149,ssb_13942,2026-06-18
-Sunnaas sykehus HF,Helse Sør-Øst,SOM,Somatisk,2025,149,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,TOT,I alt,2024,1109,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,TOT,I alt,2025,1123,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,SOM,Somatisk,2024,810,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,SOM,Somatisk,2025,824,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2024,217,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2025,217,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2024,22,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2025,22,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2024,60,ssb_13942,2026-06-18
-Akershus universitetssykehus HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2025,60,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,TOT,I alt,2024,712,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,TOT,I alt,2025,720,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,SOM,Somatisk,2024,465,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,SOM,Somatisk,2025,473,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,VOP,Psykisk helsevern voksne,2024,174,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,VOP,Psykisk helsevern voksne,2025,174,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,BUP,Psykisk helsevern barn og unge,2024,10,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,BUP,Psykisk helsevern barn og unge,2025,10,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,TSB,Rusbehandling (TSB),2024,63,ssb_13942,2026-06-18
-SÃ¸rlandet sykehus HF,,TSB,Rusbehandling (TSB),2025,63,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,TOT,I alt,2024,526,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,TOT,I alt,2025,522,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,SOM,Somatisk,2024,367,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,SOM,Somatisk,2025,361,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2024,107,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2025,109,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2024,6,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2025,6,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2024,46,ssb_13942,2026-06-18
-Sykehuset i Vestfold HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2025,46,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,TOT,I alt,2024,904,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,TOT,I alt,2025,881,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,SOM,Somatisk,2024,643,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,SOM,Somatisk,2025,624,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2024,189,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,VOP,Psykisk helsevern voksne,2025,185,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2024,23,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,BUP,Psykisk helsevern barn og unge,2025,23,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2024,49,ssb_13942,2026-06-18
-Sykehuset Innlandet HF,Helse Sør-Øst,TSB,Rusbehandling (TSB),2025,49,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,TOT,I alt,2024,635,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,TOT,I alt,2025,638,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,SOM,Somatisk,2024,431,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,SOM,Somatisk,2025,431,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,VOP,Psykisk helsevern voksne,2024,155,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,VOP,Psykisk helsevern voksne,2025,155,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,BUP,Psykisk helsevern barn og unge,2024,15,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,BUP,Psykisk helsevern barn og unge,2025,18,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,TSB,Rusbehandling (TSB),2024,34,ssb_13942,2026-06-18
-Sykehuset Ã˜stfold HF,,TSB,Rusbehandling (TSB),2025,34,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,TOT,I alt,2024,706,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,TOT,I alt,2025,677,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,SOM,Somatisk,2024,492,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,SOM,Somatisk,2025,469,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,VOP,Psykisk helsevern voksne,2024,143,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,VOP,Psykisk helsevern voksne,2025,143,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,BUP,Psykisk helsevern barn og unge,2024,12,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,BUP,Psykisk helsevern barn og unge,2025,12,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,TSB,Rusbehandling (TSB),2024,59,ssb_13942,2026-06-18
-Helse MÃ¸re og Romsdal HF,,TSB,Rusbehandling (TSB),2025,53,ssb_13942,2026-06-18
+﻿helseforetak,helseregion,metric,metric_label,period,value,unit,source_id,last_updated
+Helse Bergen HF,Helse Vest,senger_somatikk,Senger - somatikk,2024,922,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,207,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,24,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,senger_rus,Senger - rusbehandling (TSB),2024,104,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,senger_totalt,Senger - totalt,2024,1257,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,84,%,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,62764,opphold,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,arsverk_totalt,Årsverk - totalt,2024,11499,årsverk,ssb_13953,2026-06-18
+Helse Bergen HF,Helse Vest,arsverk_legespesialister,Årsverk - legespesialister,2024,1350,årsverk,ssb_13953,2026-06-18
+Helse Bergen HF,Helse Vest,arsverk_sykepleiere,Årsverk - sykepleiere,2024,2269,årsverk,ssb_13953,2026-06-18
+Helse Bergen HF,Helse Vest,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,1520,årsverk,ssb_13953,2026-06-18
+Helse Bergen HF,Helse Vest,senger_somatikk,Senger - somatikk,2025,943,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,212,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,23,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,senger_rus,Senger - rusbehandling (TSB),2025,101,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,senger_totalt,Senger - totalt,2025,1279,senger,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,78,%,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,70372,opphold,ssb_13942,2026-06-18
+Helse Bergen HF,Helse Vest,arsverk_totalt,Årsverk - totalt,2025,11854,årsverk,ssb_13953,2026-06-18
+Helse Bergen HF,Helse Vest,arsverk_legespesialister,Årsverk - legespesialister,2025,1400,årsverk,ssb_13953,2026-06-18
+Helse Bergen HF,Helse Vest,arsverk_sykepleiere,Årsverk - sykepleiere,2025,2299,årsverk,ssb_13953,2026-06-18
+Helse Bergen HF,Helse Vest,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,1607,årsverk,ssb_13953,2026-06-18
+Helse Førde HF,Helse Vest,senger_somatikk,Senger - somatikk,2024,184,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,66,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,6,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,senger_rus,Senger - rusbehandling (TSB),2024,10,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,senger_totalt,Senger - totalt,2024,266,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,74,%,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,13942,opphold,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,arsverk_totalt,Årsverk - totalt,2024,2410,årsverk,ssb_13953,2026-06-18
+Helse Førde HF,Helse Vest,arsverk_legespesialister,Årsverk - legespesialister,2024,255,årsverk,ssb_13953,2026-06-18
+Helse Førde HF,Helse Vest,arsverk_sykepleiere,Årsverk - sykepleiere,2024,433,årsverk,ssb_13953,2026-06-18
+Helse Førde HF,Helse Vest,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,271,årsverk,ssb_13953,2026-06-18
+Helse Førde HF,Helse Vest,senger_somatikk,Senger - somatikk,2025,180,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,66,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,6,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,senger_rus,Senger - rusbehandling (TSB),2025,10,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,senger_totalt,Senger - totalt,2025,262,senger,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,80,%,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,14345,opphold,ssb_13942,2026-06-18
+Helse Førde HF,Helse Vest,arsverk_totalt,Årsverk - totalt,2025,2440,årsverk,ssb_13953,2026-06-18
+Helse Førde HF,Helse Vest,arsverk_legespesialister,Årsverk - legespesialister,2025,308,årsverk,ssb_13953,2026-06-18
+Helse Førde HF,Helse Vest,arsverk_sykepleiere,Årsverk - sykepleiere,2025,426,årsverk,ssb_13953,2026-06-18
+Helse Førde HF,Helse Vest,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,289,årsverk,ssb_13953,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_somatikk,Senger - somatikk,2024,563,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,210,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,16,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_rus,Senger - rusbehandling (TSB),2024,41,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_totalt,Senger - totalt,2024,830,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,89,%,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,41821,opphold,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,arsverk_totalt,Årsverk - totalt,2024,6709,årsverk,ssb_13953,2026-06-18
+Helse Stavanger HF,Helse Vest,arsverk_legespesialister,Årsverk - legespesialister,2024,744,årsverk,ssb_13953,2026-06-18
+Helse Stavanger HF,Helse Vest,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1372,årsverk,ssb_13953,2026-06-18
+Helse Stavanger HF,Helse Vest,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,726,årsverk,ssb_13953,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_somatikk,Senger - somatikk,2025,553,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,213,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,16,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_rus,Senger - rusbehandling (TSB),2025,42,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,senger_totalt,Senger - totalt,2025,824,senger,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,84,%,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,46882,opphold,ssb_13942,2026-06-18
+Helse Stavanger HF,Helse Vest,arsverk_totalt,Årsverk - totalt,2025,6874,årsverk,ssb_13953,2026-06-18
+Helse Stavanger HF,Helse Vest,arsverk_legespesialister,Årsverk - legespesialister,2025,764,årsverk,ssb_13953,2026-06-18
+Helse Stavanger HF,Helse Vest,arsverk_sykepleiere,Årsverk - sykepleiere,2025,1427,årsverk,ssb_13953,2026-06-18
+Helse Stavanger HF,Helse Vest,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,744,årsverk,ssb_13953,2026-06-18
+Helse Fonna HF,Helse Vest,senger_somatikk,Senger - somatikk,2024,331,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,109,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,10,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,senger_rus,Senger - rusbehandling (TSB),2024,12,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,senger_totalt,Senger - totalt,2024,462,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,77,%,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,22537,opphold,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,arsverk_totalt,Årsverk - totalt,2024,3201,årsverk,ssb_13953,2026-06-18
+Helse Fonna HF,Helse Vest,arsverk_legespesialister,Årsverk - legespesialister,2024,321,årsverk,ssb_13953,2026-06-18
+Helse Fonna HF,Helse Vest,arsverk_sykepleiere,Årsverk - sykepleiere,2024,639,årsverk,ssb_13953,2026-06-18
+Helse Fonna HF,Helse Vest,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,479,årsverk,ssb_13953,2026-06-18
+Helse Fonna HF,Helse Vest,senger_somatikk,Senger - somatikk,2025,327,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,109,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,10,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,senger_rus,Senger - rusbehandling (TSB),2025,13,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,senger_totalt,Senger - totalt,2025,459,senger,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,79,%,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,26234,opphold,ssb_13942,2026-06-18
+Helse Fonna HF,Helse Vest,arsverk_totalt,Årsverk - totalt,2025,3328,årsverk,ssb_13953,2026-06-18
+Helse Fonna HF,Helse Vest,arsverk_legespesialister,Årsverk - legespesialister,2025,320,årsverk,ssb_13953,2026-06-18
+Helse Fonna HF,Helse Vest,arsverk_sykepleiere,Årsverk - sykepleiere,2025,655,årsverk,ssb_13953,2026-06-18
+Helse Fonna HF,Helse Vest,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,492,årsverk,ssb_13953,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_somatikk,Senger - somatikk,2024,752,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,193,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,14,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_rus,Senger - rusbehandling (TSB),2024,34,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_totalt,Senger - totalt,2024,993,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,90,%,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,50478,opphold,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,arsverk_totalt,Årsverk - totalt,2024,9243,årsverk,ssb_13953,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,arsverk_legespesialister,Årsverk - legespesialister,2024,1056,årsverk,ssb_13953,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1878,årsverk,ssb_13953,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,1388,årsverk,ssb_13953,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_somatikk,Senger - somatikk,2025,768,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,184,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,14,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_rus,Senger - rusbehandling (TSB),2025,34,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,senger_totalt,Senger - totalt,2025,1000,senger,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,85,%,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,56650,opphold,ssb_13942,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,arsverk_totalt,Årsverk - totalt,2025,9225,årsverk,ssb_13953,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,arsverk_legespesialister,Årsverk - legespesialister,2025,1095,årsverk,ssb_13953,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,arsverk_sykepleiere,Årsverk - sykepleiere,2025,1723,årsverk,ssb_13953,2026-06-18
+St. Olavs hospital HF,Helse Midt-Norge,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,1493,årsverk,ssb_13953,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,1379,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,240,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,40,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2024,72,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,1731,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,83,%,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,84012,opphold,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,20225,årsverk,ssb_13953,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,3285,årsverk,ssb_13953,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,3718,årsverk,ssb_13953,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,2683,årsverk,ssb_13953,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,1412,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,222,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,40,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2025,72,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,1746,senger,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,72,%,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,96282,opphold,ssb_13942,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,20372,årsverk,ssb_13953,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,3332,årsverk,ssb_13953,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,3696,årsverk,ssb_13953,2026-06-18
+Oslo universitetssykehus HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,2793,årsverk,ssb_13953,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,665,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,206,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,15,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2024,49,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,935,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,90,%,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,55982,opphold,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,8057,årsverk,ssb_13953,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,1110,årsverk,ssb_13953,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1378,årsverk,ssb_13953,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,1093,årsverk,ssb_13953,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,691,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,206,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,19,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2025,48,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,964,senger,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,85,%,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,66474,opphold,ssb_13942,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,8565,årsverk,ssb_13953,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,1155,årsverk,ssb_13953,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,1437,årsverk,ssb_13953,2026-06-18
+Vestre Viken HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,1195,årsverk,ssb_13953,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_somatikk,Senger - somatikk,2024,257,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,98,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,6,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_rus,Senger - rusbehandling (TSB),2024,16,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_totalt,Senger - totalt,2024,377,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,73,%,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,17198,opphold,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,arsverk_totalt,Årsverk - totalt,2024,3018,årsverk,ssb_13953,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,arsverk_legespesialister,Årsverk - legespesialister,2024,269,årsverk,ssb_13953,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,arsverk_sykepleiere,Årsverk - sykepleiere,2024,587,årsverk,ssb_13953,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,475,årsverk,ssb_13953,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_somatikk,Senger - somatikk,2025,257,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,98,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,6,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_rus,Senger - rusbehandling (TSB),2025,16,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,senger_totalt,Senger - totalt,2025,377,senger,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,74,%,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,19409,opphold,ssb_13942,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,arsverk_totalt,Årsverk - totalt,2025,3011,årsverk,ssb_13953,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,arsverk_legespesialister,Årsverk - legespesialister,2025,287,årsverk,ssb_13953,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,arsverk_sykepleiere,Årsverk - sykepleiere,2025,571,årsverk,ssb_13953,2026-06-18
+Helse Nord-Trøndelag HF,Helse Midt-Norge,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,478,årsverk,ssb_13953,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_somatikk,Senger - somatikk,2024,303,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,119,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,13,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_rus,Senger - rusbehandling (TSB),2024,8,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_totalt,Senger - totalt,2024,443,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,88,%,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,20896,opphold,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,arsverk_totalt,Årsverk - totalt,2024,3835,årsverk,ssb_13953,2026-06-18
+Nordlandssykehuset HF,Helse Nord,arsverk_legespesialister,Årsverk - legespesialister,2024,408,årsverk,ssb_13953,2026-06-18
+Nordlandssykehuset HF,Helse Nord,arsverk_sykepleiere,Årsverk - sykepleiere,2024,627,årsverk,ssb_13953,2026-06-18
+Nordlandssykehuset HF,Helse Nord,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,508,årsverk,ssb_13953,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_somatikk,Senger - somatikk,2025,295,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,119,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,13,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_rus,Senger - rusbehandling (TSB),2025,12,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,senger_totalt,Senger - totalt,2025,439,senger,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,97,%,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,22877,opphold,ssb_13942,2026-06-18
+Nordlandssykehuset HF,Helse Nord,arsverk_totalt,Årsverk - totalt,2025,3904,årsverk,ssb_13953,2026-06-18
+Nordlandssykehuset HF,Helse Nord,arsverk_legespesialister,Årsverk - legespesialister,2025,410,årsverk,ssb_13953,2026-06-18
+Nordlandssykehuset HF,Helse Nord,arsverk_sykepleiere,Årsverk - sykepleiere,2025,588,årsverk,ssb_13953,2026-06-18
+Nordlandssykehuset HF,Helse Nord,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,549,årsverk,ssb_13953,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_somatikk,Senger - somatikk,2024,144,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,23,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,7,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_rus,Senger - rusbehandling (TSB),2024,8,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_totalt,Senger - totalt,2024,182,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,67,%,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,9671,opphold,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,arsverk_totalt,Årsverk - totalt,2024,1745,årsverk,ssb_13953,2026-06-18
+Helgelandssykehuset HF,Helse Nord,arsverk_legespesialister,Årsverk - legespesialister,2024,153,årsverk,ssb_13953,2026-06-18
+Helgelandssykehuset HF,Helse Nord,arsverk_sykepleiere,Årsverk - sykepleiere,2024,308,årsverk,ssb_13953,2026-06-18
+Helgelandssykehuset HF,Helse Nord,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,209,årsverk,ssb_13953,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_somatikk,Senger - somatikk,2025,121,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,23,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,7,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_rus,Senger - rusbehandling (TSB),2025,8,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,senger_totalt,Senger - totalt,2025,159,senger,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,79,%,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,10541,opphold,ssb_13942,2026-06-18
+Helgelandssykehuset HF,Helse Nord,arsverk_totalt,Årsverk - totalt,2025,1715,årsverk,ssb_13953,2026-06-18
+Helgelandssykehuset HF,Helse Nord,arsverk_legespesialister,Årsverk - legespesialister,2025,158,årsverk,ssb_13953,2026-06-18
+Helgelandssykehuset HF,Helse Nord,arsverk_sykepleiere,Årsverk - sykepleiere,2025,285,årsverk,ssb_13953,2026-06-18
+Helgelandssykehuset HF,Helse Nord,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,211,årsverk,ssb_13953,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_somatikk,Senger - somatikk,2024,138,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,28,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,8,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_rus,Senger - rusbehandling (TSB),2024,12,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_totalt,Senger - totalt,2024,186,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,65,%,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,8955,opphold,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,arsverk_totalt,Årsverk - totalt,2024,1797,årsverk,ssb_13953,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,arsverk_legespesialister,Årsverk - legespesialister,2024,211,årsverk,ssb_13953,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,arsverk_sykepleiere,Årsverk - sykepleiere,2024,280,årsverk,ssb_13953,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,223,årsverk,ssb_13953,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_somatikk,Senger - somatikk,2025,134,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,30,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,8,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_rus,Senger - rusbehandling (TSB),2025,12,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,senger_totalt,Senger - totalt,2025,184,senger,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,69,%,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,9826,opphold,ssb_13942,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,arsverk_totalt,Årsverk - totalt,2025,1817,årsverk,ssb_13953,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,arsverk_legespesialister,Årsverk - legespesialister,2025,223,årsverk,ssb_13953,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,arsverk_sykepleiere,Årsverk - sykepleiere,2025,283,årsverk,ssb_13953,2026-06-18
+Finnmarkssykehuset HF,Helse Nord,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,216,årsverk,ssb_13953,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_somatikk,Senger - somatikk,2024,552,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,149,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,14,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_rus,Senger - rusbehandling (TSB),2024,65,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_totalt,Senger - totalt,2024,780,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,75,%,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,32396,opphold,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,arsverk_totalt,Årsverk - totalt,2024,7040,årsverk,ssb_13953,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,arsverk_legespesialister,Årsverk - legespesialister,2024,801,årsverk,ssb_13953,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1076,årsverk,ssb_13953,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,873,årsverk,ssb_13953,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_somatikk,Senger - somatikk,2025,593,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,154,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,14,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_rus,Senger - rusbehandling (TSB),2025,52,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,senger_totalt,Senger - totalt,2025,813,senger,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,74,%,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,35349,opphold,ssb_13942,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,arsverk_totalt,Årsverk - totalt,2025,7157,årsverk,ssb_13953,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,arsverk_legespesialister,Årsverk - legespesialister,2025,833,årsverk,ssb_13953,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,arsverk_sykepleiere,Årsverk - sykepleiere,2025,1104,årsverk,ssb_13953,2026-06-18
+Universitetssykehuset Nord-Norge HF,Helse Nord,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,878,årsverk,ssb_13953,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,285,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,103,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,8,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2024,13,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,409,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,97,%,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,22124,opphold,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,3270,årsverk,ssb_13953,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,369,årsverk,ssb_13953,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,614,årsverk,ssb_13953,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,429,årsverk,ssb_13953,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,287,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,110,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,8,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2025,13,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,418,senger,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,97,%,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,25222,opphold,ssb_13942,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,3396,årsverk,ssb_13953,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,386,årsverk,ssb_13953,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,632,årsverk,ssb_13953,2026-06-18
+Sykehuset Telemark HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,432,årsverk,ssb_13953,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,149,senger,ssb_13942,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,149,senger,ssb_13942,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,98,%,ssb_13942,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,3031,opphold,ssb_13942,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,595,årsverk,ssb_13953,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,52,årsverk,ssb_13953,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,90,årsverk,ssb_13953,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,58,årsverk,ssb_13953,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,149,senger,ssb_13942,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,149,senger,ssb_13942,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,100,%,ssb_13942,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,2827,opphold,ssb_13942,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,617,årsverk,ssb_13953,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,59,årsverk,ssb_13953,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,87,årsverk,ssb_13953,2026-06-18
+Sunnaas sykehus HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,60,årsverk,ssb_13953,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,810,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,217,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,22,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2024,60,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,1109,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,93,%,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,61386,opphold,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,8938,årsverk,ssb_13953,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,1328,årsverk,ssb_13953,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1812,årsverk,ssb_13953,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,1023,årsverk,ssb_13953,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,824,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,217,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,22,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2025,60,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,1123,senger,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,90,%,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,70616,opphold,ssb_13942,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,9222,årsverk,ssb_13953,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,1388,årsverk,ssb_13953,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,1842,årsverk,ssb_13953,2026-06-18
+Akershus universitetssykehus HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,1057,årsverk,ssb_13953,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,465,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,174,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,10,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2024,63,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,712,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,83,%,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,37304,opphold,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,6210,årsverk,ssb_13953,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,771,årsverk,ssb_13953,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1285,årsverk,ssb_13953,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,748,årsverk,ssb_13953,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,473,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,174,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,10,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2025,63,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,720,senger,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,78,%,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,40273,opphold,ssb_13942,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,6277,årsverk,ssb_13953,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,793,årsverk,ssb_13953,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,1256,årsverk,ssb_13953,2026-06-18
+Sørlandet sykehus HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,774,årsverk,ssb_13953,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,367,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,107,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,6,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2024,46,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,526,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,93,%,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,30348,opphold,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,4494,årsverk,ssb_13953,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,582,årsverk,ssb_13953,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,774,årsverk,ssb_13953,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,616,årsverk,ssb_13953,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,361,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,109,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,6,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2025,46,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,522,senger,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,86,%,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,33205,opphold,ssb_13942,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,4502,årsverk,ssb_13953,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,584,årsverk,ssb_13953,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,763,årsverk,ssb_13953,2026-06-18
+Sykehuset i Vestfold HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,641,årsverk,ssb_13953,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,643,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,189,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,23,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2024,49,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,904,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,77,%,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,47239,opphold,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,6861,årsverk,ssb_13953,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,683,årsverk,ssb_13953,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1149,årsverk,ssb_13953,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,1059,årsverk,ssb_13953,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,624,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,185,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,23,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2025,49,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,881,senger,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,77,%,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,51770,opphold,ssb_13942,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,6924,årsverk,ssb_13953,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,719,årsverk,ssb_13953,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,1099,årsverk,ssb_13953,2026-06-18
+Sykehuset Innlandet HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,1108,årsverk,ssb_13953,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2024,431,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,155,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,15,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2024,34,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2024,635,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,95,%,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,40489,opphold,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2024,5635,årsverk,ssb_13953,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2024,633,årsverk,ssb_13953,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1023,årsverk,ssb_13953,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,683,årsverk,ssb_13953,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_somatikk,Senger - somatikk,2025,431,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,155,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,18,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_rus,Senger - rusbehandling (TSB),2025,34,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,senger_totalt,Senger - totalt,2025,638,senger,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,95,%,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,44277,opphold,ssb_13942,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,arsverk_totalt,Årsverk - totalt,2025,5858,årsverk,ssb_13953,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,arsverk_legespesialister,Årsverk - legespesialister,2025,683,årsverk,ssb_13953,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,arsverk_sykepleiere,Årsverk - sykepleiere,2025,1051,årsverk,ssb_13953,2026-06-18
+Sykehuset Østfold HF,Helse Sør-Øst,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,709,årsverk,ssb_13953,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_somatikk,Senger - somatikk,2024,492,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2024,143,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2024,12,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_rus,Senger - rusbehandling (TSB),2024,59,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_totalt,Senger - totalt,2024,706,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,beleggsprosent_somatikk,Beleggsprosent - somatikk,2024,72,%,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2024,32440,opphold,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,arsverk_totalt,Årsverk - totalt,2024,5593,årsverk,ssb_13953,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,arsverk_legespesialister,Årsverk - legespesialister,2024,603,årsverk,ssb_13953,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,arsverk_sykepleiere,Årsverk - sykepleiere,2024,1054,årsverk,ssb_13953,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2024,811,årsverk,ssb_13953,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_somatikk,Senger - somatikk,2025,469,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_psyk_voksne,Senger - psykisk helsevern (voksne),2025,143,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_psyk_barn,Senger - psykisk helsevern (barn/unge),2025,12,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_rus,Senger - rusbehandling (TSB),2025,53,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,senger_totalt,Senger - totalt,2025,677,senger,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,beleggsprosent_somatikk,Beleggsprosent - somatikk,2025,77,%,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,utskrivninger_somatikk,Utskrivninger - somatikk (per år),2025,37722,opphold,ssb_13942,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,arsverk_totalt,Årsverk - totalt,2025,5484,årsverk,ssb_13953,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,arsverk_legespesialister,Årsverk - legespesialister,2025,622,årsverk,ssb_13953,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,arsverk_sykepleiere,Årsverk - sykepleiere,2025,971,årsverk,ssb_13953,2026-06-18
+Helse Møre og Romsdal HF,Helse Midt-Norge,arsverk_spesialsykepleiere,Årsverk - spesialsykepleiere,2025,811,årsverk,ssb_13953,2026-06-18
