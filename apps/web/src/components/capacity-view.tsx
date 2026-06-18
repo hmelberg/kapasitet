@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import type { CapacityRow, FacilityRow, NeedRow } from "../lib/types";
 import type { FeatureCollection } from "geojson";
+import { TimeseriesComparison } from "./timeseries-comparison";
 
 type Props = {
   rows: CapacityRow[];
@@ -125,6 +126,19 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
       };
     });
   }, [filteredFacilities, filteredRows, needRows, municipalityMap, countyMap, period]);
+
+  const municipalityOptions = useMemo(() => {
+    const codes = Array.from(
+      new Set(
+        rows
+          .filter((row) => county === "all" || row.county_code === county)
+          .map((row) => row.municipality_code)
+      )
+    );
+    return codes
+      .map((code) => ({ code, name: municipalityMap[code] ?? code }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }, [rows, county, municipalityMap]);
 
   const searchedAndSortedMunicipalities = useMemo(() => {
     let result = [...municipalityOverlays];
@@ -414,6 +428,17 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
         </table>
         <p className="muted">Totalt: {searchedAndSortedMunicipalities.length} kommuner</p>
       </div>
+
+      <TimeseriesComparison
+        rows={rows}
+        needRows={needRows}
+        selectedMunicipalityCode={selectedMunicipality?.municipalityCode ?? null}
+        onSelectMunicipality={setSelectedMunicipalityCode}
+        municipalityOptions={municipalityOptions}
+        municipalityMap={municipalityMap}
+        sector={sector}
+        activePeriod={period}
+      />
 
       <div className="card table-wrap">
         <table>

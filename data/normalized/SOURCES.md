@@ -46,12 +46,50 @@ This document maps dataset identifiers to official Norwegian health and statisti
   - Coverage: All Norwegian pharmacies
   - Last accessed: 2026-06-05
 
+## Real reference data (national coverage)
+
+These three sources provide the *real* backbone of the dataset and are fetched
+live by the scripts in `scripts/`:
+
+### Kartverket / Geonorge
+- **geonorge_kommuneinfo_001**: Municipality structure + representasjonspunkt (centroid) + bounding box
+  - Coverage: all 357 current municipalities, with county and centroid coordinates
+  - API: https://ws.geonorge.no/kommuneinfo/v1 (NLOD)
+  - Used by: `scripts/fetch-municipalities.ps1` → `municipalities.csv`, `municipalities.geojson`
+
+### Statistics Norway (SSB)
+- **ssb_07459_001**: Population per municipality 2024–2026 (table 07459)
+  - Coverage: all current municipalities, real population figures
+  - API: https://data.ssb.no/api/v0/no/table/07459 (NLOD)
+  - Used by: `scripts/generate-data.ps1` to scale the modelled capacity/need values
+
+### OpenStreetMap (via Overpass)
+- **osm_overpass_001**: Hospitals, pharmacies and GP offices
+  - `sykehus` ← `amenity=hospital`/`healthcare=hospital`
+  - `apotek` ← `amenity=pharmacy`/`healthcare=pharmacy`
+  - `legekontor` ← `amenity=doctors`/`healthcare=doctor`/`healthcare=centre`
+  - Coverage: ~2 760 facilities with real names and coordinates (ODbL)
+  - Used by: `scripts/fetch-facilities-osm.ps1` → `facilities.csv`
+
 ## Data Quality Notes
 
-- Values are synthetic/estimated for demonstration purposes
-- Real data would integrate directly from SSB API, FHI databases, and health directorate systems
-- Geographic coordinates validated to Norwegian bounds (57-72°N, 3-32°E)
-- All numeric values scaled to realistic population-adjusted ranges
+- **Geography and population are REAL** (Geonorge + SSB). **Facility names and
+  coordinates are REAL** (OpenStreetMap).
+- **Capacity and need values are MODELLED**: real population scaled by ratios
+  derived from Oslo reference figures, with a deterministic per-municipality
+  variation so the pressure index varies. Absolute numbers are illustrative.
+  The dataset/source ids `ssb_kostra_001`, `fhi_kpr_001`, `fhi_hkr_001`,
+  `fhi_lmr_001` mark where real registry data would plug in.
+- **Facility → municipality assignment is approximate**: each OSM facility is
+  assigned to the nearest municipality centroid (preferring bounding-box
+  containment). Near municipality borders this can attribute a facility to a
+  neighbour, so a few municipalities may show 0 facilities even though OSM has
+  some. Upgrading to true polygon point-in-polygon (Kartverket polygons) is the
+  planned fix and pairs with the GeoJSON polygon upgrade.
+- Geographic coordinates validated to Norwegian mainland bounds (57–72°N,
+  3–32°E); Svalbard/Jan Mayen are excluded (outside the municipality structure).
+- Run `node scripts/validate-csv.mjs` to verify schema **and** completeness
+  (every municipality has rows for every period × indicator).
 
 ## Future Integration
 

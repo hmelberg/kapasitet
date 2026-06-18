@@ -1,54 +1,358 @@
-municipality_code,county_code,municipality_name,county_name
+﻿municipality_code,county_code,municipality_name,county_name
 0301,03,Oslo,Oslo
+1101,11,Eigersund,Rogaland
 1103,11,Stavanger,Rogaland
+1106,11,Haugesund,Rogaland
 1108,11,Sandnes,Rogaland
-1505,15,Kristiansund,More og Romsdal
-1508,15,Alesund,More og Romsdal
-1804,18,Bodo,Nordland
-3103,31,Moss,Ostfold
-3107,31,Fredrikstad,Ostfold
-3201,32,Baerum,Akershus
-3205,32,Lillestrom,Akershus
+1111,11,Sokndal,Rogaland
+1112,11,Lund,Rogaland
+1114,11,Bjerkreim,Rogaland
+1119,11,Hå,Rogaland
+1120,11,Klepp,Rogaland
+1121,11,Time,Rogaland
+1122,11,Gjesdal,Rogaland
+1124,11,Sola,Rogaland
+1127,11,Randaberg,Rogaland
+1130,11,Strand,Rogaland
+1133,11,Hjelmeland,Rogaland
+1134,11,Suldal,Rogaland
+1135,11,Sauda,Rogaland
+1144,11,Kvitsøy,Rogaland
+1145,11,Bokn,Rogaland
+1146,11,Tysvær,Rogaland
+1149,11,Karmøy,Rogaland
+1151,11,Utsira,Rogaland
+1160,11,Vindafjord,Rogaland
+1505,15,Kristiansund,Møre og Romsdal
+1506,15,Molde,Møre og Romsdal
+1508,15,Ålesund,Møre og Romsdal
+1511,15,Vanylven,Møre og Romsdal
+1514,15,Sande,Møre og Romsdal
+1515,15,Herøy,Møre og Romsdal
+1516,15,Ulstein,Møre og Romsdal
+1517,15,Hareid,Møre og Romsdal
+1520,15,Ørsta,Møre og Romsdal
+1525,15,Stranda,Møre og Romsdal
+1528,15,Sykkylven,Møre og Romsdal
+1531,15,Sula,Møre og Romsdal
+1532,15,Giske,Møre og Romsdal
+1535,15,Vestnes,Møre og Romsdal
+1539,15,Rauma,Møre og Romsdal
+1547,15,Aukra,Møre og Romsdal
+1554,15,Averøy,Møre og Romsdal
+1557,15,Gjemnes,Møre og Romsdal
+1560,15,Tingvoll,Møre og Romsdal
+1563,15,Sunndal,Møre og Romsdal
+1566,15,Surnadal,Møre og Romsdal
+1573,15,Smøla,Møre og Romsdal
+1576,15,Aure,Møre og Romsdal
+1577,15,Volda,Møre og Romsdal
+1578,15,Fjord,Møre og Romsdal
+1579,15,Hustadvika,Møre og Romsdal
+1580,15,Haram,Møre og Romsdal
+1804,18,Bodø,Nordland
+1806,18,Narvik,Nordland
+1811,18,Bindal,Nordland
+1812,18,Sømna,Nordland
+1813,18,Brønnøy,Nordland
+1815,18,Vega,Nordland
+1816,18,Vevelstad,Nordland
+1818,18,Herøy,Nordland
+1820,18,Alstahaug,Nordland
+1822,18,Leirfjord,Nordland
+1824,18,Vefsn,Nordland
+1825,18,Grane,Nordland
+1826,18,Hattfjelldal,Nordland
+1827,18,Dønna,Nordland
+1828,18,Nesna,Nordland
+1832,18,Hemnes,Nordland
+1833,18,Rana,Nordland
+1834,18,Lurøy,Nordland
+1835,18,Træna,Nordland
+1836,18,Rødøy,Nordland
+1837,18,Meløy,Nordland
+1838,18,Gildeskål,Nordland
+1839,18,Beiarn,Nordland
+1840,18,Saltdal,Nordland
+1841,18,Fauske,Nordland
+1845,18,Sørfold,Nordland
+1848,18,Steigen,Nordland
+1851,18,Lødingen,Nordland
+1853,18,Evenes,Nordland
+1856,18,Røst,Nordland
+1857,18,Værøy,Nordland
+1859,18,Flakstad,Nordland
+1860,18,Vestvågøy,Nordland
+1865,18,Vågan,Nordland
+1866,18,Hadsel,Nordland
+1867,18,Bø,Nordland
+1868,18,Øksnes,Nordland
+1870,18,Sortland,Nordland
+1871,18,Andøy,Nordland
+1874,18,Moskenes,Nordland
+1875,18,Hamarøy,Nordland
+3101,31,Halden,Østfold
+3103,31,Moss,Østfold
+3105,31,Sarpsborg,Østfold
+3107,31,Fredrikstad,Østfold
+3110,31,Hvaler,Østfold
+3112,31,Råde,Østfold
+3114,31,Våler,Østfold
+3116,31,Skiptvet,Østfold
+3118,31,Indre Østfold,Østfold
+3120,31,Rakkestad,Østfold
+3122,31,Marker,Østfold
+3124,31,Aremark,Østfold
+3201,32,Bærum,Akershus
+3203,32,Asker,Akershus
+3205,32,Lillestrøm,Akershus
+3207,32,Nordre Follo,Akershus
+3209,32,Ullensaker,Akershus
+3212,32,Nesodden,Akershus
+3214,32,Frogn,Akershus
+3216,32,Vestby,Akershus
+3218,32,Ås,Akershus
+3220,32,Enebakk,Akershus
+3222,32,Lørenskog,Akershus
+3224,32,Rælingen,Akershus
+3226,32,Aurskog-Høland,Akershus
+3228,32,Nes,Akershus
+3230,32,Gjerdrum,Akershus
+3232,32,Nittedal,Akershus
+3234,32,Lunner,Akershus
+3236,32,Jevnaker,Akershus
+3238,32,Nannestad,Akershus
+3240,32,Eidsvoll,Akershus
+3242,32,Hurdal,Akershus
 3301,33,Drammen,Buskerud
-3905,39,Tonsberg,Vestfold
+3303,33,Kongsberg,Buskerud
+3305,33,Ringerike,Buskerud
+3310,33,Hole,Buskerud
+3312,33,Lier,Buskerud
+3314,33,Øvre Eiker,Buskerud
+3316,33,Modum,Buskerud
+3318,33,Krødsherad,Buskerud
+3320,33,Flå,Buskerud
+3322,33,Nesbyen,Buskerud
+3324,33,Gol,Buskerud
+3326,33,Hemsedal,Buskerud
+3328,33,Ål,Buskerud
+3330,33,Hol,Buskerud
+3332,33,Sigdal,Buskerud
+3334,33,Flesberg,Buskerud
+3336,33,Rollag,Buskerud
+3338,33,Nore og Uvdal,Buskerud
+3401,34,Kongsvinger,Innlandet
+3403,34,Hamar,Innlandet
+3405,34,Lillehammer,Innlandet
+3407,34,Gjøvik,Innlandet
+3411,34,Ringsaker,Innlandet
+3412,34,Løten,Innlandet
+3413,34,Stange,Innlandet
+3414,34,Nord-Odal,Innlandet
+3415,34,Sør-Odal,Innlandet
+3416,34,Eidskog,Innlandet
+3417,34,Grue,Innlandet
+3418,34,Åsnes,Innlandet
+3419,34,Våler,Innlandet
+3420,34,Elverum,Innlandet
+3421,34,Trysil,Innlandet
+3422,34,Åmot,Innlandet
+3423,34,Stor-Elvdal,Innlandet
+3424,34,Rendalen,Innlandet
+3425,34,Engerdal,Innlandet
+3426,34,Tolga,Innlandet
+3427,34,Tynset,Innlandet
+3428,34,Alvdal,Innlandet
+3429,34,Folldal,Innlandet
+3430,34,Os,Innlandet
+3431,34,Dovre,Innlandet
+3432,34,Lesja,Innlandet
+3433,34,Skjåk,Innlandet
+3434,34,Lom,Innlandet
+3435,34,Vågå,Innlandet
+3436,34,Nord-Fron,Innlandet
+3437,34,Sel,Innlandet
+3438,34,Sør-Fron,Innlandet
+3439,34,Ringebu,Innlandet
+3440,34,Øyer,Innlandet
+3441,34,Gausdal,Innlandet
+3442,34,Østre Toten,Innlandet
+3443,34,Vestre Toten,Innlandet
+3446,34,Gran,Innlandet
+3447,34,Søndre Land,Innlandet
+3448,34,Nordre Land,Innlandet
+3449,34,Sør-Aurdal,Innlandet
+3450,34,Etnedal,Innlandet
+3451,34,Nord-Aurdal,Innlandet
+3452,34,Vestre Slidre,Innlandet
+3453,34,Øystre Slidre,Innlandet
+3454,34,Vang,Innlandet
+3901,39,Horten,Vestfold
+3903,39,Holmestrand,Vestfold
+3905,39,Tønsberg,Vestfold
+3907,39,Sandefjord,Vestfold
+3909,39,Larvik,Vestfold
+3911,39,Færder,Vestfold
+4001,40,Porsgrunn,Telemark
 4003,40,Skien,Telemark
+4005,40,Notodden,Telemark
+4010,40,Siljan,Telemark
+4012,40,Bamble,Telemark
+4014,40,Kragerø,Telemark
+4016,40,Drangedal,Telemark
+4018,40,Nome,Telemark
+4020,40,Midt-Telemark,Telemark
+4022,40,Seljord,Telemark
+4024,40,Hjartdal,Telemark
+4026,40,Tinn,Telemark
+4028,40,Kviteseid,Telemark
+4030,40,Nissedal,Telemark
+4032,40,Fyresdal,Telemark
+4034,40,Tokke,Telemark
+4036,40,Vinje,Telemark
+4201,42,Risør,Agder
+4202,42,Grimstad,Agder
+4203,42,Arendal,Agder
 4204,42,Kristiansand,Agder
+4205,42,Lindesnes,Agder
+4206,42,Farsund,Agder
+4207,42,Flekkefjord,Agder
+4211,42,Gjerstad,Agder
+4212,42,Vegårshei,Agder
+4213,42,Tvedestrand,Agder
+4214,42,Froland,Agder
+4215,42,Lillesand,Agder
+4216,42,Birkenes,Agder
+4217,42,Åmli,Agder
+4218,42,Iveland,Agder
+4219,42,Evje og Hornnes,Agder
+4220,42,Bygland,Agder
+4221,42,Valle,Agder
+4222,42,Bykle,Agder
+4223,42,Vennesla,Agder
+4224,42,Åseral,Agder
+4225,42,Lyngdal,Agder
+4226,42,Hægebostad,Agder
+4227,42,Kvinesdal,Agder
+4228,42,Sirdal,Agder
 4601,46,Bergen,Vestland
-4626,46,Oygarden,Vestland
-4627,46,Askoy,Vestland
-5001,50,Trondheim,Trondelag
-5035,50,Stjordal,Trondelag
-5501,55,Tromso,Troms
-1149,11,Haugesund,Rogaland
-1504,15,Molde,Møre og Romsdal
-1816,18,Narvik,Nordland
-2025,20,Lillehammer,Innlandet
-2027,20,Hamar,Innlandet
-2028,20,Gjøvik,Innlandet
-3603,36,Lillesand,Agder
-3706,31,Sarpsborg,Østfold
-4009,40,Porsgrunn,Telemark
-4201,42,Arendal,Agder
-4206,42,Mandal,Agder
-5006,50,Namsos,Trøndelag
-5007,50,Steinkjer,Trøndelag
-5014,50,Levanger,Trøndelag
-1226,12,Voss,Hordaland
-0105,01,Halden,Østfold
-0106,01,Mysen,Østfold
-0209,02,Asker,Akershus
-0213,02,Ørsted,Akershus
-0604,06,Kongsberg,Buskerud
-0709,07,Larvik,Vestfold
-0710,07,Holmestrand,Vestfold
-0807,08,Notodden,Telemark
-0809,08,Rjukan,Telemark
-1235,12,Odda,Hordaland
-1246,12,Knarvik,Hordaland
-1401,14,Florø,Sogn og Fjordane
-1411,14,Sogndal,Sogn og Fjordane
-1412,14,Leikanger,Sogn og Fjordane
-1821,18,Mo i Rana,Nordland
-1826,18,Sandnessjøen,Nordland
-1903,19,Harstad,Troms
-2004,20,Hammerfest,Finnmark
+4602,46,Kinn,Vestland
+4611,46,Etne,Vestland
+4612,46,Sveio,Vestland
+4613,46,Bømlo,Vestland
+4614,46,Stord,Vestland
+4615,46,Fitjar,Vestland
+4616,46,Tysnes,Vestland
+4617,46,Kvinnherad,Vestland
+4618,46,Ullensvang,Vestland
+4619,46,Eidfjord,Vestland
+4620,46,Ulvik,Vestland
+4621,46,Voss,Vestland
+4622,46,Kvam,Vestland
+4623,46,Samnanger,Vestland
+4624,46,Bjørnafjorden,Vestland
+4625,46,Austevoll,Vestland
+4626,46,Øygarden,Vestland
+4627,46,Askøy,Vestland
+4628,46,Vaksdal,Vestland
+4629,46,Modalen,Vestland
+4630,46,Osterøy,Vestland
+4631,46,Alver,Vestland
+4632,46,Austrheim,Vestland
+4633,46,Fedje,Vestland
+4634,46,Masfjorden,Vestland
+4635,46,Gulen,Vestland
+4636,46,Solund,Vestland
+4637,46,Hyllestad,Vestland
+4638,46,Høyanger,Vestland
+4639,46,Vik,Vestland
+4640,46,Sogndal,Vestland
+4641,46,Aurland,Vestland
+4642,46,Lærdal,Vestland
+4643,46,Årdal,Vestland
+4644,46,Luster,Vestland
+4645,46,Askvoll,Vestland
+4646,46,Fjaler,Vestland
+4647,46,Sunnfjord,Vestland
+4648,46,Bremanger,Vestland
+4649,46,Stad,Vestland
+4650,46,Gloppen,Vestland
+4651,46,Stryn,Vestland
+5001,50,Trondheim,Trøndelag
+5006,50,Steinkjer,Trøndelag
+5007,50,Namsos,Trøndelag
+5014,50,Frøya,Trøndelag
+5020,50,Osen,Trøndelag
+5021,50,Oppdal,Trøndelag
+5022,50,Rennebu,Trøndelag
+5025,50,Røros,Trøndelag
+5026,50,Holtålen,Trøndelag
+5027,50,Midtre Gauldal,Trøndelag
+5028,50,Melhus,Trøndelag
+5029,50,Skaun,Trøndelag
+5031,50,Malvik,Trøndelag
+5032,50,Selbu,Trøndelag
+5033,50,Tydal,Trøndelag
+5034,50,Meråker,Trøndelag
+5035,50,Stjørdal,Trøndelag
+5036,50,Frosta,Trøndelag
+5037,50,Levanger,Trøndelag
+5038,50,Verdal,Trøndelag
+5041,50,Snåsa,Trøndelag
+5042,50,Lierne,Trøndelag
+5043,50,Røyrvik,Trøndelag
+5044,50,Namsskogan,Trøndelag
+5045,50,Grong,Trøndelag
+5046,50,Høylandet,Trøndelag
+5047,50,Overhalla,Trøndelag
+5049,50,Flatanger,Trøndelag
+5052,50,Leka,Trøndelag
+5053,50,Inderøy,Trøndelag
+5054,50,Indre Fosen,Trøndelag
+5055,50,Heim,Trøndelag
+5056,50,Hitra,Trøndelag
+5057,50,Ørland,Trøndelag
+5058,50,Åfjord,Trøndelag
+5059,50,Orkland,Trøndelag
+5060,50,Nærøysund,Trøndelag
+5061,50,Rindal,Trøndelag
+5501,55,Tromsø,Troms
+5503,55,Harstad,Troms
+5510,55,Kvæfjord,Troms
+5512,55,Tjeldsund,Troms
+5514,55,Ibestad,Troms
+5516,55,Gratangen,Troms
+5518,55,Lavangen,Troms
+5520,55,Bardu,Troms
+5522,55,Salangen,Troms
+5524,55,Målselv,Troms
+5526,55,Sørreisa,Troms
+5528,55,Dyrøy,Troms
+5530,55,Senja,Troms
+5532,55,Balsfjord,Troms
+5534,55,Karlsøy,Troms
+5536,55,Lyngen,Troms
+5538,55,Storfjord,Troms
+5540,55,Kåfjord,Troms
+5542,55,Skjervøy,Troms
+5544,55,Nordreisa,Troms
+5546,55,Kvænangen,Troms
+5601,56,Alta,Finnmark
+5603,56,Hammerfest,Finnmark
+5605,56,Sør-Varanger,Finnmark
+5607,56,Vadsø,Finnmark
+5610,56,Karasjok,Finnmark
+5612,56,Kautokeino,Finnmark
+5614,56,Loppa,Finnmark
+5616,56,Hasvik,Finnmark
+5618,56,Måsøy,Finnmark
+5620,56,Nordkapp,Finnmark
+5622,56,Porsanger,Finnmark
+5624,56,Lebesby,Finnmark
+5626,56,Gamvik,Finnmark
+5628,56,Tana,Finnmark
+5630,56,Berlevåg,Finnmark
+5632,56,Båtsfjord,Finnmark
+5634,56,Vardø,Finnmark
+5636,56,Nesseby,Finnmark

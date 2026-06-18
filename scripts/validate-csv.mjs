@@ -161,6 +161,56 @@ function validateNormalizedFile(filePath) {
   });
 }
 
+function readNormalized(fileName) {
+  const content = fs.readFileSync(path.join(normalizedDir, fileName), "utf8");
+  const { header, rows } = parseCsv(content);
+  const idx = Object.fromEntries(header.map((h, i) => [h, i]));
+  return rows.map((row) => Object.fromEntries(header.map((h) => [h, row[idx[h]]])));
+}
+
+// Checks that every municipality has rows for every relevant period x indicator
+// combination, in both capacity.csv and needs.csv.
+function validateCompleteness() {
+  const municipalities = readNormalized("municipalities.csv");
+  const capacity = readNormalized("capacity.csv");
+  const needs = readNormalized("needs.csv");
+
+  const codes = [...new Set(municipalities.map((m) => m.municipality_code))];
+  const periods = [...new Set([...capacity, ...needs].map((r) => r.period))].sort();
+
+  // distinct indicator combos actually present in the data
+  const capCombos = [...new Set(capacity.map((r) => `${r.sector}|${r.metric}`))];
+  const needCombos = [...new Set(needs.map((r) => r.metric))];
+
+  const capSeen = new Set(capacity.map((r) => `${r.municipality_code}|${r.period}|${r.sector}|${r.metric}`));
+  const needSeen = new Set(needs.map((r) => `${r.municipality_code}|${r.period}|${r.metric}`));
+
+  const missing = [];
+  for (const code of codes) {
+    for (const period of periods) {
+      for (const combo of capCombos) {
+        if (!capSeen.has(`${code}|${period}|${combo}`)) {
+          missing.push(`capacity: kommune ${code}, periode ${period}, ${combo}`);
+        }
+      }
+      for (const metric of needCombos) {
+        if (!needSeen.has(`${code}|${period}|${metric}`)) {
+          missing.push(`needs: kommune ${code}, periode ${period}, ${metric}`);
+        }
+      }
+    }
+  }
+
+  assert(
+    missing.length === 0,
+    `Manglende rader (${missing.length}). Eksempler:\n  ${missing.slice(0, 10).join("\n  ")}`
+  );
+  console.log(
+    `Komplett: ${codes.length} kommuner x ${periods.length} perioder, ` +
+      `${capCombos.length} kapasitet- og ${needCombos.length} behovsindikatorer.`
+  );
+}
+
 function validateSources() {
   assert(fs.existsSync(sourcesFile), "sources.csv finnes ikke");
   const content = fs.readFileSync(sourcesFile, "utf8");
@@ -196,6 +246,7 @@ function main() {
 
   files.forEach(validateNormalizedFile);
   validateSources();
+  validateCompleteness();
 
   console.log(`CSV-validering OK. Filer kontrollert: ${files.length}`);
 }

@@ -6,3 +6,6 @@ kpr_open_001,FHI,KPR apne oversikter for primarhelse,https://www.fhi.no/helsereg
 dmp_apotek_001,DMP,Oversikt over apotek,https://www.dmp.no,Offentlig,nasjonalt,arlig,2026-06-05
 fhi_hkr_001,FHI,Hjerte og kar statistikk,https://www.fhi.no/helseregistre/hjerte-og-karregisteret,Offentlig statistikk,nasjonalt,arlig,2026-06-01
 fhi_lmr_001,FHI,Legemiddelregisteret statistikk,https://www.fhi.no/helseregistre/legemiddelregisteret,Offentlig statistikk,nasjonalt,arlig,2026-06-05
+geonorge_kommuneinfo_001,Kartverket,Kommuneinndeling og representasjonspunkt,https://ws.geonorge.no/kommuneinfo/v1,NLOD,kommune,lopende,2026-06-18
+ssb_07459_001,SSB,Folkemengde etter kommune (tabell 07459),https://www.ssb.no/statbank/table/07459,NLOD,kommune,arlig,2026-02-25
+osm_overpass_001,OpenStreetMap,Helseinstitusjoner (sykehus apotek legekontor) via Overpass,https://www.openstreetmap.org,ODbL,nasjonalt,lopende,2026-06-18

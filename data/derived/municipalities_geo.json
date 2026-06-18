@@ -1,0 +1,5000 @@
+﻿[
+    {
+        "municipality_code":  "0301",
+        "county_code":  "03",
+        "municipality_name":  "Oslo",
+        "county_name":  "Oslo",
+        "lon":  10.77573,
+        "lat":  59.9724,
+        "bbox":  [
+                     10.48917,
+                     59.80931,
+                     10.95139,
+                     60.13511
+                 ]
+    },
+    {
+        "municipality_code":  "1101",
+        "county_code":  "11",
+        "municipality_name":  "Eigersund",
+        "county_name":  "Rogaland",
+        "lon":  5.92594,
+        "lat":  58.40344,
+        "bbox":  [
+                     5.51954,
+                     58.15833,
+                     6.4975,
+                     58.64933
+                 ]
+    },
+    {
+        "municipality_code":  "1103",
+        "county_code":  "11",
+        "municipality_name":  "Stavanger",
+        "county_name":  "Rogaland",
+        "lon":  5.71246,
+        "lat":  59.10176,
+        "bbox":  [
+                     5.49903,
+                     58.88466,
+                     6.13131,
+                     59.3121
+                 ]
+    },
+    {
+        "municipality_code":  "1106",
+        "county_code":  "11",
+        "municipality_name":  "Haugesund",
+        "county_name":  "Rogaland",
+        "lon":  5.08238,
+        "lat":  59.46825,
+        "bbox":  [
+                     4.56892,
+                     59.38312,
+                     5.39726,
+                     59.55816
+                 ]
+    },
+    {
+        "municipality_code":  "1108",
+        "county_code":  "11",
+        "municipality_name":  "Sandnes",
+        "county_name":  "Rogaland",
+        "lon":  6.39464,
+        "lat":  58.98313,
+        "bbox":  [
+                     5.60971,
+                     58.77681,
+                     6.93917,
+                     59.19259
+                 ]
+    },
+    {
+        "municipality_code":  "1111",
+        "county_code":  "11",
+        "municipality_name":  "Sokndal",
+        "county_name":  "Rogaland",
+        "lon":  6.14176,
+        "lat":  58.22876,
+        "bbox":  [
+                     5.87175,
+                     58.02785,
+                     6.52264,
+                     58.47687
+                 ]
+    },
+    {
+        "municipality_code":  "1112",
+        "county_code":  "11",
+        "municipality_name":  "Lund",
+        "county_name":  "Rogaland",
+        "lon":  6.45729,
+        "lat":  58.46402,
+        "bbox":  [
+                     6.2633,
+                     58.29951,
+                     6.63215,
+                     58.62788
+                 ]
+    },
+    {
+        "municipality_code":  "1114",
+        "county_code":  "11",
+        "municipality_name":  "Bjerkreim",
+        "county_name":  "Rogaland",
+        "lon":  6.15887,
+        "lat":  58.65456,
+        "bbox":  [
+                     5.86407,
+                     58.51416,
+                     6.6228,
+                     58.79488
+                 ]
+    },
+    {
+        "municipality_code":  "1119",
+        "county_code":  "11",
+        "municipality_name":  "Hå",
+        "county_name":  "Rogaland",
+        "lon":  5.56745,
+        "lat":  58.51841,
+        "bbox":  [
+                     5.16325,
+                     58.33251,
+                     5.9347,
+                     58.70532
+                 ]
+    },
+    {
+        "municipality_code":  "1120",
+        "county_code":  "11",
+        "municipality_name":  "Klepp",
+        "county_name":  "Rogaland",
+        "lon":  5.35434,
+        "lat":  58.73267,
+        "bbox":  [
+                     5.07189,
+                     58.62362,
+                     5.73867,
+                     58.84167
+                 ]
+    },
+    {
+        "municipality_code":  "1121",
+        "county_code":  "11",
+        "municipality_name":  "Time",
+        "county_name":  "Rogaland",
+        "lon":  5.75122,
+        "lat":  58.70742,
+        "bbox":  [
+                     5.60338,
+                     58.61277,
+                     5.9303,
+                     58.80185
+                 ]
+    },
+    {
+        "municipality_code":  "1122",
+        "county_code":  "11",
+        "municipality_name":  "Gjesdal",
+        "county_name":  "Rogaland",
+        "lon":  6.27708,
+        "lat":  58.83121,
+        "bbox":  [
+                     5.79898,
+                     58.67249,
+                     6.66553,
+                     58.99
+                 ]
+    },
+    {
+        "municipality_code":  "1124",
+        "county_code":  "11",
+        "municipality_name":  "Sola",
+        "county_name":  "Rogaland",
+        "lon":  5.35625,
+        "lat":  58.88208,
+        "bbox":  [
+                     5.0076599999999996,
+                     58.78215,
+                     5.70299,
+                     58.98209
+                 ]
+    },
+    {
+        "municipality_code":  "1127",
+        "county_code":  "11",
+        "municipality_name":  "Randaberg",
+        "county_name":  "Rogaland",
+        "lon":  5.56976,
+        "lat":  59.01836,
+        "bbox":  [
+                     5.44512,
+                     58.96962,
+                     5.68349,
+                     59.07245
+                 ]
+    },
+    {
+        "municipality_code":  "1130",
+        "county_code":  "11",
+        "municipality_name":  "Strand",
+        "county_name":  "Rogaland",
+        "lon":  6.01361,
+        "lat":  59.0223,
+        "bbox":  [
+                     5.78396,
+                     58.89611,
+                     6.2486,
+                     59.1433
+                 ]
+    },
+    {
+        "municipality_code":  "1133",
+        "county_code":  "11",
+        "municipality_name":  "Hjelmeland",
+        "county_name":  "Rogaland",
+        "lon":  6.40621,
+        "lat":  59.20351,
+        "bbox":  [
+                     5.95215,
+                     59.03673,
+                     6.86514,
+                     59.37525
+                 ]
+    },
+    {
+        "municipality_code":  "1134",
+        "county_code":  "11",
+        "municipality_name":  "Suldal",
+        "county_name":  "Rogaland",
+        "lon":  6.55693,
+        "lat":  59.54328,
+        "bbox":  [
+                     5.87436,
+                     59.30127,
+                     7.21467,
+                     59.78278
+                 ]
+    },
+    {
+        "municipality_code":  "1135",
+        "county_code":  "11",
+        "municipality_name":  "Sauda",
+        "county_name":  "Rogaland",
+        "lon":  6.46209,
+        "lat":  59.70457,
+        "bbox":  [
+                     6.1781,
+                     59.5626,
+                     6.69351,
+                     59.84457
+                 ]
+    },
+    {
+        "municipality_code":  "1144",
+        "county_code":  "11",
+        "municipality_name":  "Kvitsøy",
+        "county_name":  "Rogaland",
+        "lon":  5.30323,
+        "lat":  59.0212,
+        "bbox":  [
+                     4.95912,
+                     58.91933,
+                     5.54541,
+                     59.12828
+                 ]
+    },
+    {
+        "municipality_code":  "1145",
+        "county_code":  "11",
+        "municipality_name":  "Bokn",
+        "county_name":  "Rogaland",
+        "lon":  5.4757,
+        "lat":  59.19252,
+        "bbox":  [
+                     5.34568,
+                     59.11172,
+                     5.64464,
+                     59.27624
+                 ]
+    },
+    {
+        "municipality_code":  "1146",
+        "county_code":  "11",
+        "municipality_name":  "Tysvær",
+        "county_name":  "Rogaland",
+        "lon":  5.64773,
+        "lat":  59.36093,
+        "bbox":  [
+                     5.34357,
+                     59.20906,
+                     5.92197,
+                     59.49968
+                 ]
+    },
+    {
+        "municipality_code":  "1149",
+        "county_code":  "11",
+        "municipality_name":  "Karmøy",
+        "county_name":  "Rogaland",
+        "lon":  5.15361,
+        "lat":  59.23029,
+        "bbox":  [
+                     4.53124,
+                     58.95596,
+                     5.43007,
+                     59.50361
+                 ]
+    },
+    {
+        "municipality_code":  "1151",
+        "county_code":  "11",
+        "municipality_name":  "Utsira",
+        "county_name":  "Rogaland",
+        "lon":  4.72212,
+        "lat":  59.25836,
+        "bbox":  [
+                     4.45427,
+                     59.07088,
+                     5.03081,
+                     59.4443
+                 ]
+    },
+    {
+        "municipality_code":  "1160",
+        "county_code":  "11",
+        "municipality_name":  "Vindafjord",
+        "county_name":  "Rogaland",
+        "lon":  5.7582,
+        "lat":  59.58112,
+        "bbox":  [
+                     5.45993,
+                     59.40651,
+                     6.18381,
+                     59.75356
+                 ]
+    },
+    {
+        "municipality_code":  "1505",
+        "county_code":  "15",
+        "municipality_name":  "Kristiansund",
+        "county_name":  "Møre og Romsdal",
+        "lon":  7.54526,
+        "lat":  63.21682,
+        "bbox":  [
+                     6.97131,
+                     63.00534,
+                     7.93126,
+                     63.42891
+                 ]
+    },
+    {
+        "municipality_code":  "1506",
+        "county_code":  "15",
+        "municipality_name":  "Molde",
+        "county_name":  "Møre og Romsdal",
+        "lon":  8.13862,
+        "lat":  62.60163,
+        "bbox":  [
+                     6.447,
+                     62.33174,
+                     8.73165,
+                     62.87144
+                 ]
+    },
+    {
+        "municipality_code":  "1508",
+        "county_code":  "15",
+        "municipality_name":  "Ålesund",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.55491,
+        "lat":  62.48018,
+        "bbox":  [
+                     5.88784,
+                     62.39436,
+                     7.12046,
+                     63.09133
+                 ]
+    },
+    {
+        "municipality_code":  "1511",
+        "county_code":  "15",
+        "municipality_name":  "Vanylven",
+        "county_name":  "Møre og Romsdal",
+        "lon":  5.6566,
+        "lat":  62.08749,
+        "bbox":  [
+                     5.35839,
+                     61.96041,
+                     5.86403,
+                     62.21615
+                 ]
+    },
+    {
+        "municipality_code":  "1514",
+        "county_code":  "15",
+        "municipality_name":  "Sande",
+        "county_name":  "Møre og Romsdal",
+        "lon":  5.3195,
+        "lat":  62.29372,
+        "bbox":  [
+                     4.81661,
+                     62.15476,
+                     5.79335,
+                     62.43324
+                 ]
+    },
+    {
+        "municipality_code":  "1515",
+        "county_code":  "15",
+        "municipality_name":  "Herøy",
+        "county_name":  "Møre og Romsdal",
+        "lon":  5.29309,
+        "lat":  62.43904,
+        "bbox":  [
+                     4.88741,
+                     62.20585,
+                     5.85729,
+                     62.66595
+                 ]
+    },
+    {
+        "municipality_code":  "1516",
+        "county_code":  "15",
+        "municipality_name":  "Ulstein",
+        "county_name":  "Møre og Romsdal",
+        "lon":  5.82864,
+        "lat":  62.36378,
+        "bbox":  [
+                     5.6806,
+                     62.21615,
+                     5.96703,
+                     62.51371
+                 ]
+    },
+    {
+        "municipality_code":  "1517",
+        "county_code":  "15",
+        "municipality_name":  "Hareid",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.03051,
+        "lat":  62.35983,
+        "bbox":  [
+                     5.90063,
+                     62.27516,
+                     6.16665,
+                     62.4443
+                 ]
+    },
+    {
+        "municipality_code":  "1520",
+        "county_code":  "15",
+        "municipality_name":  "Ørsta",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.28594,
+        "lat":  62.24705,
+        "bbox":  [
+                     5.92229,
+                     62.09923,
+                     6.78413,
+                     62.39436
+                 ]
+    },
+    {
+        "municipality_code":  "1525",
+        "county_code":  "15",
+        "municipality_name":  "Stranda",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.93021,
+        "lat":  62.16785,
+        "bbox":  [
+                     6.65757,
+                     61.96355,
+                     7.41946,
+                     62.37216
+                 ]
+    },
+    {
+        "municipality_code":  "1528",
+        "county_code":  "15",
+        "municipality_name":  "Sykkylven",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.60904,
+        "lat":  62.34306,
+        "bbox":  [
+                     6.3634,
+                     62.22091,
+                     6.88953,
+                     62.46425
+                 ]
+    },
+    {
+        "municipality_code":  "1531",
+        "county_code":  "15",
+        "municipality_name":  "Sula",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.20313,
+        "lat":  62.41103,
+        "bbox":  [
+                     6.01195,
+                     62.36669,
+                     6.37596,
+                     62.45898
+                 ]
+    },
+    {
+        "municipality_code":  "1532",
+        "county_code":  "15",
+        "municipality_name":  "Giske",
+        "county_name":  "Møre og Romsdal",
+        "lon":  5.71224,
+        "lat":  62.64397,
+        "bbox":  [
+                     5.34128,
+                     62.44359,
+                     6.19102,
+                     62.81199
+                 ]
+    },
+    {
+        "municipality_code":  "1535",
+        "county_code":  "15",
+        "municipality_name":  "Vestnes",
+        "county_name":  "Møre og Romsdal",
+        "lon":  7.11062,
+        "lat":  62.56819,
+        "bbox":  [
+                     6.67658,
+                     62.44624,
+                     7.41292,
+                     62.69013
+                 ]
+    },
+    {
+        "municipality_code":  "1539",
+        "county_code":  "15",
+        "municipality_name":  "Rauma",
+        "county_name":  "Møre og Romsdal",
+        "lon":  7.68836,
+        "lat":  62.44547,
+        "bbox":  [
+                     7.22546,
+                     62.17078,
+                     8.20585,
+                     62.72298
+                 ]
+    },
+    {
+        "municipality_code":  "1547",
+        "county_code":  "15",
+        "municipality_name":  "Aukra",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.67269,
+        "lat":  62.94588,
+        "bbox":  [
+                     6.33808,
+                     62.73865,
+                     7.0474,
+                     63.14596
+                 ]
+    },
+    {
+        "municipality_code":  "1554",
+        "county_code":  "15",
+        "municipality_name":  "Averøy",
+        "county_name":  "Møre og Romsdal",
+        "lon":  7.44861,
+        "lat":  63.12994,
+        "bbox":  [
+                     6.86053,
+                     62.92194,
+                     7.75631,
+                     63.34248
+                 ]
+    },
+    {
+        "municipality_code":  "1557",
+        "county_code":  "15",
+        "municipality_name":  "Gjemnes",
+        "county_name":  "Møre og Romsdal",
+        "lon":  7.86926,
+        "lat":  62.91891,
+        "bbox":  [
+                     7.38487,
+                     62.82106,
+                     8.13885,
+                     63.0156
+                 ]
+    },
+    {
+        "municipality_code":  "1560",
+        "county_code":  "15",
+        "municipality_name":  "Tingvoll",
+        "county_name":  "Møre og Romsdal",
+        "lon":  8.21887,
+        "lat":  62.95469,
+        "bbox":  [
+                     7.83651,
+                     62.78155,
+                     8.44064,
+                     63.12938
+                 ]
+    },
+    {
+        "municipality_code":  "1563",
+        "county_code":  "15",
+        "municipality_name":  "Sunndal",
+        "county_name":  "Møre og Romsdal",
+        "lon":  8.65267,
+        "lat":  62.64703,
+        "bbox":  [
+                     8.20613,
+                     62.35319,
+                     9.24382,
+                     62.94126
+                 ]
+    },
+    {
+        "municipality_code":  "1566",
+        "county_code":  "15",
+        "municipality_name":  "Surnadal",
+        "county_name":  "Møre og Romsdal",
+        "lon":  8.78793,
+        "lat":  62.92284,
+        "bbox":  [
+                     8.24371,
+                     62.71177,
+                     9.36483,
+                     63.13392
+                 ]
+    },
+    {
+        "municipality_code":  "1573",
+        "county_code":  "15",
+        "municipality_name":  "Smøla",
+        "county_name":  "Møre og Romsdal",
+        "lon":  7.69547,
+        "lat":  63.48009,
+        "bbox":  [
+                     7.11067,
+                     63.20242,
+                     8.34293,
+                     63.76816
+                 ]
+    },
+    {
+        "municipality_code":  "1576",
+        "county_code":  "15",
+        "municipality_name":  "Aure",
+        "county_name":  "Møre og Romsdal",
+        "lon":  8.51117,
+        "lat":  63.2802,
+        "bbox":  [
+                     7.74368,
+                     63.11544,
+                     8.91106,
+                     63.44748
+                 ]
+    },
+    {
+        "municipality_code":  "1577",
+        "county_code":  "15",
+        "municipality_name":  "Volda",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.27441,
+        "lat":  62.08038,
+        "bbox":  [
+                     5.72792,
+                     61.92334,
+                     6.79399,
+                     62.23752
+                 ]
+    },
+    {
+        "municipality_code":  "1578",
+        "county_code":  "15",
+        "municipality_name":  "Fjord",
+        "county_name":  "Møre og Romsdal",
+        "lon":  7.35977,
+        "lat":  62.27563,
+        "bbox":  [
+                     6.82715,
+                     62.06534,
+                     7.82858,
+                     62.48431
+                 ]
+    },
+    {
+        "municipality_code":  "1579",
+        "county_code":  "15",
+        "municipality_name":  "Hustadvika",
+        "county_name":  "Møre og Romsdal",
+        "lon":  7.03936,
+        "lat":  63.01152,
+        "bbox":  [
+                     6.4993,
+                     62.75214,
+                     7.61533,
+                     63.2733
+                 ]
+    },
+    {
+        "municipality_code":  "1580",
+        "county_code":  "15",
+        "municipality_name":  "Haram",
+        "county_name":  "Møre og Romsdal",
+        "lon":  6.14377,
+        "lat":  62.71825,
+        "bbox":  [
+                     5.64125,
+                     62.50924,
+                     6.8404,
+                     62.92708
+                 ]
+    },
+    {
+        "municipality_code":  "1804",
+        "county_code":  "18",
+        "municipality_name":  "Bodø",
+        "county_name":  "Nordland",
+        "lon":  13.91544,
+        "lat":  67.30948,
+        "bbox":  [
+                     12.72997,
+                     66.92055,
+                     15.36491,
+                     67.69962
+                 ]
+    },
+    {
+        "municipality_code":  "1806",
+        "county_code":  "18",
+        "municipality_name":  "Narvik",
+        "county_name":  "Nordland",
+        "lon":  17.08651,
+        "lat":  68.28989,
+        "bbox":  [
+                     15.90143,
+                     67.96937,
+                     18.15135,
+                     68.60845
+                 ]
+    },
+    {
+        "municipality_code":  "1811",
+        "county_code":  "18",
+        "municipality_name":  "Bindal",
+        "county_name":  "Nordland",
+        "lon":  12.43574,
+        "lat":  65.22111,
+        "bbox":  [
+                     10.57806,
+                     64.9395,
+                     13.15671,
+                     65.50271
+                 ]
+    },
+    {
+        "municipality_code":  "1812",
+        "county_code":  "18",
+        "municipality_name":  "Sømna",
+        "county_name":  "Nordland",
+        "lon":  12.22368,
+        "lat":  65.35971,
+        "bbox":  [
+                     10.60888,
+                     65.18328,
+                     12.46463,
+                     65.53756
+                 ]
+    },
+    {
+        "municipality_code":  "1813",
+        "county_code":  "18",
+        "municipality_name":  "Brønnøy",
+        "county_name":  "Nordland",
+        "lon":  11.82117,
+        "lat":  65.41364,
+        "bbox":  [
+                     10.64189,
+                     65.20392,
+                     13.16704,
+                     65.62353
+                 ]
+    },
+    {
+        "municipality_code":  "1815",
+        "county_code":  "18",
+        "municipality_name":  "Vega",
+        "county_name":  "Nordland",
+        "lon":  11.49892,
+        "lat":  65.73773,
+        "bbox":  [
+                     10.67497,
+                     65.48769,
+                     12.23998,
+                     65.99313
+                 ]
+    },
+    {
+        "municipality_code":  "1816",
+        "county_code":  "18",
+        "municipality_name":  "Vevelstad",
+        "county_name":  "Nordland",
+        "lon":  12.61397,
+        "lat":  65.6544,
+        "bbox":  [
+                     12.22693,
+                     65.51737,
+                     13.04099,
+                     65.78975
+                 ]
+    },
+    {
+        "municipality_code":  "1818",
+        "county_code":  "18",
+        "municipality_name":  "Herøy",
+        "county_name":  "Nordland",
+        "lon":  11.60607,
+        "lat":  66.13291,
+        "bbox":  [
+                     10.95389,
+                     65.85194,
+                     12.48236,
+                     66.40448
+                 ]
+    },
+    {
+        "municipality_code":  "1820",
+        "county_code":  "18",
+        "municipality_name":  "Alstahaug",
+        "county_name":  "Nordland",
+        "lon":  12.43178,
+        "lat":  65.86742,
+        "bbox":  [
+                     12.07128,
+                     65.69494,
+                     12.77499,
+                     66.03974
+                 ]
+    },
+    {
+        "municipality_code":  "1822",
+        "county_code":  "18",
+        "municipality_name":  "Leirfjord",
+        "county_name":  "Nordland",
+        "lon":  12.97723,
+        "lat":  66.09628,
+        "bbox":  [
+                     12.61704,
+                     65.94922,
+                     13.49049,
+                     66.2424
+                 ]
+    },
+    {
+        "municipality_code":  "1824",
+        "county_code":  "18",
+        "municipality_name":  "Vefsn",
+        "county_name":  "Nordland",
+        "lon":  13.1789,
+        "lat":  65.82151,
+        "bbox":  [
+                     12.58475,
+                     65.46411,
+                     13.76603,
+                     66.17854
+                 ]
+    },
+    {
+        "municipality_code":  "1825",
+        "county_code":  "18",
+        "municipality_name":  "Grane",
+        "county_name":  "Nordland",
+        "lon":  13.40833,
+        "lat":  65.443,
+        "bbox":  [
+                     12.93308,
+                     65.09908,
+                     13.87657,
+                     65.78575
+                 ]
+    },
+    {
+        "municipality_code":  "1826",
+        "county_code":  "18",
+        "municipality_name":  "Hattfjelldal",
+        "county_name":  "Nordland",
+        "lon":  14.17061,
+        "lat":  65.49996,
+        "bbox":  [
+                     13.62555,
+                     65.10829,
+                     14.62548,
+                     65.89172
+                 ]
+    },
+    {
+        "municipality_code":  "1827",
+        "county_code":  "18",
+        "municipality_name":  "Dønna",
+        "county_name":  "Nordland",
+        "lon":  12.461,
+        "lat":  66.15958,
+        "bbox":  [
+                     11.83995,
+                     65.99611,
+                     12.8341,
+                     66.33418
+                 ]
+    },
+    {
+        "municipality_code":  "1828",
+        "county_code":  "18",
+        "municipality_name":  "Nesna",
+        "county_name":  "Nordland",
+        "lon":  12.96579,
+        "lat":  66.22368,
+        "bbox":  [
+                     12.62708,
+                     66.14802,
+                     13.32405,
+                     66.33155
+                 ]
+    },
+    {
+        "municipality_code":  "1832",
+        "county_code":  "18",
+        "municipality_name":  "Hemnes",
+        "county_name":  "Nordland",
+        "lon":  14.14277,
+        "lat":  66.01075,
+        "bbox":  [
+                     13.3338,
+                     65.76583,
+                     14.60231,
+                     66.25693
+                 ]
+    },
+    {
+        "municipality_code":  "1833",
+        "county_code":  "18",
+        "municipality_name":  "Rana",
+        "county_name":  "Nordland",
+        "lon":  14.39459,
+        "lat":  66.43971,
+        "bbox":  [
+                     13.18827,
+                     66.09556,
+                     15.53337,
+                     66.78388
+                 ]
+    },
+    {
+        "municipality_code":  "1834",
+        "county_code":  "18",
+        "municipality_name":  "Lurøy",
+        "county_name":  "Nordland",
+        "lon":  12.69971,
+        "lat":  66.4378,
+        "bbox":  [
+                     11.99455,
+                     66.23247,
+                     13.26243,
+                     66.64467
+                 ]
+    },
+    {
+        "municipality_code":  "1835",
+        "county_code":  "18",
+        "municipality_name":  "Træna",
+        "county_name":  "Nordland",
+        "lon":  11.91917,
+        "lat":  66.55716,
+        "bbox":  [
+                     11.29778,
+                     66.31275,
+                     12.43543,
+                     66.81537
+                 ]
+    },
+    {
+        "municipality_code":  "1836",
+        "county_code":  "18",
+        "municipality_name":  "Rødøy",
+        "county_name":  "Nordland",
+        "lon":  12.57611,
+        "lat":  66.763,
+        "bbox":  [
+                     11.66753,
+                     66.39715,
+                     13.8724,
+                     67.12469
+                 ]
+    },
+    {
+        "municipality_code":  "1837",
+        "county_code":  "18",
+        "municipality_name":  "Meløy",
+        "county_name":  "Nordland",
+        "lon":  13.19481,
+        "lat":  66.94907,
+        "bbox":  [
+                     12.34414,
+                     66.62042,
+                     14.41897,
+                     67.2754
+                 ]
+    },
+    {
+        "municipality_code":  "1838",
+        "county_code":  "18",
+        "municipality_name":  "Gildeskål",
+        "county_name":  "Nordland",
+        "lon":  13.94373,
+        "lat":  67.00604,
+        "bbox":  [
+                     13.29628,
+                     66.76939,
+                     14.41135,
+                     67.24247
+                 ]
+    },
+    {
+        "municipality_code":  "1839",
+        "county_code":  "18",
+        "municipality_name":  "Beiarn",
+        "county_name":  "Nordland",
+        "lon":  14.66514,
+        "lat":  66.89185,
+        "bbox":  [
+                     14.30832,
+                     66.64593,
+                     15.02317,
+                     67.13802
+                 ]
+    },
+    {
+        "municipality_code":  "1840",
+        "county_code":  "18",
+        "municipality_name":  "Saltdal",
+        "county_name":  "Nordland",
+        "lon":  15.49267,
+        "lat":  66.88095,
+        "bbox":  [
+                     14.96995,
+                     66.55786,
+                     16.3064,
+                     67.20484
+                 ]
+    },
+    {
+        "municipality_code":  "1841",
+        "county_code":  "18",
+        "municipality_name":  "Fauske",
+        "county_name":  "Nordland",
+        "lon":  15.78442,
+        "lat":  67.23672,
+        "bbox":  [
+                     14.96915,
+                     67.01622,
+                     16.4041,
+                     67.4539
+                 ]
+    },
+    {
+        "municipality_code":  "1845",
+        "county_code":  "18",
+        "municipality_name":  "Sørfold",
+        "county_name":  "Nordland",
+        "lon":  15.66315,
+        "lat":  67.51942,
+        "bbox":  [
+                     15.06362,
+                     67.25555,
+                     16.40757,
+                     67.78324
+                 ]
+    },
+    {
+        "municipality_code":  "1848",
+        "county_code":  "18",
+        "municipality_name":  "Steigen",
+        "county_name":  "Nordland",
+        "lon":  14.8017,
+        "lat":  67.85358,
+        "bbox":  [
+                     13.59505,
+                     67.58667,
+                     15.91107,
+                     68.1213
+                 ]
+    },
+    {
+        "municipality_code":  "1851",
+        "county_code":  "18",
+        "municipality_name":  "Lødingen",
+        "county_name":  "Nordland",
+        "lon":  15.60966,
+        "lat":  68.39444,
+        "bbox":  [
+                     15.12597,
+                     68.17499,
+                     16.16082,
+                     68.6139
+                 ]
+    },
+    {
+        "municipality_code":  "1853",
+        "county_code":  "18",
+        "municipality_name":  "Evenes",
+        "county_name":  "Nordland",
+        "lon":  16.90572,
+        "lat":  68.49531,
+        "bbox":  [
+                     16.55259,
+                     68.4174,
+                     17.36167,
+                     68.57277
+                 ]
+    },
+    {
+        "municipality_code":  "1856",
+        "county_code":  "18",
+        "municipality_name":  "Røst",
+        "county_name":  "Nordland",
+        "lon":  12.03269,
+        "lat":  67.39729,
+        "bbox":  [
+                     11.30306,
+                     67.0156,
+                     12.82654,
+                     67.78182
+                 ]
+    },
+    {
+        "municipality_code":  "1857",
+        "county_code":  "18",
+        "municipality_name":  "Værøy",
+        "county_name":  "Nordland",
+        "lon":  12.87146,
+        "lat":  67.58534,
+        "bbox":  [
+                     11.98772,
+                     67.36496,
+                     13.50668,
+                     67.87008
+                 ]
+    },
+    {
+        "municipality_code":  "1859",
+        "county_code":  "18",
+        "municipality_name":  "Flakstad",
+        "county_name":  "Nordland",
+        "lon":  13.04743,
+        "lat":  68.12146,
+        "bbox":  [
+                     12.4701,
+                     67.84797,
+                     13.57971,
+                     68.39318
+                 ]
+    },
+    {
+        "municipality_code":  "1860",
+        "county_code":  "18",
+        "municipality_name":  "Vestvågøy",
+        "county_name":  "Nordland",
+        "lon":  13.78377,
+        "lat":  68.16056,
+        "bbox":  [
+                     13.00369,
+                     67.78442,
+                     14.18959,
+                     68.54098
+                 ]
+    },
+    {
+        "municipality_code":  "1865",
+        "county_code":  "18",
+        "municipality_name":  "Vågan",
+        "county_name":  "Nordland",
+        "lon":  14.66306,
+        "lat":  68.27769,
+        "bbox":  [
+                     13.38801,
+                     67.94409,
+                     15.272,
+                     68.60531
+                 ]
+    },
+    {
+        "municipality_code":  "1866",
+        "county_code":  "18",
+        "municipality_name":  "Hadsel",
+        "county_name":  "Nordland",
+        "lon":  14.82777,
+        "lat":  68.50329,
+        "bbox":  [
+                     14.13608,
+                     68.31908,
+                     15.44285,
+                     68.68797
+                 ]
+    },
+    {
+        "municipality_code":  "1867",
+        "county_code":  "18",
+        "municipality_name":  "Bø",
+        "county_name":  "Nordland",
+        "lon":  14.28267,
+        "lat":  68.74084,
+        "bbox":  [
+                     13.4918,
+                     68.47973,
+                     14.86312,
+                     69.00103
+                 ]
+    },
+    {
+        "municipality_code":  "1868",
+        "county_code":  "18",
+        "municipality_name":  "Øksnes",
+        "county_name":  "Nordland",
+        "lon":  14.80081,
+        "lat":  69.01994,
+        "bbox":  [
+                     14.1889,
+                     68.72356,
+                     15.38379,
+                     69.31597
+                 ]
+    },
+    {
+        "municipality_code":  "1870",
+        "county_code":  "18",
+        "municipality_name":  "Sortland",
+        "county_name":  "Nordland",
+        "lon":  15.36792,
+        "lat":  68.7673,
+        "bbox":  [
+                     14.78794,
+                     68.52598,
+                     16.11227,
+                     69.00863
+                 ]
+    },
+    {
+        "municipality_code":  "1871",
+        "county_code":  "18",
+        "municipality_name":  "Andøy",
+        "county_name":  "Nordland",
+        "lon":  15.79944,
+        "lat":  69.1968,
+        "bbox":  [
+                     15.02208,
+                     68.75986,
+                     16.51764,
+                     69.5967
+                 ]
+    },
+    {
+        "municipality_code":  "1874",
+        "county_code":  "18",
+        "municipality_name":  "Moskenes",
+        "county_name":  "Nordland",
+        "lon":  12.81415,
+        "lat":  67.90276,
+        "bbox":  [
+                     12.1666,
+                     67.67407,
+                     13.69498,
+                     68.15245
+                 ]
+    },
+    {
+        "municipality_code":  "1875",
+        "county_code":  "18",
+        "municipality_name":  "Hamarøy",
+        "county_name":  "Nordland",
+        "lon":  16.24195,
+        "lat":  67.92211,
+        "bbox":  [
+                     15.0606,
+                     67.53403,
+                     16.92985,
+                     68.31503
+                 ]
+    },
+    {
+        "municipality_code":  "3101",
+        "county_code":  "31",
+        "municipality_name":  "Halden",
+        "county_name":  "Østfold",
+        "lon":  11.53719,
+        "lat":  59.06806,
+        "bbox":  [
+                     11.15351,
+                     58.87689,
+                     11.71052,
+                     59.25961
+                 ]
+    },
+    {
+        "municipality_code":  "3103",
+        "county_code":  "31",
+        "municipality_name":  "Moss",
+        "county_name":  "Østfold",
+        "lon":  10.65966,
+        "lat":  59.41467,
+        "bbox":  [
+                     10.53668,
+                     59.29388,
+                     10.82077,
+                     59.53458
+                 ]
+    },
+    {
+        "municipality_code":  "3105",
+        "county_code":  "31",
+        "municipality_name":  "Sarpsborg",
+        "county_name":  "Østfold",
+        "lon":  11.22978,
+        "lat":  59.25495,
+        "bbox":  [
+                     10.94776,
+                     59.09262,
+                     11.34804,
+                     59.41727
+                 ]
+    },
+    {
+        "municipality_code":  "3107",
+        "county_code":  "31",
+        "municipality_name":  "Fredrikstad",
+        "county_name":  "Østfold",
+        "lon":  10.86802,
+        "lat":  59.1862,
+        "bbox":  [
+                     10.60501,
+                     59.04488,
+                     11.13072,
+                     59.32403
+                 ]
+    },
+    {
+        "municipality_code":  "3110",
+        "county_code":  "31",
+        "municipality_name":  "Hvaler",
+        "county_name":  "Østfold",
+        "lon":  10.78096,
+        "lat":  58.94697,
+        "bbox":  [
+                     10.5931,
+                     58.76096,
+                     11.16734,
+                     59.1392
+                 ]
+    },
+    {
+        "municipality_code":  "3112",
+        "county_code":  "31",
+        "municipality_name":  "Råde",
+        "county_name":  "Østfold",
+        "lon":  10.84231,
+        "lat":  59.33167,
+        "bbox":  [
+                     10.59033,
+                     59.25232,
+                     10.97797,
+                     59.41104
+                 ]
+    },
+    {
+        "municipality_code":  "3114",
+        "county_code":  "31",
+        "municipality_name":  "Våler",
+        "county_name":  "Østfold",
+        "lon":  10.92244,
+        "lat":  59.46436,
+        "bbox":  [
+                     10.76577,
+                     59.38699,
+                     11.13792,
+                     59.54197
+                 ]
+    },
+    {
+        "municipality_code":  "3116",
+        "county_code":  "31",
+        "municipality_name":  "Skiptvet",
+        "county_name":  "Østfold",
+        "lon":  11.1518,
+        "lat":  59.47113,
+        "bbox":  [
+                     11.05718,
+                     59.39287,
+                     11.2409,
+                     59.54925
+                 ]
+    },
+    {
+        "municipality_code":  "3118",
+        "county_code":  "31",
+        "municipality_name":  "Indre Østfold",
+        "county_name":  "Østfold",
+        "lon":  11.18329,
+        "lat":  59.6102,
+        "bbox":  [
+                     10.77133,
+                     59.45014,
+                     11.551,
+                     59.77027
+                 ]
+    },
+    {
+        "municipality_code":  "3120",
+        "county_code":  "31",
+        "municipality_name":  "Rakkestad",
+        "county_name":  "Østfold",
+        "lon":  11.42113,
+        "lat":  59.36032,
+        "bbox":  [
+                     11.18816,
+                     59.23638,
+                     11.59742,
+                     59.48432
+                 ]
+    },
+    {
+        "municipality_code":  "3122",
+        "county_code":  "31",
+        "municipality_name":  "Marker",
+        "county_name":  "Østfold",
+        "lon":  11.64674,
+        "lat":  59.48771,
+        "bbox":  [
+                     11.49227,
+                     59.29818,
+                     11.82153,
+                     59.67722
+                 ]
+    },
+    {
+        "municipality_code":  "3124",
+        "county_code":  "31",
+        "municipality_name":  "Aremark",
+        "county_name":  "Østfold",
+        "lon":  11.68733,
+        "lat":  59.18593,
+        "bbox":  [
+                     11.55353,
+                     59.03368,
+                     11.8298,
+                     59.33813
+                 ]
+    },
+    {
+        "municipality_code":  "3201",
+        "county_code":  "32",
+        "municipality_name":  "Bærum",
+        "county_name":  "Akershus",
+        "lon":  10.49971,
+        "lat":  59.928959999999996,
+        "bbox":  [
+                     10.34802,
+                     59.82574,
+                     10.65808,
+                     60.03223
+                 ]
+    },
+    {
+        "municipality_code":  "3203",
+        "county_code":  "32",
+        "municipality_name":  "Asker",
+        "county_name":  "Akershus",
+        "lon":  10.47406,
+        "lat":  59.68164,
+        "bbox":  [
+                     10.29006,
+                     59.45733,
+                     10.63499,
+                     59.90594
+                 ]
+    },
+    {
+        "municipality_code":  "3205",
+        "county_code":  "32",
+        "municipality_name":  "Lillestrøm",
+        "county_name":  "Akershus",
+        "lon":  11.21703,
+        "lat":  59.91555,
+        "bbox":  [
+                     10.93373,
+                     59.75385,
+                     11.43951,
+                     60.07725
+                 ]
+    },
+    {
+        "municipality_code":  "3207",
+        "county_code":  "32",
+        "municipality_name":  "Nordre Follo",
+        "county_name":  "Akershus",
+        "lon":  10.8929,
+        "lat":  59.72899,
+        "bbox":  [
+                     10.71864,
+                     59.61868,
+                     10.99198,
+                     59.83928
+                 ]
+    },
+    {
+        "municipality_code":  "3209",
+        "county_code":  "32",
+        "municipality_name":  "Ullensaker",
+        "county_name":  "Akershus",
+        "lon":  11.19843,
+        "lat":  60.15411,
+        "bbox":  [
+                     11.04086,
+                     60.05161,
+                     11.33572,
+                     60.25657
+                 ]
+    },
+    {
+        "municipality_code":  "3212",
+        "county_code":  "32",
+        "municipality_name":  "Nesodden",
+        "county_name":  "Akershus",
+        "lon":  10.636,
+        "lat":  59.80257,
+        "bbox":  [
+                     10.5421,
+                     59.72212,
+                     10.74402,
+                     59.88441
+                 ]
+    },
+    {
+        "municipality_code":  "3214",
+        "county_code":  "32",
+        "municipality_name":  "Frogn",
+        "county_name":  "Akershus",
+        "lon":  10.64625,
+        "lat":  59.69503,
+        "bbox":  [
+                     10.5381,
+                     59.61266,
+                     10.75116,
+                     59.7792
+                 ]
+    },
+    {
+        "municipality_code":  "3216",
+        "county_code":  "32",
+        "municipality_name":  "Vestby",
+        "county_name":  "Akershus",
+        "lon":  10.71171,
+        "lat":  59.55977,
+        "bbox":  [
+                     10.61644,
+                     59.47188,
+                     10.86006,
+                     59.64772
+                 ]
+    },
+    {
+        "municipality_code":  "3218",
+        "county_code":  "32",
+        "municipality_name":  "Ås",
+        "county_name":  "Akershus",
+        "lon":  10.77421,
+        "lat":  59.67914,
+        "bbox":  [
+                     10.67411,
+                     59.59228,
+                     10.89175,
+                     59.76599
+                 ]
+    },
+    {
+        "municipality_code":  "3220",
+        "county_code":  "32",
+        "municipality_name":  "Enebakk",
+        "county_name":  "Akershus",
+        "lon":  11.10456,
+        "lat":  59.76926,
+        "bbox":  [
+                     10.9319,
+                     59.6824,
+                     11.24373,
+                     59.85605
+                 ]
+    },
+    {
+        "municipality_code":  "3222",
+        "county_code":  "32",
+        "municipality_name":  "Lørenskog",
+        "county_name":  "Akershus",
+        "lon":  10.96691,
+        "lat":  59.897,
+        "bbox":  [
+                     10.90716,
+                     59.83638,
+                     11.03063,
+                     59.95796
+                 ]
+    },
+    {
+        "municipality_code":  "3224",
+        "county_code":  "32",
+        "municipality_name":  "Rælingen",
+        "county_name":  "Akershus",
+        "lon":  11.07898,
+        "lat":  59.891,
+        "bbox":  [
+                     11.01083,
+                     59.82718,
+                     11.17364,
+                     59.95485
+                 ]
+    },
+    {
+        "municipality_code":  "3226",
+        "county_code":  "32",
+        "municipality_name":  "Aurskog-Høland",
+        "county_name":  "Akershus",
+        "lon":  11.59563,
+        "lat":  59.80863,
+        "bbox":  [
+                     11.27408,
+                     59.59365,
+                     11.946,
+                     60.02363
+                 ]
+    },
+    {
+        "municipality_code":  "3228",
+        "county_code":  "32",
+        "municipality_name":  "Nes",
+        "county_name":  "Akershus",
+        "lon":  11.45512,
+        "lat":  60.1705,
+        "bbox":  [
+                     11.25447,
+                     59.98845,
+                     11.8227,
+                     60.35256
+                 ]
+    },
+    {
+        "municipality_code":  "3230",
+        "county_code":  "32",
+        "municipality_name":  "Gjerdrum",
+        "county_name":  "Akershus",
+        "lon":  11.02061,
+        "lat":  60.07878,
+        "bbox":  [
+                     10.91114,
+                     60.02853,
+                     11.11614,
+                     60.129
+                 ]
+    },
+    {
+        "municipality_code":  "3232",
+        "county_code":  "32",
+        "municipality_name":  "Nittedal",
+        "county_name":  "Akershus",
+        "lon":  10.85663,
+        "lat":  60.08044,
+        "bbox":  [
+                     10.67519,
+                     59.97286,
+                     10.99595,
+                     60.18802
+                 ]
+    },
+    {
+        "municipality_code":  "3234",
+        "county_code":  "32",
+        "municipality_name":  "Lunner",
+        "county_name":  "Akershus",
+        "lon":  10.66649,
+        "lat":  60.23506,
+        "bbox":  [
+                     10.45635,
+                     60.13161,
+                     10.86474,
+                     60.33911
+                 ]
+    },
+    {
+        "municipality_code":  "3236",
+        "county_code":  "32",
+        "municipality_name":  "Jevnaker",
+        "county_name":  "Akershus",
+        "lon":  10.40846,
+        "lat":  60.28255,
+        "bbox":  [
+                     10.19427,
+                     60.16478,
+                     10.57689,
+                     60.40034
+                 ]
+    },
+    {
+        "municipality_code":  "3238",
+        "county_code":  "32",
+        "municipality_name":  "Nannestad",
+        "county_name":  "Akershus",
+        "lon":  10.94094,
+        "lat":  60.2267,
+        "bbox":  [
+                     10.77203,
+                     60.10629,
+                     11.1292,
+                     60.34669
+                 ]
+    },
+    {
+        "municipality_code":  "3240",
+        "county_code":  "32",
+        "municipality_name":  "Eidsvoll",
+        "county_name":  "Akershus",
+        "lon":  11.25554,
+        "lat":  60.4163,
+        "bbox":  [
+                     11.0721,
+                     60.22597,
+                     11.42193,
+                     60.60515
+                 ]
+    },
+    {
+        "municipality_code":  "3242",
+        "county_code":  "32",
+        "municipality_name":  "Hurdal",
+        "county_name":  "Akershus",
+        "lon":  10.97596,
+        "lat":  60.42702,
+        "bbox":  [
+                     10.67198,
+                     60.33039,
+                     11.13931,
+                     60.52419
+                 ]
+    },
+    {
+        "municipality_code":  "3301",
+        "county_code":  "33",
+        "municipality_name":  "Drammen",
+        "county_name":  "Buskerud",
+        "lon":  10.17564,
+        "lat":  59.69649,
+        "bbox":  [
+                     9.94322,
+                     59.53043,
+                     10.4245,
+                     59.86254
+                 ]
+    },
+    {
+        "municipality_code":  "3303",
+        "county_code":  "33",
+        "municipality_name":  "Kongsberg",
+        "county_name":  "Buskerud",
+        "lon":  9.67086,
+        "lat":  59.59455,
+        "bbox":  [
+                     9.33329,
+                     59.40787,
+                     10.05997,
+                     59.78134
+                 ]
+    },
+    {
+        "municipality_code":  "3305",
+        "county_code":  "33",
+        "municipality_name":  "Ringerike",
+        "county_name":  "Buskerud",
+        "lon":  10.02176,
+        "lat":  60.32741,
+        "bbox":  [
+                     9.70451,
+                     60.01726,
+                     10.60154,
+                     60.63793
+                 ]
+    },
+    {
+        "municipality_code":  "3310",
+        "county_code":  "33",
+        "municipality_name":  "Hole",
+        "county_name":  "Buskerud",
+        "lon":  10.30204,
+        "lat":  60.04163,
+        "bbox":  [
+                     10.12454,
+                     59.95645,
+                     10.47774,
+                     60.12656
+                 ]
+    },
+    {
+        "municipality_code":  "3312",
+        "county_code":  "33",
+        "municipality_name":  "Lier",
+        "county_name":  "Buskerud",
+        "lon":  10.21155,
+        "lat":  59.84533,
+        "bbox":  [
+                     10.062,
+                     59.71609,
+                     10.3773,
+                     59.97456
+                 ]
+    },
+    {
+        "municipality_code":  "3314",
+        "county_code":  "33",
+        "municipality_name":  "Øvre Eiker",
+        "county_name":  "Buskerud",
+        "lon":  9.84121,
+        "lat":  59.74417,
+        "bbox":  [
+                     9.64547,
+                     59.58248,
+                     10.062,
+                     59.90593
+                 ]
+    },
+    {
+        "municipality_code":  "3316",
+        "county_code":  "33",
+        "municipality_name":  "Modum",
+        "county_name":  "Buskerud",
+        "lon":  10.01916,
+        "lat":  60.01051,
+        "bbox":  [
+                     9.71291,
+                     59.84975,
+                     10.29404,
+                     60.17082
+                 ]
+    },
+    {
+        "municipality_code":  "3318",
+        "county_code":  "33",
+        "municipality_name":  "Krødsherad",
+        "county_name":  "Buskerud",
+        "lon":  9.67151,
+        "lat":  60.19247,
+        "bbox":  [
+                     9.45848,
+                     60.07094,
+                     9.8817,
+                     60.31399
+                 ]
+    },
+    {
+        "municipality_code":  "3320",
+        "county_code":  "33",
+        "municipality_name":  "Flå",
+        "county_name":  "Buskerud",
+        "lon":  9.54037,
+        "lat":  60.43432,
+        "bbox":  [
+                     9.09583,
+                     60.29672,
+                     9.84672,
+                     60.57193
+                 ]
+    },
+    {
+        "municipality_code":  "3322",
+        "county_code":  "33",
+        "municipality_name":  "Nesbyen",
+        "county_name":  "Buskerud",
+        "lon":  9.02834,
+        "lat":  60.54682,
+        "bbox":  [
+                     8.68145,
+                     60.39324,
+                     9.43519,
+                     60.70117
+                 ]
+    },
+    {
+        "municipality_code":  "3324",
+        "county_code":  "33",
+        "municipality_name":  "Gol",
+        "county_name":  "Buskerud",
+        "lon":  9.0123,
+        "lat":  60.75134,
+        "bbox":  [
+                     8.71858,
+                     60.63121,
+                     9.33211,
+                     60.87171
+                 ]
+    },
+    {
+        "municipality_code":  "3326",
+        "county_code":  "33",
+        "municipality_name":  "Hemsedal",
+        "county_name":  "Buskerud",
+        "lon":  8.38349,
+        "lat":  60.92824,
+        "bbox":  [
+                     8.04087,
+                     60.76404,
+                     8.919,
+                     61.09172
+                 ]
+    },
+    {
+        "municipality_code":  "3328",
+        "county_code":  "33",
+        "municipality_name":  "Ål",
+        "county_name":  "Buskerud",
+        "lon":  8.50374,
+        "lat":  60.69727,
+        "bbox":  [
+                     7.77517,
+                     60.4705,
+                     8.84388,
+                     60.92405
+                 ]
+    },
+    {
+        "municipality_code":  "3330",
+        "county_code":  "33",
+        "municipality_name":  "Hol",
+        "county_name":  "Buskerud",
+        "lon":  8.02236,
+        "lat":  60.60368,
+        "bbox":  [
+                     7.43884,
+                     60.34103,
+                     8.6225,
+                     60.86657
+                 ]
+    },
+    {
+        "municipality_code":  "3332",
+        "county_code":  "33",
+        "municipality_name":  "Sigdal",
+        "county_name":  "Buskerud",
+        "lon":  9.40978,
+        "lat":  60.13018,
+        "bbox":  [
+                     9.13401,
+                     59.89624,
+                     9.85888,
+                     60.36468
+                 ]
+    },
+    {
+        "municipality_code":  "3334",
+        "county_code":  "33",
+        "municipality_name":  "Flesberg",
+        "county_name":  "Buskerud",
+        "lon":  9.44506,
+        "lat":  59.85727,
+        "bbox":  [
+                     9.1788,
+                     59.71727,
+                     9.72199,
+                     59.99747
+                 ]
+    },
+    {
+        "municipality_code":  "3336",
+        "county_code":  "33",
+        "municipality_name":  "Rollag",
+        "county_name":  "Buskerud",
+        "lon":  9.20807,
+        "lat":  60.01567,
+        "bbox":  [
+                     8.97066,
+                     59.8794,
+                     9.46605,
+                     60.15245
+                 ]
+    },
+    {
+        "municipality_code":  "3338",
+        "county_code":  "33",
+        "municipality_name":  "Nore og Uvdal",
+        "county_name":  "Buskerud",
+        "lon":  8.41726,
+        "lat":  60.29208,
+        "bbox":  [
+                     7.48826,
+                     60.07099,
+                     9.21785,
+                     60.51207
+                 ]
+    },
+    {
+        "municipality_code":  "3401",
+        "county_code":  "34",
+        "municipality_name":  "Kongsvinger",
+        "county_name":  "Innlandet",
+        "lon":  12.21604,
+        "lat":  60.18991,
+        "bbox":  [
+                     11.83072,
+                     59.98171,
+                     12.54191,
+                     60.39814
+                 ]
+    },
+    {
+        "municipality_code":  "3403",
+        "county_code":  "34",
+        "municipality_name":  "Hamar",
+        "county_name":  "Innlandet",
+        "lon":  11.1648,
+        "lat":  61.00149,
+        "bbox":  [
+                     10.98098,
+                     60.76898,
+                     11.27971,
+                     61.23604
+                 ]
+    },
+    {
+        "municipality_code":  "3405",
+        "county_code":  "34",
+        "municipality_name":  "Lillehammer",
+        "county_name":  "Innlandet",
+        "lon":  10.42659,
+        "lat":  61.13334,
+        "bbox":  [
+                     10.03773,
+                     61.01855,
+                     10.74367,
+                     61.24803
+                 ]
+    },
+    {
+        "municipality_code":  "3407",
+        "county_code":  "34",
+        "municipality_name":  "Gjøvik",
+        "county_name":  "Innlandet",
+        "lon":  10.50393,
+        "lat":  60.87214,
+        "bbox":  [
+                     10.16766,
+                     60.70747,
+                     10.74476,
+                     61.03683
+                 ]
+    },
+    {
+        "municipality_code":  "3411",
+        "county_code":  "34",
+        "municipality_name":  "Ringsaker",
+        "county_name":  "Innlandet",
+        "lon":  10.84453,
+        "lat":  60.98507,
+        "bbox":  [
+                     10.44295,
+                     60.67574,
+                     11.1177,
+                     61.29554
+                 ]
+    },
+    {
+        "municipality_code":  "3412",
+        "county_code":  "34",
+        "municipality_name":  "Løten",
+        "county_name":  "Innlandet",
+        "lon":  11.37288,
+        "lat":  60.86524,
+        "bbox":  [
+                     11.21978,
+                     60.67525,
+                     11.64298,
+                     61.05526
+                 ]
+    },
+    {
+        "municipality_code":  "3413",
+        "county_code":  "34",
+        "municipality_name":  "Stange",
+        "county_name":  "Innlandet",
+        "lon":  11.38275,
+        "lat":  60.62532,
+        "bbox":  [
+                     11.02778,
+                     60.45879,
+                     11.65435,
+                     60.79226
+                 ]
+    },
+    {
+        "municipality_code":  "3414",
+        "county_code":  "34",
+        "municipality_name":  "Nord-Odal",
+        "county_name":  "Innlandet",
+        "lon":  11.58488,
+        "lat":  60.43986,
+        "bbox":  [
+                     11.34225,
+                     60.29543,
+                     11.83725,
+                     60.58415
+                 ]
+    },
+    {
+        "municipality_code":  "3415",
+        "county_code":  "34",
+        "municipality_name":  "Sør-Odal",
+        "county_name":  "Innlandet",
+        "lon":  11.74814,
+        "lat":  60.2123,
+        "bbox":  [
+                     11.52034,
+                     60.04778,
+                     11.93719,
+                     60.37678
+                 ]
+    },
+    {
+        "municipality_code":  "3416",
+        "county_code":  "34",
+        "municipality_name":  "Eidskog",
+        "county_name":  "Innlandet",
+        "lon":  12.08085,
+        "lat":  59.99118,
+        "bbox":  [
+                     11.79305,
+                     59.84078,
+                     12.35868,
+                     60.14158
+                 ]
+    },
+    {
+        "municipality_code":  "3417",
+        "county_code":  "34",
+        "municipality_name":  "Grue",
+        "county_name":  "Innlandet",
+        "lon":  12.22133,
+        "lat":  60.41362,
+        "bbox":  [
+                     11.7957,
+                     60.27683,
+                     12.60688,
+                     60.55066
+                 ]
+    },
+    {
+        "municipality_code":  "3418",
+        "county_code":  "34",
+        "municipality_name":  "Åsnes",
+        "county_name":  "Innlandet",
+        "lon":  12.18688,
+        "lat":  60.68123,
+        "bbox":  [
+                     11.64134,
+                     60.4716,
+                     12.59829,
+                     60.89083
+                 ]
+    },
+    {
+        "municipality_code":  "3419",
+        "county_code":  "34",
+        "municipality_name":  "Våler",
+        "county_name":  "Innlandet",
+        "lon":  12.01474,
+        "lat":  60.81343,
+        "bbox":  [
+                     11.61356,
+                     60.56514,
+                     12.33811,
+                     61.06151
+                 ]
+    },
+    {
+        "municipality_code":  "3420",
+        "county_code":  "34",
+        "municipality_name":  "Elverum",
+        "county_name":  "Innlandet",
+        "lon":  11.73445,
+        "lat":  60.97278,
+        "bbox":  [
+                     11.29895,
+                     60.74126,
+                     12.16109,
+                     61.20427
+                 ]
+    },
+    {
+        "municipality_code":  "3421",
+        "county_code":  "34",
+        "municipality_name":  "Trysil",
+        "county_name":  "Innlandet",
+        "lon":  12.36702,
+        "lat":  61.35615,
+        "bbox":  [
+                     11.73716,
+                     61.01308,
+                     12.87085,
+                     61.69914
+                 ]
+    },
+    {
+        "municipality_code":  "3422",
+        "county_code":  "34",
+        "municipality_name":  "Åmot",
+        "county_name":  "Innlandet",
+        "lon":  11.60521,
+        "lat":  61.26118,
+        "bbox":  [
+                     10.95775,
+                     61.01513,
+                     11.91609,
+                     61.50719
+                 ]
+    },
+    {
+        "municipality_code":  "3423",
+        "county_code":  "34",
+        "municipality_name":  "Stor-Elvdal",
+        "county_name":  "Innlandet",
+        "lon":  10.90251,
+        "lat":  61.58157,
+        "bbox":  [
+                     10.05264,
+                     61.19949,
+                     11.37458,
+                     61.96391
+                 ]
+    },
+    {
+        "municipality_code":  "3424",
+        "county_code":  "34",
+        "municipality_name":  "Rendalen",
+        "county_name":  "Innlandet",
+        "lon":  11.20217,
+        "lat":  61.80658,
+        "bbox":  [
+                     10.44849,
+                     61.41291,
+                     11.84327,
+                     62.20031
+                 ]
+    },
+    {
+        "municipality_code":  "3425",
+        "county_code":  "34",
+        "municipality_name":  "Engerdal",
+        "county_name":  "Innlandet",
+        "lon":  11.9401,
+        "lat":  61.97342,
+        "bbox":  [
+                     11.51002,
+                     61.57454,
+                     12.29937,
+                     62.37448
+                 ]
+    },
+    {
+        "municipality_code":  "3426",
+        "county_code":  "34",
+        "municipality_name":  "Tolga",
+        "county_name":  "Innlandet",
+        "lon":  11.07046,
+        "lat":  62.37188,
+        "bbox":  [
+                     10.47382,
+                     62.14358,
+                     11.69582,
+                     62.60012
+                 ]
+    },
+    {
+        "municipality_code":  "3427",
+        "county_code":  "34",
+        "municipality_name":  "Tynset",
+        "county_name":  "Innlandet",
+        "lon":  10.53225,
+        "lat":  62.36011,
+        "bbox":  [
+                     10.00573,
+                     62.02298,
+                     11.21752,
+                     62.69693
+                 ]
+    },
+    {
+        "municipality_code":  "3428",
+        "county_code":  "34",
+        "municipality_name":  "Alvdal",
+        "county_name":  "Innlandet",
+        "lon":  10.50249,
+        "lat":  62.09651,
+        "bbox":  [
+                     10.12207,
+                     61.91329,
+                     10.93275,
+                     62.27982
+                 ]
+    },
+    {
+        "municipality_code":  "3429",
+        "county_code":  "34",
+        "municipality_name":  "Folldal",
+        "county_name":  "Innlandet",
+        "lon":  9.97371,
+        "lat":  62.15625,
+        "bbox":  [
+                     9.58383,
+                     61.88445,
+                     10.39159,
+                     62.42781
+                 ]
+    },
+    {
+        "municipality_code":  "3430",
+        "county_code":  "34",
+        "municipality_name":  "Os",
+        "county_name":  "Innlandet",
+        "lon":  11.40966,
+        "lat":  62.41519,
+        "bbox":  [
+                     10.72155,
+                     62.13419,
+                     11.8568,
+                     62.6963
+                 ]
+    },
+    {
+        "municipality_code":  "3431",
+        "county_code":  "34",
+        "municipality_name":  "Dovre",
+        "county_name":  "Innlandet",
+        "lon":  9.44039,
+        "lat":  62.11463,
+        "bbox":  [
+                     9.01028,
+                     61.8863,
+                     9.9282,
+                     62.34313
+                 ]
+    },
+    {
+        "municipality_code":  "3432",
+        "county_code":  "34",
+        "municipality_name":  "Lesja",
+        "county_name":  "Innlandet",
+        "lon":  8.62549,
+        "lat":  62.18767,
+        "bbox":  [
+                     7.98361,
+                     62.00085,
+                     9.31924,
+                     62.3784
+                 ]
+    },
+    {
+        "municipality_code":  "3433",
+        "county_code":  "34",
+        "municipality_name":  "Skjåk",
+        "county_name":  "Innlandet",
+        "lon":  7.91454,
+        "lat":  61.93499,
+        "bbox":  [
+                     7.34253,
+                     61.67914,
+                     8.59136,
+                     62.18969
+                 ]
+    },
+    {
+        "municipality_code":  "3434",
+        "county_code":  "34",
+        "municipality_name":  "Lom",
+        "county_name":  "Innlandet",
+        "lon":  8.43469,
+        "lat":  61.71822,
+        "bbox":  [
+                     7.89565,
+                     61.39773,
+                     8.99271,
+                     62.03096
+                 ]
+    },
+    {
+        "municipality_code":  "3435",
+        "county_code":  "34",
+        "municipality_name":  "Vågå",
+        "county_name":  "Innlandet",
+        "lon":  8.99455,
+        "lat":  61.70198,
+        "bbox":  [
+                     8.48767,
+                     61.38671,
+                     9.4309,
+                     62.01894
+                 ]
+    },
+    {
+        "municipality_code":  "3436",
+        "county_code":  "34",
+        "municipality_name":  "Nord-Fron",
+        "county_name":  "Innlandet",
+        "lon":  9.58985,
+        "lat":  61.60189,
+        "bbox":  [
+                     8.89965,
+                     61.34089,
+                     10.01496,
+                     61.86631
+                 ]
+    },
+    {
+        "municipality_code":  "3437",
+        "county_code":  "34",
+        "municipality_name":  "Sel",
+        "county_name":  "Innlandet",
+        "lon":  9.40895,
+        "lat":  61.76031,
+        "bbox":  [
+                     9.11212,
+                     61.56037,
+                     10.0155,
+                     61.9574
+                 ]
+    },
+    {
+        "municipality_code":  "3438",
+        "county_code":  "34",
+        "municipality_name":  "Sør-Fron",
+        "county_name":  "Innlandet",
+        "lon":  9.93577,
+        "lat":  61.60298,
+        "bbox":  [
+                     9.18724,
+                     61.29248,
+                     10.16482,
+                     61.91342
+                 ]
+    },
+    {
+        "municipality_code":  "3439",
+        "county_code":  "34",
+        "municipality_name":  "Ringebu",
+        "county_name":  "Innlandet",
+        "lon":  10.36493,
+        "lat":  61.55722,
+        "bbox":  [
+                     9.93865,
+                     61.36245,
+                     10.70504,
+                     61.75177
+                 ]
+    },
+    {
+        "municipality_code":  "3440",
+        "county_code":  "34",
+        "municipality_name":  "Øyer",
+        "county_name":  "Innlandet",
+        "lon":  10.50404,
+        "lat":  61.32741,
+        "bbox":  [
+                     10.17943,
+                     61.183,
+                     10.84905,
+                     61.47159
+                 ]
+    },
+    {
+        "municipality_code":  "3441",
+        "county_code":  "34",
+        "municipality_name":  "Gausdal",
+        "county_name":  "Innlandet",
+        "lon":  9.85322,
+        "lat":  61.26407,
+        "bbox":  [
+                     9.30087,
+                     61.10745,
+                     10.36765,
+                     61.42102
+                 ]
+    },
+    {
+        "municipality_code":  "3442",
+        "county_code":  "34",
+        "municipality_name":  "Østre Toten",
+        "county_name":  "Innlandet",
+        "lon":  10.90942,
+        "lat":  60.62283,
+        "bbox":  [
+                     10.67147,
+                     60.47058,
+                     11.15399,
+                     60.77494
+                 ]
+    },
+    {
+        "municipality_code":  "3443",
+        "county_code":  "34",
+        "municipality_name":  "Vestre Toten",
+        "county_name":  "Innlandet",
+        "lon":  10.61307,
+        "lat":  60.6276,
+        "bbox":  [
+                     10.48484,
+                     60.50028,
+                     10.76184,
+                     60.75541
+                 ]
+    },
+    {
+        "municipality_code":  "3446",
+        "county_code":  "34",
+        "municipality_name":  "Gran",
+        "county_name":  "Innlandet",
+        "lon":  10.42986,
+        "lat":  60.43854,
+        "bbox":  [
+                     10.12481,
+                     60.31207,
+                     10.9339,
+                     60.56481
+                 ]
+    },
+    {
+        "municipality_code":  "3447",
+        "county_code":  "34",
+        "municipality_name":  "Søndre Land",
+        "county_name":  "Innlandet",
+        "lon":  10.25187,
+        "lat":  60.70274,
+        "bbox":  [
+                     9.97739,
+                     60.52669,
+                     10.55053,
+                     60.87878
+                 ]
+    },
+    {
+        "municipality_code":  "3448",
+        "county_code":  "34",
+        "municipality_name":  "Nordre Land",
+        "county_name":  "Innlandet",
+        "lon":  9.98147,
+        "lat":  60.94602,
+        "bbox":  [
+                     9.63203,
+                     60.72606,
+                     10.25381,
+                     61.16585
+                 ]
+    },
+    {
+        "municipality_code":  "3449",
+        "county_code":  "34",
+        "municipality_name":  "Sør-Aurdal",
+        "county_name":  "Innlandet",
+        "lon":  9.68862,
+        "lat":  60.66651,
+        "bbox":  [
+                     9.25778,
+                     60.45423,
+                     10.03602,
+                     60.87917
+                 ]
+    },
+    {
+        "municipality_code":  "3450",
+        "county_code":  "34",
+        "municipality_name":  "Etnedal",
+        "county_name":  "Innlandet",
+        "lon":  9.64416,
+        "lat":  60.96355,
+        "bbox":  [
+                     9.37765,
+                     60.79925,
+                     9.81561,
+                     61.12798
+                 ]
+    },
+    {
+        "municipality_code":  "3451",
+        "county_code":  "34",
+        "municipality_name":  "Nord-Aurdal",
+        "county_name":  "Innlandet",
+        "lon":  9.26592,
+        "lat":  61.00402,
+        "bbox":  [
+                     8.88945,
+                     60.76736,
+                     9.69026,
+                     61.2407
+                 ]
+    },
+    {
+        "municipality_code":  "3452",
+        "county_code":  "34",
+        "municipality_name":  "Vestre Slidre",
+        "county_name":  "Innlandet",
+        "lon":  8.92567,
+        "lat":  61.05335,
+        "bbox":  [
+                     8.65405,
+                     60.89663,
+                     9.17874,
+                     61.20964
+                 ]
+    },
+    {
+        "municipality_code":  "3453",
+        "county_code":  "34",
+        "municipality_name":  "Øystre Slidre",
+        "county_name":  "Innlandet",
+        "lon":  9.11453,
+        "lat":  61.24941,
+        "bbox":  [
+                     8.72147,
+                     61.05092,
+                     9.466,
+                     61.45077
+                 ]
+    },
+    {
+        "municipality_code":  "3454",
+        "county_code":  "34",
+        "municipality_name":  "Vang",
+        "county_name":  "Innlandet",
+        "lon":  8.46952,
+        "lat":  61.19221,
+        "bbox":  [
+                     8.00656,
+                     60.93916,
+                     8.88916,
+                     61.44562
+                 ]
+    },
+    {
+        "municipality_code":  "3901",
+        "county_code":  "39",
+        "municipality_name":  "Horten",
+        "county_name":  "Vestfold",
+        "lon":  10.44374,
+        "lat":  59.41017,
+        "bbox":  [
+                     10.3335,
+                     59.34094,
+                     10.59527,
+                     59.47988
+                 ]
+    },
+    {
+        "municipality_code":  "3903",
+        "county_code":  "39",
+        "municipality_name":  "Holmestrand",
+        "county_name":  "Vestfold",
+        "lon":  10.15317,
+        "lat":  59.55913,
+        "bbox":  [
+                     9.91533,
+                     59.44426,
+                     10.45581,
+                     59.67401
+                 ]
+    },
+    {
+        "municipality_code":  "3905",
+        "county_code":  "39",
+        "municipality_name":  "Tønsberg",
+        "county_name":  "Vestfold",
+        "lon":  10.28205,
+        "lat":  59.35498,
+        "bbox":  [
+                     10.04261,
+                     59.22758,
+                     10.59079,
+                     59.48245
+                 ]
+    },
+    {
+        "municipality_code":  "3907",
+        "county_code":  "39",
+        "municipality_name":  "Sandefjord",
+        "county_name":  "Vestfold",
+        "lon":  10.28043,
+        "lat":  59.0799,
+        "bbox":  [
+                     9.99256,
+                     58.77128,
+                     10.38129,
+                     59.38852
+                 ]
+    },
+    {
+        "municipality_code":  "3909",
+        "county_code":  "39",
+        "municipality_name":  "Larvik",
+        "county_name":  "Vestfold",
+        "lon":  10.02193,
+        "lat":  59.09673,
+        "bbox":  [
+                     9.75534,
+                     58.72045,
+                     10.30092,
+                     59.47303
+                 ]
+    },
+    {
+        "municipality_code":  "3911",
+        "county_code":  "39",
+        "municipality_name":  "Færder",
+        "county_name":  "Vestfold",
+        "lon":  10.50112,
+        "lat":  59.01487,
+        "bbox":  [
+                     10.33023,
+                     58.76096,
+                     10.67502,
+                     59.27114
+                 ]
+    },
+    {
+        "municipality_code":  "4001",
+        "county_code":  "40",
+        "municipality_name":  "Porsgrunn",
+        "county_name":  "Telemark",
+        "lon":  9.73636,
+        "lat":  59.10373,
+        "bbox":  [
+                     9.60633,
+                     58.99781,
+                     9.89642,
+                     59.20923
+                 ]
+    },
+    {
+        "municipality_code":  "4003",
+        "county_code":  "40",
+        "municipality_name":  "Skien",
+        "county_name":  "Telemark",
+        "lon":  9.53125,
+        "lat":  59.26624,
+        "bbox":  [
+                     9.22765,
+                     59.04526,
+                     9.7797,
+                     59.48725
+                 ]
+    },
+    {
+        "municipality_code":  "4005",
+        "county_code":  "40",
+        "municipality_name":  "Notodden",
+        "county_name":  "Telemark",
+        "lon":  9.15106,
+        "lat":  59.68705,
+        "bbox":  [
+                     8.77928,
+                     59.4758,
+                     9.51526,
+                     59.89829
+                 ]
+    },
+    {
+        "municipality_code":  "4010",
+        "county_code":  "40",
+        "municipality_name":  "Siljan",
+        "county_name":  "Telemark",
+        "lon":  9.68942,
+        "lat":  59.3099,
+        "bbox":  [
+                     9.58058,
+                     59.19481,
+                     9.87812,
+                     59.4249
+                 ]
+    },
+    {
+        "municipality_code":  "4012",
+        "county_code":  "40",
+        "municipality_name":  "Bamble",
+        "county_name":  "Telemark",
+        "lon":  9.54432,
+        "lat":  59.01809,
+        "bbox":  [
+                     9.30224,
+                     58.91329,
+                     9.78313,
+                     59.12574
+                 ]
+    },
+    {
+        "municipality_code":  "4014",
+        "county_code":  "40",
+        "municipality_name":  "Kragerø",
+        "county_name":  "Telemark",
+        "lon":  9.54575,
+        "lat":  58.80226,
+        "bbox":  [
+                     9.16053,
+                     58.6033,
+                     9.96976,
+                     59.00092
+                 ]
+    },
+    {
+        "municipality_code":  "4016",
+        "county_code":  "40",
+        "municipality_name":  "Drangedal",
+        "county_name":  "Telemark",
+        "lon":  8.96878,
+        "lat":  59.09089,
+        "bbox":  [
+                     8.57969,
+                     58.88496,
+                     9.3987,
+                     59.2967
+                 ]
+    },
+    {
+        "municipality_code":  "4018",
+        "county_code":  "40",
+        "municipality_name":  "Nome",
+        "county_name":  "Telemark",
+        "lon":  9.18619,
+        "lat":  59.26394,
+        "bbox":  [
+                     8.82056,
+                     59.14234,
+                     9.443,
+                     59.38528
+                 ]
+    },
+    {
+        "municipality_code":  "4020",
+        "county_code":  "40",
+        "municipality_name":  "Midt-Telemark",
+        "county_name":  "Telemark",
+        "lon":  9.11184,
+        "lat":  59.42921,
+        "bbox":  [
+                     8.81974,
+                     59.32214,
+                     9.47174,
+                     59.5359
+                 ]
+    },
+    {
+        "municipality_code":  "4022",
+        "county_code":  "40",
+        "municipality_name":  "Seljord",
+        "county_name":  "Telemark",
+        "lon":  8.51225,
+        "lat":  59.57345,
+        "bbox":  [
+                     8.20649,
+                     59.35157,
+                     8.91759,
+                     59.79507
+                 ]
+    },
+    {
+        "municipality_code":  "4024",
+        "county_code":  "40",
+        "municipality_name":  "Hjartdal",
+        "county_name":  "Telemark",
+        "lon":  8.69096,
+        "lat":  59.69303,
+        "bbox":  [
+                     8.37091,
+                     59.52892,
+                     9.02247,
+                     59.85463
+                 ]
+    },
+    {
+        "municipality_code":  "4026",
+        "county_code":  "40",
+        "municipality_name":  "Tinn",
+        "county_name":  "Telemark",
+        "lon":  8.58602,
+        "lat":  59.97521,
+        "bbox":  [
+                     7.85336,
+                     59.76207,
+                     9.19259,
+                     60.18827
+                 ]
+    },
+    {
+        "municipality_code":  "4028",
+        "county_code":  "40",
+        "municipality_name":  "Kviteseid",
+        "county_name":  "Telemark",
+        "lon":  8.48279,
+        "lat":  59.40965,
+        "bbox":  [
+                     8.14121,
+                     59.24279,
+                     8.88279,
+                     59.57413
+                 ]
+    },
+    {
+        "municipality_code":  "4030",
+        "county_code":  "40",
+        "municipality_name":  "Nissedal",
+        "county_name":  "Telemark",
+        "lon":  8.52801,
+        "lat":  59.04974,
+        "bbox":  [
+                     8.28647,
+                     58.8314,
+                     8.83418,
+                     59.26727
+                 ]
+    },
+    {
+        "municipality_code":  "4032",
+        "county_code":  "40",
+        "municipality_name":  "Fyresdal",
+        "county_name":  "Telemark",
+        "lon":  8.03708,
+        "lat":  59.14475,
+        "bbox":  [
+                     7.69616,
+                     58.92863,
+                     8.40609,
+                     59.3604
+                 ]
+    },
+    {
+        "municipality_code":  "4034",
+        "county_code":  "40",
+        "municipality_name":  "Tokke",
+        "county_name":  "Telemark",
+        "lon":  7.94613,
+        "lat":  59.46347,
+        "bbox":  [
+                     7.51455,
+                     59.32664,
+                     8.33996,
+                     59.60107
+                 ]
+    },
+    {
+        "municipality_code":  "4036",
+        "county_code":  "40",
+        "municipality_name":  "Vinje",
+        "county_name":  "Telemark",
+        "lon":  7.71377,
+        "lat":  59.80714,
+        "bbox":  [
+                     7.09629,
+                     59.48725,
+                     8.32479,
+                     60.12685
+                 ]
+    },
+    {
+        "municipality_code":  "4201",
+        "county_code":  "42",
+        "municipality_name":  "Risør",
+        "county_name":  "Agder",
+        "lon":  9.31083,
+        "lat":  58.67683,
+        "bbox":  [
+                     8.9943,
+                     58.52363,
+                     9.66888,
+                     58.82988
+                 ]
+    },
+    {
+        "municipality_code":  "4202",
+        "county_code":  "42",
+        "municipality_name":  "Grimstad",
+        "county_name":  "Agder",
+        "lon":  8.71283,
+        "lat":  58.284,
+        "bbox":  [
+                     8.30868,
+                     58.08137,
+                     9.06727,
+                     58.49177
+                 ]
+    },
+    {
+        "municipality_code":  "4203",
+        "county_code":  "42",
+        "municipality_name":  "Arendal",
+        "county_name":  "Agder",
+        "lon":  8.94695,
+        "lat":  58.42673,
+        "bbox":  [
+                     8.49975,
+                     58.25027,
+                     9.36409,
+                     58.60353
+                 ]
+    },
+    {
+        "municipality_code":  "4204",
+        "county_code":  "42",
+        "municipality_name":  "Kristiansand",
+        "county_name":  "Agder",
+        "lon":  7.93185,
+        "lat":  58.08563,
+        "bbox":  [
+                     7.5273,
+                     57.80204,
+                     8.37167,
+                     58.36895
+                 ]
+    },
+    {
+        "municipality_code":  "4205",
+        "county_code":  "42",
+        "municipality_name":  "Lindesnes",
+        "county_name":  "Agder",
+        "lon":  7.3832,
+        "lat":  58.11613,
+        "bbox":  [
+                     6.93487,
+                     57.75901,
+                     7.87924,
+                     58.4733
+                 ]
+    },
+    {
+        "municipality_code":  "4206",
+        "county_code":  "42",
+        "municipality_name":  "Farsund",
+        "county_name":  "Agder",
+        "lon":  6.55978,
+        "lat":  58.02555,
+        "bbox":  [
+                     6.16453,
+                     57.81889,
+                     7.00142,
+                     58.23057
+                 ]
+    },
+    {
+        "municipality_code":  "4207",
+        "county_code":  "42",
+        "municipality_name":  "Flekkefjord",
+        "county_name":  "Agder",
+        "lon":  6.61296,
+        "lat":  58.29494,
+        "bbox":  [
+                     6.14971,
+                     58.02085,
+                     6.92633,
+                     58.56902
+                 ]
+    },
+    {
+        "municipality_code":  "4211",
+        "county_code":  "42",
+        "municipality_name":  "Gjerstad",
+        "county_name":  "Agder",
+        "lon":  8.97974,
+        "lat":  58.87825,
+        "bbox":  [
+                     8.75447,
+                     58.76319,
+                     9.19124,
+                     58.99323
+                 ]
+    },
+    {
+        "municipality_code":  "4212",
+        "county_code":  "42",
+        "municipality_name":  "Vegårshei",
+        "county_name":  "Agder",
+        "lon":  8.82343,
+        "lat":  58.75537,
+        "bbox":  [
+                     8.62177,
+                     58.63933,
+                     9.01708,
+                     58.871339999999996
+                 ]
+    },
+    {
+        "municipality_code":  "4213",
+        "county_code":  "42",
+        "municipality_name":  "Tvedestrand",
+        "county_name":  "Agder",
+        "lon":  9.19475,
+        "lat":  58.57707,
+        "bbox":  [
+                     8.73307,
+                     58.42566,
+                     9.53165,
+                     58.72849
+                 ]
+    },
+    {
+        "municipality_code":  "4214",
+        "county_code":  "42",
+        "municipality_name":  "Froland",
+        "county_name":  "Agder",
+        "lon":  8.60044,
+        "lat":  58.58728,
+        "bbox":  [
+                     7.9559,
+                     58.45277,
+                     8.7597,
+                     58.72165
+                 ]
+    },
+    {
+        "municipality_code":  "4215",
+        "county_code":  "42",
+        "municipality_name":  "Lillesand",
+        "county_name":  "Agder",
+        "lon":  8.43743,
+        "lat":  58.12217,
+        "bbox":  [
+                     8.14452,
+                     57.91724,
+                     8.75382,
+                     58.3333
+                 ]
+    },
+    {
+        "municipality_code":  "4216",
+        "county_code":  "42",
+        "municipality_name":  "Birkenes",
+        "county_name":  "Agder",
+        "lon":  8.2378,
+        "lat":  58.43946,
+        "bbox":  [
+                     7.93131,
+                     58.24187,
+                     8.44499,
+                     58.63722
+                 ]
+    },
+    {
+        "municipality_code":  "4217",
+        "county_code":  "42",
+        "municipality_name":  "Åmli",
+        "county_name":  "Agder",
+        "lon":  8.32412,
+        "lat":  58.79969,
+        "bbox":  [
+                     7.96138,
+                     58.61434,
+                     8.75971,
+                     58.98502
+                 ]
+    },
+    {
+        "municipality_code":  "4218",
+        "county_code":  "42",
+        "municipality_name":  "Iveland",
+        "county_name":  "Agder",
+        "lon":  7.95568,
+        "lat":  58.43303,
+        "bbox":  [
+                     7.78226,
+                     58.3086,
+                     8.10988,
+                     58.55755
+                 ]
+    },
+    {
+        "municipality_code":  "4219",
+        "county_code":  "42",
+        "municipality_name":  "Evje og Hornnes",
+        "county_name":  "Agder",
+        "lon":  7.86152,
+        "lat":  58.58661,
+        "bbox":  [
+                     7.51324,
+                     58.44183,
+                     8.11213,
+                     58.73127
+                 ]
+    },
+    {
+        "municipality_code":  "4220",
+        "county_code":  "42",
+        "municipality_name":  "Bygland",
+        "county_name":  "Agder",
+        "lon":  7.73385,
+        "lat":  58.87202,
+        "bbox":  [
+                     7.03259,
+                     58.64591,
+                     8.01684,
+                     59.09814
+                 ]
+    },
+    {
+        "municipality_code":  "4221",
+        "county_code":  "42",
+        "municipality_name":  "Valle",
+        "county_name":  "Agder",
+        "lon":  7.42477,
+        "lat":  59.16907,
+        "bbox":  [
+                     6.99638,
+                     58.93936,
+                     7.82101,
+                     59.39882
+                 ]
+    },
+    {
+        "municipality_code":  "4222",
+        "county_code":  "42",
+        "municipality_name":  "Bykle",
+        "county_name":  "Agder",
+        "lon":  7.23108,
+        "lat":  59.42731,
+        "bbox":  [
+                     6.82453,
+                     59.18192,
+                     7.62563,
+                     59.67269
+                 ]
+    },
+    {
+        "municipality_code":  "4223",
+        "county_code":  "42",
+        "municipality_name":  "Vennesla",
+        "county_name":  "Agder",
+        "lon":  7.77079,
+        "lat":  58.33986,
+        "bbox":  [
+                     7.6239,
+                     58.21664,
+                     8.07948,
+                     58.46299
+                 ]
+    },
+    {
+        "municipality_code":  "4224",
+        "county_code":  "42",
+        "municipality_name":  "Åseral",
+        "county_name":  "Agder",
+        "lon":  7.39487,
+        "lat":  58.68452,
+        "bbox":  [
+                     7.14108,
+                     58.48888,
+                     7.667,
+                     58.87937
+                 ]
+    },
+    {
+        "municipality_code":  "4225",
+        "county_code":  "42",
+        "municipality_name":  "Lyngdal",
+        "county_name":  "Agder",
+        "lon":  7.0523,
+        "lat":  58.1517,
+        "bbox":  [
+                     6.77248,
+                     57.78775,
+                     7.53249,
+                     58.51561
+                 ]
+    },
+    {
+        "municipality_code":  "4226",
+        "county_code":  "42",
+        "municipality_name":  "Hægebostad",
+        "county_name":  "Agder",
+        "lon":  7.22892,
+        "lat":  58.47639,
+        "bbox":  [
+                     7.06807,
+                     58.28237,
+                     7.37891,
+                     58.67073
+                 ]
+    },
+    {
+        "municipality_code":  "4227",
+        "county_code":  "42",
+        "municipality_name":  "Kvinesdal",
+        "county_name":  "Agder",
+        "lon":  6.95396,
+        "lat":  58.51813,
+        "bbox":  [
+                     6.71301,
+                     58.21332,
+                     7.18385,
+                     58.82271
+                 ]
+    },
+    {
+        "municipality_code":  "4228",
+        "county_code":  "42",
+        "municipality_name":  "Sirdal",
+        "county_name":  "Agder",
+        "lon":  6.82211,
+        "lat":  58.8454,
+        "bbox":  [
+                     6.43607,
+                     58.50042,
+                     7.20486,
+                     59.18969
+                 ]
+    },
+    {
+        "municipality_code":  "4601",
+        "county_code":  "46",
+        "municipality_name":  "Bergen",
+        "county_name":  "Vestland",
+        "lon":  5.37924,
+        "lat":  60.35609,
+        "bbox":  [
+                     5.14458,
+                     60.17609,
+                     5.68679,
+                     60.53609
+                 ]
+    },
+    {
+        "municipality_code":  "4602",
+        "county_code":  "46",
+        "municipality_name":  "Kinn",
+        "county_name":  "Vestland",
+        "lon":  4.89471,
+        "lat":  61.62048,
+        "bbox":  [
+                     4.1299,
+                     61.45633,
+                     5.73344,
+                     62.18084
+                 ]
+    },
+    {
+        "municipality_code":  "4611",
+        "county_code":  "46",
+        "municipality_name":  "Etne",
+        "county_name":  "Vestland",
+        "lon":  6.29499,
+        "lat":  59.79859,
+        "bbox":  [
+                     5.76422,
+                     59.57897,
+                     6.52548,
+                     60.01819
+                 ]
+    },
+    {
+        "municipality_code":  "4612",
+        "county_code":  "46",
+        "municipality_name":  "Sveio",
+        "county_name":  "Vestland",
+        "lon":  5.41176,
+        "lat":  59.61371,
+        "bbox":  [
+                     5.18741,
+                     59.47542,
+                     5.58072,
+                     59.75463
+                 ]
+    },
+    {
+        "municipality_code":  "4613",
+        "county_code":  "46",
+        "municipality_name":  "Bømlo",
+        "county_name":  "Vestland",
+        "lon":  5.0572,
+        "lat":  59.71752,
+        "bbox":  [
+                     4.60369,
+                     59.49613,
+                     5.47203,
+                     59.93862
+                 ]
+    },
+    {
+        "municipality_code":  "4614",
+        "county_code":  "46",
+        "municipality_name":  "Stord",
+        "county_name":  "Vestland",
+        "lon":  5.48837,
+        "lat":  59.82502,
+        "bbox":  [
+                     5.32062,
+                     59.72352,
+                     5.65082,
+                     59.92356
+                 ]
+    },
+    {
+        "municipality_code":  "4615",
+        "county_code":  "46",
+        "municipality_name":  "Fitjar",
+        "county_name":  "Vestland",
+        "lon":  5.29861,
+        "lat":  59.90275,
+        "bbox":  [
+                     5.07846,
+                     59.8077,
+                     5.49927,
+                     59.99904
+                 ]
+    },
+    {
+        "municipality_code":  "4616",
+        "county_code":  "46",
+        "municipality_name":  "Tysnes",
+        "county_name":  "Vestland",
+        "lon":  5.5294,
+        "lat":  59.99163,
+        "bbox":  [
+                     5.32212,
+                     59.85823,
+                     5.76973,
+                     60.1244
+                 ]
+    },
+    {
+        "municipality_code":  "4617",
+        "county_code":  "46",
+        "municipality_name":  "Kvinnherad",
+        "county_name":  "Vestland",
+        "lon":  6.03251,
+        "lat":  59.95317,
+        "bbox":  [
+                     5.56941,
+                     59.68611,
+                     6.48313,
+                     60.21709
+                 ]
+    },
+    {
+        "municipality_code":  "4618",
+        "county_code":  "46",
+        "municipality_name":  "Ullensvang",
+        "county_name":  "Vestland",
+        "lon":  6.93498,
+        "lat":  60.07576,
+        "bbox":  [
+                     6.02662,
+                     59.69381,
+                     7.48826,
+                     60.45917
+                 ]
+    },
+    {
+        "municipality_code":  "4619",
+        "county_code":  "46",
+        "municipality_name":  "Eidfjord",
+        "county_name":  "Vestland",
+        "lon":  7.40121,
+        "lat":  60.34566,
+        "bbox":  [
+                     6.7835,
+                     60.09893,
+                     7.73211,
+                     60.59203
+                 ]
+    },
+    {
+        "municipality_code":  "4620",
+        "county_code":  "46",
+        "municipality_name":  "Ulvik",
+        "county_name":  "Vestland",
+        "lon":  7.22506,
+        "lat":  60.60499,
+        "bbox":  [
+                     6.75109,
+                     60.46847,
+                     7.73211,
+                     60.74084
+                 ]
+    },
+    {
+        "municipality_code":  "4621",
+        "county_code":  "46",
+        "municipality_name":  "Voss",
+        "county_name":  "Vestland",
+        "lon":  6.40966,
+        "lat":  60.68648,
+        "bbox":  [
+                     5.84274,
+                     60.41451,
+                     6.98587,
+                     60.95955
+                 ]
+    },
+    {
+        "municipality_code":  "4622",
+        "county_code":  "46",
+        "municipality_name":  "Kvam",
+        "county_name":  "Vestland",
+        "lon":  6.08474,
+        "lat":  60.31573,
+        "bbox":  [
+                     5.8548,
+                     60.09979,
+                     6.5256,
+                     60.5336
+                 ]
+    },
+    {
+        "municipality_code":  "4623",
+        "county_code":  "46",
+        "municipality_name":  "Samnanger",
+        "county_name":  "Vestland",
+        "lon":  5.78203,
+        "lat":  60.40597,
+        "bbox":  [
+                     5.5705,
+                     60.28593,
+                     5.99107,
+                     60.52658
+                 ]
+    },
+    {
+        "municipality_code":  "4624",
+        "county_code":  "46",
+        "municipality_name":  "Bjørnafjorden",
+        "county_name":  "Vestland",
+        "lon":  5.59764,
+        "lat":  60.19362,
+        "bbox":  [
+                     5.25322,
+                     60.0336,
+                     5.96129,
+                     60.35362
+                 ]
+    },
+    {
+        "municipality_code":  "4625",
+        "county_code":  "46",
+        "municipality_name":  "Austevoll",
+        "county_name":  "Vestland",
+        "lon":  4.94384,
+        "lat":  60.05455,
+        "bbox":  [
+                     4.54705,
+                     59.91352,
+                     5.33182,
+                     60.1888
+                 ]
+    },
+    {
+        "municipality_code":  "4626",
+        "county_code":  "46",
+        "municipality_name":  "Øygarden",
+        "county_name":  "Vestland",
+        "lon":  4.73104,
+        "lat":  60.42072,
+        "bbox":  [
+                     4.26613,
+                     60.10405,
+                     5.23802,
+                     60.74091
+                 ]
+    },
+    {
+        "municipality_code":  "4627",
+        "county_code":  "46",
+        "municipality_name":  "Askøy",
+        "county_name":  "Vestland",
+        "lon":  5.08362,
+        "lat":  60.50711,
+        "bbox":  [
+                     4.89788,
+                     60.38177,
+                     5.28026,
+                     60.63189
+                 ]
+    },
+    {
+        "municipality_code":  "4628",
+        "county_code":  "46",
+        "municipality_name":  "Vaksdal",
+        "county_name":  "Vestland",
+        "lon":  5.76707,
+        "lat":  60.6735,
+        "bbox":  [
+                     5.58685,
+                     60.43375,
+                     6.314,
+                     60.91397
+                 ]
+    },
+    {
+        "municipality_code":  "4629",
+        "county_code":  "46",
+        "municipality_name":  "Modalen",
+        "county_name":  "Vestland",
+        "lon":  5.96136,
+        "lat":  60.87967,
+        "bbox":  [
+                     5.65035,
+                     60.7241,
+                     6.21036,
+                     61.03524
+                 ]
+    },
+    {
+        "municipality_code":  "4630",
+        "county_code":  "46",
+        "municipality_name":  "Osterøy",
+        "county_name":  "Vestland",
+        "lon":  5.50147,
+        "lat":  60.57088,
+        "bbox":  [
+                     5.31743,
+                     60.42541,
+                     5.72293,
+                     60.71644
+                 ]
+    },
+    {
+        "municipality_code":  "4631",
+        "county_code":  "46",
+        "municipality_name":  "Alver",
+        "county_name":  "Vestland",
+        "lon":  5.23079,
+        "lat":  60.67072,
+        "bbox":  [
+                     4.7767,
+                     60.49538,
+                     5.71382,
+                     60.85278
+                 ]
+    },
+    {
+        "municipality_code":  "4632",
+        "county_code":  "46",
+        "municipality_name":  "Austrheim",
+        "county_name":  "Vestland",
+        "lon":  4.87213,
+        "lat":  60.79392,
+        "bbox":  [
+                     4.68625,
+                     60.72995,
+                     5.04709,
+                     60.85822
+                 ]
+    },
+    {
+        "municipality_code":  "4633",
+        "county_code":  "46",
+        "municipality_name":  "Fedje",
+        "county_name":  "Vestland",
+        "lon":  4.48116,
+        "lat":  60.79051,
+        "bbox":  [
+                     4.18477,
+                     60.68782,
+                     4.79118,
+                     60.88722
+                 ]
+    },
+    {
+        "municipality_code":  "4634",
+        "county_code":  "46",
+        "municipality_name":  "Masfjorden",
+        "county_name":  "Vestland",
+        "lon":  5.40299,
+        "lat":  60.84422,
+        "bbox":  [
+                     5.10988,
+                     60.70309,
+                     5.86518,
+                     60.9855
+                 ]
+    },
+    {
+        "municipality_code":  "4635",
+        "county_code":  "46",
+        "municipality_name":  "Gulen",
+        "county_name":  "Vestland",
+        "lon":  5.16278,
+        "lat":  60.96577,
+        "bbox":  [
+                     4.61065,
+                     60.80552,
+                     5.62487,
+                     61.11785
+                 ]
+    },
+    {
+        "municipality_code":  "4636",
+        "county_code":  "46",
+        "municipality_name":  "Solund",
+        "county_name":  "Vestland",
+        "lon":  4.51677,
+        "lat":  61.03932,
+        "bbox":  [
+                     4.08752,
+                     60.83335,
+                     5.15567,
+                     61.25241
+                 ]
+    },
+    {
+        "municipality_code":  "4637",
+        "county_code":  "46",
+        "municipality_name":  "Hyllestad",
+        "county_name":  "Vestland",
+        "lon":  5.24962,
+        "lat":  61.16839,
+        "bbox":  [
+                     4.9172,
+                     61.05243,
+                     5.45054,
+                     61.28219
+                 ]
+    },
+    {
+        "municipality_code":  "4638",
+        "county_code":  "46",
+        "municipality_name":  "Høyanger",
+        "county_name":  "Vestland",
+        "lon":  5.81414,
+        "lat":  61.12548,
+        "bbox":  [
+                     5.37386,
+                     60.9515,
+                     6.41112,
+                     61.29782
+                 ]
+    },
+    {
+        "municipality_code":  "4639",
+        "county_code":  "46",
+        "municipality_name":  "Vik",
+        "county_name":  "Vestland",
+        "lon":  6.5941,
+        "lat":  61.03497,
+        "bbox":  [
+                     6.13582,
+                     60.88073,
+                     7.03008,
+                     61.19071
+                 ]
+    },
+    {
+        "municipality_code":  "4640",
+        "county_code":  "46",
+        "municipality_name":  "Sogndal",
+        "county_name":  "Vestland",
+        "lon":  6.72036,
+        "lat":  61.32979,
+        "bbox":  [
+                     6.25198,
+                     61.08973,
+                     7.4298,
+                     61.57025
+                 ]
+    },
+    {
+        "municipality_code":  "4641",
+        "county_code":  "46",
+        "municipality_name":  "Aurland",
+        "county_name":  "Vestland",
+        "lon":  7.20953,
+        "lat":  60.87089,
+        "bbox":  [
+                     6.72103,
+                     60.67555,
+                     7.75038,
+                     61.06635
+                 ]
+    },
+    {
+        "municipality_code":  "4642",
+        "county_code":  "46",
+        "municipality_name":  "Lærdal",
+        "county_name":  "Vestland",
+        "lon":  7.80329,
+        "lat":  61.03861,
+        "bbox":  [
+                     6.99881,
+                     60.84171,
+                     8.28266,
+                     61.2355
+                 ]
+    },
+    {
+        "municipality_code":  "4643",
+        "county_code":  "46",
+        "municipality_name":  "Årdal",
+        "county_name":  "Vestland",
+        "lon":  7.80493,
+        "lat":  61.28604,
+        "bbox":  [
+                     7.37808,
+                     61.11088,
+                     8.25145,
+                     61.4612
+                 ]
+    },
+    {
+        "municipality_code":  "4644",
+        "county_code":  "46",
+        "municipality_name":  "Luster",
+        "county_name":  "Vestland",
+        "lon":  7.56921,
+        "lat":  61.51895,
+        "bbox":  [
+                     6.80576,
+                     61.18175,
+                     8.32205,
+                     61.85751
+                 ]
+    },
+    {
+        "municipality_code":  "4645",
+        "county_code":  "46",
+        "municipality_name":  "Askvoll",
+        "county_name":  "Vestland",
+        "lon":  4.68478,
+        "lat":  61.35459,
+        "bbox":  [
+                     4.10297,
+                     61.21951,
+                     5.55339,
+                     61.49097
+                 ]
+    },
+    {
+        "municipality_code":  "4646",
+        "county_code":  "46",
+        "municipality_name":  "Fjaler",
+        "county_name":  "Vestland",
+        "lon":  5.47926,
+        "lat":  61.28057,
+        "bbox":  [
+                     4.82128,
+                     61.18007,
+                     5.73179,
+                     61.38092
+                 ]
+    },
+    {
+        "municipality_code":  "4647",
+        "county_code":  "46",
+        "municipality_name":  "Sunnfjord",
+        "county_name":  "Vestland",
+        "lon":  6.04917,
+        "lat":  61.46858,
+        "bbox":  [
+                     5.25815,
+                     61.23469,
+                     6.85431,
+                     61.70169
+                 ]
+    },
+    {
+        "municipality_code":  "4648",
+        "county_code":  "46",
+        "municipality_name":  "Bremanger",
+        "county_name":  "Vestland",
+        "lon":  5.05713,
+        "lat":  61.8481,
+        "bbox":  [
+                     4.2265,
+                     61.66216,
+                     5.87719,
+                     62.03194
+                 ]
+    },
+    {
+        "municipality_code":  "4649",
+        "county_code":  "46",
+        "municipality_name":  "Stad",
+        "county_name":  "Vestland",
+        "lon":  5.15072,
+        "lat":  62.10979,
+        "bbox":  [
+                     4.57893,
+                     61.83827,
+                     6.47732,
+                     62.3824
+                 ]
+    },
+    {
+        "municipality_code":  "4650",
+        "county_code":  "46",
+        "municipality_name":  "Gloppen",
+        "county_name":  "Vestland",
+        "lon":  6.17793,
+        "lat":  61.72965,
+        "bbox":  [
+                     5.63659,
+                     61.58596,
+                     6.75814,
+                     61.86928
+                 ]
+    },
+    {
+        "municipality_code":  "4651",
+        "county_code":  "46",
+        "municipality_name":  "Stryn",
+        "county_name":  "Vestland",
+        "lon":  6.80297,
+        "lat":  61.82181,
+        "bbox":  [
+                     6.25665,
+                     61.60948,
+                     7.41423,
+                     62.03409
+                 ]
+    },
+    {
+        "municipality_code":  "5001",
+        "county_code":  "50",
+        "municipality_name":  "Trondheim",
+        "county_name":  "Trøndelag",
+        "lon":  10.47512,
+        "lat":  63.33807,
+        "bbox":  [
+                     10.00353,
+                     63.1599,
+                     10.7252,
+                     63.51659
+                 ]
+    },
+    {
+        "municipality_code":  "5006",
+        "county_code":  "50",
+        "municipality_name":  "Steinkjer",
+        "county_name":  "Trøndelag",
+        "lon":  11.48191,
+        "lat":  64.05074,
+        "bbox":  [
+                     10.45127,
+                     63.77124,
+                     12.37795,
+                     64.33029
+                 ]
+    },
+    {
+        "municipality_code":  "5007",
+        "county_code":  "50",
+        "municipality_name":  "Namsos",
+        "county_name":  "Trøndelag",
+        "lon":  11.3345,
+        "lat":  64.46664,
+        "bbox":  [
+                     10.73821,
+                     64.09788,
+                     12.21685,
+                     64.83504
+                 ]
+    },
+    {
+        "municipality_code":  "5014",
+        "county_code":  "50",
+        "municipality_name":  "Frøya",
+        "county_name":  "Trøndelag",
+        "lon":  8.88949,
+        "lat":  64.0705,
+        "bbox":  [
+                     7.64811,
+                     63.59815,
+                     9.73186,
+                     64.54729
+                 ]
+    },
+    {
+        "municipality_code":  "5020",
+        "county_code":  "50",
+        "municipality_name":  "Osen",
+        "county_name":  "Trøndelag",
+        "lon":  9.9972,
+        "lat":  64.45071,
+        "bbox":  [
+                     9.32525,
+                     64.16366,
+                     10.92733,
+                     64.72845
+                 ]
+    },
+    {
+        "municipality_code":  "5021",
+        "county_code":  "50",
+        "municipality_name":  "Oppdal",
+        "county_name":  "Trøndelag",
+        "lon":  9.62338,
+        "lat":  62.53531,
+        "bbox":  [
+                     8.91996,
+                     62.25573,
+                     10.09758,
+                     62.81605
+                 ]
+    },
+    {
+        "municipality_code":  "5022",
+        "county_code":  "50",
+        "municipality_name":  "Rennebu",
+        "county_name":  "Trøndelag",
+        "lon":  9.88757,
+        "lat":  62.76611,
+        "bbox":  [
+                     9.4215699999999991,
+                     62.55823,
+                     10.32508,
+                     62.97402
+                 ]
+    },
+    {
+        "municipality_code":  "5025",
+        "county_code":  "50",
+        "municipality_name":  "Røros",
+        "county_name":  "Trøndelag",
+        "lon":  11.66044,
+        "lat":  62.56952,
+        "bbox":  [
+                     11.12343,
+                     62.30989,
+                     12.25467,
+                     62.82916
+                 ]
+    },
+    {
+        "municipality_code":  "5026",
+        "county_code":  "50",
+        "municipality_name":  "Holtålen",
+        "county_name":  "Trøndelag",
+        "lon":  11.35923,
+        "lat":  62.86466,
+        "bbox":  [
+                     10.79236,
+                     62.66149,
+                     11.80786,
+                     63.06387
+                 ]
+    },
+    {
+        "municipality_code":  "5027",
+        "county_code":  "50",
+        "municipality_name":  "Midtre Gauldal",
+        "county_name":  "Trøndelag",
+        "lon":  10.52346,
+        "lat":  62.89448,
+        "bbox":  [
+                     9.98792,
+                     62.64547,
+                     10.99857,
+                     63.14359
+                 ]
+    },
+    {
+        "municipality_code":  "5028",
+        "county_code":  "50",
+        "municipality_name":  "Melhus",
+        "county_name":  "Trøndelag",
+        "lon":  10.30813,
+        "lat":  63.18143,
+        "bbox":  [
+                     9.87838,
+                     63.01969,
+                     10.71616,
+                     63.34463
+                 ]
+    },
+    {
+        "municipality_code":  "5029",
+        "county_code":  "50",
+        "municipality_name":  "Skaun",
+        "county_name":  "Trøndelag",
+        "lon":  10.0523,
+        "lat":  63.27014,
+        "bbox":  [
+                     9.88999,
+                     63.16734,
+                     10.23098,
+                     63.37298
+                 ]
+    },
+    {
+        "municipality_code":  "5031",
+        "county_code":  "50",
+        "municipality_name":  "Malvik",
+        "county_name":  "Trøndelag",
+        "lon":  10.73787,
+        "lat":  63.39519,
+        "bbox":  [
+                     10.53932,
+                     63.29505,
+                     10.96459,
+                     63.49529
+                 ]
+    },
+    {
+        "municipality_code":  "5032",
+        "county_code":  "50",
+        "municipality_name":  "Selbu",
+        "county_name":  "Trøndelag",
+        "lon":  11.15963,
+        "lat":  63.17543,
+        "bbox":  [
+                     10.6204,
+                     63.00385,
+                     11.63177,
+                     63.34789
+                 ]
+    },
+    {
+        "municipality_code":  "5033",
+        "county_code":  "50",
+        "municipality_name":  "Tydal",
+        "county_name":  "Trøndelag",
+        "lon":  11.82114,
+        "lat":  62.97015,
+        "bbox":  [
+                     11.2719,
+                     62.74792,
+                     12.21823,
+                     63.19423
+                 ]
+    },
+    {
+        "municipality_code":  "5034",
+        "county_code":  "50",
+        "municipality_name":  "Meråker",
+        "county_name":  "Trøndelag",
+        "lon":  11.81249,
+        "lat":  63.39692,
+        "bbox":  [
+                     11.45456,
+                     63.18069,
+                     12.21288,
+                     63.63315
+                 ]
+    },
+    {
+        "municipality_code":  "5035",
+        "county_code":  "50",
+        "municipality_name":  "Stjørdal",
+        "county_name":  "Trøndelag",
+        "lon":  11.13448,
+        "lat":  63.46271,
+        "bbox":  [
+                     10.65393,
+                     63.32623,
+                     11.72817,
+                     63.60029
+                 ]
+    },
+    {
+        "municipality_code":  "5036",
+        "county_code":  "50",
+        "municipality_name":  "Frosta",
+        "county_name":  "Trøndelag",
+        "lon":  10.71161,
+        "lat":  63.59303,
+        "bbox":  [
+                     10.48858,
+                     63.49054,
+                     10.94682,
+                     63.69328
+                 ]
+    },
+    {
+        "municipality_code":  "5037",
+        "county_code":  "50",
+        "municipality_name":  "Levanger",
+        "county_name":  "Trøndelag",
+        "lon":  11.22388,
+        "lat":  63.69645,
+        "bbox":  [
+                     10.79529,
+                     63.55122,
+                     11.72851,
+                     63.83599
+                 ]
+    },
+    {
+        "municipality_code":  "5038",
+        "county_code":  "50",
+        "municipality_name":  "Verdal",
+        "county_name":  "Trøndelag",
+        "lon":  11.92033,
+        "lat":  63.78623,
+        "bbox":  [
+                     11.33192,
+                     63.59342,
+                     12.68357,
+                     63.97422
+                 ]
+    },
+    {
+        "municipality_code":  "5041",
+        "county_code":  "50",
+        "municipality_name":  "Snåsa",
+        "county_name":  "Trøndelag",
+        "lon":  12.62226,
+        "lat":  64.19365,
+        "bbox":  [
+                     11.95539,
+                     63.95692,
+                     13.24803,
+                     64.43384
+                 ]
+    },
+    {
+        "municipality_code":  "5042",
+        "county_code":  "50",
+        "municipality_name":  "Lierne",
+        "county_name":  "Trøndelag",
+        "lon":  13.60192,
+        "lat":  64.41601,
+        "bbox":  [
+                     13.0695,
+                     64.00797,
+                     14.15711,
+                     64.82212
+                 ]
+    },
+    {
+        "municipality_code":  "5043",
+        "county_code":  "50",
+        "municipality_name":  "Røyrvik",
+        "county_name":  "Trøndelag",
+        "lon":  13.54208,
+        "lat":  64.81528,
+        "bbox":  [
+                     13.03946,
+                     64.50304,
+                     14.325989999999999,
+                     65.13925
+                 ]
+    },
+    {
+        "municipality_code":  "5044",
+        "county_code":  "50",
+        "municipality_name":  "Namsskogan",
+        "county_name":  "Trøndelag",
+        "lon":  12.8818,
+        "lat":  64.81279,
+        "bbox":  [
+                     12.51622,
+                     64.50304,
+                     13.62892,
+                     65.11673
+                 ]
+    },
+    {
+        "municipality_code":  "5045",
+        "county_code":  "50",
+        "municipality_name":  "Grong",
+        "county_name":  "Trøndelag",
+        "lon":  12.63725,
+        "lat":  64.5308,
+        "bbox":  [
+                     12.07088,
+                     64.33236,
+                     13.09097,
+                     64.72637
+                 ]
+    },
+    {
+        "municipality_code":  "5046",
+        "county_code":  "50",
+        "municipality_name":  "Høylandet",
+        "county_name":  "Trøndelag",
+        "lon":  12.36145,
+        "lat":  64.75622,
+        "bbox":  [
+                     12.02366,
+                     64.52579,
+                     12.73321,
+                     64.98705
+                 ]
+    },
+    {
+        "municipality_code":  "5047",
+        "county_code":  "50",
+        "municipality_name":  "Overhalla",
+        "county_name":  "Trøndelag",
+        "lon":  11.85399,
+        "lat":  64.48062,
+        "bbox":  [
+                     11.60329,
+                     64.28352,
+                     12.22798,
+                     64.67773
+                 ]
+    },
+    {
+        "municipality_code":  "5049",
+        "county_code":  "50",
+        "municipality_name":  "Flatanger",
+        "county_name":  "Trøndelag",
+        "lon":  10.62306,
+        "lat":  64.52909,
+        "bbox":  [
+                     9.69981,
+                     64.28026,
+                     11.10838,
+                     64.77815
+                 ]
+    },
+    {
+        "municipality_code":  "5052",
+        "county_code":  "50",
+        "municipality_name":  "Leka",
+        "county_name":  "Trøndelag",
+        "lon":  11.10368,
+        "lat":  65.2176,
+        "bbox":  [
+                     10.36595,
+                     64.99619,
+                     11.96021,
+                     65.47018
+                 ]
+    },
+    {
+        "municipality_code":  "5053",
+        "county_code":  "50",
+        "municipality_name":  "Inderøy",
+        "county_name":  "Trøndelag",
+        "lon":  11.09264,
+        "lat":  63.84992,
+        "bbox":  [
+                     10.63652,
+                     63.69963,
+                     11.52449,
+                     64.00034
+                 ]
+    },
+    {
+        "municipality_code":  "5054",
+        "county_code":  "50",
+        "municipality_name":  "Indre Fosen",
+        "county_name":  "Trøndelag",
+        "lon":  10.24814,
+        "lat":  63.65819,
+        "bbox":  [
+                     9.74287,
+                     63.45457,
+                     10.87548,
+                     63.86568
+                 ]
+    },
+    {
+        "municipality_code":  "5055",
+        "county_code":  "50",
+        "municipality_name":  "Heim",
+        "county_name":  "Trøndelag",
+        "lon":  9.09044,
+        "lat":  63.24705,
+        "bbox":  [
+                     8.10266,
+                     63.01208,
+                     9.45409,
+                     63.48151
+                 ]
+    },
+    {
+        "municipality_code":  "5056",
+        "county_code":  "50",
+        "municipality_name":  "Hitra",
+        "county_name":  "Trøndelag",
+        "lon":  8.69391,
+        "lat":  63.56532,
+        "bbox":  [
+                     8.10865,
+                     63.35941,
+                     9.44573,
+                     63.77365
+                 ]
+    },
+    {
+        "municipality_code":  "5057",
+        "county_code":  "50",
+        "municipality_name":  "Ørland",
+        "county_name":  "Trøndelag",
+        "lon":  9.70037,
+        "lat":  63.84141,
+        "bbox":  [
+                     9.14906,
+                     63.60835,
+                     10.21563,
+                     64.07468
+                 ]
+    },
+    {
+        "municipality_code":  "5058",
+        "county_code":  "50",
+        "municipality_name":  "Åfjord",
+        "county_name":  "Trøndelag",
+        "lon":  10.21991,
+        "lat":  64.08356,
+        "bbox":  [
+                     9.61419,
+                     63.77124,
+                     10.88039,
+                     64.39592
+                 ]
+    },
+    {
+        "municipality_code":  "5059",
+        "county_code":  "50",
+        "municipality_name":  "Orkland",
+        "county_name":  "Trøndelag",
+        "lon":  9.66357,
+        "lat":  63.28127,
+        "bbox":  [
+                     9.14687,
+                     62.89043,
+                     10.05412,
+                     63.67184
+                 ]
+    },
+    {
+        "municipality_code":  "5060",
+        "county_code":  "50",
+        "municipality_name":  "Nærøysund",
+        "county_name":  "Trøndelag",
+        "lon":  11.18228,
+        "lat":  64.92874,
+        "bbox":  [
+                     9.80379,
+                     64.58879,
+                     12.58089,
+                     65.26521
+                 ]
+    },
+    {
+        "municipality_code":  "5061",
+        "county_code":  "50",
+        "municipality_name":  "Rindal",
+        "county_name":  "Trøndelag",
+        "lon":  9.34277,
+        "lat":  63.00288,
+        "bbox":  [
+                     8.95902,
+                     62.79411,
+                     9.58355,
+                     63.2119
+                 ]
+    },
+    {
+        "municipality_code":  "5501",
+        "county_code":  "55",
+        "municipality_name":  "Tromsø",
+        "county_name":  "Troms",
+        "lon":  18.68766,
+        "lat":  69.72386,
+        "bbox":  [
+                     17.16005,
+                     69.28209,
+                     20.04364,
+                     70.16842
+                 ]
+    },
+    {
+        "municipality_code":  "5503",
+        "county_code":  "55",
+        "municipality_name":  "Harstad",
+        "county_name":  "Troms",
+        "lon":  16.52091,
+        "lat":  68.92974,
+        "bbox":  [
+                     16.05231,
+                     68.55037,
+                     16.94581,
+                     69.3126
+                 ]
+    },
+    {
+        "municipality_code":  "5510",
+        "county_code":  "55",
+        "municipality_name":  "Kvæfjord",
+        "county_name":  "Troms",
+        "lon":  16.09223,
+        "lat":  68.68756,
+        "bbox":  [
+                     15.59254,
+                     68.44334,
+                     16.42247,
+                     68.93178
+                 ]
+    },
+    {
+        "municipality_code":  "5512",
+        "county_code":  "55",
+        "municipality_name":  "Tjeldsund",
+        "county_name":  "Troms",
+        "lon":  16.22665,
+        "lat":  68.5547,
+        "bbox":  [
+                     15.99667,
+                     68.37208,
+                     17.54759,
+                     68.73695
+                 ]
+    },
+    {
+        "municipality_code":  "5514",
+        "county_code":  "55",
+        "municipality_name":  "Ibestad",
+        "county_name":  "Troms",
+        "lon":  17.13159,
+        "lat":  68.83722,
+        "bbox":  [
+                     16.71642,
+                     68.70123,
+                     17.53201,
+                     68.97333
+                 ]
+    },
+    {
+        "municipality_code":  "5516",
+        "county_code":  "55",
+        "municipality_name":  "Gratangen",
+        "county_name":  "Troms",
+        "lon":  17.39596,
+        "lat":  68.71441,
+        "bbox":  [
+                     17.16189,
+                     68.59701,
+                     17.8429,
+                     68.83179
+                 ]
+    },
+    {
+        "municipality_code":  "5518",
+        "county_code":  "55",
+        "municipality_name":  "Lavangen",
+        "county_name":  "Troms",
+        "lon":  17.81627,
+        "lat":  68.71698,
+        "bbox":  [
+                     17.42642,
+                     68.59983,
+                     18.0514,
+                     68.83389
+                 ]
+    },
+    {
+        "municipality_code":  "5520",
+        "county_code":  "55",
+        "municipality_name":  "Bardu",
+        "county_name":  "Troms",
+        "lon":  18.67928,
+        "lat":  68.70341,
+        "bbox":  [
+                     17.9848,
+                     68.35601,
+                     20.22654,
+                     69.05091
+                 ]
+    },
+    {
+        "municipality_code":  "5522",
+        "county_code":  "55",
+        "municipality_name":  "Salangen",
+        "county_name":  "Troms",
+        "lon":  17.83513,
+        "lat":  68.87488,
+        "bbox":  [
+                     17.42913,
+                     68.73909,
+                     18.22694,
+                     69.01062
+                 ]
+    },
+    {
+        "municipality_code":  "5524",
+        "county_code":  "55",
+        "municipality_name":  "Målselv",
+        "county_name":  "Troms",
+        "lon":  19.39718,
+        "lat":  68.9691,
+        "bbox":  [
+                     18.17828,
+                     68.55794,
+                     20.33587,
+                     69.37719
+                 ]
+    },
+    {
+        "municipality_code":  "5526",
+        "county_code":  "55",
+        "municipality_name":  "Sørreisa",
+        "county_name":  "Troms",
+        "lon":  18.17684,
+        "lat":  69.10057,
+        "bbox":  [
+                     17.87682,
+                     68.9804,
+                     18.46083,
+                     69.22075
+                 ]
+    },
+    {
+        "municipality_code":  "5528",
+        "county_code":  "55",
+        "municipality_name":  "Dyrøy",
+        "county_name":  "Troms",
+        "lon":  17.63263,
+        "lat":  69.0267,
+        "bbox":  [
+                     17.24328,
+                     68.90241,
+                     18.05225,
+                     69.1492
+                 ]
+    },
+    {
+        "municipality_code":  "5530",
+        "county_code":  "55",
+        "municipality_name":  "Senja",
+        "county_name":  "Troms",
+        "lon":  17.51411,
+        "lat":  69.38857,
+        "bbox":  [
+                     16.25435,
+                     68.95195,
+                     18.5488,
+                     69.81154
+                 ]
+    },
+    {
+        "municipality_code":  "5532",
+        "county_code":  "55",
+        "municipality_name":  "Balsfjord",
+        "county_name":  "Troms",
+        "lon":  19.16993,
+        "lat":  69.27997,
+        "bbox":  [
+                     18.36001,
+                     69.033,
+                     19.99143,
+                     69.52988
+                 ]
+    },
+    {
+        "municipality_code":  "5534",
+        "county_code":  "55",
+        "municipality_name":  "Karlsøy",
+        "county_name":  "Troms",
+        "lon":  19.18276,
+        "lat":  70.24083,
+        "bbox":  [
+                     17.80525,
+                     69.79836,
+                     20.62261,
+                     70.70362
+                 ]
+    },
+    {
+        "municipality_code":  "5536",
+        "county_code":  "55",
+        "municipality_name":  "Lyngen",
+        "county_name":  "Troms",
+        "lon":  20.0818,
+        "lat":  69.73317,
+        "bbox":  [
+                     19.71577,
+                     69.40148,
+                     20.50057,
+                     70.05773
+                 ]
+    },
+    {
+        "municipality_code":  "5538",
+        "county_code":  "55",
+        "municipality_name":  "Storfjord",
+        "county_name":  "Troms",
+        "lon":  20.30846,
+        "lat":  69.25177,
+        "bbox":  [
+                     19.64222,
+                     69.03629,
+                     21.10868,
+                     69.46428
+                 ]
+    },
+    {
+        "municipality_code":  "5540",
+        "county_code":  "55",
+        "municipality_name":  "Kåfjord",
+        "county_name":  "Troms",
+        "lon":  20.72712,
+        "lat":  69.49732,
+        "bbox":  [
+                     20.27443,
+                     69.23431,
+                     21.27932,
+                     69.7587
+                 ]
+    },
+    {
+        "municipality_code":  "5542",
+        "county_code":  "55",
+        "municipality_name":  "Skjervøy",
+        "county_name":  "Troms",
+        "lon":  20.70217,
+        "lat":  70.19779,
+        "bbox":  [
+                     20.22264,
+                     69.81621,
+                     21.43869,
+                     70.5797
+                 ]
+    },
+    {
+        "municipality_code":  "5544",
+        "county_code":  "55",
+        "municipality_name":  "Nordreisa",
+        "county_name":  "Troms",
+        "lon":  21.59886,
+        "lat":  69.52746,
+        "bbox":  [
+                     20.38441,
+                     69.07289,
+                     22.53301,
+                     69.9821
+                 ]
+    },
+    {
+        "municipality_code":  "5546",
+        "county_code":  "55",
+        "municipality_name":  "Kvænangen",
+        "county_name":  "Troms",
+        "lon":  22.0571,
+        "lat":  69.8595,
+        "bbox":  [
+                     21.00662,
+                     69.4823,
+                     22.89447,
+                     70.2375
+                 ]
+    },
+    {
+        "municipality_code":  "5601",
+        "county_code":  "56",
+        "municipality_name":  "Alta",
+        "county_name":  "Finnmark",
+        "lon":  23.08254,
+        "lat":  70.04963,
+        "bbox":  [
+                     22.18582,
+                     69.64545,
+                     24.21823,
+                     70.44802
+                 ]
+    },
+    {
+        "municipality_code":  "5603",
+        "county_code":  "56",
+        "municipality_name":  "Hammerfest",
+        "county_name":  "Finnmark",
+        "lon":  23.83608,
+        "lat":  70.64134,
+        "bbox":  [
+                     22.29834,
+                     70.09652,
+                     24.97721,
+                     71.18623
+                 ]
+    },
+    {
+        "municipality_code":  "5605",
+        "county_code":  "56",
+        "municipality_name":  "Sør-Varanger",
+        "county_name":  "Finnmark",
+        "lon":  29.72614,
+        "lat":  69.53757,
+        "bbox":  [
+                     28.33048,
+                     69.01083,
+                     31.19832,
+                     70.06426
+                 ]
+    },
+    {
+        "municipality_code":  "5607",
+        "county_code":  "56",
+        "municipality_name":  "Vadsø",
+        "county_name":  "Finnmark",
+        "lon":  29.78281,
+        "lat":  70.22672,
+        "bbox":  [
+                     28.98103,
+                     69.97504,
+                     30.93274,
+                     70.47779
+                 ]
+    },
+    {
+        "municipality_code":  "5610",
+        "county_code":  "56",
+        "municipality_name":  "Karasjok",
+        "county_name":  "Finnmark",
+        "lon":  25.02389,
+        "lat":  69.3921,
+        "bbox":  [
+                     24.19381,
+                     68.8808,
+                     26.26039,
+                     69.90316
+                 ]
+    },
+    {
+        "municipality_code":  "5612",
+        "county_code":  "56",
+        "municipality_name":  "Kautokeino",
+        "county_name":  "Finnmark",
+        "lon":  23.57763,
+        "lat":  69.1336,
+        "bbox":  [
+                     21.98362,
+                     68.55459,
+                     25.4016,
+                     69.71296
+                 ]
+    },
+    {
+        "municipality_code":  "5614",
+        "county_code":  "56",
+        "municipality_name":  "Loppa",
+        "county_name":  "Finnmark",
+        "lon":  21.4359,
+        "lat":  70.39963,
+        "bbox":  [
+                     20.47973,
+                     70.0387,
+                     22.60369,
+                     70.79002
+                 ]
+    },
+    {
+        "municipality_code":  "5616",
+        "county_code":  "56",
+        "municipality_name":  "Hasvik",
+        "county_name":  "Finnmark",
+        "lon":  22.11575,
+        "lat":  70.63289,
+        "bbox":  [
+                     21.17593,
+                     70.2802,
+                     22.89947,
+                     70.98768
+                 ]
+    },
+    {
+        "municipality_code":  "5618",
+        "county_code":  "56",
+        "municipality_name":  "Måsøy",
+        "county_name":  "Finnmark",
+        "lon":  24.54425,
+        "lat":  70.97676,
+        "bbox":  [
+                     23.24746,
+                     70.61827,
+                     25.50027,
+                     71.33568
+                 ]
+    },
+    {
+        "municipality_code":  "5620",
+        "county_code":  "56",
+        "municipality_name":  "Nordkapp",
+        "county_name":  "Finnmark",
+        "lon":  25.93965,
+        "lat":  71.03978,
+        "bbox":  [
+                     24.91979,
+                     70.6563,
+                     27.0607,
+                     71.38488
+                 ]
+    },
+    {
+        "municipality_code":  "5622",
+        "county_code":  "56",
+        "municipality_name":  "Porsanger",
+        "county_name":  "Finnmark",
+        "lon":  25.19938,
+        "lat":  70.23313,
+        "bbox":  [
+                     23.91137,
+                     69.73087,
+                     26.14846,
+                     70.75506
+                 ]
+    },
+    {
+        "municipality_code":  "5624",
+        "county_code":  "56",
+        "municipality_name":  "Lebesby",
+        "county_name":  "Finnmark",
+        "lon":  26.81283,
+        "lat":  70.66573,
+        "bbox":  [
+                     25.91305,
+                     69.97312,
+                     27.77431,
+                     71.35179
+                 ]
+    },
+    {
+        "municipality_code":  "5626",
+        "county_code":  "56",
+        "municipality_name":  "Gamvik",
+        "county_name":  "Finnmark",
+        "lon":  28.16337,
+        "lat":  70.87908,
+        "bbox":  [
+                     27.35151,
+                     70.39948,
+                     29.16079,
+                     71.32965
+                 ]
+    },
+    {
+        "municipality_code":  "5628",
+        "county_code":  "56",
+        "municipality_name":  "Tana",
+        "county_name":  "Finnmark",
+        "lon":  27.89134,
+        "lat":  70.28233,
+        "bbox":  [
+                     25.76737,
+                     69.81711,
+                     29.22599,
+                     70.7616
+                 ]
+    },
+    {
+        "municipality_code":  "5630",
+        "county_code":  "56",
+        "municipality_name":  "Berlevåg",
+        "county_name":  "Finnmark",
+        "lon":  29.13701,
+        "lat":  70.7917,
+        "bbox":  [
+                     28.38528,
+                     70.47681,
+                     30.0521,
+                     71.1207
+                 ]
+    },
+    {
+        "municipality_code":  "5632",
+        "county_code":  "56",
+        "municipality_name":  "Båtsfjord",
+        "county_name":  "Finnmark",
+        "lon":  30.32723,
+        "lat":  70.61428,
+        "bbox":  [
+                     29.2177,
+                     70.29643,
+                     31.22258,
+                     70.94014
+                 ]
+    },
+    {
+        "municipality_code":  "5634",
+        "county_code":  "56",
+        "municipality_name":  "Vardø",
+        "county_name":  "Finnmark",
+        "lon":  30.96182,
+        "lat":  70.33082,
+        "bbox":  [
+                     30.07436,
+                     70.01275,
+                     31.76159,
+                     70.64439
+                 ]
+    },
+    {
+        "municipality_code":  "5636",
+        "county_code":  "56",
+        "municipality_name":  "Nesseby",
+        "county_name":  "Finnmark",
+        "lon":  28.76283,
+        "lat":  70.12726,
+        "bbox":  [
+                     28.30442,
+                     69.84919,
+                     29.34441,
+                     70.40655
+                 ]
+    }
+]
