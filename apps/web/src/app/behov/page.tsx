@@ -8,6 +8,9 @@ export default function BehovPage() {
   const municipalityMap = Object.fromEntries(
     municipalities.map((row) => [row.municipality_code, row.municipality_name])
   );
+  const countyMap = Object.fromEntries(
+    municipalities.map((row) => [row.county_code, row.county_name])
+  );
 
   return (
     <section className="grid">
@@ -18,7 +21,7 @@ export default function BehovPage() {
         </p>
       </div>
 
-      <NeedsView rows={rows} capacityRows={capacityRows} municipalityMap={municipalityMap} />
+      <NeedsView rows={rows} capacityRows={capacityRows} municipalityMap={municipalityMap} countyMap={countyMap} />
     </section>
   );
 }

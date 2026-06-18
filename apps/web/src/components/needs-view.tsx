@@ -7,13 +7,14 @@ type Props = {
   rows: NeedRow[];
   capacityRows: CapacityRow[];
   municipalityMap: Record<string, string>;
+  countyMap: Record<string, string>;
 };
 
 function uniqueSorted(values: string[]) {
   return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b));
 }
 
-export function NeedsView({ rows, capacityRows, municipalityMap }: Props) {
+export function NeedsView({ rows, capacityRows, municipalityMap, countyMap }: Props) {
   const [period, setPeriod] = useState<string>("all");
   const [category, setCategory] = useState<string>("all");
   const [county, setCounty] = useState<string>("all");
@@ -39,6 +40,7 @@ export function NeedsView({ rows, capacityRows, municipalityMap }: Props) {
 
   const totalPopulation = filteredRows.reduce((sum, row) => sum + row.value, 0);
   const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
+  const countyLabel = (countyCode: string) => countyMap[countyCode] ?? countyCode;
 
   const gapRows = useMemo(() => {
     const municipalitySet = new Set(filteredRows.map((row) => row.municipality_code));
@@ -143,7 +145,7 @@ export function NeedsView({ rows, capacityRows, municipalityMap }: Props) {
             {filteredRows.map((row) => (
               <tr key={`${row.dataset_id}-${row.category}-${row.municipality_code}-${row.metric}-${row.period}`}>
                 <td>{municipalityLabel(row.municipality_code)}</td>
-                <td>{row.county_code}</td>
+                <td>{countyLabel(row.county_code)}</td>
                 <td>{row.period}</td>
                 <td>{row.category}</td>
                 <td>{row.metric}</td>

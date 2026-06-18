@@ -8,6 +8,9 @@ export default function KapasitetPage() {
   const municipalityMap = Object.fromEntries(
     municipalities.map((row) => [row.municipality_code, row.municipality_name])
   );
+  const countyMap = Object.fromEntries(
+    municipalities.map((row) => [row.county_code, row.county_name])
+  );
 
   return (
     <section className="grid">
@@ -17,7 +20,7 @@ export default function KapasitetPage() {
           Denne visningen leser direkte fra CSV-filer i repoet med filtrering per indikator, periode og fylke.
         </p>
       </div>
-      <CapacityView rows={rows} facilities={facilities} municipalityMap={municipalityMap} />
+      <CapacityView rows={rows} facilities={facilities} municipalityMap={municipalityMap} countyMap={countyMap} />
     </section>
   );
 }

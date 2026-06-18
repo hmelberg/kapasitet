@@ -7,6 +7,7 @@ type Props = {
   rows: CapacityRow[];
   facilities: FacilityRow[];
   municipalityMap: Record<string, string>;
+  countyMap: Record<string, string>;
 };
 
 function uniqueSorted(values: string[]) {
@@ -24,7 +25,7 @@ function getFacilityPointPosition(facility: FacilityRow) {
   return { x, y };
 }
 
-export function CapacityView({ rows, facilities, municipalityMap }: Props) {
+export function CapacityView({ rows, facilities, municipalityMap, countyMap }: Props) {
   const [metric, setMetric] = useState<string>("all");
   const [period, setPeriod] = useState<string>("all");
   const [county, setCounty] = useState<string>("all");
@@ -63,6 +64,7 @@ export function CapacityView({ rows, facilities, municipalityMap }: Props) {
   }, [facilities, county]);
 
   const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
+  const countyLabel = (countyCode: string) => countyMap[countyCode] ?? countyCode;
 
   return (
     <>
@@ -153,7 +155,7 @@ export function CapacityView({ rows, facilities, municipalityMap }: Props) {
             {filteredRows.map((row) => (
               <tr key={`${row.dataset_id}-${row.municipality_code}-${row.metric}-${row.period}`}>
                 <td>{municipalityLabel(row.municipality_code)}</td>
-                <td>{row.county_code}</td>
+                <td>{countyLabel(row.county_code)}</td>
                 <td>{row.sector}</td>
                 <td>{row.period}</td>
                 <td>{row.metric}</td>

@@ -1,3 +1,4 @@
+import { OverviewDashboard } from "../components/overview-dashboard";
 import { loadCapacityRows, loadMunicipalityRows, loadNeedRows } from "../lib/csv";
 
 export default function HomePage() {
@@ -6,6 +7,9 @@ export default function HomePage() {
   const municipalities = loadMunicipalityRows();
   const countyMap = Object.fromEntries(
     municipalities.map((row) => [row.county_code, row.county_name])
+  );
+  const municipalityMap = Object.fromEntries(
+    municipalities.map((row) => [row.municipality_code, row.municipality_name])
   );
 
   const ansatte = rows
@@ -35,6 +39,32 @@ export default function HomePage() {
         .reduce((sum, row) => sum + row.value, 0);
 
       return {
+        countyCode,
+        countyName: countyMap[countyCode] ?? countyCode,
+        capacity,
+        demand,
+        need
+      };
+    })
+    .sort((a, b) => b.need - a.need);
+
+  const municipalitySummary = Array.from(new Set(rows.map((row) => row.municipality_code)))
+    .map((municipalityCode) => {
+      const exampleRow = rows.find((row) => row.municipality_code === municipalityCode);
+      const countyCode = exampleRow?.county_code ?? "";
+      const capacity = rows
+        .filter((row) => row.municipality_code === municipalityCode && row.metric === "ansatte_legger_og_sykepleiere")
+        .reduce((sum, row) => sum + row.value, 0);
+      const demand = rows
+        .filter((row) => row.municipality_code === municipalityCode && row.metric === "mottar_tjeneste_per_dag")
+        .reduce((sum, row) => sum + row.value, 0);
+      const need = needs
+        .filter((row) => row.municipality_code === municipalityCode)
+        .reduce((sum, row) => sum + row.value, 0);
+
+      return {
+        municipalityCode,
+        municipalityName: municipalityMap[municipalityCode] ?? municipalityCode,
         countyCode,
         countyName: countyMap[countyCode] ?? countyCode,
         capacity,
@@ -76,29 +106,7 @@ export default function HomePage() {
         Metoden i scenariofanen er forenklet: omfordeling skjer til naermeste tilgjengelige kapasitet.
       </div>
 
-      <div className="card table-wrap">
-        <h2>Fylkesoppsummering</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Fylke</th>
-              <th>Ansatte</th>
-              <th>Mottar tjeneste per dag</th>
-              <th>Behovsindikatorer</th>
-            </tr>
-          </thead>
-          <tbody>
-            {countySummary.map((row) => (
-              <tr key={row.countyCode}>
-                <td>{row.countyName}</td>
-                <td>{row.capacity.toLocaleString("nb-NO")}</td>
-                <td>{row.demand.toLocaleString("nb-NO")}</td>
-                <td>{row.need.toLocaleString("nb-NO")}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <OverviewDashboard countySummary={countySummary} municipalitySummary={municipalitySummary} />
     </section>
   );
 }
