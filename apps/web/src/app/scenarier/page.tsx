@@ -1,8 +1,9 @@
 import { ScenarioSimulator } from "../../components/scenario-simulator";
-import { loadCapacityRows } from "../../lib/csv";
+import { loadCapacityRows, loadFacilityRows } from "../../lib/csv";
 
 export default function ScenarioPage() {
   const rows = loadCapacityRows();
+  const facilities = loadFacilityRows();
 
   return (
     <section className="grid">
@@ -13,7 +14,7 @@ export default function ScenarioPage() {
         </p>
       </div>
 
-      <ScenarioSimulator rows={rows} />
+      <ScenarioSimulator rows={rows} facilities={facilities} />
     </section>
   );
 }

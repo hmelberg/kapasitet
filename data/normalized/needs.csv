@@ -1,0 +1,10 @@
+dataset_id,source_id,category,municipality_code,county_code,period,metric,value,unit,last_updated
+disease_prevalence,fhi_hkr_001,hjerte,0301,03,2026,pasienter_med_hjerte_karsykdom,51200,personer,2026-06-01
+disease_prevalence,fhi_hkr_001,hjerte,4601,46,2026,pasienter_med_hjerte_karsykdom,24100,personer,2026-06-01
+disease_prevalence,fhi_hkr_001,hjerte,5001,50,2026,pasienter_med_hjerte_karsykdom,16400,personer,2026-06-01
+disease_prevalence,fhi_hkr_001,kreft,0301,03,2026,pasienter_med_kreft,21900,personer,2026-06-01
+disease_prevalence,fhi_hkr_001,kreft,4601,46,2026,pasienter_med_kreft,10300,personer,2026-06-01
+disease_prevalence,fhi_hkr_001,kreft,5001,50,2026,pasienter_med_kreft,7600,personer,2026-06-01
+medication_use,fhi_lmr_001,legemidler,0301,03,2026,personer_pa_blodtrykksmedisin,68800,personer,2026-06-05
+medication_use,fhi_lmr_001,legemidler,4601,46,2026,personer_pa_blodtrykksmedisin,33200,personer,2026-06-05
+medication_use,fhi_lmr_001,legemidler,5001,50,2026,personer_pa_blodtrykksmedisin,24500,personer,2026-06-05

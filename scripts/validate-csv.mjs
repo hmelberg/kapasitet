@@ -29,6 +29,18 @@ const schemaByFile = {
     "lon",
     "beds",
     "last_updated"
+  ],
+  "needs.csv": [
+    "dataset_id",
+    "source_id",
+    "category",
+    "municipality_code",
+    "county_code",
+    "period",
+    "metric",
+    "value",
+    "unit",
+    "last_updated"
   ]
 };
 
@@ -113,6 +125,23 @@ function validateNormalizedFile(filePath) {
 
       const key = get("facility_id");
       assert(!seen.has(key), `${fileName}:${lineNo}: duplikat facility_id`);
+      seen.add(key);
+      return;
+    }
+
+    if (fileName === "needs.csv") {
+      const value = Number(get("value"));
+      assert(Number.isFinite(value), `${fileName}:${lineNo}: value er ikke et tall`);
+
+      const key = [
+        get("dataset_id"),
+        get("category"),
+        get("municipality_code"),
+        get("period"),
+        get("metric")
+      ].join("|");
+
+      assert(!seen.has(key), `${fileName}:${lineNo}: duplikat i dataset/category/kommune/periode/metric`);
       seen.add(key);
     }
   });

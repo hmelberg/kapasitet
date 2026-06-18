@@ -22,6 +22,19 @@ export type SourceRow = {
   last_updated: string;
 };
 
+export type NeedRow = {
+  dataset_id: string;
+  source_id: string;
+  category: string;
+  municipality_code: string;
+  county_code: string;
+  period: string;
+  metric: string;
+  value: number;
+  unit: string;
+  last_updated: string;
+};
+
 export type FacilityRow = {
   facility_id: string;
   source_id: string;

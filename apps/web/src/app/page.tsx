@@ -1,7 +1,8 @@
-import { loadCapacityRows } from "../lib/csv";
+import { loadCapacityRows, loadNeedRows } from "../lib/csv";
 
 export default function HomePage() {
   const rows = loadCapacityRows();
+  const needs = loadNeedRows();
 
   const ansatte = rows
     .filter((row) => row.metric === "ansatte_legger_og_sykepleiere")
@@ -9,6 +10,10 @@ export default function HomePage() {
 
   const brukerePerDag = rows
     .filter((row) => row.metric === "mottar_tjeneste_per_dag")
+    .reduce((sum, row) => sum + row.value, 0);
+
+  const sykdomsbelastning = needs
+    .filter((row) => row.category === "hjerte" || row.category === "kreft")
     .reduce((sum, row) => sum + row.value, 0);
 
   return (
@@ -32,6 +37,10 @@ export default function HomePage() {
         <article className="card">
           <p className="muted">Dekning</p>
           <div className="value">{new Set(rows.map((row) => row.municipality_code)).size} kommuner</div>
+        </article>
+        <article className="card">
+          <p className="muted">Behov (hjerte + kreft)</p>
+          <div className="value">{sykdomsbelastning.toLocaleString("nb-NO")}</div>
         </article>
       </div>
 

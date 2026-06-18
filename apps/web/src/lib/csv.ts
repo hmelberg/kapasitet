@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { CapacityRow, FacilityRow, SourceRow } from "./types";
+import type { CapacityRow, FacilityRow, NeedRow, SourceRow } from "./types";
 
 function resolveDataDir() {
   const candidates = [
@@ -71,6 +71,24 @@ export function loadFacilityRows(): FacilityRow[] {
     lat: Number(row[idx.lat]),
     lon: Number(row[idx.lon]),
     beds: Number(row[idx.beds]),
+    last_updated: row[idx.last_updated]
+  }));
+}
+
+export function loadNeedRows(): NeedRow[] {
+  const { header, rows } = readCsvFile(path.join("normalized", "needs.csv"));
+  const idx = Object.fromEntries(header.map((name, i) => [name, i]));
+
+  return rows.map((row) => ({
+    dataset_id: row[idx.dataset_id],
+    source_id: row[idx.source_id],
+    category: row[idx.category],
+    municipality_code: row[idx.municipality_code],
+    county_code: row[idx.county_code],
+    period: row[idx.period],
+    metric: row[idx.metric],
+    value: Number(row[idx.value]),
+    unit: row[idx.unit],
     last_updated: row[idx.last_updated]
   }));
 }
