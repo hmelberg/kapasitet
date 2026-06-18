@@ -58,12 +58,15 @@ export function NeedsView({ rows, capacityRows }: Props) {
           .reduce((sum, row) => sum + row.value, 0);
 
         const needPerStaff = staff > 0 ? need / staff : null;
+        const targetRatio = 5;
+        const additionalStaffNeeded = staff > 0 ? Math.max(0, Math.ceil(need / targetRatio - staff)) : Math.ceil(need / targetRatio);
 
         return {
           municipalityCode,
           need,
           staff,
-          needPerStaff
+          needPerStaff,
+          additionalStaffNeeded
         };
       })
       .sort((a, b) => (b.needPerStaff ?? -1) - (a.needPerStaff ?? -1));
@@ -163,6 +166,7 @@ export function NeedsView({ rows, capacityRows }: Props) {
               <th>Behovsvolum</th>
               <th>Ansatte</th>
               <th>Behov per ansatt</th>
+              <th>Anbefalt ekstra ansatte</th>
               <th>Status</th>
             </tr>
           </thead>
@@ -181,6 +185,7 @@ export function NeedsView({ rows, capacityRows }: Props) {
                   <td>{row.need.toLocaleString("nb-NO")}</td>
                   <td>{row.staff.toLocaleString("nb-NO")}</td>
                   <td>{row.needPerStaff ? row.needPerStaff.toFixed(2) : "-"}</td>
+                  <td>{row.additionalStaffNeeded.toLocaleString("nb-NO")}</td>
                   <td>
                     <span className="badge">{status}</span>
                   </td>

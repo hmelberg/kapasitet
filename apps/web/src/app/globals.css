@@ -162,6 +162,17 @@ th {
   filter: brightness(1.05);
 }
 
+.action-button.secondary {
+  background: #fff;
+  color: var(--brand);
+}
+
+.button-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
 .map-canvas {
   position: relative;
   width: 100%;

@@ -35,6 +35,10 @@ function getMetricValue(rows: CapacityRow[], municipalityCode: string, period: s
     .reduce((sum, row) => sum + row.value, 0);
 }
 
+function toCsvValue(value: string) {
+  return `"${value.replaceAll("\"", "\"\"")}"`;
+}
+
 export function ScenarioSimulator({ rows, facilities }: Props) {
   const municipalities = uniqueSorted(rows.map((row) => row.municipality_code));
   const periods = uniqueSorted(rows.map((row) => row.period)).reverse();
@@ -139,6 +143,33 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
     setHistory((prev) => [newEntry, ...prev].slice(0, 8));
   }
 
+  function exportHistoryCsv() {
+    if (history.length === 0) {
+      return;
+    }
+
+    const header = ["timestamp", "scenario_type", "period", "description"];
+    const rows = history.map((entry) => [
+      entry.timestamp,
+      entry.scenarioType,
+      entry.period,
+      entry.description
+    ]);
+
+    const csv = [
+      header.join(","),
+      ...rows.map((row) => row.map((value) => toCsvValue(value)).join(","))
+    ].join("\n");
+
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "scenario-historikk.csv";
+    link.click();
+    URL.revokeObjectURL(url);
+  }
+
   return (
     <>
       <div className="card filters">
@@ -224,9 +255,14 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
       </div>
 
       <div className="card">
-        <button type="button" className="action-button" onClick={saveScenario}>
-          Lagre scenariokjoring
-        </button>
+        <div className="button-row">
+          <button type="button" className="action-button" onClick={saveScenario}>
+            Lagre scenariokjoring
+          </button>
+          <button type="button" className="action-button secondary" onClick={exportHistoryCsv}>
+            Eksporter historikk CSV
+          </button>
+        </div>
       </div>
 
       {scenarioType === "evakuering" ? (
