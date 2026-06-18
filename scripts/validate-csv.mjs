@@ -54,6 +54,16 @@ const schemaByFile = {
     "unit",
     "last_updated"
   ],
+  "hf_capacity.csv": [
+    "helseforetak",
+    "helseregion",
+    "tjenesteomrade_kode",
+    "tjenesteomrade",
+    "period",
+    "dognplasser",
+    "source_id",
+    "last_updated"
+  ],
   "needs.csv": [
     "dataset_id",
     "source_id",

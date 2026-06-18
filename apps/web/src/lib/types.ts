@@ -72,6 +72,29 @@ export type MedicationRow = {
   last_updated: string;
 };
 
+// Real bed capacity per helseforetak from SSB table 13942.
+export type HfCapacityRow = {
+  helseforetak: string;
+  helseregion: string;
+  tjenesteomrade_kode: string;
+  tjenesteomrade: string;
+  period: string;
+  dognplasser: number;
+  source_id: string;
+  last_updated: string;
+};
+
+// Curated department-level bed breakdown for selected hospitals (cited).
+export type HospitalUnitBedRow = {
+  helseforetak: string;
+  hospital_match: string;
+  enhet: string;
+  sengeplasser: number;
+  period: string;
+  kilde: string;
+  kilde_note: string;
+};
+
 // Per-municipality ESTIMATE: national LMR rate x municipality population.
 export type MedicationUseRow = {
   dataset_id: string;

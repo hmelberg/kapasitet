@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
-import type { CapacityRow, FacilityRow, NeedRow } from "../lib/types";
+import type { CapacityRow, FacilityRow, HfCapacityRow, HospitalUnitBedRow, NeedRow } from "../lib/types";
 import type { FeatureCollection } from "geojson";
 import { TimeseriesComparison } from "./timeseries-comparison";
 
@@ -10,6 +10,8 @@ type Props = {
   rows: CapacityRow[];
   facilities: FacilityRow[];
   needRows: NeedRow[];
+  hfCapacity: HfCapacityRow[];
+  hospitalUnitBeds: HospitalUnitBedRow[];
   municipalityMap: Record<string, string>;
   countyMap: Record<string, string>;
 };
@@ -33,7 +35,7 @@ const FacilityLeafletMap = dynamic(
   { ssr: false }
 );
 
-export function CapacityView({ rows, facilities, needRows, municipalityMap, countyMap }: Props) {
+export function CapacityView({ rows, facilities, needRows, hfCapacity, hospitalUnitBeds, municipalityMap, countyMap }: Props) {
   const [metric, setMetric] = useState<string>("all");
   const [period, setPeriod] = useState<string>("all");
   const [county, setCounty] = useState<string>("all");
@@ -203,6 +205,31 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
   const countyLabel = (countyCode: string) => countyMap[countyCode] ?? countyCode;
   const selectedFacility = visibleFacilities.find((facility) => facility.facility_id === selectedFacilityId) ?? visibleFacilities[0] ?? null;
   const selectedMunicipality = municipalityOverlays.find((row) => row.municipalityCode === selectedMunicipalityCode) ?? municipalityOverlays[0] ?? null;
+
+  // Real bed capacity for the selected hospital's helseforetak (SSB 13942).
+  const hfBeds = useMemo(() => {
+    if (!selectedFacility || selectedFacility.facility_type !== "sykehus" || !selectedFacility.helseforetak) {
+      return null;
+    }
+    const forHf = hfCapacity.filter((r) => r.helseforetak === selectedFacility.helseforetak);
+    if (forHf.length === 0) {
+      return null;
+    }
+    const latestYear = forHf.map((r) => r.period).sort()[forHf.length - 1] ?? forHf[forHf.length - 1].period;
+    const beds = (code: string) =>
+      forHf.find((r) => r.tjenesteomrade_kode === code && r.period === latestYear)?.dognplasser ?? null;
+    return { latestYear, som: beds("SOM"), tot: beds("TOT"), vop: beds("VOP"), tsb: beds("TSB") };
+  }, [selectedFacility, hfCapacity]);
+
+  // Curated department-level breakdown for the selected hospital (if any).
+  const unitBeds = useMemo(() => {
+    if (!selectedFacility) {
+      return [];
+    }
+    return hospitalUnitBeds.filter(
+      (r) => r.hospital_match.length > 0 && selectedFacility.name.includes(r.hospital_match)
+    );
+  }, [selectedFacility, hospitalUnitBeds]);
 
   useEffect(() => {
     if (!visibleFacilities.some((facility) => facility.facility_id === selectedFacilityId)) {
@@ -428,19 +455,76 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
                       <td>{countyLabel(selectedFacility.county_code)}</td>
                     </tr>
                     <tr>
-                      <th>Kapasitet</th>
+                      <th>Kapasitet (modellert)</th>
                       <td>{selectedFacility.capacity_value.toLocaleString("nb-NO")} {selectedFacility.capacity_unit}</td>
                     </tr>
                     <tr>
                       <th>Koordinater</th>
                       <td>{selectedFacility.lat.toFixed(3)}, {selectedFacility.lon.toFixed(3)}</td>
                     </tr>
-                    <tr>
-                      <th>Oppdatert</th>
-                      <td>{selectedFacility.last_updated}</td>
-                    </tr>
                   </tbody>
                 </table>
+
+                {hfBeds ? (
+                  <div style={{ marginTop: "0.6rem" }}>
+                    <h4 style={{ margin: "0 0 0.3rem" }}>Døgnplasser i helseforetaket ({hfBeds.latestYear})</h4>
+                    <table>
+                      <tbody>
+                        {hfBeds.som !== null ? (
+                          <tr>
+                            <th>Somatikk</th>
+                            <td>{hfBeds.som.toLocaleString("nb-NO")}</td>
+                          </tr>
+                        ) : null}
+                        {hfBeds.vop !== null ? (
+                          <tr>
+                            <th>Psykisk helsevern (voksne)</th>
+                            <td>{hfBeds.vop.toLocaleString("nb-NO")}</td>
+                          </tr>
+                        ) : null}
+                        {hfBeds.tsb !== null ? (
+                          <tr>
+                            <th>Rusbehandling (TSB)</th>
+                            <td>{hfBeds.tsb.toLocaleString("nb-NO")}</td>
+                          </tr>
+                        ) : null}
+                        {hfBeds.tot !== null ? (
+                          <tr>
+                            <th>Totalt</th>
+                            <td><strong>{hfBeds.tot.toLocaleString("nb-NO")}</strong></td>
+                          </tr>
+                        ) : null}
+                      </tbody>
+                    </table>
+                    <p className="muted" style={{ fontSize: "0.72rem", marginTop: "0.3rem" }}>
+                      Kilde: SSB tabell 13942 (døgnplasser per helseforetak, hele foretaket – ikke per
+                      sykehusbygg). Per-institusjon «Kapasitet (modellert)» er et estimat.
+                    </p>
+                  </div>
+                ) : null}
+
+                {unitBeds.length > 0 ? (
+                  <div style={{ marginTop: "0.6rem" }}>
+                    <h4 style={{ margin: "0 0 0.3rem" }}>Sengeplasser per enhet</h4>
+                    <table>
+                      <tbody>
+                        {unitBeds.map((u) => (
+                          <tr key={u.enhet}>
+                            <th>{u.enhet}</th>
+                            <td>{u.sengeplasser.toLocaleString("nb-NO")}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    <p className="muted" style={{ fontSize: "0.72rem", marginTop: "0.3rem" }}>
+                      Kilde: {unitBeds[0].kilde} ({unitBeds[0].period}). {unitBeds[0].kilde_note}
+                    </p>
+                  </div>
+                ) : null}
+
+                <p className="muted" style={{ fontSize: "0.72rem", marginTop: "0.4rem" }}>
+                  Posisjon/navn: OpenStreetMap. Sist oppdatert: {selectedFacility.last_updated}.
+                </p>
               </>
             ) : (
               <p className="muted">Ingen institusjon valgt.</p>

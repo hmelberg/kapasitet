@@ -82,6 +82,18 @@ live by the scripts in `scripts/`:
     Helseforetak hospitals from Privat/ideell, Kommunal/annet (legevakt, helsesenter,
     sykehjem, ambulanse — things OSM also tags as "hospital") and Uklassifisert.
 
+### SSB spesialisthelsetjenesten (beds)
+- **ssb_13942**: Døgnplasser (beds) per helseforetak, by service area, 2015–2025
+  - `hf_capacity.csv`: **real** beds per HF (somatic / adult psych / child psych /
+    substance / total). E.g. UNN somatic 552 (2024), 593 (2025) — matches the
+    ~580 approved somatic beds. Figures are per *helseforetak*, not per building.
+  - API: https://data.ssb.no/api/v0/no/table/13942 (NLOD)
+  - Used by: `scripts/fetch-hf-capacity.ps1`
+- **unn_avdeling**: Curated department-level bed breakdown (`data/reference/hospital_unit_beds.csv`)
+  - Illustrative per-unit beds for selected hospitals (seeded with UNN). Shown in
+    the facility panel with a small-print source note. Per-building/per-unit beds
+    are not open structured data, so this table is curated and cited per row.
+
 ### FHI Legemiddelregisteret (LMR)
 - **fhi_lmr_825**: Persons dispensed medication on prescription, per ATC group (table 825)
   - 14 drug groups (asthma/COPD, diabetes, lipid-lowering, blood pressure,

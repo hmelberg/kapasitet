@@ -3,6 +3,8 @@ import path from "node:path";
 import type {
   CapacityRow,
   FacilityRow,
+  HfCapacityRow,
+  HospitalUnitBedRow,
   MedicationRow,
   MedicationUseRow,
   MunicipalityRow,
@@ -86,6 +88,37 @@ export function loadFacilityRows(): FacilityRow[] {
     helseregion: row[idx.helseregion] ?? "",
     helseforetak: row[idx.helseforetak] ?? "",
     sykehus_kategori: row[idx.sykehus_kategori] ?? ""
+  }));
+}
+
+export function loadHfCapacityRows(): HfCapacityRow[] {
+  const { header, rows } = readCsvFile(path.join("normalized", "hf_capacity.csv"));
+  const idx = Object.fromEntries(header.map((name, i) => [name, i]));
+
+  return rows.map((row) => ({
+    helseforetak: row[idx.helseforetak],
+    helseregion: row[idx.helseregion],
+    tjenesteomrade_kode: row[idx.tjenesteomrade_kode],
+    tjenesteomrade: row[idx.tjenesteomrade],
+    period: row[idx.period],
+    dognplasser: Number(row[idx.dognplasser]),
+    source_id: row[idx.source_id],
+    last_updated: row[idx.last_updated]
+  }));
+}
+
+export function loadHospitalUnitBedRows(): HospitalUnitBedRow[] {
+  const { header, rows } = readCsvFile(path.join("reference", "hospital_unit_beds.csv"));
+  const idx = Object.fromEntries(header.map((name, i) => [name, i]));
+
+  return rows.map((row) => ({
+    helseforetak: row[idx.helseforetak],
+    hospital_match: row[idx.hospital_match],
+    enhet: row[idx.enhet],
+    sengeplasser: Number(row[idx.sengeplasser]),
+    period: row[idx.period],
+    kilde: row[idx.kilde],
+    kilde_note: row[idx.kilde_note]
   }));
 }
 
