@@ -41,3 +41,35 @@ fac_drammen_apotek_001,dmp_apotek_001,Drammen Torg Apotek,apotek,3301,33,59.743,
 fac_tonsberg_apotek_001,dmp_apotek_001,Tonsberg Sentrum Apotek,apotek,3905,39,59.266,10.409,0,2026-06-05
 fac_kristiansand_apotek_001,dmp_apotek_001,Kristiansand Sentrum Apotek,apotek,4204,42,58.146,7.998,0,2026-06-05
 fac_tromso_apotek_001,dmp_apotek_001,Tromso Sentrum Apotek,apotek,5501,55,69.650,18.955,0,2026-06-05
+fac_haugesund_001,helsedir_reg_001,Haugesund sykehus,sykehus,1149,11,59.400,5.270,380,2026-06-01
+fac_molde_001,helsedir_reg_001,Molde sjukehus,sykehus,1504,15,62.736,7.195,290,2026-06-01
+fac_narvik_001,helsedir_reg_001,Narvik sjukehus,sykehus,1816,18,68.437,17.425,250,2026-06-01
+fac_lillehammer_001,helsedir_reg_001,Lillehammer sykehus,sykehus,2025,20,61.117,10.467,380,2026-06-01
+fac_hamar_001,helsedir_reg_001,Hamar sykehus,sykehus,2027,20,60.795,11.068,290,2026-06-01
+fac_gjovik_001,helsedir_reg_001,Gjøvik sykehus,sykehus,2028,20,60.789,10.703,240,2026-06-01
+fac_lillesand_001,helsedir_reg_001,Lillesand helsehus,sykehus,3603,36,58.255,8.726,160,2026-06-01
+fac_sarpsborg_001,helsedir_reg_001,Sarpsborg sykehus,sykehus,3706,31,59.300,10.830,250,2026-06-01
+fac_porsgrunn_001,helsedir_reg_001,Porsgrunn helsehus,sykehus,4009,40,59.139,9.652,200,2026-06-01
+fac_arendal_001,helsedir_reg_001,Arendal sykehus,sykehus,4201,42,58.462,8.775,310,2026-06-01
+fac_mandal_001,helsedir_reg_001,Mandal helsehus,sykehus,4206,42,58.023,7.470,180,2026-06-01
+fac_namsos_001,helsedir_reg_001,Namsos helsestasjon,sykehus,5006,50,64.460,11.497,220,2026-06-01
+fac_steinkjer_001,helsedir_reg_001,Steinkjer sjukehus,sykehus,5007,50,64.014,11.493,280,2026-06-01
+fac_levanger_001,helsedir_reg_001,Levanger helsehus,sykehus,5014,50,63.740,11.280,200,2026-06-01
+fac_voss_001,helsedir_reg_001,Voss sjukehus,sykehus,1226,12,60.639,6.413,240,2026-06-01
+fac_haugesund_gp_001,kpr_open_001,Haugesund Sentrum Legesenter,legekontor,1149,11,59.400,5.271,0,2026-06-05
+fac_molde_gp_001,kpr_open_001,Molde Sentrum Legesenter,legekontor,1504,15,62.736,7.195,0,2026-06-05
+fac_narvik_gp_001,kpr_open_001,Narvik Sentrum Legesenter,legekontor,1816,18,68.437,17.425,0,2026-06-05
+fac_lillehammer_gp_001,kpr_open_001,Lillehammer Sentrum Legesenter,legekontor,2025,20,61.117,10.467,0,2026-06-05
+fac_hamar_gp_001,kpr_open_001,Hamar Sentrum Legesenter,legekontor,2027,20,60.795,11.068,0,2026-06-05
+fac_gjovik_gp_001,kpr_open_001,Gjøvik Sentrum Legesenter,legekontor,2028,20,60.789,10.703,0,2026-06-05
+fac_arendal_gp_001,kpr_open_001,Arendal Sentrum Legesenter,legekontor,4201,42,58.462,8.775,0,2026-06-05
+fac_steinkjer_gp_001,kpr_open_001,Steinkjer Sentrum Legesenter,legekontor,5007,50,64.014,11.493,0,2026-06-05
+fac_voss_gp_001,kpr_open_001,Voss Sentrum Legesenter,legekontor,1226,12,60.639,6.413,0,2026-06-05
+fac_haugesund_apotek_001,dmp_apotek_001,Haugesund Sentrum Apotek,apotek,1149,11,59.401,5.271,0,2026-06-05
+fac_molde_apotek_001,dmp_apotek_001,Molde Sentrum Apotek,apotek,1504,15,62.735,7.196,0,2026-06-05
+fac_narvik_apotek_001,dmp_apotek_001,Narvik Sentrum Apotek,apotek,1816,18,68.437,17.425,0,2026-06-05
+fac_lillehammer_apotek_001,dmp_apotek_001,Lillehammer Sentrum Apotek,apotek,2025,20,61.117,10.468,0,2026-06-05
+fac_hamar_apotek_001,dmp_apotek_001,Hamar Sentrum Apotek,apotek,2027,20,60.795,11.068,0,2026-06-05
+fac_arendal_apotek_001,dmp_apotek_001,Arendal Sentrum Apotek,apotek,4201,42,58.462,8.776,0,2026-06-05
+fac_steinkjer_apotek_001,dmp_apotek_001,Steinkjer Sentrum Apotek,apotek,5007,50,64.014,11.494,0,2026-06-05
+fac_voss_apotek_001,dmp_apotek_001,Voss Sentrum Apotek,apotek,1226,12,60.639,6.414,0,2026-06-05
