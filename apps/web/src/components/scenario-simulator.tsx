@@ -6,6 +6,7 @@ import type { CapacityRow, FacilityRow } from "../lib/types";
 type Props = {
   rows: CapacityRow[];
   facilities: FacilityRow[];
+  municipalityMap: Record<string, string>;
 };
 
 type ScenarioType = "evakuering" | "steng_sykehus";
@@ -39,7 +40,7 @@ function toCsvValue(value: string) {
   return `"${value.replaceAll("\"", "\"\"")}"`;
 }
 
-export function ScenarioSimulator({ rows, facilities }: Props) {
+export function ScenarioSimulator({ rows, facilities, municipalityMap }: Props) {
   const municipalities = uniqueSorted(rows.map((row) => row.municipality_code));
   const periods = uniqueSorted(rows.map((row) => row.period)).reverse();
   const hospitals = facilities.filter((facility) => facility.facility_type === "sykehus");
@@ -52,6 +53,7 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
   const [selectedHospital, setSelectedHospital] = useState(hospitals[0]?.facility_id ?? "");
   const [closureDays, setClosureDays] = useState(14);
   const [history, setHistory] = useState<ScenarioHistoryEntry[]>([]);
+  const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
 
   useEffect(() => {
     const raw = window.localStorage.getItem(HISTORY_KEY);
@@ -129,7 +131,7 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
     const timestamp = new Date().toISOString();
     const description =
       scenarioType === "evakuering"
-        ? `Flytt ${movedPopulation.toLocaleString("nb-NO")} fra ${fromMunicipality} til ${toMunicipality}`
+        ? `Flytt ${movedPopulation.toLocaleString("nb-NO")} fra ${municipalityLabel(fromMunicipality)} til ${municipalityLabel(toMunicipality)}`
         : `Steng ${closureScenario?.hospital.name ?? selectedHospital} i ${closureDays} dager`;
 
     const newEntry: ScenarioHistoryEntry = {
@@ -199,7 +201,7 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
               <select value={fromMunicipality} onChange={(event) => setFromMunicipality(event.target.value)}>
                 {municipalities.map((option) => (
                   <option key={option} value={option}>
-                    {option}
+                    {municipalityLabel(option)}
                   </option>
                 ))}
               </select>
@@ -210,7 +212,7 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
               <select value={toMunicipality} onChange={(event) => setToMunicipality(event.target.value)}>
                 {municipalities.map((option) => (
                   <option key={option} value={option}>
-                    {option}
+                    {municipalityLabel(option)}
                   </option>
                 ))}
               </select>
@@ -284,14 +286,14 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
               </thead>
               <tbody>
                 <tr>
-                  <td>{fromMunicipality}</td>
+                  <td>{municipalityLabel(fromMunicipality)}</td>
                   <td>{evacuationScenario.fromBaseDemand.toLocaleString("nb-NO")}</td>
                   <td>{evacuationScenario.fromAfterDemand.toLocaleString("nb-NO")}</td>
                   <td>-{evacuationScenario.extraDailyDemand.toLocaleString("nb-NO")}</td>
                   <td>{evacuationScenario.fromBaseStaff.toLocaleString("nb-NO")}</td>
                 </tr>
                 <tr>
-                  <td>{toMunicipality}</td>
+                  <td>{municipalityLabel(toMunicipality)}</td>
                   <td>{evacuationScenario.toBaseDemand.toLocaleString("nb-NO")}</td>
                   <td>{evacuationScenario.toAfterDemand.toLocaleString("nb-NO")}</td>
                   <td>+{evacuationScenario.extraDailyDemand.toLocaleString("nb-NO")}</td>
@@ -338,7 +340,7 @@ export function ScenarioSimulator({ rows, facilities }: Props) {
                   <tbody>
                     <tr>
                       <td>{closureScenario.hospital.name}</td>
-                      <td>{closureScenario.hospital.municipality_code}</td>
+                      <td>{municipalityLabel(closureScenario.hospital.municipality_code)}</td>
                       <td>{closureScenario.lostBeds.toLocaleString("nb-NO")}</td>
                       <td>{closureScenario.redirectedPerDay.toLocaleString("nb-NO")}</td>
                       <td>{closureScenario.totalRedirected.toLocaleString("nb-NO")}</td>

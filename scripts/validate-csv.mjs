@@ -41,11 +41,18 @@ const schemaByFile = {
     "value",
     "unit",
     "last_updated"
+  ],
+  "municipalities.csv": [
+    "municipality_code",
+    "county_code",
+    "municipality_name",
+    "county_name"
   ]
 };
 
 function parseCsv(text) {
   const lines = text
+    .replace(/^\uFEFF/, "")
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
@@ -142,6 +149,13 @@ function validateNormalizedFile(filePath) {
       ].join("|");
 
       assert(!seen.has(key), `${fileName}:${lineNo}: duplikat i dataset/category/kommune/periode/metric`);
+      seen.add(key);
+      return;
+    }
+
+    if (fileName === "municipalities.csv") {
+      const key = get("municipality_code");
+      assert(!seen.has(key), `${fileName}:${lineNo}: duplikat municipality_code`);
       seen.add(key);
     }
   });

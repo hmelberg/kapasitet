@@ -1,9 +1,13 @@
 import { ScenarioSimulator } from "../../components/scenario-simulator";
-import { loadCapacityRows, loadFacilityRows } from "../../lib/csv";
+import { loadCapacityRows, loadFacilityRows, loadMunicipalityRows } from "../../lib/csv";
 
 export default function ScenarioPage() {
   const rows = loadCapacityRows();
   const facilities = loadFacilityRows();
+  const municipalities = loadMunicipalityRows();
+  const municipalityMap = Object.fromEntries(
+    municipalities.map((row) => [row.municipality_code, row.municipality_name])
+  );
 
   return (
     <section className="grid">
@@ -14,7 +18,7 @@ export default function ScenarioPage() {
         </p>
       </div>
 
-      <ScenarioSimulator rows={rows} facilities={facilities} />
+      <ScenarioSimulator rows={rows} facilities={facilities} municipalityMap={municipalityMap} />
     </section>
   );
 }

@@ -6,6 +6,7 @@ import type { CapacityRow, FacilityRow } from "../lib/types";
 type Props = {
   rows: CapacityRow[];
   facilities: FacilityRow[];
+  municipalityMap: Record<string, string>;
 };
 
 function uniqueSorted(values: string[]) {
@@ -23,7 +24,7 @@ function getFacilityPointPosition(facility: FacilityRow) {
   return { x, y };
 }
 
-export function CapacityView({ rows, facilities }: Props) {
+export function CapacityView({ rows, facilities, municipalityMap }: Props) {
   const [metric, setMetric] = useState<string>("all");
   const [period, setPeriod] = useState<string>("all");
   const [county, setCounty] = useState<string>("all");
@@ -60,6 +61,8 @@ export function CapacityView({ rows, facilities }: Props) {
       return true;
     });
   }, [facilities, county]);
+
+  const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
 
   return (
     <>
@@ -123,7 +126,7 @@ export function CapacityView({ rows, facilities }: Props) {
               <div
                 key={facility.facility_id}
                 className={`map-point type-${facility.facility_type}`}
-                title={`${facility.name} (${facility.facility_type}) | Kommune ${facility.municipality_code} | Senger ${facility.beds}`}
+                title={`${facility.name} (${facility.facility_type}) | Kommune ${municipalityLabel(facility.municipality_code)} | Senger ${facility.beds}`}
                 style={{ left: `${point.x}%`, top: `${point.y}%` }}
               />
             );
@@ -149,7 +152,7 @@ export function CapacityView({ rows, facilities }: Props) {
           <tbody>
             {filteredRows.map((row) => (
               <tr key={`${row.dataset_id}-${row.municipality_code}-${row.metric}-${row.period}`}>
-                <td>{row.municipality_code}</td>
+                <td>{municipalityLabel(row.municipality_code)}</td>
                 <td>{row.county_code}</td>
                 <td>{row.sector}</td>
                 <td>{row.period}</td>

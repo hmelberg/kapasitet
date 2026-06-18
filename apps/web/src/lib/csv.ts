@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { CapacityRow, FacilityRow, NeedRow, SourceRow } from "./types";
+import type { CapacityRow, FacilityRow, MunicipalityRow, NeedRow, SourceRow } from "./types";
 
 function resolveDataDir() {
   const candidates = [
@@ -19,6 +19,7 @@ function resolveDataDir() {
 
 function parseCsv(text: string) {
   const lines = text
+    .replace(/^\uFEFF/, "")
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
@@ -90,6 +91,18 @@ export function loadNeedRows(): NeedRow[] {
     value: Number(row[idx.value]),
     unit: row[idx.unit],
     last_updated: row[idx.last_updated]
+  }));
+}
+
+export function loadMunicipalityRows(): MunicipalityRow[] {
+  const { header, rows } = readCsvFile(path.join("normalized", "municipalities.csv"));
+  const idx = Object.fromEntries(header.map((name, i) => [name, i]));
+
+  return rows.map((row) => ({
+    municipality_code: row[idx.municipality_code],
+    county_code: row[idx.county_code],
+    municipality_name: row[idx.municipality_name],
+    county_name: row[idx.county_name]
   }));
 }
 

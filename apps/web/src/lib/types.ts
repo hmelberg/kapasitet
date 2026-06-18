@@ -35,6 +35,13 @@ export type NeedRow = {
   last_updated: string;
 };
 
+export type MunicipalityRow = {
+  municipality_code: string;
+  county_code: string;
+  municipality_name: string;
+  county_name: string;
+};
+
 export type FacilityRow = {
   facility_id: string;
   source_id: string;
