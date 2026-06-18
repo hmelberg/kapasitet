@@ -28,6 +28,7 @@ type Props = {
   selectedMunicipalityCode: string | null;
   onSelectMunicipality: (municipalityCode: string) => void;
   geojson?: FeatureCollection;
+  showMunicipalityLayer?: boolean;
 };
 
 function getMarkerColor(facilityType: string) {
@@ -83,7 +84,8 @@ export function FacilityLeafletMap({
   onSelectFacility,
   selectedMunicipalityCode,
   onSelectMunicipality,
-  geojson
+  geojson,
+  showMunicipalityLayer = false
 }: Props) {
   const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
   const countyLabel = (countyCode: string) => countyMap[countyCode] ?? countyCode;
@@ -103,7 +105,7 @@ export function FacilityLeafletMap({
 
       <FitToFacilities facilities={facilities} />
 
-      {geojson && (
+      {showMunicipalityLayer && geojson && (
         <GeoJSON
           data={geojson}
           style={() => ({
@@ -126,7 +128,7 @@ export function FacilityLeafletMap({
         />
       )}
 
-      {municipalityOverlays.map((overlay) => {
+      {showMunicipalityLayer && municipalityOverlays.map((overlay) => {
         const isSelected = overlay.municipalityCode === selectedMunicipalityCode;
 
         return (

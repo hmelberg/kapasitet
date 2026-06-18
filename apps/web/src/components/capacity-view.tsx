@@ -31,6 +31,12 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
   const [selectedMunicipalityCode, setSelectedMunicipalityCode] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<"name" | "pressure" | "capacity">("name");
+  const [mapLayers, setMapLayers] = useState<Record<string, boolean>>({
+    sykehus: true,
+    legekontor: true,
+    apotek: false,
+    kommune: false
+  });
   const [geojson, setGeojson] = useState<FeatureCollection | null>(null);
 
   useEffect(() => {
@@ -74,6 +80,10 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
       return true;
     });
   }, [facilities, county]);
+
+  const visibleFacilities = useMemo(() => {
+    return filteredFacilities.filter((facility) => mapLayers[facility.facility_type] === true);
+  }, [filteredFacilities, mapLayers]);
 
   const municipalityOverlays = useMemo(() => {
     const facilitiesByMunicipality = new Map<string, FacilityRow[]>();
@@ -146,14 +156,21 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
 
   const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
   const countyLabel = (countyCode: string) => countyMap[countyCode] ?? countyCode;
-  const selectedFacility = filteredFacilities.find((facility) => facility.facility_id === selectedFacilityId) ?? filteredFacilities[0] ?? null;
+  const selectedFacility = visibleFacilities.find((facility) => facility.facility_id === selectedFacilityId) ?? visibleFacilities[0] ?? null;
   const selectedMunicipality = municipalityOverlays.find((row) => row.municipalityCode === selectedMunicipalityCode) ?? municipalityOverlays[0] ?? null;
 
   useEffect(() => {
-    if (!filteredFacilities.some((facility) => facility.facility_id === selectedFacilityId)) {
-      setSelectedFacilityId(filteredFacilities[0]?.facility_id ?? null);
+    if (!visibleFacilities.some((facility) => facility.facility_id === selectedFacilityId)) {
+      setSelectedFacilityId(visibleFacilities[0]?.facility_id ?? null);
     }
-  }, [filteredFacilities, selectedFacilityId]);
+  }, [visibleFacilities, selectedFacilityId]);
+
+  const toggleMapLayer = (layer: string) => {
+    setMapLayers((prev) => ({
+      ...prev,
+      [layer]: !prev[layer]
+    }));
+  };
 
   useEffect(() => {
     if (!municipalityOverlays.some((row) => row.municipalityCode === selectedMunicipalityCode)) {
@@ -237,13 +254,47 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
         <p className="muted">Kartet bruker OpenStreetMap med ekte zoom, pan og popup for institusjoner i Norge.</p>
 
         <div className="map-toolbar">
-          <p className="muted">Institusjoner vist: {filteredFacilities.length}</p>
+          <p className="muted">Institusjoner vist: {visibleFacilities.length}</p>
+          <div className="layer-filters" role="group" aria-label="Velg markorer pa kartet">
+            <label>
+              <input
+                type="checkbox"
+                checked={mapLayers.sykehus}
+                onChange={() => toggleMapLayer("sykehus")}
+              />
+              Sykehus
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={mapLayers.legekontor}
+                onChange={() => toggleMapLayer("legekontor")}
+              />
+              Legekontor
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={mapLayers.apotek}
+                onChange={() => toggleMapLayer("apotek")}
+              />
+              Apotek
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                checked={mapLayers.kommune}
+                onChange={() => toggleMapLayer("kommune")}
+              />
+              Kommune
+            </label>
+          </div>
         </div>
 
         <div className="map-layout">
           <div className="map-canvas" aria-label="Kartvisning av institusjoner">
             <FacilityLeafletMap
-              facilities={filteredFacilities}
+              facilities={visibleFacilities}
               municipalityMap={municipalityMap}
               countyMap={countyMap}
               municipalityOverlays={municipalityOverlays}
@@ -252,6 +303,7 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
               selectedMunicipalityCode={selectedMunicipality?.municipalityCode ?? null}
               onSelectMunicipality={setSelectedMunicipalityCode}
               geojson={geojson ?? undefined}
+              showMunicipalityLayer={mapLayers.kommune}
             />
           </div>
 
