@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import type { CapacityRow, FacilityRow } from "../lib/types";
 
@@ -14,20 +15,10 @@ function uniqueSorted(values: string[]) {
   return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b));
 }
 
-function getFacilityPointPosition(facility: FacilityRow) {
-  const minLat = 57;
-  const maxLat = 72;
-  const minLon = 3;
-  const maxLon = 32;
-
-  const x = ((facility.lon - minLon) / (maxLon - minLon)) * 100;
-  const y = ((maxLat - facility.lat) / (maxLat - minLat)) * 100;
-  return { x, y };
-}
-
-function clampZoom(value: number) {
-  return Math.min(2.4, Math.max(1, value));
-}
+const FacilityLeafletMap = dynamic(
+  () => import("./facility-leaflet-map").then((mod) => mod.FacilityLeafletMap),
+  { ssr: false }
+);
 
 export function CapacityView({ rows, facilities, municipalityMap, countyMap }: Props) {
   const [metric, setMetric] = useState<string>("all");
@@ -35,7 +26,6 @@ export function CapacityView({ rows, facilities, municipalityMap, countyMap }: P
   const [county, setCounty] = useState<string>("all");
   const [sector, setSector] = useState<string>("all");
   const [selectedFacilityId, setSelectedFacilityId] = useState<string | null>(null);
-  const [zoom, setZoom] = useState(1.2);
 
   const metricOptions = uniqueSorted(rows.map((row) => row.metric));
   const periodOptions = uniqueSorted(rows.map((row) => row.period));
@@ -133,51 +123,21 @@ export function CapacityView({ rows, facilities, municipalityMap, countyMap }: P
 
       <div className="card">
         <h2>Kartlag for institusjoner</h2>
-        <p className="muted">Kartet er nå klikkbart med zoom og infofelt for valgt institusjon.</p>
+        <p className="muted">Kartet bruker OpenStreetMap med ekte zoom, pan og popup for institusjoner i Norge.</p>
 
         <div className="map-toolbar">
-          <div className="button-row">
-            <button type="button" className="action-button secondary" onClick={() => setZoom((value) => clampZoom(value - 0.2))}>
-              Zoom -
-            </button>
-            <button type="button" className="action-button secondary" onClick={() => setZoom(1.2)}>
-              Nullstill
-            </button>
-            <button type="button" className="action-button secondary" onClick={() => setZoom((value) => clampZoom(value + 0.2))}>
-              Zoom +
-            </button>
-          </div>
           <p className="muted">Institusjoner vist: {filteredFacilities.length}</p>
         </div>
 
         <div className="map-layout">
           <div className="map-canvas" aria-label="Kartvisning av institusjoner">
-            <div className="map-stage" style={{ transform: `scale(${zoom})` }}>
-              <svg className="norway-shape" viewBox="0 0 100 160" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                <path
-                  d="M58 6 L64 13 L66 20 L63 27 L67 34 L72 42 L69 50 L73 58 L71 66 L75 73 L70 81 L73 88 L69 95 L66 104 L62 112 L58 120 L53 128 L48 135 L43 143 L40 151 L34 156 L28 151 L26 144 L22 139 L24 132 L21 124 L24 117 L21 109 L24 100 L21 91 L25 82 L23 73 L27 65 L26 56 L30 48 L29 39 L34 31 L37 23 L42 16 L48 11 Z"
-                  className="norway-outline"
-                />
-              </svg>
-
-              {filteredFacilities.map((facility) => {
-                const point = getFacilityPointPosition(facility);
-                const isSelected = facility.facility_id === selectedFacility?.facility_id;
-
-                return (
-                  <button
-                    key={facility.facility_id}
-                    type="button"
-                    className={`map-point type-${facility.facility_type}${isSelected ? " selected" : ""}`}
-                    title={`${facility.name} (${facility.facility_type}) | Kommune ${municipalityLabel(facility.municipality_code)} | Senger ${facility.beds}`}
-                    style={{ left: `${point.x}%`, top: `${point.y}%` }}
-                    onClick={() => setSelectedFacilityId(facility.facility_id)}
-                  >
-                    <span className="sr-only">{facility.name}</span>
-                  </button>
-                );
-              })}
-            </div>
+            <FacilityLeafletMap
+              facilities={filteredFacilities}
+              municipalityMap={municipalityMap}
+              countyMap={countyMap}
+              selectedFacilityId={selectedFacility?.facility_id ?? null}
+              onSelectFacility={setSelectedFacilityId}
+            />
           </div>
 
           <aside className="map-panel card">

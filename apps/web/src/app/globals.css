@@ -1,3 +1,5 @@
+@import "leaflet/dist/leaflet.css";
+
 :root {
   --bg: #f7f6f2;
   --surface: #ffffff;
@@ -167,12 +169,6 @@ th {
   color: var(--brand);
 }
 
-.button-row {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -188,7 +184,7 @@ th {
 .map-toolbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   margin-bottom: 0.8rem;
   flex-wrap: wrap;
@@ -206,69 +202,17 @@ th {
   min-height: 320px;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background:
-    linear-gradient(160deg, rgba(15, 118, 110, 0.08), rgba(245, 158, 11, 0.09)),
-    repeating-linear-gradient(
-      45deg,
-      rgba(19, 32, 28, 0.03),
-      rgba(19, 32, 28, 0.03) 10px,
-      transparent 10px,
-      transparent 20px
-    );
   overflow: hidden;
 }
 
-.map-stage {
-  position: relative;
+.leaflet-map {
   width: 100%;
   height: 100%;
-  min-height: 320px;
-  transform-origin: center center;
-  transition: transform 140ms ease;
+  min-height: 420px;
 }
 
-.norway-shape {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.norway-outline {
-  fill: rgba(15, 118, 110, 0.12);
-  stroke: rgba(19, 32, 28, 0.4);
-  stroke-width: 1.1;
-}
-
-.map-point {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--brand);
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 0 1px rgba(19, 32, 28, 0.2);
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  padding: 0;
-}
-
-.map-point.type-sykehus {
-  background: #0f766e;
-}
-
-.map-point.type-legekontor {
-  background: #2563eb;
-}
-
-.map-point.type-apotek {
-  background: #dc2626;
-}
-
-.map-point.selected {
-  width: 14px;
-  height: 14px;
-  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.22);
+.leaflet-container {
+  font: inherit;
 }
 
 .map-panel h3 {
@@ -299,7 +243,7 @@ th {
     min-height: 240px;
   }
 
-  .map-stage {
+  .leaflet-map {
     min-height: 240px;
   }
 
