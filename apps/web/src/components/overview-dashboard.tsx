@@ -44,6 +44,16 @@ export function OverviewDashboard({ countySummary, municipalitySummary }: Props)
       .sort((a, b) => b.need - a.need);
   }, [municipalitySummary, selectedCounty]);
 
+  const pressureRows = useMemo(() => {
+    return visibleMunicipalities
+      .map((row) => ({
+        ...row,
+        pressure: row.capacity > 0 ? row.need / row.capacity : row.need
+      }))
+      .sort((a, b) => b.pressure - a.pressure)
+      .slice(0, 5);
+  }, [visibleMunicipalities]);
+
   return (
     <>
       <div className="card filters">
@@ -105,6 +115,33 @@ export function OverviewDashboard({ countySummary, municipalitySummary }: Props)
                 <td>{row.capacity.toLocaleString("nb-NO")}</td>
                 <td>{row.demand.toLocaleString("nb-NO")}</td>
                 <td>{row.need.toLocaleString("nb-NO")}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="card table-wrap">
+        <h2>Topp Presskommuner</h2>
+        <p className="muted">Kommuner med hoyest forhold mellom behovsindikatorer og registrert kapasitet.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Kommune</th>
+              <th>Fylke</th>
+              <th>Behov</th>
+              <th>Ansatte</th>
+              <th>Pressindeks</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pressureRows.map((row) => (
+              <tr key={row.municipalityCode}>
+                <td>{row.municipalityName}</td>
+                <td>{row.countyName}</td>
+                <td>{row.need.toLocaleString("nb-NO")}</td>
+                <td>{row.capacity.toLocaleString("nb-NO")}</td>
+                <td>{row.pressure.toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

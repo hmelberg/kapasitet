@@ -99,7 +99,7 @@ export function CapacityView({ rows, facilities, municipalityMap, countyMap }: P
             <option value="all">Alle</option>
             {countyOptions.map((option) => (
               <option key={option} value={option}>
-                {option}
+                {countyLabel(option)}
               </option>
             ))}
           </select>

@@ -109,7 +109,7 @@ export function NeedsView({ rows, capacityRows, municipalityMap, countyMap }: Pr
             <option value="all">Alle</option>
             {countyOptions.map((option) => (
               <option key={option} value={option}>
-                {option}
+                {countyLabel(option)}
               </option>
             ))}
           </select>
