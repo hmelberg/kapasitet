@@ -1,0 +1,853 @@
+﻿{
+    "features":  [
+                     {
+                         "properties":  {
+                                            "county_code":  "03",
+                                            "county_name":  "Oslo",
+                                            "municipality_code":  "0301",
+                                            "municipality_name":  "Oslo"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.7522,
+                                                              59.9139
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "11",
+                                            "county_name":  "Rogaland",
+                                            "municipality_code":  "1103",
+                                            "municipality_name":  "Stavanger"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              5.7331,
+                                                              58.97
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "11",
+                                            "county_name":  "Rogaland",
+                                            "municipality_code":  "1108",
+                                            "municipality_name":  "Sandnes"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              5.7367,
+                                                              58.7656
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "15",
+                                            "county_name":  "More og Romsdal",
+                                            "municipality_code":  "1505",
+                                            "municipality_name":  "Kristiansund"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              7.725,
+                                                              63.1108
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "15",
+                                            "county_name":  "More og Romsdal",
+                                            "municipality_code":  "1508",
+                                            "municipality_name":  "Alesund"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              6.1414,
+                                                              62.4706
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "18",
+                                            "county_name":  "Nordland",
+                                            "municipality_code":  "1804",
+                                            "municipality_name":  "Bodo"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              14.405,
+                                                              67.2808
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "31",
+                                            "county_name":  "Ostfold",
+                                            "municipality_code":  "3103",
+                                            "municipality_name":  "Moss"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.6622,
+                                                              59.4361
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "31",
+                                            "county_name":  "Ostfold",
+                                            "municipality_code":  "3107",
+                                            "municipality_name":  "Fredrikstad"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.9478,
+                                                              59.2181
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "32",
+                                            "county_name":  "Akershus",
+                                            "municipality_code":  "3201",
+                                            "municipality_name":  "Baerum"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.3589,
+                                                              59.8836
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "32",
+                                            "county_name":  "Akershus",
+                                            "municipality_code":  "3205",
+                                            "municipality_name":  "Lillestrom"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.0289,
+                                                              59.9522
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "33",
+                                            "county_name":  "Buskerud",
+                                            "municipality_code":  "3301",
+                                            "municipality_name":  "Drammen"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.205,
+                                                              59.743899999999996
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "39",
+                                            "county_name":  "Vestfold",
+                                            "municipality_code":  "3905",
+                                            "municipality_name":  "Tonsberg"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.4133,
+                                                              59.2736
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "40",
+                                            "county_name":  "Telemark",
+                                            "municipality_code":  "4003",
+                                            "municipality_name":  "Skien"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              9.6089,
+                                                              59.0142
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "42",
+                                            "county_name":  "Agder",
+                                            "municipality_code":  "4204",
+                                            "municipality_name":  "Kristiansand"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              8.0728,
+                                                              58.145
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "46",
+                                            "county_name":  "Vestland",
+                                            "municipality_code":  "4601",
+                                            "municipality_name":  "Bergen"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              5.325,
+                                                              60.3913
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "46",
+                                            "county_name":  "Vestland",
+                                            "municipality_code":  "4626",
+                                            "municipality_name":  "Oygarden"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              4.9392,
+                                                              60.2425
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "46",
+                                            "county_name":  "Vestland",
+                                            "municipality_code":  "4627",
+                                            "municipality_name":  "Askoy"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              5.1311,
+                                                              60.5889
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "50",
+                                            "county_name":  "Trondelag",
+                                            "municipality_code":  "5001",
+                                            "municipality_name":  "Trondheim"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.3951,
+                                                              63.4305
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "50",
+                                            "county_name":  "Trondelag",
+                                            "municipality_code":  "5035",
+                                            "municipality_name":  "Stjordal"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.1572,
+                                                              63.2997
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "55",
+                                            "county_name":  "Troms",
+                                            "municipality_code":  "5501",
+                                            "municipality_name":  "Tromso"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              18.9553,
+                                                              69.6492
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "11",
+                                            "county_name":  "Rogaland",
+                                            "municipality_code":  "1149",
+                                            "municipality_name":  "Haugesund"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              5.2682,
+                                                              59.4182
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "15",
+                                            "county_name":  "MÃ¸re og Romsdal",
+                                            "municipality_code":  "1504",
+                                            "municipality_name":  "Molde"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              7.1764,
+                                                              62.7364
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "18",
+                                            "county_name":  "Nordland",
+                                            "municipality_code":  "1816",
+                                            "municipality_name":  "Narvik"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              17.4256,
+                                                              68.4389
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "20",
+                                            "county_name":  "Innlandet",
+                                            "municipality_code":  "2025",
+                                            "municipality_name":  "Lillehammer"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.4639,
+                                                              61.1139
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "20",
+                                            "county_name":  "Innlandet",
+                                            "municipality_code":  "2027",
+                                            "municipality_name":  "Hamar"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.0758,
+                                                              60.7964
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "20",
+                                            "county_name":  "Innlandet",
+                                            "municipality_code":  "2028",
+                                            "municipality_name":  "GjÃ¸vik"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.6908,
+                                                              60.7875
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "36",
+                                            "county_name":  "Agder",
+                                            "municipality_code":  "3603",
+                                            "municipality_name":  "Lillesand"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              8.3725,
+                                                              58.2557
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "31",
+                                            "county_name":  "Ã˜stfold",
+                                            "municipality_code":  "3706",
+                                            "municipality_name":  "Sarpsborg"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.1103,
+                                                              59.2803
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "40",
+                                            "county_name":  "Telemark",
+                                            "municipality_code":  "4009",
+                                            "municipality_name":  "Porsgrunn"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              9.6542,
+                                                              59.1356
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "42",
+                                            "county_name":  "Agder",
+                                            "municipality_code":  "4201",
+                                            "municipality_name":  "Arendal"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              8.7725,
+                                                              58.4611
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "42",
+                                            "county_name":  "Agder",
+                                            "municipality_code":  "4206",
+                                            "municipality_name":  "Mandal"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              7.4697,
+                                                              58.0225
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "50",
+                                            "county_name":  "TrÃ¸ndelag",
+                                            "municipality_code":  "5006",
+                                            "municipality_name":  "Namsos"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.5,
+                                                              64.4697
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "50",
+                                            "county_name":  "TrÃ¸ndelag",
+                                            "municipality_code":  "5007",
+                                            "municipality_name":  "Steinkjer"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.4919,
+                                                              64.0136
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "50",
+                                            "county_name":  "TrÃ¸ndelag",
+                                            "municipality_code":  "5014",
+                                            "municipality_name":  "Levanger"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.2578,
+                                                              63.7558
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "12",
+                                            "county_name":  "Hordaland",
+                                            "municipality_code":  "1226",
+                                            "municipality_name":  "Voss"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              6.4219,
+                                                              60.5614
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "01",
+                                            "county_name":  "Ã˜stfold",
+                                            "municipality_code":  "0105",
+                                            "municipality_name":  "Halden"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.4044,
+                                                              59.1233
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "01",
+                                            "county_name":  "Ã˜stfold",
+                                            "municipality_code":  "0106",
+                                            "municipality_name":  "Mysen"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              11.3897,
+                                                              59.7164
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "02",
+                                            "county_name":  "Akershus",
+                                            "municipality_code":  "0209",
+                                            "municipality_name":  "Asker"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.1639,
+                                                              59.8522
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "02",
+                                            "county_name":  "Akershus",
+                                            "municipality_code":  "0213",
+                                            "municipality_name":  "Ã˜rsted"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.845,
+                                                              60.0542
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "06",
+                                            "county_name":  "Buskerud",
+                                            "municipality_code":  "0604",
+                                            "municipality_name":  "Kongsberg"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              9.6453,
+                                                              59.6608
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "07",
+                                            "county_name":  "Vestfold",
+                                            "municipality_code":  "0709",
+                                            "municipality_name":  "Larvik"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.0306,
+                                                              59.0542
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "07",
+                                            "county_name":  "Vestfold",
+                                            "municipality_code":  "0710",
+                                            "municipality_name":  "Holmestrand"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              10.2264,
+                                                              59.0386
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "08",
+                                            "county_name":  "Telemark",
+                                            "municipality_code":  "0807",
+                                            "municipality_name":  "Notodden"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              9.2086,
+                                                              59.5686
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "08",
+                                            "county_name":  "Telemark",
+                                            "municipality_code":  "0809",
+                                            "municipality_name":  "Rjukan"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              8.7667,
+                                                              59.3014
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "12",
+                                            "county_name":  "Hordaland",
+                                            "municipality_code":  "1235",
+                                            "municipality_name":  "Odda"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              6.2135,
+                                                              60.0549
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "12",
+                                            "county_name":  "Hordaland",
+                                            "municipality_code":  "1246",
+                                            "municipality_name":  "Knarvik"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              5.2806,
+                                                              60.4514
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "14",
+                                            "county_name":  "Sogn og Fjordane",
+                                            "municipality_code":  "1401",
+                                            "municipality_name":  "FlorÃ¸"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              5.8625,
+                                                              61.5947
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "14",
+                                            "county_name":  "Sogn og Fjordane",
+                                            "municipality_code":  "1411",
+                                            "municipality_name":  "Sogndal"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              6.734,
+                                                              61.1614
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "14",
+                                            "county_name":  "Sogn og Fjordane",
+                                            "municipality_code":  "1412",
+                                            "municipality_name":  "Leikanger"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              6.9014,
+                                                              61.2308
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "18",
+                                            "county_name":  "Nordland",
+                                            "municipality_code":  "1821",
+                                            "municipality_name":  "Mo i Rana"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              14.1897,
+                                                              66.3133
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "18",
+                                            "county_name":  "Nordland",
+                                            "municipality_code":  "1826",
+                                            "municipality_name":  "SandnessjÃ¸en"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              12.4789,
+                                                              65.9594
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "19",
+                                            "county_name":  "Troms",
+                                            "municipality_code":  "1903",
+                                            "municipality_name":  "Harstad"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              16.5447,
+                                                              68.5506
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     },
+                     {
+                         "properties":  {
+                                            "county_code":  "20",
+                                            "county_name":  "Finnmark",
+                                            "municipality_code":  "2004",
+                                            "municipality_name":  "Hammerfest"
+                                        },
+                         "type":  "Feature",
+                         "geometry":  {
+                                          "coordinates":  [
+                                                              25.5163,
+                                                              70.9821
+                                                          ],
+                                          "type":  "Point"
+                                      }
+                     }
+                 ],
+    "type":  "FeatureCollection"
+}

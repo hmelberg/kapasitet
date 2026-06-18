@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import { Circle, CircleMarker, MapContainer, Popup, TileLayer, useMap } from "react-leaflet";
+import { Circle, CircleMarker, GeoJSON, MapContainer, Popup, TileLayer, useMap } from "react-leaflet";
+import L from "leaflet";
 import type { FacilityRow } from "../lib/types";
+import type { FeatureCollection } from "geojson";
 
 type MunicipalityOverlay = {
   municipalityCode: string;
@@ -25,6 +27,7 @@ type Props = {
   onSelectFacility: (facilityId: string) => void;
   selectedMunicipalityCode: string | null;
   onSelectMunicipality: (municipalityCode: string) => void;
+  geojson?: FeatureCollection;
 };
 
 function getMarkerColor(facilityType: string) {
@@ -79,7 +82,8 @@ export function FacilityLeafletMap({
   selectedFacilityId,
   onSelectFacility,
   selectedMunicipalityCode,
-  onSelectMunicipality
+  onSelectMunicipality,
+  geojson
 }: Props) {
   const municipalityLabel = (municipalityCode: string) => municipalityMap[municipalityCode] ?? municipalityCode;
   const countyLabel = (countyCode: string) => countyMap[countyCode] ?? countyCode;
@@ -98,6 +102,29 @@ export function FacilityLeafletMap({
       />
 
       <FitToFacilities facilities={facilities} />
+
+      {geojson && (
+        <GeoJSON
+          data={geojson}
+          style={() => ({
+            color: "#666",
+            weight: 1,
+            opacity: 0.4,
+            fillOpacity: 0.05
+          })}
+          pointToLayer={(feature, latlng) => {
+            const popupText = feature.properties?.municipality_name || "Municipality";
+            return L.circleMarker(latlng, {
+              radius: 3,
+              fillColor: "#666",
+              color: "#333",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.3
+            }).bindPopup(popupText);
+          }}
+        />
+      )}
 
       {municipalityOverlays.map((overlay) => {
         const isSelected = overlay.municipalityCode === selectedMunicipalityCode;

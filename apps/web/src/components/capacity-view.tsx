@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import type { CapacityRow, FacilityRow, NeedRow } from "../lib/types";
+import type { FeatureCollection } from "geojson";
 
 type Props = {
   rows: CapacityRow[];
@@ -30,6 +31,17 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
   const [selectedMunicipalityCode, setSelectedMunicipalityCode] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<"name" | "pressure" | "capacity">("name");
+  const [geojson, setGeojson] = useState<FeatureCollection | null>(null);
+
+  useEffect(() => {
+    // Load GeoJSON boundaries (fallback to empty if not available)
+    fetch("/data/boundaries/municipalities.geojson")
+      .then((res) => res.json())
+      .then((data) => setGeojson(data))
+      .catch(() => {
+        console.log("Note: GeoJSON boundaries not available, using circle approximations");
+      });
+  }, []);
 
   const metricOptions = uniqueSorted(rows.map((row) => row.metric));
   const periodOptions = uniqueSorted(rows.map((row) => row.period));
@@ -239,6 +251,7 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
               onSelectFacility={setSelectedFacilityId}
               selectedMunicipalityCode={selectedMunicipality?.municipalityCode ?? null}
               onSelectMunicipality={setSelectedMunicipalityCode}
+              geojson={geojson ?? undefined}
             />
           </div>
 
