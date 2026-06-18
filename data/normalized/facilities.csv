@@ -2,24 +2,42 @@
 fac_oslo_001,helsedir_reg_001,Oslo Universitetssykehus,sykehus,0301,03,59.936,10.738,1200,2026-06-01
 fac_stavanger_001,helsedir_reg_001,Stavanger universitetssjukehus,sykehus,1103,11,58.964,5.730,780,2026-06-01
 fac_sandnes_001,helsedir_reg_001,Sandnes lokalmedisinske senter,sykehus,1108,11,58.852,5.736,220,2026-06-01
+fac_kristiansund_001,helsedir_reg_001,Kristiansund sjukehus,sykehus,1505,15,63.111,7.728,210,2026-06-01
+fac_alesund_001,helsedir_reg_001,Alesund sjukehus,sykehus,1508,15,62.472,6.154,420,2026-06-01
+fac_bodo_001,helsedir_reg_001,Nordlandssykehuset Bodo,sykehus,1804,18,67.282,14.405,520,2026-06-01
+fac_moss_001,helsedir_reg_001,Moss sykehus,sykehus,3103,31,59.433,10.657,170,2026-06-01
+fac_fredrikstad_001,helsedir_reg_001,Kalnes sykehusomrade Fredrikstad,sykehus,3107,31,59.246,10.959,340,2026-06-01
+fac_baerum_001,helsedir_reg_001,Baerum sykehus,sykehus,3201,32,59.888,10.523,440,2026-06-01
+fac_lillestrom_001,helsedir_reg_001,Akershus universitetssykehus avd Lillestrom,sykehus,3205,32,59.956,11.050,360,2026-06-01
+fac_drammen_001,helsedir_reg_001,Drammen sykehus,sykehus,3301,33,59.744,10.204,500,2026-06-01
+fac_tonsberg_001,helsedir_reg_001,SiV Tonsberg,sykehus,3905,39,59.291,10.423,390,2026-06-01
+fac_skien_001,helsedir_reg_001,Skien sykehus,sykehus,4003,40,59.205,9.608,310,2026-06-01
+fac_kristiansand_001,helsedir_reg_001,Sorlandet sykehus Kristiansand,sykehus,4204,42,58.159,8.003,620,2026-06-01
 fac_bergen_001,helsedir_reg_001,Haukeland Universitetssjukehus,sykehus,4601,46,60.377,5.360,1080,2026-06-01
 fac_oygarden_001,helsedir_reg_001,Oygarden helsehus,sykehus,4626,46,60.580,4.920,180,2026-06-01
 fac_askoy_001,helsedir_reg_001,Askoy behandlingstun,sykehus,4627,46,60.408,5.200,170,2026-06-01
 fac_trondheim_001,helsedir_reg_001,St. Olavs hospital,sykehus,5001,50,63.421,10.398,920,2026-06-01
 fac_stjordal_001,helsedir_reg_001,Stjordal helsehus,sykehus,5035,50,63.468,10.926,210,2026-06-01
-fac_baerum_001,helsedir_reg_001,Baerum sykehus,sykehus,3201,32,59.888,10.523,440,2026-06-01
-fac_lillestrom_001,helsedir_reg_001,Akershus universitetssykehus avd Lillestrom,sykehus,3205,32,59.956,11.050,360,2026-06-01
-fac_drammen_001,helsedir_reg_001,Drammen sykehus,sykehus,3301,33,59.744,10.204,500,2026-06-01
-fac_kristiansand_001,helsedir_reg_001,Sorlandet sykehus Kristiansand,sykehus,4204,42,58.159,8.003,620,2026-06-01
+fac_tromso_001,helsedir_reg_001,UNN Tromso,sykehus,5501,55,69.684,18.972,700,2026-06-01
 fac_oslo_gp_001,kpr_open_001,Sentrum Legekontor,legekontor,0301,03,59.912,10.748,0,2026-06-05
+fac_stavanger_gp_001,kpr_open_001,Vagen Legesenter,legekontor,1103,11,58.970,5.733,0,2026-06-05
+fac_alesund_gp_001,kpr_open_001,Alesund Legesenter,legekontor,1508,15,62.472,6.155,0,2026-06-05
+fac_bodo_gp_001,kpr_open_001,Bodo Sentrum Legesenter,legekontor,1804,18,67.281,14.401,0,2026-06-05
+fac_fredrikstad_gp_001,kpr_open_001,Fredrikstad Helsehus Legesenter,legekontor,3107,31,59.218,10.929,0,2026-06-05
 fac_bergen_gp_001,kpr_open_001,Nordnes Legesenter,legekontor,4601,46,60.396,5.312,0,2026-06-05
 fac_trondheim_gp_001,kpr_open_001,Midtbyen Legesenter,legekontor,5001,50,63.430,10.395,0,2026-06-05
-fac_stavanger_gp_001,kpr_open_001,Vagen Legesenter,legekontor,1103,11,58.970,5.733,0,2026-06-05
 fac_baerum_gp_001,kpr_open_001,Sandvika Legesenter,legekontor,3201,32,59.892,10.524,0,2026-06-05
+fac_tonsberg_gp_001,kpr_open_001,Tonsberg Legesenter,legekontor,3905,39,59.267,10.407,0,2026-06-05
 fac_kristiansand_gp_001,kpr_open_001,Kvadraturen Legesenter,legekontor,4204,42,58.146,7.995,0,2026-06-05
+fac_tromso_gp_001,kpr_open_001,Tromso Sentrum Legesenter,legekontor,5501,55,69.649,18.956,0,2026-06-05
 fac_oslo_apotek_001,dmp_apotek_001,Apotek 1 Oslo S,apotek,0301,03,59.910,10.753,0,2026-06-05
+fac_stavanger_apotek_001,dmp_apotek_001,Stavanger Sentrum Apotek,apotek,1103,11,58.968,5.732,0,2026-06-05
+fac_alesund_apotek_001,dmp_apotek_001,Alesund Sentrum Apotek,apotek,1508,15,62.471,6.154,0,2026-06-05
+fac_bodo_apotek_001,dmp_apotek_001,Bodo Sentrum Apotek,apotek,1804,18,67.280,14.404,0,2026-06-05
+fac_fredrikstad_apotek_001,dmp_apotek_001,Fredrikstad Sentrum Apotek,apotek,3107,31,59.218,10.930,0,2026-06-05
 fac_bergen_apotek_001,dmp_apotek_001,Bergen Sentrum Apotek,apotek,4601,46,60.392,5.325,0,2026-06-05
 fac_trondheim_apotek_001,dmp_apotek_001,Trondheim Torg Apotek,apotek,5001,50,63.430,10.395,0,2026-06-05
-fac_stavanger_apotek_001,dmp_apotek_001,Stavanger Sentrum Apotek,apotek,1103,11,58.968,5.732,0,2026-06-05
 fac_drammen_apotek_001,dmp_apotek_001,Drammen Torg Apotek,apotek,3301,33,59.743,10.204,0,2026-06-05
+fac_tonsberg_apotek_001,dmp_apotek_001,Tonsberg Sentrum Apotek,apotek,3905,39,59.266,10.409,0,2026-06-05
 fac_kristiansand_apotek_001,dmp_apotek_001,Kristiansand Sentrum Apotek,apotek,4204,42,58.146,7.998,0,2026-06-05
+fac_tromso_apotek_001,dmp_apotek_001,Tromso Sentrum Apotek,apotek,5501,55,69.650,18.955,0,2026-06-05

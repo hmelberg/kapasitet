@@ -2,12 +2,20 @@ municipality_code,county_code,municipality_name,county_name
 0301,03,Oslo,Oslo
 1103,11,Stavanger,Rogaland
 1108,11,Sandnes,Rogaland
+1505,15,Kristiansund,More og Romsdal
+1508,15,Alesund,More og Romsdal
+1804,18,Bodo,Nordland
+3103,31,Moss,Ostfold
+3107,31,Fredrikstad,Ostfold
+3201,32,Baerum,Akershus
+3205,32,Lillestrom,Akershus
+3301,33,Drammen,Buskerud
+3905,39,Tonsberg,Vestfold
+4003,40,Skien,Telemark
+4204,42,Kristiansand,Agder
 4601,46,Bergen,Vestland
 4626,46,Oygarden,Vestland
 4627,46,Askoy,Vestland
 5001,50,Trondheim,Trondelag
 5035,50,Stjordal,Trondelag
-3201,32,Baerum,Akershus
-3205,32,Lillestrom,Akershus
-3301,33,Drammen,Buskerud
-4204,42,Kristiansand,Agder
+5501,55,Tromso,Troms
