@@ -1,8 +1,9 @@
-import { CapacityView } from "@/components/capacity-view";
-import { loadCapacityRows } from "@/lib/csv";
+import { CapacityView } from "../../components/capacity-view";
+import { loadCapacityRows, loadFacilityRows } from "../../lib/csv";
 
 export default function KapasitetPage() {
   const rows = loadCapacityRows();
+  const facilities = loadFacilityRows();
 
   return (
     <section className="grid">
@@ -12,7 +13,7 @@ export default function KapasitetPage() {
           Denne visningen leser direkte fra CSV-filer i repoet med filtrering per indikator, periode og fylke.
         </p>
       </div>
-      <CapacityView rows={rows} />
+      <CapacityView rows={rows} facilities={facilities} />
     </section>
   );
 }

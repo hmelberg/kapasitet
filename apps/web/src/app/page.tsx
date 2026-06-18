@@ -1,4 +1,4 @@
-import { loadCapacityRows } from "@/lib/csv";
+import { loadCapacityRows } from "../lib/csv";
 
 export default function HomePage() {
   const rows = loadCapacityRows();

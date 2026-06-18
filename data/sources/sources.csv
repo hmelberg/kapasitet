@@ -1,3 +1,6 @@
 source_id,owner,dataset_name,url,license,geo_level,update_frequency,last_updated
 ssb_kostra_001,SSB,KOSTRA helse og omsorg,https://www.ssb.no/offentlig-sektor/kostra,NLOD,kommune,arlig,2026-06-01
 fhi_kpr_001,FHI,KPR fastlege og kommunale tjenester,https://www.fhi.no/helseregistre/kpr,Offentlig statistikk,kommune,arlig,2026-06-05
+helsedir_reg_001,Helsedirektoratet,Register over sykehus og behandlingssteder,https://www.helsedirektoratet.no,NLOD,nasjonalt,arlig,2026-06-01
+kpr_open_001,FHI,KPR apne oversikter for primarhelse,https://www.fhi.no/helseregistre/kpr,Offentlig statistikk,kommune,arlig,2026-06-05
+dmp_apotek_001,DMP,Oversikt over apotek,https://www.dmp.no,Offentlig,nasjonalt,arlig,2026-06-05

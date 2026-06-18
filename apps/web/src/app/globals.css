@@ -140,6 +140,14 @@ th {
   background: #fff;
 }
 
+.filters input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem;
+  background: #fff;
+}
+
 .map-canvas {
   position: relative;
   width: 100%;
@@ -166,6 +174,18 @@ th {
   border: 2px solid #ffffff;
   box-shadow: 0 0 0 1px rgba(19, 32, 28, 0.2);
   transform: translate(-50%, -50%);
+}
+
+.map-point.type-sykehus {
+  background: #0f766e;
+}
+
+.map-point.type-legekontor {
+  background: #2563eb;
+}
+
+.map-point.type-apotek {
+  background: #dc2626;
 }
 
 @media (max-width: 760px) {

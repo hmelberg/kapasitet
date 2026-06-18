@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { TopNav } from "@/components/top-nav";
+import { TopNav } from "../components/top-nav";
 
 export const metadata: Metadata = {
   title: "Kapasitet i helsesektoren",

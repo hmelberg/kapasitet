@@ -1,4 +1,4 @@
-import { loadSourceRows } from "@/lib/csv";
+import { loadSourceRows } from "../../lib/csv";
 
 export default function KilderPage() {
   const sources = loadSourceRows();
