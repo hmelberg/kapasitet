@@ -82,7 +82,10 @@ export function loadFacilityRows(): FacilityRow[] {
     beds: Number(row[idx.beds]),
     last_updated: row[idx.last_updated],
     capacity_value: Number(row[idx.capacity_value]),
-    capacity_unit: row[idx.capacity_unit]
+    capacity_unit: row[idx.capacity_unit],
+    helseregion: row[idx.helseregion] ?? "",
+    helseforetak: row[idx.helseforetak] ?? "",
+    sykehus_kategori: row[idx.sykehus_kategori] ?? ""
   }));
 }
 

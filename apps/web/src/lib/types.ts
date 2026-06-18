@@ -55,6 +55,10 @@ export type FacilityRow = {
   last_updated: string;
   capacity_value: number;
   capacity_unit: string;
+  // Specialist-health hierarchy (populated for facility_type "sykehus" only):
+  helseregion: string;
+  helseforetak: string;
+  sykehus_kategori: string;
 };
 
 // National, real medication-use figures from FHI Legemiddelregisteret (LMR).

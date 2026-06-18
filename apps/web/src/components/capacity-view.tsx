@@ -18,6 +18,16 @@ function uniqueSorted(values: string[]) {
   return Array.from(new Set(values)).sort((a, b) => a.localeCompare(b));
 }
 
+// Mirrors REGION_COLORS in facility-leaflet-map (kept local so this component
+// does not statically import the Leaflet module, which is client-only).
+const REGION_LEGEND: { label: string; color: string }[] = [
+  { label: "Helse Sør-Øst", color: "#7c3aed" },
+  { label: "Helse Vest", color: "#0f766e" },
+  { label: "Helse Midt-Norge", color: "#ca8a04" },
+  { label: "Helse Nord", color: "#0891b2" },
+  { label: "Sykehus uten HF / legekontor / apotek", color: "#9ca3af" }
+];
+
 const FacilityLeafletMap = dynamic(
   () => import("./facility-leaflet-map").then((mod) => mod.FacilityLeafletMap),
   { ssr: false }
@@ -32,6 +42,8 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
   const [selectedMunicipalityCode, setSelectedMunicipalityCode] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<"name" | "pressure" | "capacity">("name");
+  const [helseregion, setHelseregion] = useState<string>("all");
+  const [sykehusType, setSykehusType] = useState<string>("all");
   const [mapLayers, setMapLayers] = useState<Record<string, boolean>>({
     sykehus: true,
     legekontor: true,
@@ -54,6 +66,12 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
   const periodOptions = uniqueSorted(rows.map((row) => row.period));
   const countyOptions = uniqueSorted(rows.map((row) => row.county_code));
   const sectorOptions = uniqueSorted(rows.map((row) => row.sector));
+  const regionOptions = uniqueSorted(
+    facilities.filter((f) => f.facility_type === "sykehus" && f.helseregion).map((f) => f.helseregion)
+  );
+  const sykehusTypeOptions = uniqueSorted(
+    facilities.filter((f) => f.facility_type === "sykehus" && f.sykehus_kategori).map((f) => f.sykehus_kategori)
+  );
 
   const filteredRows = useMemo(() => {
     return rows.filter((row) => {
@@ -83,8 +101,21 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
   }, [facilities, county]);
 
   const visibleFacilities = useMemo(() => {
-    return filteredFacilities.filter((facility) => mapLayers[facility.facility_type] === true);
-  }, [filteredFacilities, mapLayers]);
+    return filteredFacilities.filter((facility) => {
+      if (mapLayers[facility.facility_type] !== true) {
+        return false;
+      }
+      if (facility.facility_type === "sykehus") {
+        if (helseregion !== "all" && facility.helseregion !== helseregion) {
+          return false;
+        }
+        if (sykehusType !== "all" && facility.sykehus_kategori !== sykehusType) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }, [filteredFacilities, mapLayers, helseregion, sykehusType]);
 
   const municipalityOverlays = useMemo(() => {
     const facilitiesByMunicipality = new Map<string, FacilityRow[]>();
@@ -244,6 +275,30 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
         </label>
 
         <label>
+          Helseregion (sykehus)
+          <select value={helseregion} onChange={(event) => setHelseregion(event.target.value)}>
+            <option value="all">Alle</option>
+            {regionOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Sykehustype
+          <select value={sykehusType} onChange={(event) => setSykehusType(event.target.value)}>
+            <option value="all">Alle</option>
+            {sykehusTypeOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
           Søk kommune/fylke
           <input
             type="text"
@@ -305,6 +360,24 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
           </div>
         </div>
 
+        <div className="map-legend" style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", margin: "0.4rem 0 0.8rem" }}>
+          {REGION_LEGEND.map((item) => (
+            <span key={item.label} style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem", fontSize: "0.82rem" }}>
+              <span
+                style={{
+                  width: "0.8rem",
+                  height: "0.8rem",
+                  borderRadius: "50%",
+                  background: item.color,
+                  border: "1px solid #fff",
+                  boxShadow: "0 0 0 1px #ccc"
+                }}
+              />
+              {item.label}
+            </span>
+          ))}
+        </div>
+
         <div className="map-layout">
           <div className="map-canvas" aria-label="Kartvisning av institusjoner">
             <FacilityLeafletMap
@@ -326,9 +399,26 @@ export function CapacityView({ rows, facilities, needRows, municipalityMap, coun
             {selectedFacility ? (
               <>
                 <p><strong>{selectedFacility.name}</strong></p>
-                <p className="muted">{selectedFacility.facility_type}</p>
+                <p className="muted">
+                  {selectedFacility.facility_type}
+                  {selectedFacility.facility_type === "sykehus" && selectedFacility.sykehus_kategori
+                    ? ` · ${selectedFacility.sykehus_kategori}`
+                    : ""}
+                </p>
                 <table>
                   <tbody>
+                    {selectedFacility.facility_type === "sykehus" && selectedFacility.helseregion ? (
+                      <tr>
+                        <th>Helseregion</th>
+                        <td>{selectedFacility.helseregion}</td>
+                      </tr>
+                    ) : null}
+                    {selectedFacility.facility_type === "sykehus" && selectedFacility.helseforetak ? (
+                      <tr>
+                        <th>Helseforetak</th>
+                        <td>{selectedFacility.helseforetak}</td>
+                      </tr>
+                    ) : null}
                     <tr>
                       <th>Kommune</th>
                       <td>{municipalityLabel(selectedFacility.municipality_code)}</td>

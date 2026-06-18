@@ -31,11 +31,21 @@ type Props = {
   showMunicipalityLayer?: boolean;
 };
 
-function getMarkerColor(facilityType: string) {
-  if (facilityType === "sykehus") {
-    return "#0f766e";
+export const REGION_COLORS: Record<string, string> = {
+  "Helse Sør-Øst": "#7c3aed",
+  "Helse Vest": "#0f766e",
+  "Helse Midt-Norge": "#ca8a04",
+  "Helse Nord": "#0891b2"
+};
+
+function getMarkerColor(facility: FacilityRow) {
+  if (facility.facility_type === "sykehus") {
+    if (facility.sykehus_kategori === "Helseforetak") {
+      return REGION_COLORS[facility.helseregion] ?? "#0f766e";
+    }
+    return "#9ca3af"; // private / municipal / unclassified "hospitals"
   }
-  if (facilityType === "legekontor") {
+  if (facility.facility_type === "legekontor") {
     return "#2563eb";
   }
   return "#dc2626";
@@ -174,7 +184,7 @@ export function FacilityLeafletMap({
             pathOptions={{
               color: "#ffffff",
               weight: 2,
-              fillColor: getMarkerColor(facility.facility_type),
+              fillColor: getMarkerColor(facility),
               fillOpacity: 0.92
             }}
             eventHandlers={{
@@ -185,7 +195,20 @@ export function FacilityLeafletMap({
               <strong>{facility.name}</strong>
               <br />
               {facility.facility_type}
+              {facility.facility_type === "sykehus" && facility.sykehus_kategori ? ` (${facility.sykehus_kategori})` : ""}
               <br />
+              {facility.facility_type === "sykehus" && facility.helseregion ? (
+                <>
+                  Helseregion: {facility.helseregion}
+                  <br />
+                  {facility.helseforetak ? (
+                    <>
+                      Helseforetak: {facility.helseforetak}
+                      <br />
+                    </>
+                  ) : null}
+                </>
+              ) : null}
               Kommune: {municipalityLabel(facility.municipality_code)}
               <br />
               Fylke: {countyLabel(facility.county_code)}

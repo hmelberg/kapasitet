@@ -74,6 +74,13 @@ live by the scripts in `scripts/`:
     **modelled** indicators added by `scripts/generate-facility-capacity.ps1`
     (hospital beds scaled by municipality population; real OSM `beds` tags kept
     where present).
+  - `helseregion`/`helseforetak`/`sykehus_kategori` (hospitals only) are added by
+    `scripts/classify-hospitals.ps1`. **helseregion is derived from the county and
+    is accurate.** **helseforetak** is matched on hospital name against the curated
+    list in `data/reference/helseforetak.csv` (4 regions → 20 HF) and is best-effort;
+    unmatched public hospitals stay region-only. `sykehus_kategori` separates genuine
+    Helseforetak hospitals from Privat/ideell, Kommunal/annet (legevakt, helsesenter,
+    sykehjem, ambulanse — things OSM also tags as "hospital") and Uklassifisert.
 
 ### FHI Legemiddelregisteret (LMR)
 - **fhi_lmr_825**: Persons dispensed medication on prescription, per ATC group (table 825)
