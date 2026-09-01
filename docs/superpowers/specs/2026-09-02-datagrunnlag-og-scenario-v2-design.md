@@ -54,9 +54,11 @@ Prosjektet er delt i to spesifikasjoner:
 | SSB 14820 | Tilsvarende for psykisk helsevern voksne | Fylke | 2015–2025 |
 | SSB 07459 | Befolkning etter kommune × kjønn × ettårig alder | Kommune | 1986– |
 | SSB KOSTRA 11996 | Legeårsverk (fastlege, legevakt, sykehjem) | Kommune | 2015– |
-| SSB KOSTRA 12292 | Plasser i institusjon (sykehjem) | Kommune | 2015– |
+| SSB KOSTRA 11875 | Disponible plasser i institusjon (sykehjem, demens, tidsbegrenset, rehabilitering) | Kommune | 2015– |
+| SSB KOSTRA 12292 | Beboere i institusjon (lang-/korttid), brukere av hjemmetjenester, årsverk per bruker, oppholdsdøgn | Kommune | 2015– |
+| SSB KOSTRA 12293 | Beleggsprosent i institusjon | Kommune | 2015– |
 | SSB KOSTRA 14533 | Årsverk i omsorgstjenestene etter yrke | Kommune | 2015– |
-| FHI `nokkel` NPR_1/NPR_3, KPR_1/KPR_3 | Pasienter i spesialist-/primærhelsetjenesten per sykdomsgruppe | Kommune | siste 3-årssnitt |
+| FHI `nokkel` 699 (NPR_1) og 370 (KPR_1) | Pasienter i spesialist-/primærhelsetjenesten per sykdomsgruppe (antall og rate) | Kommune | siste 3-årssnitt |
 | FHI `kpr` 634 | Brukere av hjemmetjenester per tjeneste | Kommune | årlig |
 | FHI `lmr` 825 | Legemiddelbrukere (beholdes som i dag) | Land | årlig |
 | SSB KLASS 629 / 632 + korrespondansetabeller 2688 / 2690 | Offisielle opptaksområder: RHF → HF → lokalsykehusområde (S01–S50) / DPS-område (D01–D69) → kommune (2024-koder). S-/D-kodene er identiske med 13982s regionkoder. | Kommune | 2025 |
@@ -70,27 +72,36 @@ Ikke tilgjengelig som åpne strukturerte data: senger per enkeltsykehus etter
 
 ### 4.1 Normaliserte tabeller (`data/normalized/`, committet)
 
-Felles kolonner der det gir mening: `period`, `value`, `unit`, `source_id`,
-`quality` (ekte/avledet/estimat), `last_updated`.
+Alle tabeller har `period`, `value`, `unit`, `source_id` og `quality`
+(ekte/avledet/estimat). Summer av ekte tall (aldersgrupper, fylkesbefolkning)
+arver den dårligste kvaliteten blant leddene. Kolonnelistene under er
+låst i implementeringsplanen (`docs/superpowers/plans/2026-09-02-datagrunnlag-fase-1-3.md`).
 
-- `hf_activity.csv` – 13942: `hf_id` (org.nr), `hf_navn`, `helseregion`,
+- `hf_activity.csv` – 13942: `hf_id` (org.nr for HF/private; `H00` for landet
+  og `H03/H04/H05/H12` for regionene), `hf_navn`, `helseregion`,
   `tjenesteomrade`, `metric` (dognplasser, utskrivninger, liggedager,
-  polikliniske_konsultasjoner, dagbehandlinger, beleggsprosent), `period`,
-  `value`. Erstatter `hf_capacity.csv`.
-- `hf_staffing.csv` – 13953: `hf_id`, `tjenesteomrade`, `yrkesgruppe`
-  (kode + navn), `period`, `value` (årsverk).
-- `hf_specialists.csv` – 14080: `hf_id`, `spesialitet`, `period`, `value`.
+  polikliniske_konsultasjoner, dagbehandlinger, sengedogn, beleggsprosent,
+  beleggsprosent_oecd), `period`, `value`. Erstatter `hf_capacity.csv`.
+- `hf_staffing.csv` – 13953: `hf_id`, `hf_navn`, `helseregion`,
+  `yrkesgruppe_kode`, `yrkesgruppe`, `metric` (arsverk), `period`, `value`.
+- `hf_specialists.csv` – 14080: `hf_id`, `hf_navn`, `helseregion`,
+  `spesialitet_kode`, `spesialitet`, `metric`, `period`, `value`.
 - `catchment_population.csv` – 13982: `omrade_id`, `omrade_navn`, `omrade_type`
-  (hf | lokalsykehus | dps), `hf_id`, `tjenesteomrade`, `kjonn`, `aldersgruppe`
-  (SSB 14824-gruppene: 0–17, 18–29, 30–49, 50–66, 67–79, 80–89, 90+), `period`,
-  `value`. Ettårig alder beholdes i `data/raw/` (gitignored), ikke i normalisert.
-  14820 (VOP) bruker 18–29, 30–49, 50–66, 67+; motoren slår sammen 67–79/80–89/90+
-  ved behov.
-- `patients_by_diagnosis.csv` – 14824 + 14820: `fylke_id`, `tjenesteomrade`,
-  `aldersgruppe`, `diagnose_kode` (kapittel), `diagnose_navn`, `metric`
-  (pasienter, dognopphold, oppholdsdogn, polikliniske_konsultasjoner), `period`,
-  `value`. Kun kapittelnivå i CSV; undergrupper for siste år legges i
-  fylkets enhets-JSON.
+  (lokalsykehus | dps | hf | helseregion | land), `tjenesteomrade`,
+  `aldersgruppe` (14824-gruppene 0-17, 18-29, 30-49, 50-66, 67-79, 80-89, 90+
+  pluss `alle`), `period`, `value`. Ingen kjønnsdimensjon (begge kjønn
+  summert) og ingen `hf_id` – HF-et finnes via `opptaksomrader.csv`. Ettårig
+  alder beholdes i `data/raw/` (gitignored), ikke i normalisert.
+- `patients_by_diagnosis.csv` – 14824 + 14820: `region_id`, `region_navn`,
+  `region_type` (land | fylke | helseregion), `tjenesteomrade` (SOM | VOP),
+  `aldersgruppe`, `diagnose_kode` (kapittel; 14820 har ingen
+  diagnosedimensjon og får `_T`), `diagnose_navn`, `metric` (pasienter,
+  pasienter_dogn, dognopphold, oppholdsdogn for SOM; 14820s fire metrikker
+  for VOP), `period`, `value`. 14820 bruker aldersgruppene 18-29, 30-49,
+  50-66, 67+; motoren slår sammen 67-79/80-89/90+ ved behov.
+  `patients_by_diagnosis_detail.csv` (samme kolonner) har siste år, alle
+  aldre samlet, alle 222 diagnoser og alle sju metrikker; den mates inn i
+  enhets-JSON for fylker og regioner.
 - `helseforetak.csv` – KLASS 629 nivå 1–2 + 13942-navn: `hf_id` (org.nr),
   `hf_navn`, `rhf_id`, `helseregion` (H03/H04/H05/H12), `type` (hf | privat).
   Erstatter `data/reference/helseforetak.csv`.
@@ -106,44 +117,60 @@ Felles kolonner der det gir mening: `period`, `value`, `unit`, `source_id`,
   intensiv | fode | annet), `senger`, `period`, `quality`, `source_url`,
   `source_note`, `last_verified`.
 - `sites.csv` – behandlingssteder: `site_id`, `site_navn`, `hf_id`,
-  `municipality_code`, `lat`, `lon`, `site_type` (sykehus | dps | klinikk),
-  `akuttfunksjon` (ja/nei/ukjent). Bygges fra OSM-`facilities.csv` + manuell
-  kobling til HF; erstatter `sykehus_kategori`-logikken.
-- `municipal_capacity.csv` – KOSTRA 11996/12292/14533: `municipality_code`,
-  `metric`, `period`, `value`.
-- `municipal_needs.csv` – FHI nokkel + kpr 634: `municipality_code`, `metric`,
-  `period`, `value`.
+  `municipality_code`, `lokalsykehus_id` (S-kode for sykehus med
+  opptaksområde, tom for klinikker/psykiatri), `lat`, `lon`, `site_type`
+  (sykehus | dps | klinikk), `akuttfunksjon` (ja/nei/ukjent). Kuratert for
+  Helse Nord med koordinater fra OSM-`facilities.csv`; erstatter
+  `sykehus_kategori`-logikken.
+- `municipal_capacity.csv` – KOSTRA 11875/12292/12293/11996/14533:
+  `municipality_code`, `metric`, `metric_label`, `period`, `value`.
+- `municipal_needs.csv` – FHI nokkel 699/370 + kpr 634: `municipality_code`,
+  `metric`, `metric_label`, `period`, `value`.
+- `municipal_population.csv` – 07459 summert til aldersgruppene over pluss
+  `alle`: `municipality_code`, `aldersgruppe`, `period`, `value`.
 - `municipalities.csv`, `facilities.csv` (uten modellkolonner),
-  `medications.csv`: beholdes.
+  `medications.csv` (hentes nå av `fhi-lmr.mjs`): beholdes.
 
 ### 4.2 Kildemanifest (`data/sources/manifest.json`)
 
 Én post per kilde: `id`, `navn`, `url` (dokumentasjon), `api_url`, `query`
 (SSB json-query eller FHI query), `lisens`, `last_fetched`, `tables_out`.
-Kilder-siden genereres fra manifestet. `sources.csv` slettes.
+Genereres av `fetch`, som slår sammen forrige manifest, resultatene fra
+kjøringen og `manifest.static.json` (kuraterte kilder som `curated_helse_nord`,
+med tom `last_fetched`). Kilder-siden genereres fra manifestet. `sources.csv`
+slettes.
 
 ### 4.3 Enhetsmodell (`apps/web/public/data/units/`, bygget av `build:data`, committet)
 
-`index.json`: liste av `{id, navn, type, parent_ids[], sok[]}` for typene
-`kommune`, `fylke`, `opptaksomrade`, `helseforetak`, `behandlingssted`,
-`helseregion`. ID-format `type:kode` (f.eks. `hf:983974880`, `kommune:5601`,
-`site:hammerfest`).
+`index.json`: `{generated, units: [{id, navn, type, parent_ids[], sok[]}]}`
+for typene `land`, `helseregion`, `helseforetak`, `behandlingssted`,
+`opptaksomrade`, `fylke`, `kommune`. ID-format `<type>:<kode>` med typenavnet
+som prefiks (`helseforetak:983974880`, `behandlingssted:hammerfest`,
+`opptaksomrade:S01`, `fylke:56`, `kommune:5601`, `helseregion:H05`,
+`land:H00`). Filsti `<type>/<kode>.json` (ingen kolon i filnavn).
 
-`<type>/<id>.json` = faktaark. Hvert tall er `{value, unit, period, quality,
-source_id}`. Innhold etter type:
+`<type>/<kode>.json` = faktaark; gjentar `id, navn, type`. Hvert tall er
+`{value, unit, period, quality, source_id}` («Tall»); tidsserier er lister av
+Tall sortert på `period`. Innhold etter type:
 
-- **helseforetak**: senger per tjenesteområde (tidsserie), belegg, aktivitet,
-  årsverk per yrkesgruppe, legespesialister, opptaksbefolkning per
-  aldersgruppe, liste over behandlingssteder med senger per kategori.
-- **behandlingssted**: senger per kategori (kuratert), koordinater, HF, akutt,
-  opptaksområde-befolkning hvis lokalsykehusområde er koblet.
-- **opptaksomrade**: befolkning per aldersgruppe × kjønn (tidsserie),
-  kommuneliste, HF, tilhørende behandlingssted.
-- **fylke**: befolkning, pasienter/døgnopphold/oppholdsdøgn per diagnosekapittel
-  × aldersgruppe (siste år), tidsserie for totaler, undergrupper siste år.
-- **kommune**: befolkning per aldersgruppe, HF/lokalsykehus/DPS-tilhørighet,
-  kommunale kapasitets- og behovsindikatorer.
-- **helseregion**: aggregat av HF-ene.
+- **helseforetak**: aktivitet fra 13942 per tjenesteområde × metrikk
+  (tidsserie, inkl. døgnplasser og belegg), årsverk per yrkesgruppe,
+  legespesialister, opptaksbefolkning per tjenesteområde × aldersgruppe,
+  opptaksområder, kommuner, behandlingssteder med senger per kategori.
+- **behandlingssted**: senger per kategori (kuratert, siste periode, med
+  `source_url`/`source_note`/`last_verified` på tallet), koordinater, HF,
+  kommune, akutt, opptaksområdets befolkning hvis lokalsykehusområde er koblet.
+- **opptaksomrade**: befolkning per tjenesteområde × aldersgruppe (tidsserie,
+  begge kjønn samlet), kommuneliste med kvalitet, HF, tilhørende
+  behandlingssted.
+- **fylke**: befolkning per aldersgruppe (sum av kommunene), pasienter per
+  diagnosekapittel × aldersgruppe (siste år), tidsserie for totaler,
+  undergrupper siste år, kommuneliste, HF-er med antall kommuner.
+- **kommune**: befolkning per aldersgruppe, fylke,
+  HF/lokalsykehus/DPS/helseregion-tilhørighet med kvalitet, kommunale
+  kapasitets- og behovsindikatorer (tidsserier).
+- **helseregion** og **land**: aktivitet og opptaksbefolkning fra SSBs egne
+  region-/landsrader (ikke sum av HF-ene), pasienter per diagnose, HF-liste.
 
 UI-faktaark, scenariomotor og senere LLM-laget leser samme JSON.
 
@@ -151,15 +178,19 @@ UI-faktaark, scenariomotor og senere LLM-laget leser samme JSON.
 
 ```
 scripts/
-  lib/            ssb.mjs (json-stat2 → rader), fhi.mjs, klass.mjs, csv.mjs, paths.mjs
-  fetch/          en fil per kilde: klass-catchment.mjs, ssb-13942.mjs,
-                  ssb-13953.mjs, ssb-14080.mjs, ssb-13982.mjs, ssb-14824.mjs,
-                  ssb-14820.mjs, ssb-07459.mjs, ssb-kostra.mjs, fhi-nokkel.mjs,
-                  fhi-kpr.mjs, fhi-lmr.mjs; index.mjs kjører alle og skriver
-                  manifestet
-  build-units.mjs
-  validate.mjs    skjema per tabell + kontrollsummer + brotabell-integritet
-  *.test.mjs
+  lib/            paths.mjs, csv.mjs, jsonstat.mjs (json-stat2 → rader), http.mjs
+                  (retry), ssb.mjs, fhi.mjs, klass.mjs, age.mjs, regions.mjs,
+                  fetcher.mjs (felles kjøring), test-helpers.mjs
+  fetch/          klass-catchment.mjs, ssb-13942.mjs, ssb-13953.mjs, ssb-14080.mjs,
+                  ssb-13982.mjs, ssb-pasienter.mjs (14824 + 14820), ssb-07459.mjs,
+                  ssb-kostra.mjs, fhi-kommune.mjs (nokkel 699/370 + kpr 634),
+                  fhi-lmr.mjs, manifest.mjs; index.mjs kjører alle (eller
+                  `--only=id,…`) og skriver manifestet
+  validate/       schemas.mjs, rules.mjs;  validate.mjs = CLI
+  units/          common.mjs (Tall-hjelpere), hf.mjs, geo.mjs, build.mjs;
+                  build-units.mjs = CLI
+  drift.mjs
+  **/*.test.mjs   node --test, ingen nettverk
 ```
 
 Regler:
@@ -169,7 +200,10 @@ Regler:
 - `validate` feiler bygget hvis: en kommune mangler HF, en kommune har mer enn
   ett lokalsykehusområde, sum `hospital_beds` somatikk per HF avviker > 15 % fra
   SSB døgnplasser SOM (avvik rapporteres, ikke feiler, for HF uten kuratert
-  tabell), eller `quality` mangler.
+  tabell), `quality` mangler, eller en fremmednøkkel (`hf_id`, `site_id`,
+  `municipality_code`, `omrade_id`) ikke finnes. Fire kontrollsummer mot
+  13942 (Helse Nord-HF-ene, SOM døgnplasser 2025) er advarsler, siden SSB
+  reviderer. `build:data` kjører `validate` først.
 - Drift-test (`npm run drift`, manuell): henter tre kjente celler fra SSB og
   sammenligner med normalisert CSV.
 
