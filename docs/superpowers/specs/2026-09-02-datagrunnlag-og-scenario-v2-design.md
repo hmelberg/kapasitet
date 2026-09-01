@@ -21,8 +21,11 @@ Prosjektet er delt i to spesifikasjoner:
 - **A (denne):** datagrunnlag, enhetsmodell, scenario v2, presentasjon.
 - **B (senere, egen spec):** «Spør dataene» – LLM-svar over enhetsmodellen via
   Netlify-funksjon med `ANTHROPIC_API_KEY` i miljø (`.env` lokalt, Netlify env i
-  prod), passordport og rate-limit. Enhetsmodellen i A er designet slik at B
-  kan hente faktaark per navngitt enhet og legge dem i kontekst.
+  prod), passordport (`KAPASITET_PASSWORD`, samme mekanisme som drawcasts
+  `netlify/functions/keys.mts` + Blobs-basert feilbudsjett; passord og nøkkel
+  kopiert fra drawcast 2026-09-02) og rate-limit. Enhetsmodellen i A er
+  designet slik at B kan hente faktaark per navngitt enhet og legge dem i
+  kontekst.
 
 ## 2. Beslutninger (defaults Hans kan overstyre)
 
@@ -33,7 +36,7 @@ Prosjektet er delt i to spesifikasjoner:
 | Pipeline | Node ≥ 20 ESM i `scripts/`, null avhengigheter utover Node. `npm run fetch` / `validate` / `build:data` / `test` fra rotens `package.json`. |
 | Geografi | Fire nivåer for spesialisthelsetjenesten: **behandlingssted → helseforetak → helseregion**, pluss **opptaksområde** (lokalsykehusområde/DPS-område) som kobler kommuner til sykehus. Kommune og fylke beholdes for befolkning og kommunale tjenester. |
 | Senger per sykehus | Kuratert tabell `hospital_beds.csv` per behandlingssted med kilde-URL per rad. **Helse Nord først** (Finnmarkssykehuset, UNN, Nordlandssykehuset, Helgelandssykehuset). HF-sum fra SSB 13942 er kontrollsum. |
-| Kommune → opptaksområde | Avledes ved befolkningsmatching (SSB 13982 vs 07459) og verifiseres for Helse Nord mot HF-enes egne kommunelister; HF-nivå fra Helsedirektoratets helsefellesskap-liste. |
+| Kommune → opptaksområde | **SSB KLASS** er fasit: klassifikasjon 629 (opptaksområder somatikk: RHF → HF → S01–S50 → grunnkrets) og 632 (DPS-områder: RHF → HF → D01–D69 → grunnkrets/kommune), pluss korrespondansetabellene 2688 (somatikk → kommune 2024) og 2690 (DPS → kommune 2024). Kommuner som er delt mellom områder (Oslo, Bergen, Asker, Holmestrand, Lurøy) får hovedområdet (flest grunnkretser) og `quality=avledet` med alle områdene i `note`. Ingen befolkningsmatching, ingen helsefellesskap-liste. |
 | Språk | UI bokmål med æøå. Kode engelsk. Datakolonner norsk snake_case (som i dag). |
 | Tilstand | URL-parametre (delbare lenker), ikke localStorage. |
 | Tester | `node:test` for pipeline-verktøy, brotabell-integritet, kontrollsummer og scenariomatte. Scenariomotoren er rene funksjoner i `apps/web/src/lib/scenario/` (Node 26 kjører TS med `--experimental-strip-types`). |
@@ -56,7 +59,7 @@ Prosjektet er delt i to spesifikasjoner:
 | FHI `nokkel` NPR_1/NPR_3, KPR_1/KPR_3 | Pasienter i spesialist-/primærhelsetjenesten per sykdomsgruppe | Kommune | siste 3-årssnitt |
 | FHI `kpr` 634 | Brukere av hjemmetjenester per tjeneste | Kommune | årlig |
 | FHI `lmr` 825 | Legemiddelbrukere (beholdes som i dag) | Land | årlig |
-| Helsedirektoratet helsefellesskap | Kommune → HF | Kommune | 2024 |
+| SSB KLASS 629 / 632 + korrespondansetabeller 2688 / 2690 | Offisielle opptaksområder: RHF → HF → lokalsykehusområde (S01–S50) / DPS-område (D01–D69) → kommune (2024-koder). S-/D-kodene er identiske med 13982s regionkoder. | Kommune | 2025 |
 | Kuratert (styresaker, utviklingsplaner, NIPaR-årsrapport, SSB 04434 hist.) | Senger per behandlingssted per kategori | Behandlingssted | per rad |
 | Geonorge / OSM | Kommunegrenser, sykehusnavn og koordinater (beholdes) | – | – |
 
@@ -88,10 +91,16 @@ Felles kolonner der det gir mening: `period`, `value`, `unit`, `source_id`,
   (pasienter, dognopphold, oppholdsdogn, polikliniske_konsultasjoner), `period`,
   `value`. Kun kapittelnivå i CSV; undergrupper for siste år legges i
   fylkets enhets-JSON.
-- `municipality_catchment.csv` – brotabell: `municipality_code`, `hf_id`,
-  `lokalsykehus_id`, `dps_id`, `quality` (ekte for HF via helsefellesskap,
-  avledet for lokalsykehus/DPS via befolkningsmatching), `verified` (ja/nei),
-  `note`.
+- `helseforetak.csv` – KLASS 629 nivå 1–2 + 13942-navn: `hf_id` (org.nr),
+  `hf_navn`, `rhf_id`, `helseregion` (H03/H04/H05/H12), `type` (hf | privat).
+  Erstatter `data/reference/helseforetak.csv`.
+- `opptaksomrader.csv` – KLASS 629/632 nivå 3: `omrade_id` (S01–S50, D01–D69),
+  `omrade_navn`, `omrade_type` (lokalsykehus | dps), `hf_id`.
+- `municipality_catchment.csv` – brotabell fra KLASS 2688/2690:
+  `municipality_code`, `lokalsykehus_id`, `dps_id`, `hf_id` (HF-et
+  lokalsykehusområdet tilhører), `helseregion`, `quality` (ekte når kommunen
+  ligger i ett område; avledet når den er delt og hovedområdet er valgt),
+  `note` (alle områder med grunnkretsantall for delte kommuner).
 - `hospital_beds.csv` – kuratert: `site_id`, `site_navn`, `hf_id`,
   `municipality_code`, `kategori` (somatikk | psykisk_helsevern | tsb |
   intensiv | fode | annet), `senger`, `period`, `quality`, `source_url`,
@@ -142,12 +151,12 @@ UI-faktaark, scenariomotor og senere LLM-laget leser samme JSON.
 
 ```
 scripts/
-  lib/            ssb.mjs (json-stat2 → rader), fhi.mjs, csv.mjs, geo.mjs
-  fetch/          en fil per kilde: ssb-13942.mjs, ssb-13953.mjs, ssb-14080.mjs,
-                  ssb-13982.mjs, ssb-14824.mjs, ssb-14820.mjs, ssb-07459.mjs,
-                  ssb-kostra.mjs, fhi-nokkel.mjs, fhi-kpr.mjs, fhi-lmr.mjs,
-                  helsedir-helsefellesskap.mjs (kuratert JSON i repo med URL)
-  derive/         catchment-map.mjs (befolkningsmatching), sites.mjs
+  lib/            ssb.mjs (json-stat2 → rader), fhi.mjs, klass.mjs, csv.mjs, paths.mjs
+  fetch/          en fil per kilde: klass-catchment.mjs, ssb-13942.mjs,
+                  ssb-13953.mjs, ssb-14080.mjs, ssb-13982.mjs, ssb-14824.mjs,
+                  ssb-14820.mjs, ssb-07459.mjs, ssb-kostra.mjs, fhi-nokkel.mjs,
+                  fhi-kpr.mjs, fhi-lmr.mjs; index.mjs kjører alle og skriver
+                  manifestet
   build-units.mjs
   validate.mjs    skjema per tabell + kontrollsummer + brotabell-integritet
   *.test.mjs
@@ -164,15 +173,22 @@ Regler:
 - Drift-test (`npm run drift`, manuell): henter tre kjente celler fra SSB og
   sammenligner med normalisert CSV.
 
-### 5.1 Befolkningsmatching (kommune → lokalsykehusområde)
+### 5.1 Kommune → opptaksområde (KLASS)
 
-For hvert HF: kommunelisten fra helsefellesskap; for hvert lokalsykehus-/
-DPS-område i 13982: finn delmengden av HF-ets kommuner der befolkningssummen
-matcher 13982 eksakt for alle år 2020–2025 og begge kjønn (07459). Søket er
-backtracking over ≤ 40 kommuner per HF; en løsning som matcher 12 uavhengige
-summer regnes som entydig. Uløste områder (Oslo bydeler, kommuner delt mellom
-områder) får `lokalsykehus_id` tom og `note` med årsak. Helse Nord verifiseres
-manuelt mot HF-enes kommunelister og markeres `verified=ja`.
+`klass-catchment.mjs` henter:
+
+- `classifications/629/codes?from=2025-01-01&to=2025-01-02` – nivå 1 RHF
+  (org.nr), nivå 2 HF/private (org.nr, parent = RHF), nivå 3 S-koder (parent =
+  HF), nivå 4 grunnkretser (8 siffer, parent = S-kode). Tilsvarende 632 for
+  D-koder (nivå 4 er blanding av grunnkretser og hele kommuner).
+- `correspondencetables/2688` (S → kommune, 364 rader) og `2690` (D → kommune).
+
+Fem kommuner ligger i flere somatiske områder (0301 Oslo: S34/S35/S36/S49,
+4601 Bergen: S16/S17, 3203 Asker: S30/S31, 3903 Holmestrand: S31/S46, 1834
+Lurøy: S09/S11). Hovedområde = området med flest grunnkretser i nivå 4;
+`quality=avledet`, `note` lister alle. Alle andre kommuner: `quality=ekte`.
+Befolkning per område hentes uansett direkte fra 13982 (ekte), så brotabellen
+brukes bare til kart og til å summere kommunale tall per område.
 
 ## 6. Scenariomotor v2 (`apps/web/src/lib/scenario/`)
 
@@ -261,10 +277,12 @@ enhets-JSON hentes klientside fra `/data/units/`.
 
 ## 9. Faser
 
-1. **Pipeline + ekte spesialistdata**: Node-scripts, manifest, 13942/13953/
-   14080/13982/14824/14820/07459, validate, tester. Slett modelltall og .ps1.
-2. **Brotabeller + senger per sykehus**: helsefellesskap, befolkningsmatching,
-   `sites.csv`, kuratert `hospital_beds.csv` for Helse Nord.
+1. **Pipeline + ekte spesialistdata**: Node-scripts, manifest, KLASS-brotabeller,
+   13942/13953/14080/13982/14824/14820/07459, KOSTRA, FHI, validate, tester.
+   Nye CSV-er skrives ved siden av de gamle; modelltall, `.ps1` og gamle
+   loadere slettes i fase 5 når UI-et byttes (så bygget aldri er rødt).
+2. **Senger per sykehus**: `sites.csv`, kuratert `hospital_beds.csv` for
+   Helse Nord med kilde-URL per rad, kontrollsum mot 13942.
 3. **Enhetsmodell**: `build-units.mjs`, `index.json`, faktaark-JSON.
 4. **Scenario v2**: motor + tester + UI + URL-tilstand.
 5. **Presentasjon**: ny navigasjon, verktøylinje, `<Tall>`, kart, faktaark-side,
