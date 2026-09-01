@@ -10,9 +10,14 @@
     "build": "npm run build -w @kapasitet/web",
     "lint": "npm run lint -w @kapasitet/web",
     "validate:data": "node scripts/validate-csv.mjs",
-    "ci": "npm run validate:data ; npm run build"
+    "ci": "npm run validate:data ; npm run build",
+    "fetch": "node scripts/fetch/index.mjs",
+    "validate": "node scripts/validate.mjs",
+    "build:data": "node scripts/build-units.mjs",
+    "drift": "node scripts/drift.mjs",
+    "test": "node --test \"scripts/**/*.test.mjs\""
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   }
 }
