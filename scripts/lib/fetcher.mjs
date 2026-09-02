@@ -14,11 +14,18 @@ export async function runFetcher(def, { deps = {}, log = console.log, rawDir = R
   await mkdir(rawDir, { recursive: true });
   await writeFile(join(rawDir, `${id}.json`), JSON.stringify(raw), "utf8");
   const tables = def.transform(raw, deps);
-  const rows = {};
+
+  // Pass 1: Validate all tables before writing any CSV.
   for (const [file, list] of Object.entries(tables)) {
     const columns = def.columns[file];
     if (!columns) throw new Error(`[${id}] ${file} mangler kolonneliste i def.columns`);
     if (list.length === 0) throw new Error(`[${id}] ${file} fikk 0 rader – kilden har endret seg`);
+  }
+
+  // Pass 2: Write all CSVs and build the return object.
+  const rows = {};
+  for (const [file, list] of Object.entries(tables)) {
+    const columns = def.columns[file];
     await writeCsv(join(outDir, file), list, columns);
     rows[file] = list.length;
     log(`[${id}] ${file}: ${list.length} rader`);

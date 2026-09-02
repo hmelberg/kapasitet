@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtemp, readFile } from "node:fs/promises";
+import { mkdtemp, readFile, access } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { runFetcher } from "./fetcher.mjs";
@@ -30,4 +30,20 @@ test("runFetcher refuses a table without a column list or with zero rows", async
     runFetcher({ ...base, columns: { "b.csv": ["x"] }, transform: () => ({ "b.csv": [] }) }, { deps: {}, log: () => {}, rawDir: dir, outDir: dir }),
     /0 rader/,
   );
+});
+
+test("runFetcher validates all tables before writing any CSV", async () => {
+  const dir = await mkdtemp(join(tmpdir(), "kap-"));
+  const def = {
+    meta: { id: "test_2", navn: "Test", url: "https://x", api_url: "https://x/api", lisens: "NLOD" },
+    fetchRaw: async () => ({}),
+    transform: () => ({ "a.csv": [{ k: "v" }], "b.csv": [] }),
+    columns: { "a.csv": ["k"], "b.csv": ["x"] },
+  };
+  await assert.rejects(
+    runFetcher(def, { deps: {}, log: () => {}, rawDir: dir, outDir: dir }),
+    /0 rader/,
+  );
+  // Assert that a.csv was not written.
+  await assert.rejects(access(join(dir, "a.csv")));
 });
