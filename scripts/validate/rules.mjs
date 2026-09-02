@@ -60,8 +60,10 @@ export function validateTables(tables, schemas = SCHEMAS) {
   for (const f of ["opptaksomrader.csv", "sites.csv", "hospital_beds.csv"]) ref(f, "hf_id", (v) => hfIds.has(v), "HF");
   for (const f of Object.keys(tables).filter((f) => f.startsWith("municipal_")).concat("sites.csv", "hospital_beds.csv")) ref(f, "municipality_code", (v) => muniIds.has(v), "kommuner");
   ref("hospital_beds.csv", "site_id", (v) => siteIds.has(v), "site_id");
-  const cpBad = [...new Set(t("catchment_population.csv").filter((r) => (r.omrade_type === "lokalsykehus" || r.omrade_type === "dps") && !areas.has(r.omrade_id)).map((r) => r.omrade_id))];
-  if (cpBad.length) err(`catchment_population.csv: ${cpBad.length} områder finnes ikke i opptaksomrader.csv: ${cpBad.slice(0, 5).join(", ")}`);
+  const cpRows = t("catchment_population.csv");
+  const cpLatest = cpRows.reduce((max, r) => (r.period > max ? r.period : max), "");
+  const cpBad = [...new Set(cpRows.filter((r) => r.period === cpLatest && (r.omrade_type === "lokalsykehus" || r.omrade_type === "dps") && !areas.has(r.omrade_id)).map((r) => r.omrade_id))];
+  if (cpBad.length) err(`catchment_population.csv: ${cpBad.length} områder i siste periode (${cpLatest}) finnes ikke i opptaksomrader.csv: ${cpBad.slice(0, 5).join(", ")}`);
 
   // 6. curated somatic beds vs SSB 13942
   const ssbBeds = new Map(); // hf_id → {period, value}

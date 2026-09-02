@@ -51,3 +51,14 @@ test("duplicate catchment row and unknown site reference are errors", () => {
   assert.ok(r.errors.some((e) => /5603.*flere enn ett/.test(e)));
   assert.ok(r.errors.some((e) => /hospital_beds.*site_id.*ukjent/.test(e)));
 });
+
+test("catchment_population.csv is checked against opptaksomrader.csv only for its latest period", () => {
+  const t = good();
+  t["catchment_population.csv"] = [
+    { omrade_id: "S26", omrade_navn: "Kristiansund", omrade_type: "lokalsykehus", tjenesteomrade: "SOM", aldersgruppe: "alle", period: "2020", value: "47000", unit: "personer", source_id: "ssb_13982", quality: "ekte" },
+    { omrade_id: "S99", omrade_navn: "Ukjent", omrade_type: "lokalsykehus", tjenesteomrade: "SOM", aldersgruppe: "alle", period: "2025", value: "100", unit: "personer", source_id: "ssb_13982", quality: "ekte" },
+  ];
+  const r = validateTables(t, schemas);
+  assert.ok(r.errors.some((e) => /catchment_population.*siste periode \(2025\).*S99/.test(e)));
+  assert.ok(!r.errors.some((e) => /S26/.test(e)));
+});
