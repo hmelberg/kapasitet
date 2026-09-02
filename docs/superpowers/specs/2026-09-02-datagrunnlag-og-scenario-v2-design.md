@@ -330,3 +330,39 @@ Hver fase avsluttes med grønn `npm test`, `next build`, commit og push.
 Sengetabell utenfor Helse Nord (kan legges til rad for rad senere),
 Oslo-bydeler i brotabellen, dissolve av opptaksområde-polygoner, historikk
 per bruker, autentisering av selve appen.
+
+## 11. Overført fra sluttreviewen av fase 1–3 (2026-09-02)
+
+Fase 1–3 er levert (414fa0c). Sluttreviewen fant ingen gale tall; disse
+punktene ble bevisst utsatt og skal inn i planen for fase 4–5:
+
+- **Slett pre-pipeline-restene**: `docs/ARCHITECTURE.md` linje 1–112 (gammel
+  tekst med oppdiktet historikk), `scripts/*.ps1`, `data/derived/`,
+  `capacity.csv`, `needs.csv`, `facilities.csv`, `hf_capacity.csv`,
+  `medication_use.csv`, `sources.csv` og de gamle laderne i `apps/web`. De
+  fem CSV-ene har `source_id`-er som ikke finnes i manifestet, men leses ikke
+  av `loadTables`, så regel 8 ser dem ikke.
+- **Droppede celler telles** (`jsonStatToRows` rapporterer antall ikke-finite
+  celler per status; `runFetcher` logger «N rader, M celler droppet»), så
+  KOSTRA/FHI-undertrykking (12293 45 %, kpr 634 59 %, nokkel 699 36 %) kan
+  overvåkes. Aldri fyll inn nuller.
+- **Kommuneuniverset** utledes fra KLASS 131 (gyldig per dato) i stedet for
+  den frosne `municipalities.csv`; fetcherne logger antall regionkoder de
+  dropper. Dekningsregelen (regel 9) finnes allerede.
+- **Manifest-hygiene**: `mergeManifest` dropper aldri oppføringer;
+  `--manifest-only` skriver ny `generated`-dato selv uten endringer; KLASS-
+  datoen er låst til 2025-01-01 i `scripts/lib/klass.mjs`.
+- **Skriving**: `fetcher.mjs` skriver tabellene sekvensielt uten tmp+rename;
+  `build:data` skriver alle 547 faktaark hver gang (35 MB, `generated` churner).
+- **Småting**: `csv.mjs` filtrerer bare rader med én tom celle;
+  `medications.csv` mangler `quality`-kolonne; `docs/SOURCES.md` er
+  håndskrevet fra manifestet (kan genereres).
+- **Sengetabellen**: Mosjøen-estimatet (25) er trolig for høyt etter at
+  akuttfunksjonen ble flyttet; Tromsø-estimatet (403) ignorerer
+  regionfunksjoner; Alta, Åsgård og Rønvik har ingen sengerader, så «steng
+  Alta» viser 0 senger tapt; Hammerfest 89 inkluderer 14 pasienthotell.
+  Scenariomotoren må vise `quality` og disse hullene, ikke skjule dem.
+- **LLM-laget (spec B)** må få med seg: manglende KOSTRA/FHI-verdi = ukjent,
+  manglende aldersgruppe = 0, 8 av 11 somatikk-rader er estimat, og
+  `source_id` på hvert Tall peker nå på en manifest-oppføring (regel 8 og
+  `model.test.mjs` låser det).
