@@ -1,0 +1,102 @@
+import { klassCodes, klassCorrespondence } from "../lib/klass.mjs";
+import { readCsv } from "../lib/csv.mjs";
+import { normalized } from "../lib/paths.mjs";
+import { RHF_TO_REGION, PRIVATE_RHF } from "../lib/regions.mjs";
+
+const WHOLE_KOMMUNE_WEIGHT = 10_000;
+
+function areasByCode(codes) {
+  return Object.fromEntries(codes.filter((c) => c.level === 3).map((c) => [c.code, c]));
+}
+
+/** area → { kommune → weight } from level-4 codes (grunnkrets 8-digit or whole kommune 4-digit). */
+function coverage(codes) {
+  const cov = {};
+  for (const c of codes) {
+    if (c.level !== 4) continue;
+    const kommune = c.code.slice(0, 4);
+    const w = c.code.length === 4 ? WHOLE_KOMMUNE_WEIGHT : 1;
+    ((cov[c.parentCode] ??= {})[kommune] ??= 0);
+    cov[c.parentCode][kommune] += w;
+  }
+  return cov;
+}
+
+function pickArea(kommune, candidates, areas, cov) {
+  if (candidates.length === 0) return { id: "", note: null, split: false };
+  if (candidates.length === 1) return { id: candidates[0], note: null, split: false };
+  const scored = candidates
+    .map((id) => ({ id, n: cov[id]?.[kommune] ?? 0 }))
+    .sort((a, b) => b.n - a.n || a.id.localeCompare(b.id));
+  const desc = scored.map((s) => `${s.id} ${areas[s.id]?.name ?? ""} (${s.n})`).join(", ");
+  return { id: scored[0].id, note: desc, split: true };
+}
+
+export function buildCatchment({ codes629, codes632, corr2688, corr2690, municipalities }) {
+  const sAreas = areasByCode(codes629);
+  const dAreas = areasByCode(codes632);
+  const opptaksomrader = [
+    ...Object.values(sAreas).map((a) => ({ omrade_id: a.code, omrade_navn: a.name, omrade_type: "lokalsykehus", hf_id: a.parentCode })),
+    ...Object.values(dAreas).map((a) => ({ omrade_id: a.code, omrade_navn: a.name, omrade_type: "dps", hf_id: a.parentCode })),
+  ];
+  const sCov = coverage(codes629);
+  const dCov = coverage(codes632);
+  const sCand = {};
+  for (const m of corr2688) (sCand[m.targetCode] ??= []).push(m.sourceCode);
+  const dCand = {};
+  for (const m of corr2690) (dCand[m.targetCode] ??= []).push(m.sourceCode);
+  const hfParent = Object.fromEntries(codes629.filter((c) => c.level === 2).map((c) => [c.code, c.parentCode]));
+
+  const catchment = municipalities.map((m) => {
+    const k = m.municipality_code;
+    const s = pickArea(k, sCand[k] ?? [], sAreas, sCov);
+    const d = pickArea(k, dCand[k] ?? [], dAreas, dCov);
+    const notes = [];
+    if (!s.id) notes.push("Ikke i KLASS 2688");
+    if (s.split) notes.push(`Delt lokalsykehus: ${s.note}`);
+    if (!d.id) notes.push("Ikke i KLASS 2690");
+    if (d.split) notes.push(`Delt DPS: ${d.note}`);
+    const hf_id = s.id ? sAreas[s.id].parentCode : "";
+    const rhf = hf_id ? hfParent[hf_id] ?? PRIVATE_RHF[hf_id] : "";
+    return {
+      municipality_code: k,
+      municipality_name: m.municipality_name,
+      lokalsykehus_id: s.id,
+      dps_id: d.id,
+      hf_id,
+      helseregion: rhf ? RHF_TO_REGION[rhf] ?? "" : "",
+      quality: notes.length === 0 ? "ekte" : "avledet",
+      note: notes.join("; "),
+    };
+  });
+  return { opptaksomrader, catchment };
+}
+
+const def = {
+  meta: {
+    id: "ssb_klass_opptak",
+    navn: "SSB KLASS 629 lokalsykehusområder og 632 DPS-områder med korrespondanse til kommune (2688, 2690)",
+    url: "https://www.ssb.no/klass/klassifikasjoner/629",
+    api_url: "https://data.ssb.no/api/klass/v1/classifications/629/codes",
+    lisens: "NLOD 2.0",
+  },
+  async fetchRaw(deps) {
+    const municipalities = (await readCsv(normalized("municipalities.csv"))).rows;
+    return {
+      codes629: await klassCodes(629, deps),
+      codes632: await klassCodes(632, deps),
+      corr2688: await klassCorrespondence(2688, deps),
+      corr2690: await klassCorrespondence(2690, deps),
+      municipalities,
+    };
+  },
+  transform(raw) {
+    const { opptaksomrader, catchment } = buildCatchment(raw);
+    return { "opptaksomrader.csv": opptaksomrader, "municipality_catchment.csv": catchment };
+  },
+  columns: {
+    "opptaksomrader.csv": ["omrade_id", "omrade_navn", "omrade_type", "hf_id"],
+    "municipality_catchment.csv": ["municipality_code", "municipality_name", "lokalsykehus_id", "dps_id", "hf_id", "helseregion", "quality", "note"],
+  },
+};
+export default def;
