@@ -45,7 +45,7 @@ Alle fire ligger godt innenfor 15 %-toleransen. UNN sitt avvik (5,1 %, kuratert 
 
 ## Estimat-rader: hvorfor ingen kilde ble funnet
 
-For 7 av 11 obligatoriske `somatikk`-rader ble det ikke funnet en side som eksplisitt oppgir sengetallet for stedet, etter minst to målrettede søk hver (HFets egne avdelings-/steder-sider, sykehusbygg.no «sengeområder», Helse Nord styresaker, presseoppslag). Disse bruker fallback-formelen fra oppdraget:
+For 8 av 11 obligatoriske `somatikk`-rader ble det ikke funnet en side som eksplisitt oppgir sengetallet for stedet, etter minst to målrettede søk hver (HFets egne avdelings-/steder-sider, sykehusbygg.no «sengeområder», Helse Nord styresaker, presseoppslag). Disse bruker fallback-formelen fra oppdraget:
 
 ```
 senger = round(HF_SOM × pop_site / Σ pop_sites-of-HF)
