@@ -1,0 +1,11 @@
+[
+  {
+    "id": "curated_helse_nord",
+    "navn": "Kuraterte sengetall per behandlingssted i Helse Nord (manuell innsamling fra HF-ene og SSB 13942)",
+    "url": "https://www.helse-nord.no",
+    "api_url": "",
+    "query": "",
+    "lisens": "Offentlige kilder, se source_url per rad",
+    "tables_out": ["sites.csv", "hospital_beds.csv"]
+  }
+]

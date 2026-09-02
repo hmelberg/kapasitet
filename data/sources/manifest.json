@@ -1,0 +1,141 @@
+{
+  "generated": "2026-09-02",
+  "sources": [
+    {
+      "last_fetched": "",
+      "id": "curated_helse_nord",
+      "navn": "Kuraterte sengetall per behandlingssted i Helse Nord (manuell innsamling fra HF-ene og SSB 13942)",
+      "url": "https://www.helse-nord.no",
+      "api_url": "",
+      "query": "",
+      "lisens": "Offentlige kilder, se source_url per rad",
+      "tables_out": [
+        "sites.csv",
+        "hospital_beds.csv"
+      ]
+    },
+    {
+      "id": "fhi_kommune",
+      "navn": "FHI Kommunehelsa: NPR-brukere per diagnosegruppe (nokkel 699), KPR-brukere 0–74 år (nokkel 370), mottakere av hjemmetjenester (kpr 634)",
+      "url": "https://statistikk.fhi.no/kommunehelsa",
+      "api_url": "https://statistikk-data.fhi.no/api/open/v1/{nokkel/Table/699,nokkel/Table/370,kpr/Table/634}/data",
+      "query": "699: GEO=*, AAR=*, KJONN=0, ALDER=0_120, KODEGRUPPE=*, MEASURE_TYPE=TELLER,RATE; 370: samme men ALDER=0_74; 634: Sted=*, AAR=*, tjtjentypeNavn=*, MEASURE_TYPE=Antall_Brukere",
+      "lisens": "CC BY 4.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_needs.csv"
+      ]
+    },
+    {
+      "id": "fhi_lmr_825",
+      "navn": "FHI Legemiddelregisteret tabell 825 – brukere per ATC-gruppe, hele landet",
+      "url": "https://www.fhi.no/he/legemiddelbruk",
+      "api_url": "https://statistikk-data.fhi.no/api/open/v1/lmr/Table/825/data",
+      "query": "Atc_Verdi=R03,A10,C10,C09,C07,N06A,N05B,N06B,H03,M05B,N02A,R06,A02B,N03A, Kjonn_Verdi=TOTALT, Aldersgruppe_Verdi=TOTALT, Utlevering_Ar=*, MEASURE_TYPE=AntallBrukere,Brukere_Per1000_Innbyggere",
+      "lisens": "CC BY 4.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "medications.csv"
+      ]
+    },
+    {
+      "id": "ssb_07459",
+      "navn": "SSB 07459 Befolkning etter kommune, kjønn og ettårig alder",
+      "url": "https://www.ssb.no/statbank/table/07459",
+      "api_url": "https://data.ssb.no/api/v0/no/table/07459",
+      "query": "Region=*, Kjonn=*, Alder=*, Tid>=2015 (én forespørsel per år)",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_population.csv"
+      ]
+    },
+    {
+      "id": "ssb_13942",
+      "navn": "SSB 13942 Spesialisthelsetjenesten – døgnplasser, aktivitet og belegg etter helseforetak",
+      "url": "https://www.ssb.no/statbank/table/13942",
+      "api_url": "https://data.ssb.no/api/v0/no/table/13942",
+      "query": "[{\"code\":\"HelseReg\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}},{\"code\":\"HelseTjenomr\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}},{\"code\":\"ContentsCode\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}},{\"code\":\"Tid\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}}]",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "hf_activity.csv",
+        "helseforetak.csv"
+      ]
+    },
+    {
+      "id": "ssb_13953",
+      "navn": "SSB 13953 Avtalte årsverk i spesialisthelsetjenesten etter helseforetak og yrkesgruppe",
+      "url": "https://www.ssb.no/statbank/table/13953",
+      "api_url": "https://data.ssb.no/api/v0/no/table/13953",
+      "query": "[{\"code\":\"HelseReg\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}},{\"code\":\"Yrke\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}},{\"code\":\"HelseTjenomr\",\"selection\":{\"filter\":\"item\",\"values\":[\"TOT\"]}},{\"code\":\"ContentsCode\",\"selection\":{\"filter\":\"item\",\"values\":[\"Arsverk\"]}},{\"code\":\"Tid\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}}]",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "hf_staffing.csv"
+      ]
+    },
+    {
+      "id": "ssb_13982",
+      "navn": "SSB 13982 Befolkning i opptaksområder for helseforetak, etter tjenesteområde og alder",
+      "url": "https://www.ssb.no/statbank/table/13982",
+      "api_url": "https://data.ssb.no/api/v0/no/table/13982",
+      "query": "HelseReg=*, HelseTjenomr=*, Kjonn=0, Alder=*, Tid=<alle år fra metadata, én forespørsel per år>",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "catchment_population.csv"
+      ]
+    },
+    {
+      "id": "ssb_14080",
+      "navn": "SSB 14080 Avtalte legeårsverk i spesialisthelsetjenesten etter helseforetak og spesialitet",
+      "url": "https://www.ssb.no/statbank/table/14080",
+      "api_url": "https://data.ssb.no/api/v0/no/table/14080",
+      "query": "[{\"code\":\"HelseReg\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}},{\"code\":\"Spesialitet\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}},{\"code\":\"HelseTjenomr\",\"selection\":{\"filter\":\"item\",\"values\":[\"TOT\"]}},{\"code\":\"ContentsCode\",\"selection\":{\"filter\":\"item\",\"values\":[\"AvtAarsverk\"]}},{\"code\":\"Tid\",\"selection\":{\"filter\":\"all\",\"values\":[\"*\"]}}]",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "hf_specialists.csv"
+      ]
+    },
+    {
+      "id": "ssb_klass_opptak",
+      "navn": "SSB KLASS 629 lokalsykehusområder og 632 DPS-områder med korrespondanse til kommune (2688, 2690)",
+      "url": "https://www.ssb.no/klass/klassifikasjoner/629",
+      "api_url": "https://data.ssb.no/api/klass/v1/classifications/629/codes",
+      "query": "",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "opptaksomrader.csv",
+        "municipality_catchment.csv"
+      ]
+    },
+    {
+      "id": "ssb_kostra",
+      "navn": "SSB KOSTRA 11875 (plasser), 12292 (beboere/brukere/årsverk), 12293 (belegg), 11996 (legeårsverk), 14533 (årsverk etter yrke) – kommunale helse- og omsorgstjenester",
+      "url": "https://www.ssb.no/statbank/list/helsetjenester-kommuner",
+      "api_url": "https://data.ssb.no/api/v0/no/table/{11875,12292,12293,11996,14533}",
+      "query": "KOKkommuneregion0000=*, ContentsCode=<mapped koder per tabell, se KOSTRA_TABLES>, Tid=* (+ KOKavtaleform0000=sum, KOKfunksjon0000=* for 11996; KOKyrker0000=* for 14533)",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_capacity.csv"
+      ]
+    },
+    {
+      "id": "ssb_pasienter",
+      "navn": "SSB 14824 Pasienter i somatisk spesialisthelsetjeneste etter bosted, alder og diagnose + SSB 14820 pasienter i psykisk helsevern for voksne",
+      "url": "https://www.ssb.no/statbank/table/14824",
+      "api_url": "https://data.ssb.no/api/v0/no/table/14824 og …/14820",
+      "query": "14824: Region=*, Kjonn=0, Alder=*, Aktor=_T, Diagnose=kapitler(_T,I..XXI), ContentsCode=Pasient,PasientDognBeh,DognOpphold,OppholdDogn, Tid=* (per år); detalj: siste år, Alder=999A, Diagnose=*, ContentsCode=*; 14820: Region=*, Kjonn=0, Alder=*, Aktor=_T, ContentsCode=*, Tid=*",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "patients_by_diagnosis.csv",
+        "patients_by_diagnosis_detail.csv"
+      ]
+    }
+  ]
+}

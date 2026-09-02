@@ -1,0 +1,33 @@
+hf_id,hf_navn,rhf_id,helseregion,type
+983974724,Helse Bergen HF,983658725,H03,hf
+983974732,Helse Førde HF,983658725,H03,hf
+983974678,Helse Stavanger HF,983658725,H03,hf
+983974694,Helse Fonna HF,983658725,H03,hf
+883974832,St. Olavs Hospital HF,983658776,H04,hf
+993467049,Oslo Universitetssykehus HF,991324968,H12,hf
+894166762,Vestre Viken HF,991324968,H12,hf
+983974791,Helse Nord-Trøndelag HF,983658776,H04,hf
+983974910,Nordlandssykehuset HF,883658752,H05,hf
+983974929,Helgelandssykehuset HF,883658752,H05,hf
+983974880,Finnmarkssykehuset HF,883658752,H05,hf
+983974899,Universitetssykehuset Nord-Norge HF,883658752,H05,hf
+983975267,Sykehuset Telemark HF,991324968,H12,hf
+883971752,Sunnaas sykehus HF,991324968,H12,hf
+983971636,Akershus universitetssykehus HF,991324968,H12,hf
+983975240,Sørlandet sykehus HF,991324968,H12,hf
+983975259,Sykehuset i Vestfold HF,991324968,H12,hf
+983971709,Sykehuset Innlandet HF,991324968,H12,hf
+983971768,Sykehuset Østfold HF,991324968,H12,hf
+916270097,Voss DPS NKS Bjørkeli AS,983658725,H03,privat
+919865636,Solli DPS AS,983658725,H03,privat
+922716552,Betanien sykehus AS,983658725,H03,privat
+965985166,Lovisenberg diakonale sykehus AS,991324968,H12,privat
+981275721,Betanien Hospital Skien Stiftelse,991324968,H12,privat
+982791952,Diakonhjemmet sykehus AS,991324968,H12,privat
+984027737,Haraldsplass diakonale sykehus AS,983658725,H03,privat
+985773238,Revmatismesykehuset AS,991324968,H12,privat
+985962170,Martina Hansens Hospital AS,991324968,H12,privat
+986106839,Haugesund Sanitetsforenings Revmatismesykehus AS,983658725,H03,privat
+987554401,NKS Olaviken alderspsykiatriske sykehus AS,983658725,H03,privat
+996380041,NKS Jæren Distriktspsykiatriske senter AS,983658725,H03,privat
+997005562,Helse Møre og Romsdal HF,983658776,H04,hf

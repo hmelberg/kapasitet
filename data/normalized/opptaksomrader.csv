@@ -1,0 +1,118 @@
+omrade_id,omrade_navn,omrade_type,hf_id
+S01,Hammerfest,lokalsykehus,983974880
+S02,Kirkenes,lokalsykehus,983974880
+S03,Harstad,lokalsykehus,983974899
+S04,Narvik,lokalsykehus,983974899
+S05,Tromsø,lokalsykehus,983974899
+S06,Bodø,lokalsykehus,983974910
+S07,Lofoten,lokalsykehus,983974910
+S08,Vesterålen,lokalsykehus,983974910
+S09,Mo i Rana,lokalsykehus,983974929
+S10,Mosjøen,lokalsykehus,983974929
+S11,Sandnessjøen,lokalsykehus,983974929
+S12,Stavanger,lokalsykehus,983974678
+S13,Haugesund,lokalsykehus,983974694
+S14,Odda,lokalsykehus,983974694
+S15,Stord,lokalsykehus,983974694
+S16,Haraldsplass,lokalsykehus,983974724
+S17,Haukeland,lokalsykehus,983974724
+S18,Voss,lokalsykehus,983974724
+S19,Førde,lokalsykehus,983974732
+S20,Lærdal,lokalsykehus,983974732
+S21,Nordfjord,lokalsykehus,983974732
+S22,Orkdal,lokalsykehus,883974832
+S23,St. Olavs hospital,lokalsykehus,883974832
+S24,Levanger,lokalsykehus,983974791
+S25,Namsos,lokalsykehus,983974791
+S28,Volda,lokalsykehus,997005562
+S29,Ålesund,lokalsykehus,997005562
+S30,Bærum,lokalsykehus,894166762
+S31,Drammen,lokalsykehus,894166762
+S32,Kongsberg,lokalsykehus,894166762
+S33,Ringerike,lokalsykehus,894166762
+S34,Lovisenberg,lokalsykehus,965985166
+S35,Diakonhjemmet,lokalsykehus,982791952
+S36,Akershus,lokalsykehus,983971636
+S37,Kongsvinger,lokalsykehus,983971636
+S38,Elverum-Hamar,lokalsykehus,983971709
+S39,Gjøvik,lokalsykehus,983971709
+S40,Lillehammer,lokalsykehus,983971709
+S41,Tynset,lokalsykehus,983971709
+S42,Østfold,lokalsykehus,983971768
+S43,Arendal,lokalsykehus,983975240
+S44,Flekkefjord,lokalsykehus,983975240
+S45,Kristiansand,lokalsykehus,983975240
+S46,Vestfold,lokalsykehus,983975259
+S47,Notodden,lokalsykehus,983975267
+S48,Skien,lokalsykehus,983975267
+S49,Oslo universitetssykehus,lokalsykehus,993467049
+S50,Nordmøre og Romsdal,lokalsykehus,997005562
+D01,Midt-Finnmark,dps,983974880
+D02,Vest-Finnmark,dps,983974880
+D03,Øst-Finnmark,dps,983974880
+D04,Midt-Troms,dps,983974899
+D05,Nord-Troms,dps,983974899
+D06,Ofoten,dps,983974899
+D07,Sør-Troms,dps,983974899
+D08,Tromsø og omegn,dps,983974899
+D09,Lofoten,dps,983974910
+D10,Salten,dps,983974910
+D11,Vesterålen,dps,983974910
+D12,Mo i Rana,dps,983974929
+D13,Mosjøen,dps,983974929
+D14,Ytre Helgeland,dps,983974929
+D15,Dalane,dps,983974678
+D16,Jæren,dps,983974678
+D17,Sandnes,dps,983974678
+D18,Sola,dps,983974678
+D19,Stavanger,dps,983974678
+D20,Folgefonn,dps,983974694
+D21,Haugaland,dps,983974694
+D22,Karmøy,dps,983974694
+D23,Stord,dps,983974694
+D24,Betanien,dps,983974724
+D25,Bjørgvin,dps,983974724
+D26,Kronstad,dps,983974724
+D27,Solli,dps,983974724
+D28,Voss,dps,983974724
+D29,Øyane,dps,983974724
+D30,Førde,dps,983974732
+D31,Indre Sogn,dps,983974732
+D32,Nordfjord,dps,983974732
+D33,Nidaros,dps,883974832
+D34,Nidelv,dps,883974832
+D35,Levanger,dps,983974791
+D36,Namsos,dps,983974791
+D37,Stjørdal,dps,983974791
+D38,Kristiansund,dps,997005562
+D39,Molde,dps,997005562
+D40,Sunnmøre,dps,997005562
+D41,Volda,dps,997005562
+D42,Asker,dps,894166762
+D43,Bærum,dps,894166762
+D44,Drammen,dps,894166762
+D45,Kongsberg,dps,894166762
+D46,Ringerike,dps,894166762
+D47,Lovisenberg,dps,965985166
+D48,Vindern,dps,982791952
+D49,Follo,dps,983971636
+D50,Groruddalen,dps,983971636
+D51,Kongsvinger,dps,983971636
+D52,Nedre Romerike,dps,983971636
+D53,Øvre Romerike,dps,983971636
+D54,Elverum - Hamar,dps,983971709
+D55,Gjøvik,dps,983971709
+D56,Lillehammer,dps,983971709
+D57,Tynset,dps,983971709
+D58,Fredrikstad,dps,983971768
+D59,Halden Sarpsborg,dps,983971768
+D60,Nordre Østfold,dps,983971768
+D61,Lister,dps,983975240
+D62,Solvang,dps,983975240
+D63,Strømme,dps,983975240
+D64,Østre Agder,dps,983975240
+D65,Vestfold,dps,983975259
+D66,Nedre Telemark,dps,983975267
+D67,Øvre Telemark,dps,983975267
+D68,Nydalen,dps,993467049
+D69,Søndre Oslo,dps,993467049
