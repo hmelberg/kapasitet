@@ -31,7 +31,7 @@ export async function ssbQueryChunked(tableId, query, chunkDim, opts = {}) {
     const q = query.map((x) => (x.code === chunkDim ? item(chunkDim, [v]) : x));
     const ds = await ssbQuery(tableId, q, opts);
     datasets.push(ds);
-    rows.push(...jsonStatToRows(ds));
+    for (const r of jsonStatToRows(ds)) rows.push(r);
   }
   return { rows, datasets };
 }
