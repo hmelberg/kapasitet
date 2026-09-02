@@ -154,7 +154,7 @@ Når en kommune er delt mellom flere områder, velger `pickArea()` området med 
 
 Enhets-id er `type:kode` (`unitId`/`unitPath` i `scripts/units/common.mjs`), og filstien under `apps/web/public/data/units/` er `type/kode.json` – f.eks. `kommune:5603` → `kommune/5603.json`, `helseforetak:983974880` (org.nr) → `helseforetak/983974880.json`, `opptaksomrade:S01`/`D02` (KLASS-kode), `helseregion:H05`, `land:H00`, `fylke:56` (fylkesnummer), `behandlingssted:hammerfest` (site_id). `index.json` lister `{id, navn, type, parent_ids, sok}` for alle 541 enheter (357 kommuner, 117 opptaksområder, 32 helseforetak, 15 behandlingssteder, 15 fylker, 4 helseregioner, 1 land); hver enhet har i tillegg et faktaark på `type/kode.json` med det fulle innholdet.
 
-Hvert tall i faktaarket er et `Tall`: `{ value, unit, period, quality, source_id }`, bygget av `tall(r)` i `scripts/units/common.mjs` fra én rad i en normalisert CSV-tabell. Under er `apps/web/public/data/units/kommune/5603.json` (Hammerfest) trimmet til én oppføring per blokk – i den ekte fila er `befolkning` 8 aldersgrupper × årganger, `kapasitet` ~27 KOSTRA-serier og `behov` ~24 FHI-serier:
+Hvert tall i faktaarket er et `Tall`: `{ value, unit, period, quality, source_id }`, bygget av `tall(r)` i `scripts/units/common.mjs` fra én rad i en normalisert CSV-tabell. Under er `apps/web/public/data/units/kommune/5603.json` (Hammerfest) trimmet til én oppføring per blokk – i den ekte fila er `befolkning` 8 aldersgrupper × årganger, `kapasitet` 33 KOSTRA-serier og `behov` 57 FHI-serier:
 
 ```json
 {

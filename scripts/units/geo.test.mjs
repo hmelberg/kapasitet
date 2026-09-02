@@ -40,6 +40,7 @@ test("opptaksomrade unit lists kommuner, population, hf and site", () => {
 test("fylke unit sums kommune population per aldersgruppe and lists HFs with kommune counts", () => {
   const [f] = buildFylkeUnits(tables());
   assert.equal(f.id, "fylke:56");
+  assert.deepEqual(f.parent_ids, ["land:H00"]);
   assert.deepEqual(f.fakta.befolkning.alle.map((t) => [t.period, t.value]), [["2024", 31800], ["2025", 32000]]);
   assert.equal(f.fakta.befolkning["0-17"][0].value, 6000);
   assert.equal(f.fakta.pasienter.tidsserie.SOM.pasienter[0].value, 30000);

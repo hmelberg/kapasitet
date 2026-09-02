@@ -14,8 +14,12 @@ const tables = () => ({
     { hf_id: "H05", hf_navn: "Helse Nord", helseregion: "H05", tjenesteomrade: "SOM", metric: "dognplasser", period: "2025", value: "1143", ...q },
     { hf_id: "H00", hf_navn: "Hele landet", helseregion: "", tjenesteomrade: "SOM", metric: "dognplasser", period: "2025", value: "10000", ...q },
   ],
-  "hf_staffing.csv": [{ hf_id: "983974880", hf_navn: "Finnmarkssykehuset HF", helseregion: "H05", yrkesgruppe_kode: "01", yrkesgruppe: "Leger", metric: "arsverk", period: "2025", value: "200", unit: "arsverk", source_id: "ssb_13953", quality: "ekte" }],
-  "hf_specialists.csv": [],
+  "hf_staffing.csv": [
+    { hf_id: "983974880", hf_navn: "Finnmarkssykehuset HF", helseregion: "H05", yrkesgruppe_kode: "01", yrkesgruppe: "Leger", metric: "arsverk", period: "2025", value: "200", unit: "arsverk", source_id: "ssb_13953", quality: "ekte" },
+    { hf_id: "H05", hf_navn: "Helseregion Nord", helseregion: "H05", yrkesgruppe_kode: "01", yrkesgruppe: "Leger", metric: "arsverk", period: "2025", value: "1800", unit: "arsverk", source_id: "ssb_13953", quality: "ekte" },
+    { hf_id: "818711832", hf_navn: "Luftambulansetjenesten HF", helseregion: "", yrkesgruppe_kode: "01", yrkesgruppe: "Leger", metric: "arsverk", period: "2025", value: "42", unit: "arsverk", source_id: "ssb_13953", quality: "ekte" },
+  ],
+  "hf_specialists.csv": [{ hf_id: "H05", hf_navn: "Helseregion Nord", helseregion: "H05", spesialitet_kode: "K1", spesialitet: "Kirurgi", metric: "avtalte_legearsverk", period: "2025", value: "90", unit: "arsverk", source_id: "ssb_14080", quality: "ekte" }],
   "catchment_population.csv": [
     { omrade_id: "S01", omrade_navn: "Hammerfest", omrade_type: "lokalsykehus", tjenesteomrade: "SOM", aldersgruppe: "alle", period: "2025", value: "40000", unit: "personer", source_id: "ssb_13982", quality: "ekte" },
     { omrade_id: "983974880", omrade_navn: "Finnmarkssykehuset HF", omrade_type: "hf", tjenesteomrade: "SOM", aldersgruppe: "alle", period: "2025", value: "75000", unit: "personer", source_id: "ssb_13982", quality: "ekte" },
@@ -59,6 +63,28 @@ test("region units: land + four helseregioner with activity, patients and HF lis
   assert.equal(nord.fakta.pasienter.tidsserie.SOM.pasienter[0].value, 150000);
   assert.deepEqual(nord.fakta.helseforetak, [{ id: "helseforetak:983974880", navn: "Finnmarkssykehuset HF", type: "hf" }]);
   assert.equal(units[0].fakta.aktivitet.SOM.dognplasser[0].value, 10000);
+});
+
+test("felleseide HF-er blir egne enheter under land:H00 og står i landets HF-liste", () => {
+  const luft = buildHfUnits(tables()).find((u) => u.id === "helseforetak:818711832");
+  assert.equal(luft.navn, "Luftambulansetjenesten HF");
+  assert.deepEqual(luft.parent_ids, ["land:H00"]);
+  assert.equal(luft.fakta.hf_type, "felleseid");
+  assert.equal(luft.fakta.helseregion, null);
+  assert.equal(luft.fakta.arsverk["01"].serie[0].value, 42);
+  assert.deepEqual(luft.fakta.opptaksomrader, []);
+  assert.deepEqual(luft.fakta.behandlingssteder, []);
+  const land = buildRegionUnits(tables())[0];
+  assert.ok(land.fakta.helseforetak.some((h) => h.id === "helseforetak:818711832" && h.type === "felleseid"));
+});
+
+test("region- og landenheter får årsverk og spesialister fra sin egen H-kode", () => {
+  const nord = buildRegionUnits(tables()).find((u) => u.id === "helseregion:H05");
+  assert.equal(nord.fakta.arsverk["01"].navn, "Leger");
+  assert.equal(nord.fakta.arsverk["01"].serie[0].value, 1800);
+  assert.equal(nord.fakta.spesialister.K1.serie[0].value, 90);
+  const vest = buildRegionUnits(tables()).find((u) => u.id === "helseregion:H03");
+  assert.deepEqual(vest.fakta.arsverk, {});
 });
 
 test("bedsBlock keeps the latest period per kategori", () => {

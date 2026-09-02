@@ -37,7 +37,7 @@ export function buildFylkeUnits(tables) {
     const pop = list.flatMap((m) => popBy.get(m.municipality_code) ?? []);
     const hfCount = groupBy(list.flatMap((m) => catchBy.get(m.municipality_code) ?? []), "hf_id");
     return {
-      id, navn, type: "fylke", parent_ids: [], sok: sok(navn, code),
+      id, navn, type: "fylke", parent_ids: [unitId("land", "H00")], sok: sok(navn, code),
       fakta: {
         id, navn, type: "fylke",
         befolkning: nest(sumRows(pop, ["aldersgruppe", "period"]), ["aldersgruppe"]),

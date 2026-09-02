@@ -1,9 +1,25 @@
 import { nest, tall, byPeriod, unitId, ref, sok, groupBy, seriesBlock, patientsBlock } from "./common.mjs";
-import { REGION_NAMES } from "../lib/regions.mjs";
+import { REGION_NAMES, NATIONAL_HF } from "../lib/regions.mjs";
 
 const t = (tables, f) => tables[f] ?? [];
 const byCol = (rows, col, v) => rows.filter((r) => r[col] === v);
 const nameMap = (rows, idCol, nameCol) => new Map(rows.map((r) => [r[idCol], r[nameCol]]));
+
+const FELLESEID = "felleseid";
+
+/**
+ * De felleseide støtteforetakene (Sykehusbygg, Luftambulansetjenesten, Pasientreiser …) står i
+ * SSBs årsverks- og spesialisttabeller, men ikke i helseforetak.csv, som kommer fra 13942.
+ * Uten dem faller f.eks. Luftambulansetjenestens årsverk ut av modellen uten en eneste melding.
+ * De har ingen eier-RHF og henger derfor rett under land:H00.
+ */
+export function nationalHfRows(tables) {
+  const seen = new Map();
+  for (const f of ["hf_staffing.csv", "hf_specialists.csv"]) {
+    for (const r of t(tables, f)) if (NATIONAL_HF.has(r.hf_id) && !seen.has(r.hf_id)) seen.set(r.hf_id, { hf_id: r.hf_id, hf_navn: r.hf_navn, helseregion: "", type: FELLESEID });
+  }
+  return [...seen.values()].sort((a, b) => a.hf_id.localeCompare(b.hf_id));
+}
 
 /** Latest period per kategori, provenance columns kept on the Tall. */
 export function bedsBlock(bedRows) {
@@ -49,11 +65,11 @@ export function buildHfUnits(tables) {
   const population = groupBy(t(tables, "catchment_population.csv"), "omrade_id");
   const areas = groupBy(t(tables, "opptaksomrader.csv"), "hf_id");
   const kommuner = groupBy(t(tables, "municipality_catchment.csv"), "hf_id");
-  return t(tables, "helseforetak.csv").map((h) => {
+  return [...t(tables, "helseforetak.csv"), ...nationalHfRows(tables)].map((h) => {
     const id = unitId("helseforetak", h.hf_id);
     return {
       id, navn: h.hf_navn, type: "helseforetak",
-      parent_ids: h.helseregion ? [unitId("helseregion", h.helseregion)] : [],
+      parent_ids: h.helseregion ? [unitId("helseregion", h.helseregion)] : h.type === FELLESEID ? [unitId("land", "H00")] : [],
       sok: sok(h.hf_navn, h.hf_id),
       fakta: {
         id, navn: h.hf_navn, type: "helseforetak", hf_type: h.type,
@@ -70,9 +86,10 @@ export function buildHfUnits(tables) {
   });
 }
 
-/** land:H00 + the four helseregioner. hf_activity/catchment_population use H-codes; the patients tables use "0" for the country. */
+/** land:H00 + the four helseregioner. hf_activity/catchment_population/hf_staffing/hf_specialists use H-codes; the patients tables use "0" for the country. */
 export function buildRegionUnits(tables) {
   const hfs = t(tables, "helseforetak.csv");
+  const nationals = nationalHfRows(tables);
   const defs = [["H00", "Hele landet", "land", [], "norge"], ...Object.entries(REGION_NAMES).map(([c, n]) => [c, n, "helseregion", [unitId("land", "H00")], n.replace("Helse ", "")])];
   return defs.map(([code, navn, type, parent_ids, alias]) => {
     const id = unitId(type, code);
@@ -82,9 +99,11 @@ export function buildRegionUnits(tables) {
       fakta: {
         id, navn, type,
         aktivitet: nest(byCol(t(tables, "hf_activity.csv"), "hf_id", code), ["tjenesteomrade", "metric"]),
+        arsverk: seriesBlock(byCol(t(tables, "hf_staffing.csv"), "hf_id", code), "yrkesgruppe_kode", "yrkesgruppe"),
+        spesialister: seriesBlock(byCol(t(tables, "hf_specialists.csv"), "hf_id", code), "spesialitet_kode", "spesialitet"),
         befolkning: nest(byCol(t(tables, "catchment_population.csv"), "omrade_id", code), ["tjenesteomrade", "aldersgruppe"]),
         pasienter: patientsBlock(byCol(t(tables, "patients_by_diagnosis.csv"), "region_id", regionId), byCol(t(tables, "patients_by_diagnosis_detail.csv"), "region_id", regionId)),
-        helseforetak: (type === "land" ? hfs : hfs.filter((h) => h.helseregion === code)).map((h) => ({ ...ref("helseforetak", h.hf_id, h.hf_navn), type: h.type })),
+        helseforetak: (type === "land" ? [...hfs, ...nationals] : hfs.filter((h) => h.helseregion === code)).map((h) => ({ ...ref("helseforetak", h.hf_id, h.hf_navn), type: h.type })),
       },
     };
   });

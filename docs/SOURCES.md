@@ -1,6 +1,6 @@
 # Kilder
 
-Generert fra `data/sources/manifest.json` (skrevet av `npm run fetch`; `last_fetched` er tom for den kuraterte kilden, som ikke hentes over nett).
+Skrevet for hånd fra `data/sources/manifest.json` (som igjen skrives av `npm run fetch`), og **må oppdateres når manifestet endrer seg** – den genereres ikke. `last_fetched` er tom for den kuraterte kilden, som ikke hentes over nett. De ti sub-kildene nederst er tabellene fetcherne stempler som `source_id` på radene; de arver lisens og `last_fetched` fra fetcheren sin (`parent`-kolonnen).
 
 | id | navn | url | lisens | last_fetched | tables_out |
 |---|---|---|---|---|---|
@@ -17,6 +17,25 @@ Generert fra `data/sources/manifest.json` (skrevet av `npm run fetch`; `last_fet
 | `ssb_pasienter` | SSB 14824 Pasienter i somatisk spesialisthelsetjeneste etter bosted, alder og diagnose + SSB 14820 pasienter i psykisk helsevern for voksne | https://www.ssb.no/statbank/table/14824 | NLOD 2.0 | 2026-09-02 | `patients_by_diagnosis.csv`, `patients_by_diagnosis_detail.csv` |
 
 10 av de 11 radene er hentet av fetchere i `scripts/fetch/` (kjørt via `npm run fetch`); `curated_helse_nord` er manuelt samlet inn og merges inn fra `data/sources/manifest.static.json` (se under). Full spørring per kilde (SSB-utvalg, FHI-nøkler) står i `query`-feltet i `manifest.json` selv – den er for detaljert til å gjengi her.
+
+## Sub-kilder
+
+Tre av fetcherne henter flere tabeller og stempler den enkelte tabellens id som `source_id` på radene. De tabellene står som egne oppføringer i manifestet med et `parent`-felt, slik at hvert tall i modellen kan slås opp mot en url og en lisens. De deklareres som `meta.sub_sources` på fetcheren og hentes ikke separat – `last_fetched` og lisens er forelderens.
+
+| id | parent | navn | url | tables_out |
+|---|---|---|---|---|
+| `ssb_11875` | `ssb_kostra` | SSB KOSTRA 11875 – plasser i institusjon og sykehjem (kommunale helse- og omsorgstjenester) | https://www.ssb.no/statbank/table/11875 | `municipal_capacity.csv` |
+| `ssb_12292` | `ssb_kostra` | SSB KOSTRA 12292 – beboere, brukere og årsverk i kommunale helse- og omsorgstjenester | https://www.ssb.no/statbank/table/12292 | `municipal_capacity.csv` |
+| `ssb_12293` | `ssb_kostra` | SSB KOSTRA 12293 – belegg i kommunale institusjoner | https://www.ssb.no/statbank/table/12293 | `municipal_capacity.csv` |
+| `ssb_11996` | `ssb_kostra` | SSB KOSTRA 11996 – legeårsverk i kommunen etter funksjon | https://www.ssb.no/statbank/table/11996 | `municipal_capacity.csv` |
+| `ssb_14533` | `ssb_kostra` | SSB KOSTRA 14533 – årsverk etter yrke i kommunale helse- og omsorgstjenester | https://www.ssb.no/statbank/table/14533 | `municipal_capacity.csv` |
+| `fhi_nokkel_699` | `fhi_kommune` | FHI Kommunehelsa nøkkel 699 – brukere av spesialisthelsetjenesten (NPR) per diagnosegruppe | https://statistikk.fhi.no/kommunehelsa | `municipal_needs.csv` |
+| `fhi_nokkel_370` | `fhi_kommune` | FHI Kommunehelsa nøkkel 370 – brukere av kommunale helse- og omsorgstjenester (KPR) 0–74 år per diagnosegruppe | https://statistikk.fhi.no/kommunehelsa | `municipal_needs.csv` |
+| `fhi_kpr_634` | `fhi_kommune` | FHI Kommunehelsa kpr 634 – mottakere av hjemmetjenester etter tjenestetype | https://statistikk.fhi.no/kommunehelsa | `municipal_needs.csv` |
+| `ssb_14824` | `ssb_pasienter` | SSB 14824 – pasienter i somatisk spesialisthelsetjeneste etter bosted, alder og diagnose | https://www.ssb.no/statbank/table/14824 | `patients_by_diagnosis.csv`, `patients_by_diagnosis_detail.csv` |
+| `ssb_14820` | `ssb_pasienter` | SSB 14820 – pasienter i psykisk helsevern for voksne etter bosted og alder | https://www.ssb.no/statbank/table/14820 | `patients_by_diagnosis.csv` |
+
+`data/normalized/hospital_beds.csv` bruker i tillegg `ssb_13942` som `source_id` på de 8 estimat-radene, siden de er utledet av SSB-tallet og ikke av den kuraterte kilden.
 
 ## Kuraterte tabeller
 
