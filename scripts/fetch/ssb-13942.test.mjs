@@ -40,7 +40,12 @@ test("helseforetak.csv has one row per org.nr with rhf and type", () => {
 
 test("unknown metric or org.nr throws", () => {
   const bad = makeJsonStat([{ id: "HelseReg", codes: ["H00"] }, { id: "HelseTjenomr", codes: ["SOM"] }, { id: "ContentsCode", codes: ["Nytt"] }, { id: "Tid", codes: ["2025"] }], [1]);
-  assert.throws(() => transform13942({ dataset: bad, klass }), /Ukjent ContentsCode "Nytt"/);
+  assert.throws(() => transform13942({ dataset: bad, klass }), /\[ssb_13942\]/);
   const unknownOrg = makeJsonStat([{ id: "HelseReg", codes: ["111111111"] }, { id: "HelseTjenomr", codes: ["SOM"] }, { id: "ContentsCode", codes: ["Dognplass"] }, { id: "Tid", codes: ["2025"] }], [1]);
-  assert.throws(() => transform13942({ dataset: unknownOrg, klass }), /111111111/);
+  assert.throws(() => transform13942({ dataset: unknownOrg, klass }), /\[ssb_13942\]/);
+});
+
+test("invalid HelseReg code (neither 9 digits nor H) throws with source id", () => {
+  const invalid = makeJsonStat([{ id: "HelseReg", codes: ["X1"] }, { id: "HelseTjenomr", codes: ["SOM"] }, { id: "ContentsCode", codes: ["Dognplass"] }, { id: "Tid", codes: ["2025"] }], [1]);
+  assert.throws(() => transform13942({ dataset: invalid, klass }), /\[ssb_13942\]/);
 });

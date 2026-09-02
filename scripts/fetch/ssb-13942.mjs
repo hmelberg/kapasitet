@@ -17,7 +17,7 @@ export const METRICS = {
 
 function rhfOf(orgnr, klassParent) {
   const rhf = klassParent[orgnr] ?? PRIVATE_RHF[orgnr];
-  if (!rhf) throw new Error(`Org.nr ${orgnr} finnes verken i KLASS 629 nivå 2 eller i PRIVATE_RHF – legg den til i scripts/lib/regions.mjs`);
+  if (!rhf) throw new Error(`[ssb_13942] Org.nr ${orgnr} finnes verken i KLASS 629 nivå 2 eller i PRIVATE_RHF – legg den til i scripts/lib/regions.mjs`);
   return rhf;
 }
 
@@ -28,18 +28,19 @@ export function transform13942({ dataset, klass }) {
   const hfs = new Map();
   for (const r of rows) {
     const m = METRICS[r.ContentsCode];
-    if (!m) throw new Error(`Ukjent ContentsCode "${r.ContentsCode}" i SSB 13942 – oppdater METRICS`);
+    if (!m) throw new Error(`[ssb_13942] Ukjent ContentsCode "${r.ContentsCode}" i SSB 13942 – oppdater METRICS`);
     const code = r.HelseReg;
     let helseregion = "";
     if (isOrgNr(code)) {
       const rhf = rhfOf(code, klassParent);
       helseregion = RHF_TO_REGION[rhf];
+      if (helseregion === undefined) throw new Error(`[ssb_13942] ukjent RHF ${rhf} for org.nr ${code}`);
       if (!hfs.has(code)) {
         const navn = stripPeriodSuffix(r.HelseReg_label);
         hfs.set(code, { hf_id: code, hf_navn: navn, rhf_id: rhf, helseregion, type: /\bHF$/.test(navn) ? "hf" : "privat" });
       }
     } else if (code.startsWith("H")) helseregion = regionPrefix(code);
-    else throw new Error(`Ukjent HelseReg-kode "${code}" i SSB 13942`);
+    else throw new Error(`[ssb_13942] Ukjent HelseReg-kode "${code}" i SSB 13942`);
     activity.push({
       hf_id: code, hf_navn: stripPeriodSuffix(r.HelseReg_label), helseregion, tjenesteomrade: r.HelseTjenomr,
       metric: m[0], period: r.Tid, value: r.value, unit: m[1], source_id: "ssb_13942", quality: "ekte",
