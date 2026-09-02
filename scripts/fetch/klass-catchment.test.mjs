@@ -59,3 +59,83 @@ test("split kommune gets the area with most grunnkretser and quality=avledet; mi
   assert.equal(ukjent.hf_id, "");
   assert.match(ukjent.note, /Ikke i KLASS 2688/);
 });
+
+test("split DPS: whole-kommune code (10000 weight) beats grunnkrets codes", () => {
+  const rawDpsSplit = {
+    codes629: [
+      { code: "883658752", parentCode: null, level: 1, name: "Helse Nord RHF" },
+      { code: "983974880", parentCode: "883658752", level: 2, name: "Finnmarkssykehuset HF" },
+      { code: "S01", parentCode: "983974880", level: 3, name: "Hammerfest" },
+      { code: "56010101", parentCode: "S01", level: 4, name: "Alta sentrum" },
+    ],
+    codes632: [
+      { code: "883658752", parentCode: null, level: 1, name: "Helse Nord RHF" },
+      { code: "983974880", parentCode: "883658752", level: 2, name: "Finnmarkssykehuset HF" },
+      { code: "D01", parentCode: "983974880", level: 3, name: "DPS Vest" },
+      { code: "D02", parentCode: "983974880", level: 3, name: "DPS Øst" },
+      { code: "56010101", parentCode: "D01", level: 4, name: "Alta-grunnkrets-1" },
+      { code: "56010102", parentCode: "D01", level: 4, name: "Alta-grunnkrets-2" },
+      { code: "56010103", parentCode: "D01", level: 4, name: "Alta-grunnkrets-3" },
+      { code: "5601", parentCode: "D02", level: 4, name: "Alta" },
+    ],
+    corr2688: [{ sourceCode: "S01", sourceName: "Hammerfest", targetCode: "5601", targetName: "Alta" }],
+    corr2690: [
+      { sourceCode: "D01", sourceName: "DPS Vest", targetCode: "5601", targetName: "Alta" },
+      { sourceCode: "D02", sourceName: "DPS Øst", targetCode: "5601", targetName: "Alta" },
+    ],
+    municipalities: [{ municipality_code: "5601", municipality_name: "Alta" }],
+  };
+  const { catchment } = buildCatchment(rawDpsSplit);
+  const alta = catchment[0];
+  assert.equal(alta.dps_id, "D02");
+  assert.equal(alta.quality, "avledet");
+  assert.match(alta.note, /Delt DPS: D02 DPS Øst \(10000\), D01 DPS Vest \(3\)/);
+});
+
+test("throws when HF's RHF is not in RHF_TO_REGION", () => {
+  const rawUnknownRhf = {
+    codes629: [
+      { code: "111111111", parentCode: null, level: 1, name: "Unknown RHF" },
+      { code: "983974880", parentCode: "111111111", level: 2, name: "Finnmarkssykehuset HF" },
+      { code: "S01", parentCode: "983974880", level: 3, name: "Hammerfest" },
+      { code: "56010101", parentCode: "S01", level: 4, name: "Alta sentrum" },
+    ],
+    codes632: [
+      { code: "111111111", parentCode: null, level: 1, name: "Unknown RHF" },
+      { code: "983974880", parentCode: "111111111", level: 2, name: "Finnmarkssykehuset HF" },
+      { code: "D01", parentCode: "983974880", level: 3, name: "DPS Vest-Finnmark" },
+      { code: "5601", parentCode: "D01", level: 4, name: "Alta" },
+    ],
+    corr2688: [{ sourceCode: "S01", sourceName: "Hammerfest", targetCode: "5601", targetName: "Alta" }],
+    corr2690: [{ sourceCode: "D01", sourceName: "DPS Vest-Finnmark", targetCode: "5601", targetName: "Alta" }],
+    municipalities: [{ municipality_code: "5601", municipality_name: "Alta" }],
+  };
+  assert.throws(
+    () => buildCatchment(rawUnknownRhf),
+    /ukjent helseregion/
+  );
+});
+
+test("throws when corr2688 references an S code not in codes629", () => {
+  const rawDanglingCode = {
+    codes629: [
+      { code: "883658752", parentCode: null, level: 1, name: "Helse Nord RHF" },
+      { code: "983974880", parentCode: "883658752", level: 2, name: "Finnmarkssykehuset HF" },
+      { code: "S01", parentCode: "983974880", level: 3, name: "Hammerfest" },
+      { code: "56010101", parentCode: "S01", level: 4, name: "Alta sentrum" },
+    ],
+    codes632: [
+      { code: "883658752", parentCode: null, level: 1, name: "Helse Nord RHF" },
+      { code: "983974880", parentCode: "883658752", level: 2, name: "Finnmarkssykehuset HF" },
+      { code: "D01", parentCode: "983974880", level: 3, name: "DPS Vest-Finnmark" },
+      { code: "5601", parentCode: "D01", level: 4, name: "Alta" },
+    ],
+    corr2688: [{ sourceCode: "SNONEXISTENT", sourceName: "Nonexistent", targetCode: "5601", targetName: "Alta" }],
+    corr2690: [{ sourceCode: "D01", sourceName: "DPS Vest-Finnmark", targetCode: "5601", targetName: "Alta" }],
+    municipalities: [{ municipality_code: "5601", municipality_name: "Alta" }],
+  };
+  assert.throws(
+    () => buildCatchment(rawDanglingCode),
+    /ukjent områdekode/
+  );
+});

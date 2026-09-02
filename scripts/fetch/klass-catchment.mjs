@@ -35,6 +35,19 @@ function pickArea(kommune, candidates, areas, cov) {
 export function buildCatchment({ codes629, codes632, corr2688, corr2690, municipalities }) {
   const sAreas = areasByCode(codes629);
   const dAreas = areasByCode(codes632);
+
+  // Validate that all correspondence codes exist in their respective area maps
+  for (const m of corr2688) {
+    if (!sAreas[m.sourceCode]) {
+      throw new Error(`[ssb_klass_opptak] ukjent områdekode ${m.sourceCode} i korrespondansetabellen`);
+    }
+  }
+  for (const m of corr2690) {
+    if (!dAreas[m.sourceCode]) {
+      throw new Error(`[ssb_klass_opptak] ukjent områdekode ${m.sourceCode} i korrespondansetabellen`);
+    }
+  }
+
   const opptaksomrader = [
     ...Object.values(sAreas).map((a) => ({ omrade_id: a.code, omrade_navn: a.name, omrade_type: "lokalsykehus", hf_id: a.parentCode })),
     ...Object.values(dAreas).map((a) => ({ omrade_id: a.code, omrade_navn: a.name, omrade_type: "dps", hf_id: a.parentCode })),
@@ -57,14 +70,27 @@ export function buildCatchment({ codes629, codes632, corr2688, corr2690, municip
     if (!d.id) notes.push("Ikke i KLASS 2690");
     if (d.split) notes.push(`Delt DPS: ${d.note}`);
     const hf_id = s.id ? sAreas[s.id].parentCode : "";
-    const rhf = hf_id ? hfParent[hf_id] ?? PRIVATE_RHF[hf_id] : "";
+
+    // Validate that the HF maps to a known region
+    let helseregion = "";
+    if (hf_id) {
+      const rhf = hfParent[hf_id] ?? PRIVATE_RHF[hf_id];
+      if (!rhf) {
+        throw new Error(`[ssb_klass_opptak] ukjent helseregion for helseforetak ${hf_id} (område ${s.id})`);
+      }
+      helseregion = RHF_TO_REGION[rhf] ?? "";
+      if (!helseregion) {
+        throw new Error(`[ssb_klass_opptak] ukjent helseregion for helseforetak ${hf_id} (område ${s.id})`);
+      }
+    }
+
     return {
       municipality_code: k,
       municipality_name: m.municipality_name,
       lokalsykehus_id: s.id,
       dps_id: d.id,
       hf_id,
-      helseregion: rhf ? RHF_TO_REGION[rhf] ?? "" : "",
+      helseregion,
       quality: notes.length === 0 ? "ekte" : "avledet",
       note: notes.join("; "),
     };
