@@ -1,0 +1,16 @@
+site_id,site_navn,hf_id,municipality_code,lokalsykehus_id,lat,lon,site_type,akuttfunksjon
+hammerfest,Hammerfest sykehus,983974880,5603,S01,70.67193,23.65210,sykehus,ja
+kirkenes,Kirkenes sykehus,983974880,5605,S02,69.70703,30.03492,sykehus,ja
+alta,Finnmarkssykehuset Klinikk Alta,983974880,5601,,69.96884,23.27611,klinikk,nei
+karasjok,SANKS Karasjok,983974880,5610,,69.4717,25.5218,klinikk,nei
+tromso,UNN Tromsø,983974899,5501,S05,69.68393,18.98265,sykehus,ja
+asgard,UNN Åsgård,983974899,5501,,69.65910,18.91433,sykehus,nei
+harstad,UNN Harstad,983974899,5503,S03,68.79627,16.52476,sykehus,ja
+narvik,UNN Narvik,983974899,1806,S04,68.44742,17.46525,sykehus,ja
+bodo,Nordlandssykehuset Bodø,983974910,1804,S06,67.28304,14.39688,sykehus,ja
+ronvik,Nordlandssykehuset Rønvik,983974910,1804,,67.28616,14.43654,sykehus,nei
+lofoten,Nordlandssykehuset Lofoten,983974910,1860,S07,68.11971,13.53695,sykehus,ja
+vesteralen,Nordlandssykehuset Vesterålen,983974910,1866,S08,68.55999,14.91023,sykehus,ja
+mo-i-rana,Helgelandssykehuset Mo i Rana,983974929,1833,S09,66.32598,14.18577,sykehus,ja
+mosjoen,Helgelandssykehuset Mosjøen,983974929,1824,S10,65.83093,13.21239,sykehus,ja
+sandnessjoen,Helgelandssykehuset Sandnessjøen,983974929,1820,S11,66.01822,12.61859,sykehus,ja
