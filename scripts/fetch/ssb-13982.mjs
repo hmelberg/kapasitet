@@ -27,6 +27,7 @@ export function aggregateAges(rows, { key, name, extra }) {
 export function transform13982({ rows }) {
   const out = [];
   for (const e of aggregateAges(rows, { key: (r) => r.HelseReg, name: (r) => stripPeriodSuffix(r.HelseReg_label), extra: (r) => r.HelseTjenomr })) {
+    if (e.groups.alle === 0) continue; // retired or not-yet-created area-code for this period (e.g. S26/S27 post-2025, S50 pre-2025) – not a real zero population
     for (const g of [...AGE_GROUPS, "alle"]) {
       if (g !== "alle" && e.groups[g] === 0) continue;
       out.push({ omrade_id: e.id, omrade_navn: e.navn, omrade_type: areaType(e.id), tjenesteomrade: e.extra, aldersgruppe: g, period: e.period, value: e.groups[g], unit: "personer", source_id: "ssb_13982", quality: "ekte" });

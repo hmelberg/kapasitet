@@ -27,3 +27,14 @@ test("aggregates single years into groups plus 'alle' and types the area by code
   assert.equal(out.find((r) => r.omrade_id === "H05").omrade_type, "helseregion");
   assert.equal(out.find((r) => r.omrade_id === "H00").omrade_type, "land");
 });
+
+test("a zero-total area-period emits no rows at all, but a nonzero one still emits including 'alle'", () => {
+  const rows = [
+    row("S26", "Kristiansund", "SOM", "000", "2025", 0),
+    row("S27", "Molde", "SOM", "000", "2020", 5),
+  ];
+  const out = transform13982({ rows })["catchment_population.csv"];
+  assert.deepEqual(out.filter((r) => r.omrade_id === "S26"), []);
+  const s27 = out.filter((r) => r.omrade_id === "S27");
+  assert.ok(s27.some((r) => r.aldersgruppe === "alle" && r.value === 5));
+});
