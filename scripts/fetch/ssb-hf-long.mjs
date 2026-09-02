@@ -1,7 +1,7 @@
 import { ssbQuery, all, item } from "../lib/ssb.mjs";
 import { klassCodes } from "../lib/klass.mjs";
 import { jsonStatToRows } from "../lib/jsonstat.mjs";
-import { RHF_TO_REGION, PRIVATE_RHF, isOrgNr, regionPrefix, stripPeriodSuffix } from "../lib/regions.mjs";
+import { RHF_TO_REGION, PRIVATE_RHF, NATIONAL_HF, isOrgNr, regionPrefix, stripPeriodSuffix } from "../lib/regions.mjs";
 
 /** hf org.nr → helseregion from KLASS 629 level 2 plus PRIVATE_RHF. Shared by 13953/14080. */
 export async function fetchHfRegion(deps) {
@@ -23,8 +23,11 @@ export function makeHfLongFetcher({ id, tableId, navn, dim, dimCol, dimLabelCol,
       let helseregion = "";
       if (isOrgNr(code)) {
         if (RHF_TO_REGION[code]) continue; // RHF total rows – the H.. rows already carry those
-        helseregion = hfRegion[code];
-        if (!helseregion) throw new Error(`[${id}] Org.nr ${code} i SSB ${tableId} finnes verken i KLASS 629 nivå 2 eller i PRIVATE_RHF`);
+        if (NATIONAL_HF.has(code)) helseregion = ""; // felleseid støtteforetak – ingen enkelt helseregion
+        else {
+          helseregion = hfRegion[code];
+          if (!helseregion) throw new Error(`[${id}] Org.nr ${code} i SSB ${tableId} finnes verken i KLASS 629 nivå 2 eller i PRIVATE_RHF`);
+        }
       } else if (code.startsWith("H")) helseregion = regionPrefix(code);
       else throw new Error(`[${id}] Ukjent HelseReg-kode "${code}" i SSB ${tableId}`);
       out.push({
