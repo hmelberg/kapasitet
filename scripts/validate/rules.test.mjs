@@ -28,6 +28,62 @@ test("clean tables give no errors and an info line for the bed control", () => {
   assert.ok(r.info.some((l) => l.includes("983974880") && l.includes("130") && l.includes("134")));
 });
 
+test("kontrollsummen hoppes over når en somatikk-rad er estimat fordelt fra SSB", () => {
+  const t = good();
+  t["hospital_beds.csv"].push({ ...t["hospital_beds.csv"][0], site_id: "kirkenes", site_navn: "Kirkenes sykehus", source_id: "ssb_13942", senger: "300", quality: "estimat" });
+  t["sites.csv"].push({ ...t["sites.csv"][0], site_id: "kirkenes", site_navn: "Kirkenes sykehus" });
+  const r = validateTables(t, schemas);
+  assert.deepEqual(r.errors, []); // 430 mot 134 ville vært langt utenfor toleransen
+  assert.ok(r.info.some((l) => /983974880: 1 av 2 somatikk-rader er estimat.*ikke uavhengig/.test(l)));
+  assert.ok(!r.info.some((l) => /avvik/.test(l)));
+});
+
+test("tom numerisk celle er ikke 0, men en feil", () => {
+  const t = good();
+  t["hf_activity.csv"][0].value = "";
+  t["hospital_beds.csv"][0].senger = "  ";
+  const r = validateTables(t, schemas);
+  assert.ok(r.errors.some((e) => /hf_activity.*ikke-numerisk/.test(e)));
+  assert.ok(r.errors.some((e) => /hospital_beds.*ikke-numerisk/.test(e)));
+});
+
+test("lokalsykehus_id, sengekategori og duplikate sengerader kontrolleres", () => {
+  const t = good();
+  t["sites.csv"][0].lokalsykehus_id = "S99";
+  t["hospital_beds.csv"][0].kategori = "somatik";
+  t["hospital_beds.csv"].push({ ...t["hospital_beds.csv"][0] });
+  const r = validateTables(t, schemas);
+  assert.ok(r.errors.some((e) => /sites.csv: lokalsykehus_id 1 ukjente lokalsykehus_id: S99/.test(e)));
+  assert.ok(r.errors.some((e) => /hospital_beds.csv: kategori 1 ukjente kategorier: somatik/.test(e)));
+  assert.ok(r.errors.some((e) => /hospital_beds.csv: 2 rader deler samme site_id\/kategori\/period \(hammerfest\/somatik\/2025\)/.test(e)));
+  // tom lokalsykehus_id er lov (Klinikk Alta har ingen)
+  t["sites.csv"][0].lokalsykehus_id = "";
+  assert.ok(!validateTables(t, schemas).errors.some((e) => /lokalsykehus_id/.test(e)));
+});
+
+test("hf_id i SSB-tabellene godtar org.nr, H-aggregater og felleseide/private HF-er – ikke annet", () => {
+  const t = good();
+  t["hf_activity.csv"] = [
+    { ...t["hf_activity.csv"][0], hf_id: "H05" },
+    { ...t["hf_activity.csv"][0], hf_id: "H06_HF" },
+    { ...t["hf_activity.csv"][0], hf_id: "818711832" }, // Luftambulansetjenesten HF (NATIONAL_HF)
+    { ...t["hf_activity.csv"][0], hf_id: "883971752" }, // Sunnaas sykehus HF (PRIVATE_RHF)
+  ];
+  assert.ok(!validateTables(t, schemas).errors.some((e) => /ukjent hf_id/.test(e)));
+  t["hf_activity.csv"].push({ ...t["hf_activity.csv"][0], hf_id: "999999999" }, { ...t["hf_activity.csv"][0], hf_id: "999999999" });
+  assert.ok(validateTables(t, schemas).errors.some((e) => e === "[hf_activity.csv] ukjent hf_id 999999999 (2 rader)"));
+});
+
+test("hver kommune må ha rader i befolknings-, kapasitets- og behovstabellen", () => {
+  const t = good();
+  const cap = { municipality_code: "5603", metric: "inst_plasser", metric_label: "Plasser", period: "2025", value: "138", unit: "plasser", source_id: "ssb_11875", quality: "ekte" };
+  t["municipal_capacity.csv"] = [cap];
+  t["municipal_population.csv"] = [];
+  const r = validateTables(t, { ...schemas, "municipal_capacity.csv": { columns: Object.keys(cap), required: true }, "municipal_population.csv": { columns: Object.keys(cap), required: true } });
+  assert.ok(r.errors.some((e) => e === "[municipal_population.csv] mangler rader for 1 kommuner: 5603…"));
+  assert.ok(!r.errors.some((e) => /municipal_capacity.csv\] mangler/.test(e)));
+});
+
 test("schema, quality, missing HF and bed deviation are errors; optional tables are warnings", () => {
   const t = good();
   t["hf_activity.csv"][0].quality = "gjett";

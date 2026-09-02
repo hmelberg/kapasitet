@@ -11,7 +11,9 @@ Denne tabellen blander to kilder som ikke teller likt, og avvik mellom dem er fo
 - **SSB-tabell 13942** (`data/normalized/hf_activity.csv`, `metric=dognplasser`) teller **gjennomsnittlig tilgjengelige døgnplasser over året**, rapportert på HF-nivå. Det er et driftstall: senger tas ut av drift ved bemanningsmangel, ombygging osv., så tallet svinger år for år og ligger ofte lavere enn det fysiske sengetallet.
 - **Sykehusenes egne sider / sykehusbygg.no** (kolonnene under) teller stort sett **fysiske senger** – sengerom bygget inn i bygningsmassen, slik de er beskrevet i byggeprosjekter, "sengeområde"-sider eller avdelingssider. Dette tallet endrer seg sjelden, og er upåvirket av kortsiktig bemanningssituasjon.
 
-`npm run validate` sammenligner summen av kuraterte `somatikk`-rader per HF (fysiske senger, nyeste periode) mot SSB 13942 (drift, 2025) med 15 %-toleranse. Et avvik i det intervallet er forventet – ikke en feil i dataene – fordi de to kildene måler forskjellige ting. Se avvikstall i tabellen nedenfor.
+`npm run validate` sammenligner summen av kuraterte `somatikk`-rader per HF (fysiske senger, nyeste periode) mot SSB 13942 (drift, 2025) med 15 %-toleranse. Et avvik i det intervallet er forventet – ikke en feil i dataene – fordi de to kildene måler forskjellige ting.
+
+**Kontrollen kjøres bare når alle stedets somatikk-rader er `ekte` eller `avledet`.** En `estimat`-rad er selv regnet ut fra SSB-tallet (`round(HF_SOM × pop_site / Σ pop_sites)`), så et avvik målt mot den er en identitet, ikke en kontroll. I dagens data kvalifiserer **ingen** av de fire HF-ene: 8 av de 11 somatikk-radene er estimat, og alle fire HF-ene har minst én. Validatoren skriver derfor en info-linje av typen «HF 983974929: 3 av 3 somatikk-rader er estimat (fordelt fra SSB 13942) — kontrollsummen er ikke uavhengig, sjekk hoppet over» i stedet for et avvikstall.
 
 ## Senger per behandlingssted
 
@@ -36,14 +38,16 @@ Denne tabellen blander to kilder som ikke teller likt, og avvik mellom dem er fo
 
 ## Kontroll mot SSB 13942 (`npm run validate`)
 
-| HF | Kuratert somatikk (sum, siste periode) | SSB 13942 døgnplasser (2025) | Avvik |
-|---|---:|---:|---:|
-| Finnmarkssykehuset (983974880) | 137 (89 Hammerfest + 48 Kirkenes) | 134 | 2,2 % |
-| UNN (983974899) | 563 (112 Harstad + 48 Narvik + 403 Tromsø) | 593 | 5,1 % |
-| Nordlandssykehuset (983974910) | 291 (180 Bodø + 50 Lofoten + 61 Vesterålen) | 295 | 1,4 % |
-| Helgelandssykehuset (983974929) | 121 (53 Mo i Rana + 25 Mosjøen + 43 Sandnessjøen) | 121 | 0,0 % |
+Ingen av de fire HF-ene kvalifiserer til kontrollen i dag – alle har minst én estimat-rad, så validatoren hopper over avviksberegningen (se avsnittet over). Tabellen viser hva avviket *ville* vært, og hvor mye av det som er sirkulært:
 
-Alle fire ligger godt innenfor 15 %-toleransen. UNN sitt avvik (5,1 %, kuratert *under* SSB) er størst; det er ventet siden Tromsø-tallet er et estimat (se under) og et reelt UNN Tromsø-tall trolig ville løftet summen nærmere/over SSB-tallet, gitt at Tromsø har regionfunksjoner.
+| HF | Kuratert somatikk (sum, siste periode) | SSB 13942 døgnplasser (2025) | Avvik hvis regnet ut | Rader med uavhengig informasjon |
+|---|---:|---:|---:|---|
+| Finnmarkssykehuset (983974880) | 137 (89 Hammerfest + 48 Kirkenes) | 134 | 2,2 % | 1 av 2 (Hammerfest) |
+| UNN (983974899) | 563 (112 Harstad + 48 Narvik + 403 Tromsø) | 593 | 5,1 % | 1 av 3 (Narvik) |
+| Nordlandssykehuset (983974910) | 291 (180 Bodø + 50 Lofoten + 61 Vesterålen) | 295 | 1,4 % | 1 av 3 (Vesterålen) |
+| Helgelandssykehuset (983974929) | 121 (53 Mo i Rana + 25 Mosjøen + 43 Sandnessjøen) | 121 | **0,0 %** | ingen – alle tre er estimat |
+
+Helgelandssykehusets «0,0 %» er en identitet, ikke en bekreftelse: alle tre radene er regnet ut fra nettopp de 121 døgnplassene de sammenlignes med. De tre andre avvikene er hver en enkelt-rads sammenligning uttynnet av to–tre tautologiske ledd. Dersom et ekte sengetall dukker opp for de gjenstående stedene, blir kontrollen reell og kjører automatisk igjen.
 
 ## Estimat-rader: hvorfor ingen kilde ble funnet
 
@@ -68,6 +72,12 @@ der `HF_SOM` er HF-ets somatiske SSB-døgnplasser 2025 (`hf_activity.csv`) og `p
 
 - **Klinikk Alta** (somatikk): en nordnorskdebatt.no-artikkel nevnte i søkeresultatet en økning fra 9 til 20 senger, men da siden ble åpnet direkte var sengetallet ikke lesbart der, og ingen annen side ga et entydig tall. Uten en side jeg selv har åpnet og som inneholder tallet, er raden utelatt (jf. oppdragets krav om ekte kilder). Alta har ingen `lokalsykehus_id`, så estimat-formelen kan heller ikke brukes.
 - **UNN Åsgård** og **Nordlandssykehuset Rønvik** (psykisk_helsevern): søk ga bare tall for enkeltposter (f.eks. «17 senger» sikkerhetspsykiatri, «12» akuttpost Tromsø ved Åsgård; «8» en enkelt enhet ved Rønvik) – ingen åpnet side oppga et samlet sengetall for hele stedet, så radene er utelatt fremfor å gjette en sum.
+
+## Kjente begrensninger
+
+- **Hammerfest 89 inkluderer 14 pasienthotell-senger.** Kilden oppgir 89 som *total kapasitet* (57 enkeltrom + 8 dobbeltrom + 14 pasienthotell + 4 barn + 6 intensiv + 7 isolat), og pasienthotellplasser er ikke døgnplasser i SSBs forstand. Det eneste genuint uavhengige datapunktet for Finnmarkssykehuset er dermed oppblåst med ~14 mot tallet det sammenlignes med.
+- 8 av 11 somatikk-rader er estimat (se over), så per sted-sengetall må aldri presenteres som målt.
+- Klinikk Alta, UNN Åsgård og Nordlandssykehuset Rønvik har ingen sengerad i det hele tatt – et scenario som stenger Alta viser derfor 0 tapte senger.
 
 ## Åpne spørsmål til controller
 

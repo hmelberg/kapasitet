@@ -1,11 +1,20 @@
 import { SCHEMAS } from "./schemas.mjs";
+import { NATIONAL_HF, PRIVATE_RHF } from "../lib/regions.mjs";
 
 export const QUALITIES = new Set(["ekte", "avledet", "estimat"]);
+export const BED_CATEGORIES = new Set(["somatikk", "psykisk_helsevern", "tsb", "intensiv", "fode", "annet"]);
 export const BED_TOLERANCE = 0.15;
 const CONTROL_SUMS = [
   ["983974880", "Finnmarkssykehuset", 134], ["983974899", "UNN", 593], ["983974910", "Nordlandssykehuset", 295], ["983974929", "Helgelandssykehuset", 121],
 ];
 const NUMERIC = { value: true, senger: true };
+// Tabeller der hver kommune i municipalities.csv må ha minst én rad.
+const KOMMUNE_COVERAGE = ["municipal_population.csv", "municipal_capacity.csv", "municipal_needs.csv", "municipality_catchment.csv"];
+// SSB rapporterer også på aggregatnivå (H00, H03…H12, H03_AV, H06_HF, H99) i tillegg til org.nr.
+const AGGREGATE_HF = /^H\d\d(_[A-Z]+)?$/;
+
+/** Tom celle er ukjent, ikke 0 – Number("") === 0 og Number(" ") === 0 er begge endelige. */
+const numOrNaN = (v) => (v === "" || v == null || String(v).trim() === "" ? NaN : Number(v));
 
 export function validateTables(tables, schemas = SCHEMAS, { manifest } = {}) {
   const errors = [], warnings = [], info = [];
@@ -27,7 +36,7 @@ export function validateTables(tables, schemas = SCHEMAS, { manifest } = {}) {
     let badQ = 0, badN = 0, badP = 0, example = "";
     for (const r of rows) {
       if (cols.includes("quality") && !QUALITIES.has(r.quality)) { badQ++; example ||= JSON.stringify(r); }
-      for (const c of cols) if (NUMERIC[c] && !Number.isFinite(Number(r[c]))) badN++;
+      for (const c of cols) if (NUMERIC[c] && !Number.isFinite(numOrNaN(r[c]))) badN++;
       if (cols.includes("period") && !/^\d{4}$/.test(r.period)) badP++;
     }
     if (badQ) err(`${file}: ${badQ} rader med ugyldig quality, f.eks. ${example}`);
@@ -60,6 +69,33 @@ export function validateTables(tables, schemas = SCHEMAS, { manifest } = {}) {
   for (const f of ["opptaksomrader.csv", "sites.csv", "hospital_beds.csv"]) ref(f, "hf_id", (v) => hfIds.has(v), "HF");
   for (const f of Object.keys(tables).filter((f) => f.startsWith("municipal_")).concat("sites.csv", "hospital_beds.csv")) ref(f, "municipality_code", (v) => muniIds.has(v), "kommuner");
   ref("hospital_beds.csv", "site_id", (v) => siteIds.has(v), "site_id");
+  ref("sites.csv", "lokalsykehus_id", (v) => v === "" || areas.has(v), "lokalsykehus_id");
+  ref("hospital_beds.csv", "kategori", (v) => BED_CATEGORIES.has(v), "kategorier");
+
+  // hf_id i SSB-tabellene: org.nr fra helseforetak.csv, H-aggregater, felleseide og private/historiske HF-er
+  const knownHf = (v) => hfIds.has(v) || AGGREGATE_HF.test(v) || NATIONAL_HF.has(v) || v in PRIVATE_RHF;
+  for (const file of ["hf_activity.csv", "hf_staffing.csv", "hf_specialists.csv"]) {
+    const counts = new Map();
+    for (const r of t(file)) if (!knownHf(r.hf_id)) counts.set(r.hf_id, (counts.get(r.hf_id) ?? 0) + 1);
+    for (const [id, n] of counts) err(`[${file}] ukjent hf_id ${id} (${n} rader)`);
+  }
+
+  // hver kommune må ha rader i befolknings-, kapasitets-, behovs- og tilhørighetstabellen
+  for (const file of KOMMUNE_COVERAGE) {
+    if (!tables[file]) continue;
+    const have = new Set(t(file).map((r) => r.municipality_code));
+    const missing = [...muniIds].filter((c) => !have.has(c));
+    if (missing.length) err(`[${file}] mangler rader for ${missing.length} kommuner: ${missing.slice(0, 5).join(", ")}…`);
+  }
+
+  // samme (site_id, kategori, period) to ganger ville stille overskrive hverandre i bedsBlock
+  const bedKeys = new Map();
+  for (const r of t("hospital_beds.csv")) {
+    const k = `${r.site_id}/${r.kategori}/${r.period}`;
+    bedKeys.set(k, (bedKeys.get(k) ?? 0) + 1);
+  }
+  for (const [k, n] of bedKeys) if (n > 1) err(`hospital_beds.csv: ${n} rader deler samme site_id/kategori/period (${k})`);
+
   const cpRows = t("catchment_population.csv");
   const cpLatest = cpRows.reduce((max, r) => (r.period > max ? r.period : max), "");
   const cpBad = [...new Set(cpRows.filter((r) => r.period === cpLatest && (r.omrade_type === "lokalsykehus" || r.omrade_type === "dps") && !areas.has(r.omrade_id)).map((r) => r.omrade_id))];
@@ -72,17 +108,21 @@ export function validateTables(tables, schemas = SCHEMAS, { manifest } = {}) {
     const cur = ssbBeds.get(r.hf_id);
     if (!cur || r.period > cur.period) ssbBeds.set(r.hf_id, { period: r.period, value: Number(r.value) });
   }
-  const curated = new Map(); // hf_id → Map(site_id → {period, senger})
+  const curated = new Map(); // hf_id → Map(site_id → {period, senger, quality})
   for (const r of t("hospital_beds.csv")) {
     if (r.kategori !== "somatikk") continue;
     const sites = curated.get(r.hf_id) ?? curated.set(r.hf_id, new Map()).get(r.hf_id);
     const cur = sites.get(r.site_id);
-    if (!cur || r.period > cur.period) sites.set(r.site_id, { period: r.period, senger: Number(r.senger) });
+    if (!cur || r.period > cur.period) sites.set(r.site_id, { period: r.period, senger: Number(r.senger), quality: r.quality });
   }
   for (const [hf, sites] of curated) {
-    const sum = [...sites.values()].reduce((a, s) => a + s.senger, 0);
+    const rows = [...sites.values()];
+    const sum = rows.reduce((a, s) => a + s.senger, 0);
     const ssb = ssbBeds.get(hf);
     if (!ssb) { warnings.push(`hospital_beds.csv: HF ${hf} har ingen SOM døgnplasser i hf_activity.csv å kontrollere mot`); continue; }
+    // En estimat-rad er selv utledet av SSB-tallet, så et avvik målt mot den er sirkulært, ikke en kontroll.
+    const est = rows.filter((s) => s.quality === "estimat").length;
+    if (est) { info.push(`HF ${hf}: ${est} av ${rows.length} somatikk-rader er estimat (fordelt fra SSB 13942) — kontrollsummen er ikke uavhengig, sjekk hoppet over`); continue; }
     const dev = Math.abs(sum - ssb.value) / ssb.value;
     const line = `HF ${hf}: kuratert somatikk ${sum} senger vs SSB 13942 ${ssb.value} døgnplasser (${ssb.period}), avvik ${(dev * 100).toFixed(1)} %`;
     if (dev > BED_TOLERANCE) err(`${line} – avviker mer enn ${BED_TOLERANCE * 100} %`); else info.push(line);

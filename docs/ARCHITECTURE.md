@@ -184,7 +184,12 @@ Hvert tall i faktaarket er et `Tall`: `{ value, unit, period, quality, source_id
 - en rad har ugyldig `quality` (må være `ekte`/`avledet`/`estimat`), et ikke-numerisk `value`/`senger`, eller en `period` som ikke er et 4-sifret årstall
 - en kommune mangler i `municipality_catchment.csv`, har mer enn én lokalsykehus-rad, mangler/har ukjent `hf_id`, eller peker på en `lokalsykehus_id` som ikke finnes i `opptaksomrader.csv`
 - en ukjent `hf_id` i `opptaksomrader.csv`/`sites.csv`/`hospital_beds.csv`, en ukjent `municipality_code` i en `municipal_*`-tabell/`sites.csv`/`hospital_beds.csv`, en ukjent `site_id` i `hospital_beds.csv`, eller et opptaksområde i siste periode av `catchment_population.csv` som ikke finnes i `opptaksomrader.csv`
-- kuratert somatikk-sengesum for et HF avviker fra SSB 13942 med mer enn `BED_TOLERANCE = 0.15` (15 %)
+- en `lokalsykehus_id` i `sites.csv` som ikke finnes i `opptaksomrader.csv` (tom verdi er lov – Klinikk Alta har ingen)
+- en `kategori` i `hospital_beds.csv` utenfor `BED_CATEGORIES` (`somatikk`, `psykisk_helsevern`, `tsb`, `intensiv`, `fode`, `annet`)
+- to rader i `hospital_beds.csv` med samme `site_id`/`kategori`/`period` – `bedsBlock` ville stille beholdt den ene
+- en `hf_id` i `hf_activity.csv`/`hf_staffing.csv`/`hf_specialists.csv` som verken står i `helseforetak.csv`, er et H-aggregat (`H00`, `H03`…`H12`, `H03_AV`, `H06_HF`, `H99`) eller står i `NATIONAL_HF`/`PRIVATE_RHF` i `scripts/lib/regions.mjs`. I dagens data faller alle 40 ikke-`helseforetak.csv`-idene innenfor lista (12 H-aggregater, 6 felleseide, 22 private/fusjonerte)
+- en kommune i `municipalities.csv` uten rader i `municipal_population.csv`, `municipal_capacity.csv`, `municipal_needs.csv` eller `municipality_catchment.csv`
+- kuratert somatikk-sengesum for et HF avviker fra SSB 13942 med mer enn `BED_TOLERANCE = 0.15` (15 %) – kontrollen kjøres bare når **ingen** av HF-ets somatikk-rader er `estimat`, siden en estimat-rad selv er utledet av SSB-tallet
 - en `source_id` i en tabell finnes ikke i `data/sources/manifest.json` (hoppes over dersom manifestet ikke er lest inn, f.eks. i enhetstester)
 
 **Advarsler (warnings):**
@@ -193,13 +198,16 @@ Hvert tall i faktaarket er et `Tall`: `{ value, unit, period, quality, source_id
 - et HF med kuraterte sengerader har ingen SOM-døgnplasser å kontrollere mot i `hf_activity.csv`
 - en av de fire kontrollsummene (Finnmarkssykehuset 134, UNN 593, Nordlandssykehuset 295, Helgelandssykehuset 121 – SOM døgnplasser 2025) stemmer ikke lenger (SSB kan ha revidert tallet)
 
-**Info:** avvikslinjen for hvert HF som er innenfor 15 %-toleransen, og én linje per HF uten noen kuratert sengetabell i det hele tatt.
+**Info:** avvikslinjen for hvert HF som er innenfor 15 %-toleransen, én linje per HF der kontrollen ble hoppet over fordi noen somatikk-rader er estimat, og én linje per HF uten noen kuratert sengetabell i det hele tatt.
+
+En tom numerisk celle er **ikke** 0. Både validatoren og `num()` i `scripts/units/common.mjs` behandler `""`/`" "`/`null` som NaN, slik at en tom `value`/`senger` blir en feil i stedet for å materialisere seg som et `Tall` med `value: 0` – i en kapasitetsapp er «0 senger» og «vi vet ikke» motsatte svar.
 
 ### (f) Kjente begrensninger
 
 - `hospital_beds.csv` har bare rader for de fire HF-ene i Helse Nord – ingen andre HF har en sengetabell.
 - `catchment_population.csv` (SSB 13982) er hentet med `Kjonn=0`, altså uten kjønnsfordeling.
 - SSB 14820 (psykisk helsevern for voksne, VOP) har ingen diagnosedimensjon; alle VOP-rader i `patients_by_diagnosis.csv` får `diagnose_kode="_T"`, i motsetning til SOM-radene (14824) som er brutt ned på ICD-10-kapittel.
-- KOSTRA-tabellene prikkes av SSB for små kommuner; `jsonStatToRows()` dropper stille alle ikke-numeriske celler, så en manglende kommune/metrikk/periode-kombinasjon i `municipal_capacity.csv` er ikke flagget noe sted – den er bare fraværende.
+- **Et hull betyr to motsatte ting, avhengig av tabellen.** I aldersgruppetabellene (`municipal_population.csv` fra 07459 og `catchment_population.csv` fra 13982) droppes celler med verdien 0 (`ssb-07459.mjs:15`, `ssb-13982.mjs:32`) – der betyr en manglende aldersgruppe **0**, og det er informasjonsbevarende: befolkningstall er ikke-negative, så `alle === 0` medfører at hver gruppe er 0. I KOSTRA- og FHI-tabellene (`municipal_capacity.csv`, `municipal_needs.csv`) droppes prikkede/undertrykte celler – der betyr en manglende verdi **ukjent**, og den må aldri leses som 0. Scenariomotoren og LLM-laget møter begge konvensjonene og må skille dem på tabell.
+- KOSTRA-tabellene prikkes av SSB for små kommuner; `jsonStatToRows()` dropper stille alle ikke-numeriske celler, så en manglende kommune/metrikk/periode-kombinasjon i `municipal_capacity.csv` er ikke flagget noe sted – den er bare fraværende. Andelen er stor: 45 % av cellene i KOSTRA 12293 og 59 % i FHI kpr 634 er borte, så spennet i antall rader per kommune (56–383 for kapasitet) sier mest om kommunestørrelse, ikke om tjenestetilbud.
 - SSB 13942 sine døgnplasser og de kuraterte fysiske sengetallene måler ikke det samme (driftstall vs. bygningsmasse); `docs/senger-helse-nord.md` forklarer forskjellen og hvorfor et avvik innenfor 15 % er forventet, ikke en feil.
-- 8 av de 11 obligatoriske `somatikk`-radene i `hospital_beds.csv` er `estimat`: kirkenes, harstad, tromso, bodo, lofoten, mo-i-rana, mosjoen og sandnessjoen, fordelt fra HF-ets SSB-døgnplasser proporsjonalt med opptaksbefolkningen til stedet (formel og kildesøk i `docs/senger-helse-nord.md`). Mosjøens estimat er trolig for høyt – stedet har siden mistet sin akuttfunksjon til Sandnessjøen/Mo i Rana. UNN Tromsøs 403 er også et estimat, og formelen ser bort fra at Tromsø har regionfunksjoner som trekker det reelle tallet oppover. Klinikk Alta, UNN Åsgård og Nordlandssykehuset Rønvik har ingen sengerad i det hele tatt.
+- 8 av de 11 obligatoriske `somatikk`-radene i `hospital_beds.csv` er `estimat`: kirkenes, harstad, tromso, bodo, lofoten, mo-i-rana, mosjoen og sandnessjoen, fordelt fra HF-ets SSB-døgnplasser proporsjonalt med opptaksbefolkningen til stedet (formel og kildesøk i `docs/senger-helse-nord.md`). Mosjøens estimat er trolig for høyt – stedet har siden mistet sin akuttfunksjon til Sandnessjøen/Mo i Rana. UNN Tromsøs 403 er også et estimat, og formelen ser bort fra at Tromsø har regionfunksjoner som trekker det reelle tallet oppover. Klinikk Alta, UNN Åsgård og Nordlandssykehuset Rønvik har ingen sengerad i det hele tatt. Hammerfests 89 `ekte` senger inkluderer 14 pasienthotell-plasser (kildens totaltall), som ikke er døgnplasser i SSBs forstand.

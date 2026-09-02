@@ -1,8 +1,14 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { nest, sumRows, seriesBlock, unitPath, sok, patientsBlock } from "./common.mjs";
+import { nest, num, sumRows, seriesBlock, unitPath, sok, patientsBlock } from "./common.mjs";
 
 const row = (o) => ({ unit: "personer", quality: "ekte", source_id: "s", ...o });
+
+test("num kaster på tom celle i stedet for å gi 0", () => {
+  assert.equal(num("7"), 7);
+  assert.equal(num(0), 0);
+  for (const v of ["", " ", "\t", null, undefined]) assert.throws(() => num(v), /Ikke et tall/, `num(${JSON.stringify(v)}) burde kaste`);
+});
 
 test("nest builds nested objects with period-sorted Tall[] leaves, or single Tall", () => {
   const rows = [row({ a: "x", b: "p", period: "2025", value: "2" }), row({ a: "x", b: "p", period: "2024", value: "1" }), row({ a: "y", b: "q", period: "2024", value: "3" })];

@@ -1,6 +1,11 @@
 const RANK = { ekte: 0, avledet: 1, estimat: 2 };
 
-export const num = (v) => { const n = Number(v); if (!Number.isFinite(n)) throw new Error(`Ikke et tall: "${v}"`); return n; };
+/** Tom celle er ukjent, ikke 0 – Number("") === 0, så den fella må stenges eksplisitt. */
+export const num = (v) => {
+  const n = v === "" || v == null || String(v).trim() === "" ? NaN : Number(v);
+  if (!Number.isFinite(n)) throw new Error(`Ikke et tall: "${v}"`);
+  return n;
+};
 export const tall = (r) => ({ value: num(r.value), unit: r.unit, period: r.period, quality: r.quality, source_id: r.source_id });
 export const byPeriod = (a, b) => a.period.localeCompare(b.period);
 
