@@ -101,6 +101,13 @@ test("throws when a postnummer name does not resolve to a kommune", () => {
   assert.throws(() => buildCatchment(raw632), /postnummer-kode 9999 «Bjørnøya \(postnummer\)» kan ikke knyttes til en kommune/);
 });
 
+test("throws when a postnummer name matches two kommuner instead of guessing", () => {
+  const raw = postnummerRaw();
+  raw.municipalities = [...raw.municipalities, { municipality_code: "1515", municipality_name: "Herøy" }, { municipality_code: "1818", municipality_name: "Herøy" }];
+  raw.codes632.push({ code: "6090", parentCode: "D34", level: 4, name: "Herøy (postnummer)" });
+  assert.throws(() => buildCatchment(raw), /postnummer-kode 6090 «Herøy \(postnummer\)» kan ikke knyttes til en kommune/);
+});
+
 test("throws when HF's RHF is not in RHF_TO_REGION", () => {
   const rawUnknownRhf = {
     codes629: [

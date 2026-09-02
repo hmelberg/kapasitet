@@ -14,7 +14,12 @@ function areasByCode(codes) {
  * – 4611–4647 er Vestland-kommuner – så kommunen slås opp på navnet. Begge slag teller 1.
  */
 function coverage(codes, municipalities) {
-  const byName = new Map(municipalities.map((m) => [m.municipality_name.toLowerCase(), m.municipality_code]));
+  // Navn som finnes to ganger (Herøy, Våler) markeres, så et postnummer-oppslag på dem kaster i stedet for å gjette.
+  const byName = new Map();
+  for (const m of municipalities) {
+    const key = m.municipality_name.toLowerCase();
+    byName.set(key, byName.has(key) ? null : m.municipality_code);
+  }
   const cov = {};
   for (const c of codes) {
     if (c.level !== 4) continue;
