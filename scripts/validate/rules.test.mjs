@@ -9,7 +9,7 @@ const schemas = {
   "municipality_catchment.csv": { columns: ["municipality_code", "municipality_name", "lokalsykehus_id", "dps_id", "hf_id", "helseregion", "quality", "note"], required: true },
   "hf_activity.csv": { columns: ["hf_id", "hf_navn", "helseregion", "tjenesteomrade", "metric", "period", "value", "unit", "source_id", "quality"], required: true },
   "sites.csv": { columns: ["site_id", "site_navn", "hf_id", "municipality_code", "lokalsykehus_id", "lat", "lon", "site_type", "akuttfunksjon"], required: false },
-  "hospital_beds.csv": { columns: ["site_id", "site_navn", "hf_id", "municipality_code", "kategori", "senger", "period", "quality", "source_url", "source_note", "last_verified"], required: false },
+  "hospital_beds.csv": { columns: ["site_id", "site_navn", "hf_id", "source_id", "municipality_code", "kategori", "senger", "period", "quality", "source_url", "source_note", "last_verified"], required: false },
 };
 
 const good = () => ({
@@ -19,7 +19,7 @@ const good = () => ({
   "municipality_catchment.csv": [{ municipality_code: "5603", municipality_name: "Hammerfest", lokalsykehus_id: "S01", dps_id: "D01", hf_id: "983974880", helseregion: "H05", quality: "ekte", note: "" }],
   "hf_activity.csv": [{ hf_id: "983974880", hf_navn: "Finnmarkssykehuset HF", helseregion: "H05", tjenesteomrade: "SOM", metric: "dognplasser", period: "2025", value: "134", unit: "senger", source_id: "ssb_13942", quality: "ekte" }],
   "sites.csv": [{ site_id: "hammerfest", site_navn: "Hammerfest sykehus", hf_id: "983974880", municipality_code: "5603", lokalsykehus_id: "S01", lat: "70.67", lon: "23.65", site_type: "sykehus", akuttfunksjon: "ja" }],
-  "hospital_beds.csv": [{ site_id: "hammerfest", site_navn: "Hammerfest sykehus", hf_id: "983974880", municipality_code: "5603", kategori: "somatikk", senger: "130", period: "2025", quality: "ekte", source_url: "https://x", source_note: "", last_verified: "2026-09-02" }],
+  "hospital_beds.csv": [{ site_id: "hammerfest", site_navn: "Hammerfest sykehus", hf_id: "983974880", source_id: "curated_helse_nord", municipality_code: "5603", kategori: "somatikk", senger: "130", period: "2025", quality: "ekte", source_url: "https://x", source_note: "", last_verified: "2026-09-02" }],
 });
 
 test("clean tables give no errors and an info line for the bed control", () => {
@@ -50,6 +50,17 @@ test("duplicate catchment row and unknown site reference are errors", () => {
   const r = validateTables(t, schemas);
   assert.ok(r.errors.some((e) => /5603.*flere enn ett/.test(e)));
   assert.ok(r.errors.some((e) => /hospital_beds.*site_id.*ukjent/.test(e)));
+});
+
+test("source_id må finnes i manifestet, men bare når et manifest er gitt", () => {
+  const t = good();
+  t["hf_activity.csv"][0].source_id = "ssb_99999";
+  assert.deepEqual(validateTables(t, schemas).errors, []);
+  const manifest = { generated: "2026-09-02", sources: [{ id: "ssb_13942" }, { id: "curated_helse_nord" }] };
+  const r = validateTables(t, schemas, { manifest });
+  assert.deepEqual(r.errors, ["[hf_activity.csv] source_id 'ssb_99999' finnes ikke i manifest.json"]);
+  t["hf_activity.csv"][0].source_id = "ssb_13942";
+  assert.deepEqual(validateTables(t, schemas, { manifest }).errors, []);
 });
 
 test("catchment_population.csv is checked against opptaksomrader.csv only for its latest period", () => {

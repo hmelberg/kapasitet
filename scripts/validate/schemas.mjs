@@ -3,7 +3,7 @@ import { ALL_FETCHERS } from "../fetch/index.mjs";
 const CURATED = {
   "municipalities.csv": { columns: ["municipality_code", "county_code", "municipality_name", "county_name"], required: true },
   "sites.csv": { columns: ["site_id", "site_navn", "hf_id", "municipality_code", "lokalsykehus_id", "lat", "lon", "site_type", "akuttfunksjon"], required: true },
-  "hospital_beds.csv": { columns: ["site_id", "site_navn", "hf_id", "municipality_code", "kategori", "senger", "period", "quality", "source_url", "source_note", "last_verified"], required: true },
+  "hospital_beds.csv": { columns: ["site_id", "site_navn", "hf_id", "source_id", "municipality_code", "kategori", "senger", "period", "quality", "source_url", "source_note", "last_verified"], required: true },
 };
 
 /** Every normalized table the pipeline knows: fetcher outputs (required) + curated tables. */

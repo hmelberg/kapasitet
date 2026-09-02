@@ -2,6 +2,8 @@
 
 Kuratert fra `data/normalized/sites.csv` og `data/normalized/hospital_beds.csv`. Tallene er hentet per sted, ikke bare per helseforetak (HF), slik at man kan regne på hva som skjer med kapasiteten dersom ett enkelt sykehus – eller alle sykehusene i ett fylke, f.eks. Finnmark – stenger eller evakueres.
 
+Hver rad i `hospital_beds.csv` har en egen `source_id`: `curated_helse_nord` for de `ekte` radene (kilden står i `source_url`) og `ssb_13942` for de 8 `estimat`-radene, som er avledet av SSB-tallet og ikke skal tilskrives den kuraterte kilden.
+
 ## To ulike telletradisjoner
 
 Denne tabellen blander to kilder som ikke teller likt, og avvik mellom dem er forventet:

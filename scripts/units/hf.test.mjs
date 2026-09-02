@@ -24,8 +24,8 @@ const tables = () => ({
   "patients_by_diagnosis_detail.csv": [],
   "sites.csv": [{ site_id: "hammerfest", site_navn: "Hammerfest sykehus", hf_id: "983974880", municipality_code: "5603", lokalsykehus_id: "S01", lat: "70.67", lon: "23.65", site_type: "sykehus", akuttfunksjon: "ja" }],
   "hospital_beds.csv": [
-    { site_id: "hammerfest", site_navn: "Hammerfest sykehus", hf_id: "983974880", municipality_code: "5603", kategori: "somatikk", senger: "46", period: "2024", quality: "ekte", source_url: "https://a", source_note: "n", last_verified: "2026-09-02" },
-    { site_id: "hammerfest", site_navn: "Hammerfest sykehus", hf_id: "983974880", municipality_code: "5603", kategori: "somatikk", senger: "50", period: "2025", quality: "ekte", source_url: "https://b", source_note: "n2", last_verified: "2026-09-02" },
+    { site_id: "hammerfest", site_navn: "Hammerfest sykehus", hf_id: "983974880", source_id: "curated_helse_nord", municipality_code: "5603", kategori: "somatikk", senger: "46", period: "2024", quality: "ekte", source_url: "https://a", source_note: "n", last_verified: "2026-09-02" },
+    { site_id: "hammerfest", site_navn: "Hammerfest sykehus", hf_id: "983974880", source_id: "ssb_13942", municipality_code: "5603", kategori: "somatikk", senger: "50", period: "2025", quality: "estimat", source_url: "https://b", source_note: "n2", last_verified: "2026-09-02" },
   ],
 });
 
@@ -33,7 +33,7 @@ test("site unit has beds (latest period), parents and catchment population", () 
   const [s] = buildSiteUnits(tables());
   assert.equal(s.id, "behandlingssted:hammerfest");
   assert.deepEqual(s.parent_ids, ["helseforetak:983974880", "kommune:5603"]);
-  assert.deepEqual(s.fakta.senger.somatikk, { value: 50, unit: "senger", period: "2025", quality: "ekte", source_id: "curated_helse_nord", source_url: "https://b", source_note: "n2", last_verified: "2026-09-02" });
+  assert.deepEqual(s.fakta.senger.somatikk, { value: 50, unit: "senger", period: "2025", quality: "estimat", source_id: "ssb_13942", source_url: "https://b", source_note: "n2", last_verified: "2026-09-02" });
   assert.equal(s.fakta.opptaksomrade.befolkning_alle.value, 40000);
   assert.equal(s.fakta.lat, 70.67);
 });

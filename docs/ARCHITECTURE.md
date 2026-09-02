@@ -129,7 +129,7 @@ Hver fetcher i `scripts/fetch/*.mjs` er et objekt `{ meta, fetchRaw(deps), trans
 
 ### (b) Kildene (`data/sources/manifest.json`)
 
-10 av kildene hentes av en fetcher via `npm run fetch`; én (`curated_helse_nord`) er kuratert for hånd og merges inn fra `data/sources/manifest.static.json`. Full tabell med url/lisens/last_fetched/tables_out står i `docs/SOURCES.md`; her er fetcher-id → tabeller:
+10 av kildene hentes av en fetcher via `npm run fetch`; én (`curated_helse_nord`) er kuratert for hånd og merges inn fra `data/sources/manifest.static.json`. I tillegg står 10 **sub-kilder** i manifestet: de fem KOSTRA-tabellene, de tre FHI-tabellene og SSB 14824/14820, altså de tabellene fetcherne stempler som `source_id` på radene. De deklareres som `meta.sub_sources` på fetcheren, utledes fra den samme tabell-lista fetcheren spør med, arver `lisens`/`last_fetched` fra fetcheren og får et `parent`-felt. Uten dem ville tre firedeler av tallene i modellen hatt en `source_id` uten manifestoppføring; validatorregelen i (e) sørger for at det ikke skjer igjen. Full tabell med url/lisens/last_fetched/tables_out står i `docs/SOURCES.md`; her er fetcher-id → tabeller:
 
 - `klass-catchment.mjs` (`ssb_klass_opptak`, SSB KLASS 629/632 + korrespondanse 2688/2690) → `opptaksomrader.csv`, `municipality_catchment.csv`
 - `ssb-13942.mjs` (SSB 13942, døgnplasser/aktivitet/belegg per HF) → `hf_activity.csv`, `helseforetak.csv`
@@ -185,6 +185,7 @@ Hvert tall i faktaarket er et `Tall`: `{ value, unit, period, quality, source_id
 - en kommune mangler i `municipality_catchment.csv`, har mer enn én lokalsykehus-rad, mangler/har ukjent `hf_id`, eller peker på en `lokalsykehus_id` som ikke finnes i `opptaksomrader.csv`
 - en ukjent `hf_id` i `opptaksomrader.csv`/`sites.csv`/`hospital_beds.csv`, en ukjent `municipality_code` i en `municipal_*`-tabell/`sites.csv`/`hospital_beds.csv`, en ukjent `site_id` i `hospital_beds.csv`, eller et opptaksområde i siste periode av `catchment_population.csv` som ikke finnes i `opptaksomrader.csv`
 - kuratert somatikk-sengesum for et HF avviker fra SSB 13942 med mer enn `BED_TOLERANCE = 0.15` (15 %)
+- en `source_id` i en tabell finnes ikke i `data/sources/manifest.json` (hoppes over dersom manifestet ikke er lest inn, f.eks. i enhetstester)
 
 **Advarsler (warnings):**
 - en valgfri/ikke-kuratert tabell mangler

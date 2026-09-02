@@ -7,7 +7,7 @@ const CONTROL_SUMS = [
 ];
 const NUMERIC = { value: true, senger: true };
 
-export function validateTables(tables, schemas = SCHEMAS) {
+export function validateTables(tables, schemas = SCHEMAS, { manifest } = {}) {
   const errors = [], warnings = [], info = [];
   const err = (m) => errors.push(m);
 
@@ -93,6 +93,17 @@ export function validateTables(tables, schemas = SCHEMAS) {
   for (const [hf, navn, expected] of CONTROL_SUMS) {
     const row = t("hf_activity.csv").find((r) => r.hf_id === hf && r.tjenesteomrade === "SOM" && r.metric === "dognplasser" && r.period === "2025");
     if (row && Number(row.value) !== expected) warnings.push(`Kontrollsum: ${navn} SOM døgnplasser 2025 er ${row.value}, forventet ${expected} (SSB har revidert?)`);
+  }
+
+  // 8. provenienss: hver source_id må kunne slås opp i manifestet (hoppes over uten manifest)
+  if (manifest) {
+    const known = new Set((manifest.sources ?? []).map((s) => s.id));
+    for (const [file, rows] of Object.entries(tables)) {
+      if (!schemas[file]?.columns.includes("source_id")) continue;
+      for (const id of new Set(rows.map((r) => r.source_id).filter(Boolean))) {
+        if (!known.has(id)) err(`[${file}] source_id '${id}' finnes ikke i manifest.json`);
+      }
+    }
   }
   return { errors, warnings, info };
 }

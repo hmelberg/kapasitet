@@ -27,6 +27,19 @@
       ]
     },
     {
+      "id": "fhi_kpr_634",
+      "navn": "FHI Kommunehelsa kpr 634 – mottakere av hjemmetjenester etter tjenestetype",
+      "url": "https://statistikk.fhi.no/kommunehelsa",
+      "api_url": "https://statistikk-data.fhi.no/api/open/v1/kpr/Table/634/data",
+      "query": "",
+      "lisens": "CC BY 4.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_needs.csv"
+      ],
+      "parent": "fhi_kommune"
+    },
+    {
       "id": "fhi_lmr_825",
       "navn": "FHI Legemiddelregisteret tabell 825 – brukere per ATC-gruppe, hele landet",
       "url": "https://www.fhi.no/he/legemiddelbruk",
@@ -39,6 +52,32 @@
       ]
     },
     {
+      "id": "fhi_nokkel_370",
+      "navn": "FHI Kommunehelsa nøkkel 370 – brukere av kommunale helse- og omsorgstjenester (KPR) 0–74 år per diagnosegruppe",
+      "url": "https://statistikk.fhi.no/kommunehelsa",
+      "api_url": "https://statistikk-data.fhi.no/api/open/v1/nokkel/Table/370/data",
+      "query": "",
+      "lisens": "CC BY 4.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_needs.csv"
+      ],
+      "parent": "fhi_kommune"
+    },
+    {
+      "id": "fhi_nokkel_699",
+      "navn": "FHI Kommunehelsa nøkkel 699 – brukere av spesialisthelsetjenesten (NPR) per diagnosegruppe",
+      "url": "https://statistikk.fhi.no/kommunehelsa",
+      "api_url": "https://statistikk-data.fhi.no/api/open/v1/nokkel/Table/699/data",
+      "query": "",
+      "lisens": "CC BY 4.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_needs.csv"
+      ],
+      "parent": "fhi_kommune"
+    },
+    {
       "id": "ssb_07459",
       "navn": "SSB 07459 Befolkning etter kommune, kjønn og ettårig alder",
       "url": "https://www.ssb.no/statbank/table/07459",
@@ -49,6 +88,58 @@
       "tables_out": [
         "municipal_population.csv"
       ]
+    },
+    {
+      "id": "ssb_11875",
+      "navn": "SSB KOSTRA 11875 – plasser i institusjon og sykehjem (kommunale helse- og omsorgstjenester)",
+      "url": "https://www.ssb.no/statbank/table/11875",
+      "api_url": "https://data.ssb.no/api/v0/no/table/11875/",
+      "query": "",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_capacity.csv"
+      ],
+      "parent": "ssb_kostra"
+    },
+    {
+      "id": "ssb_11996",
+      "navn": "SSB KOSTRA 11996 – legeårsverk i kommunen etter funksjon",
+      "url": "https://www.ssb.no/statbank/table/11996",
+      "api_url": "https://data.ssb.no/api/v0/no/table/11996/",
+      "query": "",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_capacity.csv"
+      ],
+      "parent": "ssb_kostra"
+    },
+    {
+      "id": "ssb_12292",
+      "navn": "SSB KOSTRA 12292 – beboere, brukere og årsverk i kommunale helse- og omsorgstjenester",
+      "url": "https://www.ssb.no/statbank/table/12292",
+      "api_url": "https://data.ssb.no/api/v0/no/table/12292/",
+      "query": "",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_capacity.csv"
+      ],
+      "parent": "ssb_kostra"
+    },
+    {
+      "id": "ssb_12293",
+      "navn": "SSB KOSTRA 12293 – belegg i kommunale institusjoner",
+      "url": "https://www.ssb.no/statbank/table/12293",
+      "api_url": "https://data.ssb.no/api/v0/no/table/12293/",
+      "query": "",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_capacity.csv"
+      ],
+      "parent": "ssb_kostra"
     },
     {
       "id": "ssb_13942",
@@ -98,6 +189,46 @@
       "tables_out": [
         "hf_specialists.csv"
       ]
+    },
+    {
+      "id": "ssb_14533",
+      "navn": "SSB KOSTRA 14533 – årsverk etter yrke i kommunale helse- og omsorgstjenester",
+      "url": "https://www.ssb.no/statbank/table/14533",
+      "api_url": "https://data.ssb.no/api/v0/no/table/14533/",
+      "query": "",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "municipal_capacity.csv"
+      ],
+      "parent": "ssb_kostra"
+    },
+    {
+      "id": "ssb_14820",
+      "navn": "SSB 14820 – pasienter i psykisk helsevern for voksne etter bosted og alder",
+      "url": "https://www.ssb.no/statbank/table/14820",
+      "api_url": "https://data.ssb.no/api/v0/no/table/14820/",
+      "query": "",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "patients_by_diagnosis.csv"
+      ],
+      "parent": "ssb_pasienter"
+    },
+    {
+      "id": "ssb_14824",
+      "navn": "SSB 14824 – pasienter i somatisk spesialisthelsetjeneste etter bosted, alder og diagnose",
+      "url": "https://www.ssb.no/statbank/table/14824",
+      "api_url": "https://data.ssb.no/api/v0/no/table/14824/",
+      "query": "",
+      "lisens": "NLOD 2.0",
+      "last_fetched": "2026-09-02",
+      "tables_out": [
+        "patients_by_diagnosis.csv",
+        "patients_by_diagnosis_detail.csv"
+      ],
+      "parent": "ssb_pasienter"
     },
     {
       "id": "ssb_klass_opptak",

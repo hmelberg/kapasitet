@@ -27,13 +27,27 @@ export async function main(argv = process.argv.slice(2)) {
   if (only && fetchers.length !== only.size) throw new Error(`Ukjent fetcher-id i --only: ${[...only].filter((id) => !ALL_FETCHERS.some((f) => f.meta.id === id)).join(", ")}`);
   const today = new Date().toISOString().slice(0, 10);
   const deps = { today };
-  const results = [];
-  for (const def of fetchers) results.push({ def, result: await runFetcher(def, { deps }) });
   const manifestPath = join(SOURCES_DIR, "manifest.json");
-  const previous = await readJsonOr(manifestPath, null);
   const statics = await readJsonOr(join(SOURCES_DIR, "manifest.static.json"), []);
-  await mkdir(SOURCES_DIR, { recursive: true });
-  await writeFile(manifestPath, JSON.stringify(mergeManifest(previous, statics, results, { today }), null, 2) + "\n", "utf8");
+  // Skrives etter hver fetcher, ikke bare til slutt: en fetcher som feiler skal ikke ta med seg
+  // manifest-oppføringene til dem som allerede har gått bra.
+  const writeManifest = async (results) => {
+    const previous = await readJsonOr(manifestPath, null);
+    await mkdir(SOURCES_DIR, { recursive: true });
+    await writeFile(manifestPath, JSON.stringify(mergeManifest(previous, statics, results, { today, defs: ALL_FETCHERS }), null, 2) + "\n", "utf8");
+  };
+
+  if (argv.includes("--manifest-only")) {
+    await writeManifest([]);
+    console.log(`Skrev ${manifestPath} (bare manifest, ingen henting)`);
+    return;
+  }
+  const results = [];
+  for (const def of fetchers) {
+    results.push({ def, result: await runFetcher(def, { deps }) });
+    await writeManifest(results);
+  }
+  await writeManifest(results);
   console.log(`Skrev ${manifestPath} (${results.length} kilder hentet)`);
 }
 

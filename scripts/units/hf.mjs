@@ -10,7 +10,7 @@ export function bedsBlock(bedRows) {
   const out = {};
   for (const [kategori, list] of groupBy(bedRows, "kategori")) {
     const r = list.reduce((a, b) => (b.period > a.period ? b : a));
-    out[kategori] = { value: Number(r.senger), unit: "senger", period: r.period, quality: r.quality, source_id: "curated_helse_nord", source_url: r.source_url, source_note: r.source_note, last_verified: r.last_verified };
+    out[kategori] = { value: Number(r.senger), unit: "senger", period: r.period, quality: r.quality, source_id: r.source_id, source_url: r.source_url, source_note: r.source_note, last_verified: r.last_verified };
   }
   return out;
 }

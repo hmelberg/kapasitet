@@ -6,25 +6,31 @@ import { normalized } from "../lib/paths.mjs";
 const REGION = "KOKkommuneregion0000";
 
 // contents code → [metric, unit]; `suffixDim` appends "_<code>" (lower-cased) and " – <label>" from that dimension.
+// `navn` er tabelltittelen som havner i manifestet – radene stemples med source_id `ssb_<tableId>`.
 export const KOSTRA_TABLES = {
   11875: {
-    tableId: "11875", query: [all(REGION), all("ContentsCode"), all("Tid")],
+    tableId: "11875", navn: "SSB KOSTRA 11875 – plasser i institusjon og sykehjem (kommunale helse- og omsorgstjenester)",
+    query: [all(REGION), all("ContentsCode"), all("Tid")],
     contents: { KOSinstdispplass0000: ["inst_plasser", "plasser"], KOSsykehjdisppla0000: ["sykehjem_plasser", "plasser"], KOSinstdemenspla0000: ["demens_plasser", "plasser"], KOSinsttidsbegrp0000: ["tidsbegrensede_plasser", "plasser"], KOSinstrehabplas0000: ["rehab_plasser", "plasser"] },
   },
   12292: {
-    tableId: "12292", query: [all(REGION), all("ContentsCode"), all("Tid")],
+    tableId: "12292", navn: "SSB KOSTRA 12292 – beboere, brukere og årsverk i kommunale helse- og omsorgstjenester",
+    query: [all(REGION), all("ContentsCode"), all("Tid")],
     contents: { KOSbeboersykehje0000: ["sykehjem_beboere", "personer"], KOSlangtid0000: ["langtid_beboere", "personer"], KOSkorttid0000: ["korttid_beboere", "personer"], KOSkjernetotalt0000: ["hjemmetjeneste_brukere", "personer"], KOSkjerne80aarov0000: ["hjemmetjeneste_brukere_80pluss", "personer"], KOSaarsverkbruke0000: ["omsorg_arsverk_brukerrettet", "arsverk"], KOSinstoppholdsd0000: ["inst_oppholdsdogn", "dogn"] },
   },
   12293: {
-    tableId: "12293", query: [all(REGION), all("ContentsCode"), all("Tid")],
+    tableId: "12293", navn: "SSB KOSTRA 12293 – belegg i kommunale institusjoner",
+    query: [all(REGION), all("ContentsCode"), all("Tid")],
     contents: { KOSbeleggomsorgs0000: ["inst_belegg", "prosent"] },
   },
   11996: {
-    tableId: "11996", query: [all(REGION), item("KOKavtaleform0000", ["sum"]), all("KOKfunksjon0000"), all("ContentsCode"), all("Tid")],
+    tableId: "11996", navn: "SSB KOSTRA 11996 – legeårsverk i kommunen etter funksjon",
+    query: [all(REGION), item("KOKavtaleform0000", ["sum"]), all("KOKfunksjon0000"), all("ContentsCode"), all("Tid")],
     contents: { KOSlegeaarsverk0000: ["legearsverk", "arsverk"] }, suffixDim: "KOKfunksjon0000",
   },
   14533: {
-    tableId: "14533", query: [all(REGION), all("KOKyrker0000"), all("ContentsCode"), all("Tid")],
+    tableId: "14533", navn: "SSB KOSTRA 14533 – årsverk etter yrke i kommunale helse- og omsorgstjenester",
+    query: [all(REGION), all("KOKyrker0000"), all("ContentsCode"), all("Tid")],
     contents: { KOSARBAARSVERKST0000: ["omsorg_arsverk", "arsverk"] }, suffixDim: "KOKyrker0000",
   },
 };
@@ -61,6 +67,11 @@ const def = {
     api_url: "https://data.ssb.no/api/v0/no/table/{11875,12292,12293,11996,14533}",
     lisens: "NLOD 2.0",
     query: "KOKkommuneregion0000=*, ContentsCode=<mapped koder per tabell, se KOSTRA_TABLES>, Tid=* (+ KOKavtaleform0000=sum, KOKfunksjon0000=* for 11996; KOKyrker0000=* for 14533)",
+    sub_sources: Object.values(KOSTRA_TABLES).map((c) => ({
+      id: `ssb_${c.tableId}`, navn: c.navn,
+      url: `https://www.ssb.no/statbank/table/${c.tableId}`, api_url: `https://data.ssb.no/api/v0/no/table/${c.tableId}/`,
+      tables_out: ["municipal_capacity.csv"],
+    })),
   },
   async fetchRaw(deps) {
     const datasets = {};
