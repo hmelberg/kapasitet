@@ -1,6 +1,6 @@
 # Senger per behandlingssted, Helse Nord
 
-Kurert fra `data/normalized/sites.csv` og `data/normalized/hospital_beds.csv` (Task 16). Tallene er hentet per sted, ikke bare per helseforetak (HF), slik at man kan regne på hva som skjer med kapasiteten dersom ett enkelt sykehus – eller alle sykehusene i ett fylke, f.eks. Finnmark – stenger eller evakueres.
+Kuratert fra `data/normalized/sites.csv` og `data/normalized/hospital_beds.csv`. Tallene er hentet per sted, ikke bare per helseforetak (HF), slik at man kan regne på hva som skjer med kapasiteten dersom ett enkelt sykehus – eller alle sykehusene i ett fylke, f.eks. Finnmark – stenger eller evakueres.
 
 ## To ulike telletradisjoner
 
