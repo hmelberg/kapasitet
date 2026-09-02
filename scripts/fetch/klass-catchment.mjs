@@ -3,21 +3,28 @@ import { readCsv } from "../lib/csv.mjs";
 import { normalized } from "../lib/paths.mjs";
 import { RHF_TO_REGION, PRIVATE_RHF } from "../lib/regions.mjs";
 
-const WHOLE_KOMMUNE_WEIGHT = 10_000;
-
 function areasByCode(codes) {
   return Object.fromEntries(codes.filter((c) => c.level === 3).map((c) => [c.code, c]));
 }
 
-/** area → { kommune → weight } from level-4 codes (grunnkrets 8-digit or whole kommune 4-digit). */
-function coverage(codes) {
+/**
+ * area → { kommune → antall nivå-4-koder }. Nivå 4 er av to slag: 8 sifre = grunnkrets
+ * (kommunen er de fire første sifrene), 4 sifre = postnummer, som i KLASS 632 alltid heter
+ * "<Kommune> (postnummer)" (Trondheim og Kristiansand). Et postnummer er *ikke* en kommunekode
+ * – 4611–4647 er Vestland-kommuner – så kommunen slås opp på navnet. Begge slag teller 1.
+ */
+function coverage(codes, municipalities) {
+  const byName = new Map(municipalities.map((m) => [m.municipality_name.toLowerCase(), m.municipality_code]));
   const cov = {};
   for (const c of codes) {
     if (c.level !== 4) continue;
-    const kommune = c.code.slice(0, 4);
-    const w = c.code.length === 4 ? WHOLE_KOMMUNE_WEIGHT : 1;
+    let kommune = c.code.slice(0, 4);
+    if (c.code.length === 4) {
+      kommune = byName.get(String(c.name).replace(/\s*\(postnummer\)\s*$/i, "").trim().toLowerCase());
+      if (!kommune) throw new Error(`[ssb_klass_opptak] postnummer-kode ${c.code} «${c.name}» kan ikke knyttes til en kommune`);
+    }
     ((cov[c.parentCode] ??= {})[kommune] ??= 0);
-    cov[c.parentCode][kommune] += w;
+    cov[c.parentCode][kommune] += 1;
   }
   return cov;
 }
@@ -52,8 +59,8 @@ export function buildCatchment({ codes629, codes632, corr2688, corr2690, municip
     ...Object.values(sAreas).map((a) => ({ omrade_id: a.code, omrade_navn: a.name, omrade_type: "lokalsykehus", hf_id: a.parentCode })),
     ...Object.values(dAreas).map((a) => ({ omrade_id: a.code, omrade_navn: a.name, omrade_type: "dps", hf_id: a.parentCode })),
   ];
-  const sCov = coverage(codes629);
-  const dCov = coverage(codes632);
+  const sCov = coverage(codes629, municipalities);
+  const dCov = coverage(codes632, municipalities);
   const sCand = {};
   for (const m of corr2688) (sCand[m.targetCode] ??= []).push(m.sourceCode);
   const dCand = {};

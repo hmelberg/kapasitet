@@ -214,7 +214,7 @@ municipality_code,municipality_name,lokalsykehus_id,dps_id,hf_id,helseregion,qua
 4201,Risør,S43,D64,983975240,H12,ekte,
 4202,Grimstad,S43,D64,983975240,H12,ekte,
 4203,Arendal,S43,D64,983975240,H12,ekte,
-4204,Kristiansand,S45,D62,983975240,H12,avledet,"Delt DPS: D62 Solvang (0), D63 Strømme (0)"
+4204,Kristiansand,S45,D62,983975240,H12,avledet,"Delt DPS: D62 Solvang (23), D63 Strømme (19)"
 4205,Lindesnes,S45,D63,983975240,H12,ekte,
 4206,Farsund,S44,D61,983975240,H12,ekte,
 4207,Flekkefjord,S44,D61,983975240,H12,ekte,
@@ -279,7 +279,7 @@ municipality_code,municipality_name,lokalsykehus_id,dps_id,hf_id,helseregion,qua
 4649,Stad,S21,D32,983974732,H03,ekte,
 4650,Gloppen,S19,D32,983974732,H03,ekte,
 4651,Stryn,S19,D32,983974732,H03,ekte,
-5001,Trondheim,S23,D33,883974832,H04,avledet,"Delt DPS: D33 Nidaros (0), D34 Nidelv (0)"
+5001,Trondheim,S23,D33,883974832,H04,avledet,"Delt DPS: D33 Nidaros (43), D34 Nidelv (34)"
 5006,Steinkjer,S24,D35,983974791,H04,ekte,
 5007,Namsos,S25,D36,983974791,H04,ekte,
 5014,Frøya,S22,D34,883974832,H04,ekte,

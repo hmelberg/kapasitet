@@ -60,36 +60,45 @@ test("split kommune gets the area with most grunnkretser and quality=avledet; mi
   assert.match(ukjent.note, /Ikke i KLASS 2688/);
 });
 
-test("split DPS: whole-kommune code (10000 weight) beats grunnkrets codes", () => {
-  const rawDpsSplit = {
-    codes629: [
-      { code: "883658752", parentCode: null, level: 1, name: "Helse Nord RHF" },
-      { code: "983974880", parentCode: "883658752", level: 2, name: "Finnmarkssykehuset HF" },
-      { code: "S01", parentCode: "983974880", level: 3, name: "Hammerfest" },
-      { code: "56010101", parentCode: "S01", level: 4, name: "Alta sentrum" },
-    ],
-    codes632: [
-      { code: "883658752", parentCode: null, level: 1, name: "Helse Nord RHF" },
-      { code: "983974880", parentCode: "883658752", level: 2, name: "Finnmarkssykehuset HF" },
-      { code: "D01", parentCode: "983974880", level: 3, name: "DPS Vest" },
-      { code: "D02", parentCode: "983974880", level: 3, name: "DPS Øst" },
-      { code: "56010101", parentCode: "D01", level: 4, name: "Alta-grunnkrets-1" },
-      { code: "56010102", parentCode: "D01", level: 4, name: "Alta-grunnkrets-2" },
-      { code: "56010103", parentCode: "D01", level: 4, name: "Alta-grunnkrets-3" },
-      { code: "5601", parentCode: "D02", level: 4, name: "Alta" },
-    ],
-    corr2688: [{ sourceCode: "S01", sourceName: "Hammerfest", targetCode: "5601", targetName: "Alta" }],
-    corr2690: [
-      { sourceCode: "D01", sourceName: "DPS Vest", targetCode: "5601", targetName: "Alta" },
-      { sourceCode: "D02", sourceName: "DPS Øst", targetCode: "5601", targetName: "Alta" },
-    ],
-    municipalities: [{ municipality_code: "5601", municipality_name: "Alta" }],
-  };
-  const { catchment } = buildCatchment(rawDpsSplit);
-  const alta = catchment[0];
-  assert.equal(alta.dps_id, "D02");
-  assert.equal(alta.quality, "avledet");
-  assert.match(alta.note, /Delt DPS: D02 DPS Øst \(10000\), D01 DPS Vest \(3\)/);
+/** Trondheim-formen fra ekte KLASS 632: to DPS-kandidater delt på postnummer, ikke grunnkretser. */
+const postnummerRaw = (extraCodes = []) => ({
+  codes629: [
+    { code: "983658776", parentCode: null, level: 1, name: "Helse Midt-Norge RHF" },
+    { code: "883974832", parentCode: "983658776", level: 2, name: "St. Olavs Hospital HF" },
+    { code: "S23", parentCode: "883974832", level: 3, name: "St. Olav" },
+    { code: "50010101", parentCode: "S23", level: 4, name: "Midtbyen" },
+  ],
+  codes632: [
+    { code: "983658776", parentCode: null, level: 1, name: "Helse Midt-Norge RHF" },
+    { code: "883974832", parentCode: "983658776", level: 2, name: "St. Olavs Hospital HF" },
+    { code: "D33", parentCode: "883974832", level: 3, name: "Nidaros" },
+    { code: "D34", parentCode: "883974832", level: 3, name: "Nidelv" },
+    { code: "7010", parentCode: "D33", level: 4, name: "Trondheim (postnummer)" },
+    { code: "7011", parentCode: "D33", level: 4, name: "Trondheim (postnummer)" },
+    { code: "7012", parentCode: "D33", level: 4, name: "Trondheim (postnummer)" },
+    { code: "7017", parentCode: "D34", level: 4, name: "Trondheim (postnummer)" },
+    { code: "7018", parentCode: "D34", level: 4, name: "Trondheim (postnummer)" },
+    ...extraCodes,
+  ],
+  corr2688: [{ sourceCode: "S23", sourceName: "St. Olav", targetCode: "5001", targetName: "Trondheim" }],
+  corr2690: [
+    { sourceCode: "D33", sourceName: "Nidaros", targetCode: "5001", targetName: "Trondheim" },
+    { sourceCode: "D34", sourceName: "Nidelv", targetCode: "5001", targetName: "Trondheim" },
+  ],
+  municipalities: [{ municipality_code: "5001", municipality_name: "Trondheim" }],
+});
+
+test("split DPS: four-digit codes are postnummer, counted 1 each against the kommune in their name", () => {
+  const { catchment } = buildCatchment(postnummerRaw());
+  const trondheim = catchment[0];
+  assert.equal(trondheim.dps_id, "D33");
+  assert.equal(trondheim.quality, "avledet");
+  assert.match(trondheim.note, /Delt DPS: D33 Nidaros \(3\), D34 Nidelv \(2\)/);
+});
+
+test("throws when a postnummer name does not resolve to a kommune", () => {
+  const raw632 = postnummerRaw([{ code: "9999", parentCode: "D34", level: 4, name: "Bjørnøya (postnummer)" }]);
+  assert.throws(() => buildCatchment(raw632), /postnummer-kode 9999 «Bjørnøya \(postnummer\)» kan ikke knyttes til en kommune/);
 });
 
 test("throws when HF's RHF is not in RHF_TO_REGION", () => {
