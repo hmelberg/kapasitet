@@ -29,6 +29,12 @@ export const KOSTRA_TABLES = {
   },
 };
 
+/** cfg.query with its `all("ContentsCode")` entry narrowed to the mapped codes in cfg.contents. */
+function queryFor(cfg) {
+  const codes = Object.keys(cfg.contents);
+  return cfg.query.map((q) => (q.code === "ContentsCode" ? item("ContentsCode", codes) : q));
+}
+
 export function transformKostra({ datasets, municipalities }) {
   const keep = new Set(municipalities);
   const out = [];
@@ -54,11 +60,11 @@ const def = {
     url: "https://www.ssb.no/statbank/list/helsetjenester-kommuner",
     api_url: "https://data.ssb.no/api/v0/no/table/{11875,12292,12293,11996,14533}",
     lisens: "NLOD 2.0",
-    query: "KOKkommuneregion0000=*, ContentsCode=*, Tid=* (+ KOKavtaleform0000=sum, KOKfunksjon0000=* for 11996; KOKyrker0000=* for 14533)",
+    query: "KOKkommuneregion0000=*, ContentsCode=<mapped koder per tabell, se KOSTRA_TABLES>, Tid=* (+ KOKavtaleform0000=sum, KOKfunksjon0000=* for 11996; KOKyrker0000=* for 14533)",
   },
   async fetchRaw(deps) {
     const datasets = {};
-    for (const cfg of Object.values(KOSTRA_TABLES)) datasets[cfg.tableId] = await ssbQuery(cfg.tableId, cfg.query, deps);
+    for (const cfg of Object.values(KOSTRA_TABLES)) datasets[cfg.tableId] = await ssbQuery(cfg.tableId, queryFor(cfg), deps);
     const municipalities = (await readCsv(normalized("municipalities.csv"))).rows.map((m) => m.municipality_code);
     return { datasets, municipalities };
   },
